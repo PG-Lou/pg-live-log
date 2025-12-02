@@ -87,3 +87,19 @@ function exportImage(){
 document.getElementById("export-btn").addEventListener("click", exportImage);
 renderList();
 
+loadLiveData().then(liveData => {
+  const container = document.getElementById('live-list');
+
+  liveData.forEach(live => {
+    const item = document.createElement('div');
+    item.classList.add('live-item');
+    item.innerHTML = `
+      <label>
+        <input type="checkbox">
+        ${live.year} / ${live.date} / ${live.tour} / ${live.location}
+      </label>
+    `;
+    
+    container.appendChild(item);
+  });
+});
