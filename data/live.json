@@ -8,6 +8,8 @@
           { "date": "2022-09-22", "prefecture": "神奈川", "venue": "よこすか芸術劇場" },
           { "date": "2022-09-27", "prefecture": "群馬", "venue": "高崎芸術劇場 大劇場" }
         ]
+      },
+      {
         "year": 2023,
         "shows": [
           { "date": "2023-05-10", "prefecture": "東京", "venue": "日本武道館" },
