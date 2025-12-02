@@ -1,3 +1,9 @@
+async function loadLiveData() {
+  const response = await fetch('data/live.json');
+  const data = await response.json();
+  return data;
+}
+
 // 簡易データ（例）
 const liveData = [
   {
@@ -80,3 +86,4 @@ function exportImage(){
 
 document.getElementById("export-btn").addEventListener("click", exportImage);
 renderList();
+
