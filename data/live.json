@@ -1,0 +1,23 @@
+[
+  {
+    "year": 2024,
+    "date": "2024-04-15",
+    "tour": "暁ツアー",
+    "location": "大阪城ホール",
+    "prefecture": "Osaka"
+  },
+  {
+    "year": 2024,
+    "date": "2024-05-03",
+    "tour": "暁ツアー",
+    "location": "日本武道館",
+    "prefecture": "Tokyo"
+  },
+  {
+    "year": 2025,
+    "date": "2025-01-18",
+    "tour": "暁追加公演",
+    "location": "マリンメッセ福岡A館",
+    "prefecture": "Fukuoka"
+  }
+]
