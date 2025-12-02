@@ -1,23 +1,38 @@
 [
   {
-    "year": 2024,
-    "date": "2024-04-15",
-    "tour": "暁ツアー",
-    "location": "大阪城ホール",
-    "prefecture": "Osaka"
+    "liveName": "18th LIVE CIRCUIT “暁”",
+    "years": [
+      {
+        "year": 2023,
+        "shows": [
+          { "date": "2023-05-10", "prefecture": "東京", "venue": "日本武道館" },
+          { "date": "2023-05-11", "prefecture": "東京", "venue": "日本武道館" }
+        ]
+      }
+    ]
   },
   {
-    "year": 2024,
-    "date": "2024-05-03",
-    "tour": "暁ツアー",
-    "location": "日本武道館",
-    "prefecture": "Tokyo"
+    "liveName": "19th LIVE CIRCUIT “PG wasn't built in a day”",
+    "years": [
+      {
+        "year": 2024,
+        "shows": [
+          { "date": "2024-09-04", "prefecture": "東京", "venue": "東京有明アリーナ" },
+          { "date": "2024-09-05", "prefecture": "東京", "venue": "東京有明アリーナ" },
+          { "date": "2024-09-06", "prefecture": "東京", "venue": "東京有明アリーナ" }
+        ]
+      }
+    ]
   },
   {
-    "year": 2025,
-    "date": "2025-01-18",
-    "tour": "暁追加公演",
-    "location": "マリンメッセ福岡A館",
-    "prefecture": "Fukuoka"
+    "liveName": "因島・横浜ロマンスポルノ'24 ～解放区～",
+    "years": [
+      {
+        "year": 2024,
+        "shows": [
+          { "date": "2024-05-17", "prefecture": "神奈川", "venue": "横浜アリーナ" }
+        ]
+      }
+    ]
   }
 ]
