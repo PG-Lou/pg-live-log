@@ -71,13 +71,9 @@ document.addEventListener('DOMContentLoaded', () => {
       /* タイトルチェック → 全部操作 */
       summary.querySelector('.tour-check').addEventListener('change', e => {
       const checked = e.target.checked;
-
-      // 子をまとめてON/OFF
       content.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = checked);
-
-      // チェック入れたら開く、外したら閉じる
-      // details.open = checked;
       });
+
 
 
       container.appendChild(details);
@@ -97,5 +93,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   loadLiveData().then(renderList);
 });
+
 
 
