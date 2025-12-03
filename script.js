@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
           sCb.type = 'checkbox';
           sCb.dataset.show = JSON.stringify({ live: live.liveName, year: y.year, show: s });
           sLabel.appendChild(sCb);
-          sLabel.append(` ${s.date ${s.time ? s.time : ''} — ${s.prefecture} — ${s.venue}`);
+          sLabel.append(` ${s.date ${s.time ? `(${s.time})` : ''} — ${s.prefecture} — ${s.venue}`);
           yDiv.appendChild(sLabel);
         });
 
@@ -77,4 +77,5 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 });
+
 
