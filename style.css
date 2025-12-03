@@ -51,3 +51,42 @@ button {
   padding: 10px 20px;
   margin-top: 20px;
 }
+
+/* カスタムチェックボックスのベース */
+input[type="checkbox"] {
+  appearance: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  border: 2px solid #555;
+  display: inline-block;
+  position: relative;
+  margin-right: 8px;
+  cursor: pointer;
+}
+
+/* チェック時 */
+input[type="checkbox"]:checked {
+  background: #4a7cff;
+  border-color: #4a7cff;
+}
+
+/* チェックマーク */
+input[type="checkbox"]:checked::after {
+  content: "✔";
+  color: white;
+  font-size: 16px;
+  position: absolute;
+  left: 3px;
+  top: -1px;
+}
+
+/* テキストを大きくスマホ向けに */
+label {
+  font-size: 18px;
+  line-height: 1.6;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
