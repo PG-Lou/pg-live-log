@@ -1,3 +1,53 @@
-body{font-family:Arial, sans-serif;padding:20px;}
-.live{border:1px solid #ddd;padding:8px;margin-bottom:12px;border-radius:6px;}
-.year-list{margin-left:16px;margin-top:8px;}
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+/* 各ツアーブロック */
+.tour {
+  border-radius: 12px;
+  margin-bottom: 18px;
+  overflow: hidden;
+}
+
+/* summary（折りたたみタイトル） */
+.tour summary {
+  font-size: 18px;
+  padding: 14px;
+  cursor: pointer;
+  color: #fff;
+  background: var(--tour-strong);
+}
+
+/* 中身（開いてる時だけ背景付く） */
+.tour[open] .tour-content {
+  background: var(--tour-light);
+  padding: 14px;
+}
+
+/* 年ごと */
+.year-block strong {
+  font-size: 16px;
+  display: block;
+  margin: 12px 0 6px;
+}
+
+/* ラベルとチェックボックス */
+.tour-content label {
+  display: block;
+  font-size: 16px;
+  padding: 6px 0;
+}
+
+input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  margin-right: 6px;
+}
+
+/* 保存ボタン */
+button {
+  font-size: 18px;
+  padding: 10px 20px;
+  margin-top: 20px;
+}
