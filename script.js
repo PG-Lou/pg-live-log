@@ -3,10 +3,8 @@ document.addEventListener('DOMContentLoaded', () => {
   async function loadLiveData() {
     try {
       const response = await fetch('data/live.json');
-      if (!response.ok) throw new Error('JSON読み込み失敗: ' + response.status);
-      const data = await response.json();
-      console.log("読み込んだライブデータ:", data);
-      return data;
+      if (!response.ok) throw new Error('JSON load error ' + response.status);
+      return await response.json();
     } catch (e) {
       console.error(e);
       alert('ライブデータの読み込みに失敗しました');
@@ -18,51 +16,70 @@ document.addEventListener('DOMContentLoaded', () => {
     const container = document.getElementById('live-list');
     container.innerHTML = '';
 
-    liveData.forEach(live => {
-      const liveDiv = document.createElement('div');
-      liveDiv.className = 'live';
+    liveData.forEach((live, index) => {
+      const details = document.createElement('details');
+      details.className = 'tour';
 
-      const label = document.createElement('label');
-      const cb = document.createElement('input');
-      cb.type = 'checkbox';
-      label.appendChild(cb);
-      label.append(` ${live.liveName}`);
-      liveDiv.appendChild(label);
+      /* 最新( index===0 )だけ開いた状態に */
+      if (index === 0) details.open = true;
 
-      const yearsDiv = document.createElement('div');
-      yearsDiv.className = 'year-list';
+      /* カラー設定 */
+      const strong = live.color ? `${live.color}cc` : '#999';
+      const light = live.color ? `${live.color}55` : '#ccc';
+
+      details.style.setProperty('--tour-strong', strong);
+      details.style.setProperty('--tour-light', light);
+
+      /* summary */
+      const summary = document.createElement('summary');
+      summary.innerHTML = `
+        <input type="checkbox" class="tour-check"> ${live.liveName}
+      `;
+      details.appendChild(summary);
+
+      /* 中身 */
+      const content = document.createElement('div');
+      content.className = 'tour-content';
 
       live.years.forEach(y => {
-        const yDiv = document.createElement('div');
-        yDiv.innerHTML = `<strong>${y.year}</strong>`;
+        const yBlock = document.createElement('div');
+        yBlock.className = 'year-block';
+        yBlock.innerHTML = `<strong>${y.year}</strong>`;
 
         y.shows.forEach(s => {
-          const sLabel = document.createElement('label');
-          sLabel.style.display = 'block';
-          const sCb = document.createElement('input');
-          sCb.type = 'checkbox';
-          sCb.dataset.show = JSON.stringify({ live: live.liveName, year: y.year, show: s });
-          sLabel.appendChild(sCb);
-          sLabel.append(` ${s.date} ${s.time ? `(${s.time})` : ''} — ${s.prefecture} — ${s.venue}`);
-          yDiv.appendChild(sLabel);
+          const label = document.createElement('label');
+          const input = document.createElement('input');
+          input.type = 'checkbox';
+          input.dataset.show = JSON.stringify({
+            live: live.liveName,
+            year: y.year,
+            show: s
+          });
+
+          const timeText = s.time ? `(${s.time})` : '';
+          label.appendChild(input);
+          label.append(` ${s.date} ${timeText} — ${s.prefecture} — ${s.venue}`);
+
+          yBlock.appendChild(label);
         });
 
-        yearsDiv.appendChild(yDiv);
+        content.appendChild(yBlock);
       });
 
-      cb.addEventListener('change', e => {
+      details.appendChild(content);
+
+      /* タイトルチェック → 全部操作 */
+      summary.querySelector('.tour-check').addEventListener('change', e => {
         const checked = e.target.checked;
-        yearsDiv.querySelectorAll('input[type="checkbox"]').forEach(x => x.checked = checked);
+        content.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = checked);
       });
 
-      liveDiv.appendChild(yearsDiv);
-      container.appendChild(liveDiv);
+      container.appendChild(details);
     });
   }
 
   function exportImage() {
-    const el = document.getElementById('live-list');
-    html2canvas(el).then(canvas => {
+    html2canvas(document.getElementById('live-list')).then(canvas => {
       const link = document.createElement('a');
       link.download = 'pg_live_log.png';
       link.href = canvas.toDataURL('image/png');
@@ -72,11 +89,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.getElementById('export-btn').addEventListener('click', exportImage);
 
-  loadLiveData().then(data => {
-    renderList(data);
-  });
-
+  loadLiveData().then(renderList);
 });
-
-
-
