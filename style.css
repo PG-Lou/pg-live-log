@@ -1,66 +1,41 @@
+/* スマホ前提の全体調整 */
 body {
   font-family: Arial, sans-serif;
   padding: 20px;
-}
-
-/* 各ツアーブロック */
-.tour {
-  border-radius: 12px;
-  margin-bottom: 18px;
-  overflow: hidden;
-}
-
-/* summary（折りたたみタイトル） */
-.tour summary {
   font-size: 18px;
-  padding: 14px;
-  cursor: pointer;
-  color: #fff;
-  background: var(--tour-strong);
 }
 
-/* 中身（開いてる時だけ背景付く） */
-.tour[open] .tour-content {
-  background: var(--tour-light);
-  padding: 14px;
+/* 各ライブブロック */
+.live {
+  border: 1px solid #ddd;
+  padding: 12px;
+  margin-bottom: 16px;
+  border-radius: 10px;
+  background: rgba(0,0,0,0.03);
 }
 
-/* 年ごと */
-.year-block strong {
-  font-size: 16px;
+/* 折り畳み用 */
+.year-list {
+  margin-left: 8px;
+  margin-top: 10px;
+  display: none;
+}
+
+.year-list.open {
   display: block;
-  margin: 12px 0 6px;
 }
 
-/* ラベルとチェックボックス */
-.tour-content label {
-  display: block;
-  font-size: 16px;
-  padding: 6px 0;
-}
-
-input[type="checkbox"] {
-  width: 20px;
-  height: 20px;
-  margin-right: 6px;
-}
-
-/* 保存ボタン */
-button {
-  font-size: 18px;
-  padding: 10px 20px;
-  margin-top: 20px;
-}
-
-/* カスタムチェックボックスのベース */
+/* カスタムチェックボックス */
 input[type="checkbox"] {
   appearance: none;
   width: 22px;
   height: 22px;
   border-radius: 6px;
-  border: 2px solid #555;
-  display: inline-block;
-  position: relative;
+  border: 2px solid #666;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  vertical-align: middle;
   margin-right: 8px;
   cursor: pointer;
 }
@@ -71,22 +46,4 @@ input[type="checkbox"]:checked {
   border-color: #4a7cff;
 }
 
-/* チェックマーク */
-input[type="checkbox"]:checked::after {
-  content: "✔";
-  color: white;
-  font-size: 16px;
-  position: absolute;
-  left: 3px;
-  top: -1px;
-}
-
-/* テキストを大きくスマホ向けに */
-label {
-  font-size: 18px;
-  line-height: 1.6;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
+input
