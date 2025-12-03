@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
       content.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = checked);
 
       // チェック入れたら開く、外したら閉じる
-      details.open = checked;
+      // details.open = checked;
       });
 
 
@@ -97,4 +97,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
   loadLiveData().then(renderList);
 });
+
 
