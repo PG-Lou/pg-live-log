@@ -55,6 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
           const timeText = s.time ? `(${s.time})` : '';
           label.appendChild(input);
           label.append(` ${s.date} ${timeText} — ${s.prefecture} — ${s.venue}`);
+
           yBlock.appendChild(label);
         });
 
@@ -63,22 +64,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
       details.appendChild(content);
 
-      // 🌟 修正済み：summary のチェック動作制御
-      const toggle = summary.querySelector('.tour-check');
-
-      toggle.addEventListener('click', e => {
-        // ← summaryクリック扱いになるの防止（これ大事）
-        e.stopPropagation();
-
+      // ▼ツアータイトルのチェック挙動
+      summary.querySelector('.tour-check').addEventListener('change', e => {
         const checked = e.target.checked;
 
-        // 中身のチェック全部切り替える
-        content.querySelectorAll('input[type="checkbox"]').forEach(cb => {
-          cb.checked = checked;
-        });
+        // 子チェックON/OFF
+        content.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = checked);
 
-        // チェックしたら折りたたみ自動で開く
-        if (checked) details.open = true;
+        // 開閉
+        details.open = checked;
       });
 
       container.appendChild(details);
@@ -86,4 +80,15 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function exportImage() {
-    html
+    html2canvas(document.getElementById('live-list')).then(canvas => {
+      const link = document.createElement('a');
+      link.download = 'pg_live_log.png';
+      link.href = canvas.toDataURL('image/png');
+      link.click();
+    });
+  }
+
+  document.getElementById('export-btn').addEventListener('click', exportImage);
+
+  loadLiveData().then(renderList);
+});
