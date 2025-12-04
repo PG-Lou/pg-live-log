@@ -110,3 +110,37 @@ label {
   font-size: 18px;
   padding: 10px 0;
 }
+
+/* スマホ調整 */
+@media (max-width: 600px) {
+
+  /* 全体フォント少し小さく */
+  body {
+    font-size: 16px;
+  }
+
+  /* チェックボックス小さく */
+  input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+  }
+
+  /* ラベルとの余白整える */
+  label {
+    font-size: 15px;
+    gap: 8px;
+  }
+
+  /* summaryのタイトル(ツアー名) */
+  summary {
+    font-size: 18px;
+    padding: 12px;
+  }
+
+  /* 矢印も微調整 */
+  summary::before {
+    font-size: 16px;
+    top: 3px;
+  }
+}
+
