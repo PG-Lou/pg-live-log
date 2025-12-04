@@ -94,3 +94,19 @@ input[type="checkbox"]:checked::after {
   color: white;
   font-size: 16px;
 }
+
+/* ===== チェックボックス改善 ===== */
+input[type="checkbox"] {
+  width: 24px;
+  height: 24px;
+  transform: scale(1.4);
+  margin-right: 10px;
+}
+
+label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 18px;
+  padding: 10px 0;
+}
