@@ -20,24 +20,20 @@ document.addEventListener('DOMContentLoaded', () => {
       const details = document.createElement('details');
       details.className = 'tour';
 
-      /* 最新( index===0 )だけ開いた状態に */
       if (index === 0) details.open = true;
 
-      /* カラー設定 */
       const strong = live.color ? `${live.color}cc` : '#999';
       const light = live.color ? `${live.color}55` : '#ccc';
 
       details.style.setProperty('--tour-strong', strong);
       details.style.setProperty('--tour-light', light);
 
-      /* summary */
       const summary = document.createElement('summary');
       summary.innerHTML = `
         <input type="checkbox" class="tour-check"> ${live.liveName}
       `;
       details.appendChild(summary);
 
-      /* 中身 */
       const content = document.createElement('div');
       content.className = 'tour-content';
 
@@ -59,7 +55,6 @@ document.addEventListener('DOMContentLoaded', () => {
           const timeText = s.time ? `(${s.time})` : '';
           label.appendChild(input);
           label.append(` ${s.date} ${timeText} — ${s.prefecture} — ${s.venue}`);
-
           yBlock.appendChild(label);
         });
 
@@ -68,33 +63,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
       details.appendChild(content);
 
-      /* タイトルチェック → 全部操作 */
-      summary.querySelector('.tour-check').addEventListener('change', e => {
-      const checked = e.target.checked;
-      content.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = checked);
-      details.open = checked;
+      // 🌟 修正済み：summary のチェック動作制御
+      const toggle = summary.querySelector('.tour-check');
+
+      toggle.addEventListener('click', e => {
+        // ← summaryクリック扱いになるの防止（これ大事）
+        e.stopPropagation();
+
+        const checked = e.target.checked;
+
+        // 中身のチェック全部切り替える
+        content.querySelectorAll('input[type="checkbox"]').forEach(cb => {
+          cb.checked = checked;
+        });
+
+        // チェックしたら折りたたみ自動で開く
+        if (checked) details.open = true;
       });
-
-
 
       container.appendChild(details);
     });
   }
 
   function exportImage() {
-    html2canvas(document.getElementById('live-list')).then(canvas => {
-      const link = document.createElement('a');
-      link.download = 'pg_live_log.png';
-      link.href = canvas.toDataURL('image/png');
-      link.click();
-    });
-  }
-
-  document.getElementById('export-btn').addEventListener('click', exportImage);
-
-  loadLiveData().then(renderList);
-});
-
-
-
-
+    html
