@@ -89,24 +89,27 @@ input[type="checkbox"]:checked::after {
   font-size: 16px;
 }
 
+details summary::-webkit-details-marker {
+  display: none;
+}
+
 details summary {
   cursor: pointer;
+  padding-left: 1.4rem;
   list-style: none;
   position: relative;
-  padding-left: 1.4rem;
 }
 
 details summary::before {
-  content: "▶";
+  content: "▼"; /* ← Safariでも出るやつに変更 */
+  font-size: 0.9rem;
   position: absolute;
   left: 0;
   top: 2px;
   transition: transform .2s ease;
-  font-size: 0.9rem;
 }
 
 details[open] summary::before {
-  transform: rotate(90deg);
+  transform: rotate(-180deg);
 }
-
 
