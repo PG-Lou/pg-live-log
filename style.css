@@ -88,3 +88,25 @@ input[type="checkbox"]:checked::after {
   color: white;
   font-size: 16px;
 }
+
+details summary {
+  cursor: pointer;
+  list-style: none;
+  position: relative;
+  padding-left: 1.4rem;
+}
+
+details summary::before {
+  content: "▶";
+  position: absolute;
+  left: 0;
+  top: 2px;
+  transition: transform .2s ease;
+  font-size: 0.9rem;
+}
+
+details[open] summary::before {
+  transform: rotate(90deg);
+}
+
+
