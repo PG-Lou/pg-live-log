@@ -54,4 +54,43 @@ summary::-webkit-details-marker {
 
 /* 年タイトル */
 .year-block strong {
-  display: bloc
+  display: block;
+  margin-top: 12px;
+  margin-bottom: 6px;
+  font-size: 18px;
+}
+
+/* 行 */
+label {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  gap: 6px;
+  padding: 4px 0;
+}
+
+/* カスタムチェックボックス */
+input[type="checkbox"] {
+  appearance: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  border: 2px solid #666;
+  cursor: pointer;
+  position: relative;
+}
+
+/* チェック時 */
+input[type="checkbox"]:checked {
+  background: #4a7cff;
+  border-color: #4a7cff;
+}
+
+input[type="checkbox"]:checked::after {
+  content: "✔";
+  position: absolute;
+  top: -2px;
+  left: 4px;
+  color: white;
+  font-size: 16px;
+}
