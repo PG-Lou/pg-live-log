@@ -72,6 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
       summary.querySelector('.tour-check').addEventListener('change', e => {
       const checked = e.target.checked;
       content.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = checked);
+      details.open = checked;
       });
 
 
@@ -93,6 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   loadLiveData().then(renderList);
 });
+
 
 
 
