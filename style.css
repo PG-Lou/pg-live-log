@@ -94,19 +94,19 @@ input[type="checkbox"]:checked {
 /* チェックマーク */
 input[type="checkbox"]::after {
   content: "";
-  width: 11px;
+  width: 12px;
   height: 6px;
+  border-left: 3px solid transparent;
   border-bottom: 3px solid transparent;
-  border-right: 3px solid transparent;
-  transform: rotate(45deg);
+  transform: rotate(-45deg);
   position: absolute;
-  left: 4px;
-  top: 5px;
+  left: 6px;
+  top: 4px;
 }
 
 input[type="checkbox"]:checked::after {
+  border-left-color: white;
   border-bottom-color: white;
-  border-right-color: white;
 }
 
 /* ===== スマホ最適化 ===== */
@@ -149,3 +149,4 @@ input[type="checkbox"]:checked::after {
     font-size: 16px;
   }
 }
+
