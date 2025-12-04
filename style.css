@@ -26,19 +26,25 @@ summary {
   user-select: none;
   font-weight: bold;
   list-style: none;
+  position: relative;
 }
 
 /* ▼▶ 矢印アイコン */
 summary::before {
   content: "▶";
-  font-size: 18px;
+  font-size: 20px;
   transition: transform 0.25s;
 }
 
 /* 展開時→矢印回転 */
-.tour[open] summary::before {
+details[open] summary::before {
   transform: rotate(90deg);
   content: "▼";
+}
+
+/* Safari marker削除 */
+summary::-webkit-details-marker {
+  display: none;
 }
 
 /* 内側(公演リスト) */
@@ -48,68 +54,4 @@ summary::before {
 
 /* 年タイトル */
 .year-block strong {
-  display: block;
-  margin-top: 12px;
-  margin-bottom: 6px;
-  font-size: 18px;
-}
-
-/* 行 */
-label {
-  display: flex;
-  align-items: center;
-  font-size: 16px;
-  gap: 6px;
-  padding: 4px 0;
-}
-
-/* カスタムチェックボックス */
-input[type="checkbox"] {
-  appearance: none;
-  width: 22px;
-  height: 22px;
-  border-radius: 6px;
-  border: 2px solid #666;
-  cursor: pointer;
-  position: relative;
-}
-
-/* チェック時 */
-input[type="checkbox"]:checked {
-  background: #4a7cff;
-  border-color: #4a7cff;
-}
-
-input[type="checkbox"]:checked::after {
-  content: "✔";
-  position: absolute;
-  top: -2px;
-  left: 3px;
-  color: white;
-  font-size: 16px;
-}
-
-details summary::-webkit-details-marker {
-  display: none;
-}
-
-details summary {
-  cursor: pointer;
-  padding-left: 1.4rem;
-  list-style: none;
-  position: relative;
-}
-
-details summary::before {
-  content: "▼"; /* ← Safariでも出るやつに変更 */
-  font-size: 0.9rem;
-  position: absolute;
-  left: 0;
-  top: 2px;
-  transition: transform .2s ease;
-}
-
-details[open] summary::before {
-  transform: rotate(-180deg);
-}
-
+  display: bloc
