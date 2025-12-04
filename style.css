@@ -111,36 +111,34 @@ label {
   padding: 10px 0;
 }
 
-/* スマホ調整 */
+/* スマホ調整（強制版）*/
 @media (max-width: 600px) {
 
-  /* 全体フォント少し小さく */
   body {
-    font-size: 16px;
+    font-size: 15px !important;
   }
 
-  /* チェックボックス小さく */
-  input[type="checkbox"] {
-    width: 20px;
-    height: 20px;
-  }
-
-  /* ラベルとの余白整える */
-  label {
-    font-size: 15px;
-    gap: 8px;
-  }
-
-  /* summaryのタイトル(ツアー名) */
   summary {
-    font-size: 18px;
-    padding: 12px;
+    font-size: 17px !important;
+    padding: 12px !important;
   }
 
-  /* 矢印も微調整 */
+  label {
+    font-size: 14px !important;
+    gap: 10px !important;
+  }
+
+  input[type="checkbox"] {
+    width: 22px !important;
+    height: 22px !important;
+  }
+
   summary::before {
-    font-size: 16px;
-    top: 3px;
+    font-size: 16px !important;
+    top: 4px !important;
+  }
+
+  .year-block strong {
+    font-size: 16px !important;
   }
 }
-
