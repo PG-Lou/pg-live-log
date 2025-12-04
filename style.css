@@ -69,15 +69,23 @@ label {
   padding: 4px 0;
 }
 
-/* カスタムチェックボックス */
+/* 統一チェックボックス */
 input[type="checkbox"] {
   appearance: none;
-  width: 22px;
-  height: 22px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  
+  width: 28px;
+  height: 28px;
   border-radius: 6px;
-  border: 2px solid #666;
+  border: 2px solid #555;
+  background: #fff;
   cursor: pointer;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
   position: relative;
+  box-sizing: border-box;
 }
 
 /* チェック時 */
@@ -86,22 +94,36 @@ input[type="checkbox"]:checked {
   border-color: #4a7cff;
 }
 
-input[type="checkbox"]:checked::after {
-  content: "✔";
+/* チェックマーク */
+input[type="checkbox"]::after {
+  content: "";
+  width: 12px;
+  height: 6px;
+  border-bottom: 3px solid transparent;
+  border-right: 3px solid transparent;
+  transform: rotate(45deg);
   position: absolute;
-  top: -2px;
-  left: 4px;
-  color: white;
-  font-size: 16px;
 }
 
-/* ===== チェックボックス改善 ===== */
-input[type="checkbox"] {
-  width: 24px;
-  height: 24px;
-  transform: scale(1.4);
-  margin-right: 10px;
+/* チェック入れたとき表示 */
+input[type="checkbox"]:checked::after {
+  border-bottom-color: white;
+  border-right-color: white;
 }
+
+/* スマホ調整 */
+@media (max-width: 600px) {
+  input[type="checkbox"] {
+    width: 32px;
+    height: 32px;
+  }
+
+  input[type="checkbox"]::after {
+    width: 14px;
+    height: 7px;
+  }
+}
+
 
 label {
   display: flex;
@@ -142,3 +164,4 @@ label {
     font-size: 16px !important;
   }
 }
+
