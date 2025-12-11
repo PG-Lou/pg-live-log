@@ -161,6 +161,18 @@ document.addEventListener('DOMContentLoaded', () => {
     line.style.paddingLeft = "8px";
     line.style.fontSize = "16px";
     card.appendChild(line);
+
+    // 右下の小文字表記
+    const label = document.createElement("div");
+    label.textContent = "カラーイメージ：" + selectedName;
+    label.style.position = "absolute";
+    label.style.right = "10px";
+    label.style.bottom = "10px";
+    label.style.fontSize = "12px";
+    label.style.color = "rgba(255,255,255,0.8)";
+    label.style.textShadow = "0 0 4px rgba(0,0,0,0.5)";
+    wrapper.appendChild(label);
+
   });
 
   exportArea.appendChild(wrapper);
@@ -185,6 +197,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 });
+
 
 
 
