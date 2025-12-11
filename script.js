@@ -178,7 +178,14 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('export-btn').addEventListener('click', exportImage);
 
   loadLiveData().then(renderList);
+
+  document.getElementById("bg-select").addEventListener("change", () => {
+  const btn = document.getElementById("export-btn");
+  btn.disabled = !document.getElementById("bg-select").value;
+  });
+
 });
+
 
 
 
