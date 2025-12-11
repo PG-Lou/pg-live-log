@@ -80,7 +80,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function exportImage() {
-  // 1. チェックされた公演を集める
   const checked = document.querySelectorAll(
     '.tour-content input[type="checkbox"]:checked'
   );
@@ -90,38 +89,67 @@ document.addEventListener('DOMContentLoaded', () => {
     return;
   }
 
-  // 2. 出力用のHTMLを生成
-  const exportArea = document.getElementById("export-area");
-  exportArea.innerHTML = ""; // 初期化
+  // ▼プルダウン背景色
+  const bgColor = document.getElementById("bg-select").value;
 
+  // ▼固定サイズ（スマホ画面くらい）
+  const WIDTH = 390;
+  const HEIGHT = 844;
+
+  // ▼export-area 初期化
+  const exportArea = document.getElementById("export-area");
+  exportArea.innerHTML = "";
+
+  // ▼背景
+  const wrapper = document.createElement("div");
+  wrapper.style.width = WIDTH + "px";
+  wrapper.style.height = HEIGHT + "px";
+  wrapper.style.background = bgColor;
+  wrapper.style.position = "relative";
+  wrapper.style.fontFamily = "Helvetica, Arial";
+  wrapper.style.color = "#000";
+  wrapper.style.overflow = "hidden";
+  wrapper.style.padding = "0";
+
+  // ▼内側の白カード（余白つけて読みやすく）
+  const card = document.createElement("div");
+  card.style.width = (WIDTH - 40) + "px";
+  card.style.height = (HEIGHT - 80) + "px";
+  card.style.position = "absolute";
+  card.style.left = "20px";
+  card.style.top = "40px";
+  card.style.background = "rgba(255,255,255,0.86)";
+  card.style.borderRadius = "18px";
+  card.style.padding = "20px";
+  card.style.boxSizing = "border-box";
+  card.style.overflowY = "auto";
+  card.style.display = "flex";
+  card.style.flexDirection = "column";
+  card.style.gap = "10px";
+
+  wrapper.appendChild(card);
+
+  // ▼現在のツアー名
   let currentTour = "";
-  let wrapper = document.createElement("div");
-  wrapper.style.fontSize = "18px";
-  wrapper.style.lineHeight = "1.6";
-  wrapper.style.width = "360px";      // ←スマホ幅
-  wrapper.style.padding = "20px";
-  wrapper.style.background = "#fff";
-  wrapper.style.border = "1px solid #ddd";
-  wrapper.style.borderRadius = "10px";
 
   checked.forEach(cb => {
     const data = JSON.parse(cb.dataset.show);
     const tourName = data.live;
-    const y = data.year;
     const s = data.show;
 
-    // ツアー名が変わったらツアー見出しを追加
+    // ツアー名の見出し
     if (tourName !== currentTour) {
       currentTour = tourName;
 
       const h = document.createElement("div");
       h.textContent = "■ " + tourName;
-      h.style.marginTop = "16px";
       h.style.fontWeight = "bold";
-      wrapper.appendChild(h);
+      h.style.marginTop = "10px";
+      h.style.fontSize = "18px";
+      card.appendChild(h);
     }
 
-    // 昼/夜変換
+    // 昼夜変換
     let timeLabel = "";
     if (s.time === "AM") timeLabel = "昼";
     if (s.time === "PM") timeLabel = "夜";
@@ -129,13 +157,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const line = document.createElement("div");
     line.textContent =
       `${s.date} ${timeLabel ? timeLabel + " " : ""}${s.prefecture} ${s.venue}`;
-    line.style.marginLeft = "10px";
-    wrapper.appendChild(line);
+    line.style.paddingLeft = "8px";
+    line.style.fontSize = "16px";
+    card.appendChild(line);
   });
 
   exportArea.appendChild(wrapper);
 
-  // 3. html2canvas で画像化
+  // ▼画像化
   html2canvas(wrapper, { scale: 2 }).then(canvas => {
     const link = document.createElement("a");
     link.download = "pg_live_selected.png";
@@ -144,8 +173,10 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 }
 
+
   document.getElementById('export-btn').addEventListener('click', exportImage);
 
   loadLiveData().then(renderList);
 });
+
 
