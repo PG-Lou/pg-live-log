@@ -90,7 +90,11 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ▼プルダウン背景（グラデーションOK）
-  const bgStyle = document.getElementById("bg-select").value;
+  const bgSelect = document.getElementById("bg-select");
+  const bgStyle = bgSelect.value;
+
+  // ▼選択中のラベル名
+  const selectedName = bgSelect.options[bgSelect.selectedIndex].textContent;
 
   // ▼固定サイズ（スマホ画面イメージ）
   const WIDTH = 390;
@@ -103,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const wrapper = document.createElement("div");
   wrapper.style.width = WIDTH + "px";
   wrapper.style.height = HEIGHT + "px";
-  wrapper.style.background = bgStyle;  // ←グラデ背景
+  wrapper.style.background = bgStyle;
   wrapper.style.position = "relative";
   wrapper.style.fontFamily = "Helvetica, Arial";
   wrapper.style.color = "#000";
@@ -116,13 +120,8 @@ document.addEventListener('DOMContentLoaded', () => {
   card.style.position = "absolute";
   card.style.left = "20px";
   card.style.top = "40px";
-
-  // 白カードを “ふわっと透過”
   card.style.background = "rgba(255,255,255,0.75)";
-
-  // ふんわり影
   card.style.boxShadow = "0 4px 18px rgba(0,0,0,0.18)";
-
   card.style.borderRadius = "18px";
   card.style.padding = "20px";
   card.style.boxSizing = "border-box";
@@ -161,19 +160,18 @@ document.addEventListener('DOMContentLoaded', () => {
     line.style.paddingLeft = "8px";
     line.style.fontSize = "16px";
     card.appendChild(line);
-
-    // 右下の小文字表記
-    const label = document.createElement("div");
-    label.textContent = "カラーイメージ：" + selectedName;
-    label.style.position = "absolute";
-    label.style.right = "10px";
-    label.style.bottom = "10px";
-    label.style.fontSize = "12px";
-    label.style.color = "rgba(255,255,255,0.8)";
-    label.style.textShadow = "0 0 4px rgba(0,0,0,0.5)";
-    wrapper.appendChild(label);
-
   });
+
+  // ▼★★★ ここに右下のラベルを設置（ここが正しい場所）★★★
+  const label = document.createElement("div");
+  label.textContent = "カラーイメージ：" + selectedName;
+  label.style.position = "absolute";
+  label.style.right = "10px";
+  label.style.bottom = "10px";
+  label.style.fontSize = "12px";
+  label.style.color = "rgba(255,255,255,0.8)";
+  label.style.textShadow = "0 0 4px rgba(0,0,0,0.5)";
+  wrapper.appendChild(label);
 
   exportArea.appendChild(wrapper);
 
@@ -187,6 +185,7 @@ document.addEventListener('DOMContentLoaded', () => {
 }
 
 
+
   document.getElementById('export-btn').addEventListener('click', exportImage);
 
   loadLiveData().then(renderList);
@@ -197,6 +196,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 });
+
 
 
 
