@@ -89,36 +89,40 @@ document.addEventListener('DOMContentLoaded', () => {
     return;
   }
 
-  // ▼プルダウン背景色
-  const bgColor = document.getElementById("bg-select").value;
+  // ▼プルダウン背景（グラデーションOK）
+  const bgStyle = document.getElementById("bg-select").value;
 
-  // ▼固定サイズ（スマホ画面くらい）
+  // ▼固定サイズ（スマホ画面イメージ）
   const WIDTH = 390;
   const HEIGHT = 844;
 
-  // ▼export-area 初期化
   const exportArea = document.getElementById("export-area");
   exportArea.innerHTML = "";
 
-  // ▼背景
+  // ▼背景 wrapper
   const wrapper = document.createElement("div");
   wrapper.style.width = WIDTH + "px";
   wrapper.style.height = HEIGHT + "px";
-  wrapper.style.background = bgColor;
+  wrapper.style.background = bgStyle;  // ←グラデ背景
   wrapper.style.position = "relative";
   wrapper.style.fontFamily = "Helvetica, Arial";
   wrapper.style.color = "#000";
   wrapper.style.overflow = "hidden";
-  wrapper.style.padding = "0";
 
-  // ▼内側の白カード（余白つけて読みやすく）
+  // ▼内側の白カード
   const card = document.createElement("div");
   card.style.width = (WIDTH - 40) + "px";
   card.style.height = (HEIGHT - 80) + "px";
   card.style.position = "absolute";
   card.style.left = "20px";
   card.style.top = "40px";
-  card.style.background = "rgba(255,255,255,0.86)";
+
+  // 白カードを “ふわっと透過”
+  card.style.background = "rgba(255,255,255,0.75)";
+
+  // ふんわり影
+  card.style.boxShadow = "0 4px 18px rgba(0,0,0,0.18)";
+
   card.style.borderRadius = "18px";
   card.style.padding = "20px";
   card.style.boxSizing = "border-box";
@@ -129,15 +133,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   wrapper.appendChild(card);
 
-  // ▼現在のツアー名
+  // ▼見出し生成
   let currentTour = "";
-
   checked.forEach(cb => {
     const data = JSON.parse(cb.dataset.show);
     const tourName = data.live;
     const s = data.show;
 
-    // ツアー名の見出し
     if (tourName !== currentTour) {
       currentTour = tourName;
 
@@ -149,7 +151,6 @@ document.addEventListener('DOMContentLoaded', () => {
       card.appendChild(h);
     }
 
-    // 昼夜変換
     let timeLabel = "";
     if (s.time === "AM") timeLabel = "昼";
     if (s.time === "PM") timeLabel = "夜";
@@ -164,7 +165,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   exportArea.appendChild(wrapper);
 
-  // ▼画像化
+  // ▼画像として保存
   html2canvas(wrapper, { scale: 2 }).then(canvas => {
     const link = document.createElement("a");
     link.download = "pg_live_selected.png";
@@ -178,5 +179,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   loadLiveData().then(renderList);
 });
+
 
 
