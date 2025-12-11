@@ -79,6 +79,19 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+// 「イメージカラー選択」が未選択なら export ボタンを無効化
+const bgSelect = document.getElementById("bg-select");
+const exportBtn = document.getElementById("export-btn");
+
+// 初期状態（ページ読み込み直後）
+exportBtn.disabled = !bgSelect.value;
+
+// 選択変更時にON/OFF切り替え
+bgSelect.addEventListener("change", () => {
+  exportBtn.disabled = !bgSelect.value;
+});
+
+
   async function exportImage() {
   try {
     const checked = document.querySelectorAll('.tour-content input[type="checkbox"]:checked');
@@ -89,7 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // 選択中の background とそのラベル名を取得（selectedOptions 安全）
-    const bgSelect = document.getElementById("bg-select");
+    // const bgSelect = document.getElementById("bg-select");
     const bgStyle = bgSelect.value || "";
     const selectedName = (bgSelect.selectedOptions && bgSelect.selectedOptions[0])
       ? bgSelect.selectedOptions[0].textContent.trim()
@@ -221,6 +234,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 });
+
 
 
 
