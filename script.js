@@ -80,15 +80,72 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function exportImage() {
-    html2canvas(document.getElementById('live-list')).then(canvas => {
-      const link = document.createElement('a');
-      link.download = 'pg_live_log.png';
-      link.href = canvas.toDataURL('image/png');
-      link.click();
-    });
+  // 1. チェックされた公演を集める
+  const checked = document.querySelectorAll(
+    '.tour-content input[type="checkbox"]:checked'
+  );
+
+  if (checked.length === 0) {
+    alert("チェックされた公演がありません");
+    return;
   }
+
+  // 2. 出力用のHTMLを生成
+  const exportArea = document.getElementById("export-area");
+  exportArea.innerHTML = ""; // 初期化
+
+  let currentTour = "";
+  let wrapper = document.createElement("div");
+  wrapper.style.fontSize = "18px";
+  wrapper.style.lineHeight = "1.6";
+  wrapper.style.width = "360px";      // ←スマホ幅
+  wrapper.style.padding = "20px";
+  wrapper.style.background = "#fff";
+  wrapper.style.border = "1px solid #ddd";
+  wrapper.style.borderRadius = "10px";
+
+  checked.forEach(cb => {
+    const data = JSON.parse(cb.dataset.show);
+    const tourName = data.live;
+    const y = data.year;
+    const s = data.show;
+
+    // ツアー名が変わったらツアー見出しを追加
+    if (tourName !== currentTour) {
+      currentTour = tourName;
+
+      const h = document.createElement("div");
+      h.textContent = "■ " + tourName;
+      h.style.marginTop = "16px";
+      h.style.fontWeight = "bold";
+      wrapper.appendChild(h);
+    }
+
+    // 昼/夜変換
+    let timeLabel = "";
+    if (s.time === "AM") timeLabel = "昼";
+    if (s.time === "PM") timeLabel = "夜";
+
+    const line = document.createElement("div");
+    line.textContent =
+      `${s.date} ${timeLabel ? timeLabel + " " : ""}${s.prefecture} ${s.venue}`;
+    line.style.marginLeft = "10px";
+    wrapper.appendChild(line);
+  });
+
+  exportArea.appendChild(wrapper);
+
+  // 3. html2canvas で画像化
+  html2canvas(wrapper, { scale: 2 }).then(canvas => {
+    const link = document.createElement("a");
+    link.download = "pg_live_selected.png";
+    link.href = canvas.toDataURL("image/png");
+    link.click();
+  });
+}
 
   document.getElementById('export-btn').addEventListener('click', exportImage);
 
   loadLiveData().then(renderList);
 });
+
