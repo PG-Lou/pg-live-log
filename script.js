@@ -79,109 +79,134 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  function exportImage() {
-  const checked = document.querySelectorAll(
-    '.tour-content input[type="checkbox"]:checked'
-  );
+  async function exportImage() {
+  try {
+    const checked = document.querySelectorAll('.tour-content input[type="checkbox"]:checked');
 
-  if (checked.length === 0) {
-    alert("チェックされた公演がありません");
-    return;
-  }
-
-  // ▼プルダウン背景（グラデーションOK）
-  const bgSelect = document.getElementById("bg-select");
-  const bgStyle = bgSelect.value;
-
-  // ▼選択中のラベル名
-  const selectedName = bgSelect.options[bgSelect.selectedIndex].textContent;
-
-  // ▼固定サイズ（スマホ画面イメージ）
-  const WIDTH = 390;
-  const HEIGHT = 844;
-
-  const exportArea = document.getElementById("export-area");
-  exportArea.innerHTML = "";
-
-  // ▼背景 wrapper
-  const wrapper = document.createElement("div");
-  wrapper.style.width = WIDTH + "px";
-  wrapper.style.height = HEIGHT + "px";
-  wrapper.style.background = bgStyle;
-  wrapper.style.position = "relative";
-  wrapper.style.fontFamily = "Helvetica, Arial";
-  wrapper.style.color = "#000";
-  wrapper.style.overflow = "hidden";
-
-  // ▼内側の白カード
-  const card = document.createElement("div");
-  card.style.width = (WIDTH - 40) + "px";
-  card.style.height = (HEIGHT - 80) + "px";
-  card.style.position = "absolute";
-  card.style.left = "20px";
-  card.style.top = "40px";
-  card.style.background = "rgba(255,255,255,0.75)";
-  card.style.boxShadow = "0 4px 18px rgba(0,0,0,0.18)";
-  card.style.borderRadius = "18px";
-  card.style.padding = "20px";
-  card.style.boxSizing = "border-box";
-  card.style.overflowY = "auto";
-  card.style.display = "flex";
-  card.style.flexDirection = "column";
-  card.style.gap = "10px";
-
-  wrapper.appendChild(card);
-
-  // ▼見出し生成
-  let currentTour = "";
-  checked.forEach(cb => {
-    const data = JSON.parse(cb.dataset.show);
-    const tourName = data.live;
-    const s = data.show;
-
-    if (tourName !== currentTour) {
-      currentTour = tourName;
-
-      const h = document.createElement("div");
-      h.textContent = "■ " + tourName;
-      h.style.fontWeight = "bold";
-      h.style.marginTop = "10px";
-      h.style.fontSize = "18px";
-      card.appendChild(h);
+    if (checked.length === 0) {
+      alert("チェックされた公演がありません");
+      return;
     }
 
-    let timeLabel = "";
-    if (s.time === "AM") timeLabel = "昼";
-    if (s.time === "PM") timeLabel = "夜";
+    // 選択中の background とそのラベル名を取得（selectedOptions 安全）
+    const bgSelect = document.getElementById("bg-select");
+    const bgStyle = bgSelect.value || "";
+    const selectedName = (bgSelect.selectedOptions && bgSelect.selectedOptions[0])
+      ? bgSelect.selectedOptions[0].textContent.trim()
+      : "";
 
-    const line = document.createElement("div");
-    line.textContent =
-      `${s.date} ${timeLabel ? timeLabel + " " : ""}${s.prefecture} ${s.venue}`;
-    line.style.paddingLeft = "8px";
-    line.style.fontSize = "16px";
-    card.appendChild(line);
-  });
+    console.log("bgStyle:", bgStyle, "selectedName:", selectedName);
 
-  // ▼★★★ ここに右下のラベルを設置（ここが正しい場所）★★★
-  const label = document.createElement("div");
-  label.textContent = "カラーイメージ：" + selectedName;
-  label.style.position = "absolute";
-  label.style.right = "10px";
-  label.style.bottom = "10px";
-  label.style.fontSize = "12px";
-  label.style.color = "rgba(255,255,255,0.8)";
-  label.style.textShadow = "0 0 4px rgba(0,0,0,0.5)";
-  wrapper.appendChild(label);
+    // 固定サイズ（スマホイメージ）
+    const WIDTH = 390;
+    const HEIGHT = 844;
 
-  exportArea.appendChild(wrapper);
+    const exportArea = document.getElementById("export-area");
+    exportArea.innerHTML = "";
 
-  // ▼画像として保存
-  html2canvas(wrapper, { scale: 2 }).then(canvas => {
-    const link = document.createElement("a");
-    link.download = "pg_live_selected.png";
-    link.href = canvas.toDataURL("image/png");
-    link.click();
-  });
+    // wrapper（必ず body 配下にある exportArea に append するので html2canvas が拾える）
+    const wrapper = document.createElement("div");
+    wrapper.style.width = WIDTH + "px";
+    wrapper.style.height = HEIGHT + "px";
+    // gradient を backgroundImage と background の両方に設定（互換性のため）
+    if (bgStyle) {
+      wrapper.style.background = bgStyle;
+      wrapper.style.backgroundImage = bgStyle;
+      wrapper.style.backgroundSize = "cover";
+      wrapper.style.backgroundRepeat = "no-repeat";
+      wrapper.style.backgroundPosition = "center center";
+    } else {
+      wrapper.style.background = "#ffffff";
+    }
+    wrapper.style.position = "relative";
+    wrapper.style.fontFamily = "Helvetica, Arial, sans-serif";
+    wrapper.style.color = "#000";
+    wrapper.style.overflow = "hidden";
+
+    // 白カード（透過）
+    const card = document.createElement("div");
+    card.style.width = (WIDTH - 40) + "px";
+    card.style.height = (HEIGHT - 80) + "px";
+    card.style.position = "absolute";
+    card.style.left = "20px";
+    card.style.top = "40px";
+    card.style.background = "rgba(255,255,255,0.7)"; // 透過具合調整
+    card.style.boxShadow = "0 4px 18px rgba(0,0,0,0.18)";
+    card.style.borderRadius = "18px";
+    card.style.padding = "20px";
+    card.style.boxSizing = "border-box";
+    card.style.overflowY = "auto";
+    card.style.display = "flex";
+    card.style.flexDirection = "column";
+    card.style.gap = "10px";
+
+    wrapper.appendChild(card);
+
+    // コンテンツ作成（ツアーごとに見出し）
+    let currentTour = "";
+    checked.forEach(cb => {
+      const data = JSON.parse(cb.dataset.show);
+      const tourName = data.live;
+      const s = data.show;
+
+      if (tourName !== currentTour) {
+        currentTour = tourName;
+        const h = document.createElement("div");
+        h.textContent = "■ " + tourName;
+        h.style.fontWeight = "700";
+        h.style.marginTop = "10px";
+        h.style.fontSize = "18px";
+        card.appendChild(h);
+      }
+
+      let timeLabel = "";
+      if (s.time === "AM") timeLabel = "昼";
+      if (s.time === "PM") timeLabel = "夜";
+
+      const line = document.createElement("div");
+      // date を 2025-09-30 みたいなフォーマットから 2025/9/30 にしておく（元データの形式によるが保持）
+      const dateText = s.date.replace(/-/g, '/').replace(/^0+/g, '');
+      line.textContent = `${dateText}${timeLabel ? " " + timeLabel : ""} ${s.prefecture} ${s.venue}`;
+      line.style.paddingLeft = "8px";
+      line.style.fontSize = "16px";
+      card.appendChild(line);
+    });
+
+    // 右下の小文字表記（wrapper の外側に重ならないように配置）
+    if (selectedName) {
+      const label = document.createElement("div");
+      label.textContent = "カラーイメージ：" + selectedName;
+      label.style.position = "absolute";
+      label.style.right = "10px";
+      label.style.bottom = "10px";
+      label.style.fontSize = "12px";
+      label.style.color = "rgba(255,255,255,0.85)";
+      label.style.textShadow = "0 0 6px rgba(0,0,0,0.45)";
+      // 背景が明るいときに見えるように軽いボーダーを付ける（任意）
+      label.style.padding = "2px 6px";
+      label.style.borderRadius = "8px";
+      label.style.backdropFilter = "blur(2px)";
+      wrapper.appendChild(label);
+    }
+
+    exportArea.appendChild(wrapper);
+
+    // html2canvas 実行（要素が DOM にある状態で）
+    // scale:2 で解像度上げる
+    html2canvas(wrapper, { scale: 2, useCORS: true }).then(canvas => {
+      const link = document.createElement("a");
+      link.download = "pg_live_selected.png";
+      link.href = canvas.toDataURL("image/png");
+      link.click();
+    }).catch(err => {
+      console.error("html2canvas error:", err);
+      alert("画像エクスポート中にエラーが発生しました（コンソールを確認）");
+    });
+
+  } catch (err) {
+    console.error(err);
+    alert("エクスポート処理で問題が発生しました");
+  }
 }
 
 
@@ -196,6 +221,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 });
+
 
 
 
