@@ -22,19 +22,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const container = document.getElementById('live-list');
     container.innerHTML = '';
 
-    liveData.forEach((live, index) => {
+    liveData.forEach((live) => {
       const details = document.createElement('details');
       details.className = 'tour';
 
-      // ▼ 背景色（単色 or グラデ対応）
-      if (live.color && live.color.startsWith('radial-gradient')) {
+      // ★ ここが重要：色はそのまま background に突っ込む
+      if (live.color) {
         details.style.background = live.color;
-      } else if (live.color) {
-        details.style.background = `linear-gradient(
-          180deg,
-          ${live.color}cc,
-          ${live.color}55
-        )`;
+        details.style.backgroundRepeat = 'no-repeat';
+        details.style.backgroundSize = 'cover';
       } else {
         details.style.background = '#ccc';
       }
@@ -74,11 +70,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
       details.appendChild(content);
 
-      // ▼ 親チェックで子もON/OFF
+      // ▼ 親チェックで子もON/OFF（※開閉はチェック時のみ）
       summary.querySelector('.tour-check').addEventListener('change', e => {
         const checked = e.target.checked;
         content.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = checked);
-        details.open = checked;
+        if (checked) details.open = true;
       });
 
       container.appendChild(details);
@@ -119,6 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
     wrapper.style.width = WIDTH + 'px';
     wrapper.style.height = HEIGHT + 'px';
     wrapper.style.background = bgStyle;
+    wrapper.style.backgroundRepeat = 'no-repeat';
     wrapper.style.backgroundSize = 'cover';
     wrapper.style.position = 'relative';
     wrapper.style.fontFamily = 'Helvetica, Arial, sans-serif';
@@ -188,7 +185,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     exportArea.appendChild(wrapper);
 
-    // ▼ Canvas → Blob → 画面遷移
     html2canvas(wrapper, { scale: 2, useCORS: true }).then(canvas => {
       canvas.toBlob(blob => {
         const url = URL.createObjectURL(blob);
@@ -201,35 +197,3 @@ document.addEventListener('DOMContentLoaded', () => {
 
   loadLiveData().then(renderList);
 });
-
-
-// ======================
-// ヘッダー画像 → 背景色
-// ======================
-function averageColor(img) {
-  const canvas = document.createElement('canvas');
-  const ctx = canvas.getContext('2d');
-  canvas.width = img.naturalWidth;
-  canvas.height = img.naturalHeight;
-  ctx.drawImage(img, 0, 0);
-
-  const data = ctx.getImageData(0, 0, canvas.width, canvas.height).data;
-  let r = 0, g = 0, b = 0;
-  for (let i = 0; i < data.length; i += 4) {
-    r += data[i];
-    g += data[i + 1];
-    b += data[i + 2];
-  }
-  const len = data.length / 4;
-  return `rgb(${Math.round(r / len)}, ${Math.round(g / len)}, ${Math.round(b / len)})`;
-}
-
-window.addEventListener('load', () => {
-  const img = new Image();
-  img.crossOrigin = 'anonymous';
-  img.src = 'https://raw.githubusercontent.com/PG-Lou/pg-live-log/main/images/header.png';
-  img.onload = () => {
-    document.body.style.backgroundColor = averageColor(img);
-  };
-});
-
