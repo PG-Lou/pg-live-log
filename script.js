@@ -26,13 +26,13 @@ document.addEventListener('DOMContentLoaded', () => {
       const details = document.createElement('details');
       details.className = 'tour';
 
-      // ★ ここが重要：色はそのまま background に突っ込む
+      // ★ グラデ or 単色どちらもそのまま background に入れる
       if (live.color) {
         details.style.background = live.color;
         details.style.backgroundRepeat = 'no-repeat';
         details.style.backgroundSize = 'cover';
       } else {
-        details.style.background = '#ccc';
+        details.style.background = '#ddd';
       }
 
       // ▼ summary
@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       details.appendChild(content);
 
-      // ▼ 親チェックで子もON/OFF（※開閉はチェック時のみ）
+      // ▼ 親チェック → 子チェックON/OFF（自動で開くが閉じない）
       summary.querySelector('.tour-check').addEventListener('change', e => {
         const checked = e.target.checked;
         content.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = checked);
@@ -133,7 +133,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     wrapper.appendChild(card);
 
-    // ▼ ユーザー名 + X
+    // ▼ ユーザー名 + X（1行）
     let userName = document.getElementById('user-name')?.value.trim() || '';
     let userX = document.getElementById('user-x')?.value.trim() || '';
     if (userX && !userX.startsWith('@')) userX = '@' + userX;
@@ -185,6 +185,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     exportArea.appendChild(wrapper);
 
+    // ▼ 画面遷移プレビュー
     html2canvas(wrapper, { scale: 2, useCORS: true }).then(canvas => {
       canvas.toBlob(blob => {
         const url = URL.createObjectURL(blob);
