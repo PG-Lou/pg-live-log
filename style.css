@@ -6,11 +6,12 @@ body {
   color: #222;
 }
 
+/* ===== ヘッダー ===== */
 .header {
   width: 100%;
   height: 200px;
-  min-height: 200px; /* ← これで絶対高さゼロにならない */
-  display: block;    /* ← ブロック要素を保証 */
+  min-height: 200px;
+  display: block;
   background-image: url("https://raw.githubusercontent.com/PG-Lou/pg-live-log/main/images/header.png");
   background-size: cover;
   background-position: center;
@@ -19,10 +20,10 @@ body {
 /* ===== TOUR BOX 全体 ===== */
 .tour {
   margin-bottom: 18px;
-  border-radius: 12px;
+  border-radius: 14px;
   overflow: hidden;
-  border: 1px solid #ccc;
-  background: linear-gradient(180deg, var(--tour-strong), var(--tour-light));
+  border: 1px solid rgba(0,0,0,0.15);
+  /* ★ 背景はJSに完全に任せる */
 }
 
 /* ===== SUMMARY（タイトル部分）===== */
@@ -36,6 +37,10 @@ summary {
   font-weight: bold;
   user-select: none;
   position: relative;
+
+  /* ▼ 文字が背景に埋もれないように */
+  background: rgba(255,255,255,0.35);
+  backdrop-filter: blur(2px);
 }
 
 summary::-webkit-details-marker {
@@ -57,6 +62,8 @@ details[open] summary::before {
 /* ===== 展開内容 ===== */
 .tour-content {
   padding: 12px 20px 18px;
+  background: rgba(255,255,255,0.25);
+  backdrop-filter: blur(1px);
 }
 
 .year-block strong {
@@ -75,12 +82,9 @@ label {
   font-size: 16px;
 }
 
-/* ===== チェックボックス統一カスタム ===== */
+/* ===== チェックボックス ===== */
 input[type="checkbox"] {
   appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-
   width: 22px;
   height: 22px;
   border-radius: 6px;
@@ -88,20 +92,14 @@ input[type="checkbox"] {
   background: #fff;
   cursor: pointer;
   box-sizing: border-box;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
   position: relative;
 }
 
-/* ON状態 */
 input[type="checkbox"]:checked {
   background: #4a7cff;
   border-color: #4a7cff;
 }
 
-/* チェックマーク */
 input[type="checkbox"]::after {
   content: "";
   width: 12px;
@@ -119,9 +117,25 @@ input[type="checkbox"]:checked::after {
   border-bottom-color: white;
 }
 
+/* ===== ユーザー入力欄 ===== */
+.user-info {
+  margin: 15px 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.user-info input {
+  padding: 10px 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
 /* ===== スマホ最適化 ===== */
 @media (max-width: 600px) {
-
   body {
     font-size: 16px;
     padding: 14px;
@@ -141,14 +155,6 @@ input[type="checkbox"]:checked::after {
   input[type="checkbox"] {
     width: 24px;
     height: 24px;
-    border-radius: 5px;
-  }
-
-  input[type="checkbox"]::after {
-    width: 12px;
-    height: 7px;
-    left: 5px;
-    top: 6px;
   }
 
   .year-block strong {
@@ -159,24 +165,3 @@ input[type="checkbox"]:checked::after {
     font-size: 16px;
   }
 }
-
-.user-info {
-  margin: 15px 0 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.user-info input {
-  padding: 10px 12px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-
-
-
-
