@@ -154,33 +154,43 @@ bgSelect.addEventListener("change", () => {
     card.style.gap = "10px";
 
     wrapper.appendChild(card);
-
+    
 // ▼ユーザー入力の取得
-const userName = document.getElementById("user-name").value.trim();
-const userX = document.getElementById("user-x").value.trim();
+let userName = document.getElementById("user-name").value.trim();
+let userX = document.getElementById("user-x").value.trim();
 
-// ▼ユーザー名・X表示エリア
+// X は先頭に @ がなかったら自動で付ける
+if (userX && !userX.startsWith("@")) {
+  userX = "@" + userX;
+}
+
+// ▼名前＋X を1行で表示（どちらかあれば表示）
 if (userName || userX) {
-  const userBox = document.createElement("div");
-  userBox.style.fontSize = "18px";
-  userBox.style.fontWeight = "600";
-  userBox.style.marginBottom = "10px";
+  const userLine = document.createElement("div");
+  userLine.style.fontSize = "18px";
+  userLine.style.fontWeight = "600";
+  userLine.style.marginBottom = "14px";
+  userLine.style.display = "flex";
+  userLine.style.alignItems = "baseline";
+  userLine.style.gap = "8px";
 
+  // 名前
   if (userName) {
-    const n = document.createElement("div");
-    n.textContent = userName;
-    userBox.appendChild(n);
+    const nameSpan = document.createElement("span");
+    nameSpan.textContent = userName;
+    userLine.appendChild(nameSpan);
   }
 
+  // Xアカウント（小さめ）
   if (userX) {
-    const x = document.createElement("div");
-    x.textContent = `X: ${userX}`;
-    x.style.fontSize = "14px";
-    x.style.opacity = "0.85";
-    userBox.appendChild(x);
+    const xSpan = document.createElement("span");
+    xSpan.textContent = userX;
+    xSpan.style.fontSize = "14px";
+    xSpan.style.opacity = "0.8";
+    userLine.appendChild(xSpan);
   }
 
-  card.appendChild(userBox);
+  card.appendChild(userLine);
 }
     
 
@@ -306,6 +316,7 @@ window.addEventListener("load", () => {
     document.body.style.backgroundColor = avg;
   };
 });
+
 
 
 
