@@ -25,7 +25,6 @@ document.addEventListener('DOMContentLoaded', () => {
     liveData.forEach((live, index) => {
       const details = document.createElement('details');
       details.className = 'tour';
-      if (index === 0) details.open = true;
 
       // ▼ 背景色（単色 or グラデ対応）
       if (live.color && live.color.startsWith('radial-gradient')) {
@@ -233,3 +232,4 @@ window.addEventListener('load', () => {
     document.body.style.backgroundColor = averageColor(img);
   };
 });
+
