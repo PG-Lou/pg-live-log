@@ -6,6 +6,12 @@ body {
   color: #222;
 }
 
+header {
+  background-image: url('https://raw.githubusercontent.com/PG-Lou/pg-live-log/main/images/header.png');
+  background-size: cover;
+  background-position: center;
+}
+
 /* ===== TOUR BOX 全体 ===== */
 .tour {
   margin-bottom: 18px;
@@ -149,4 +155,5 @@ input[type="checkbox"]:checked::after {
     font-size: 16px;
   }
 }
+
 
