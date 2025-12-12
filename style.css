@@ -160,6 +160,23 @@ input[type="checkbox"]:checked::after {
   }
 }
 
+.user-info {
+  margin: 15px 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.user-info input {
+  padding: 10px 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+
 
 
 
