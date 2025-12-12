@@ -236,6 +236,48 @@ bgSelect.addEventListener("change", () => {
 });
 
 
+// ===== ヘッダー画像に合わせて背景自動色調整 =====
+function averageColor(imgEl) {
+  const canvas = document.createElement("canvas");
+  const ctx = canvas.getContext("2d");
+
+  canvas.width = imgEl.naturalWidth;
+  canvas.height = imgEl.naturalHeight;
+
+  ctx.drawImage(imgEl, 0, 0);
+
+  const data = ctx.getImageData(0, 0, canvas.width, canvas.height).data;
+
+  let r = 0, g = 0, b = 0;
+  const len = data.length / 4;
+
+  for (let i = 0; i < data.length; i += 4) {
+    r += data[i];
+    g += data[i + 1];
+    b += data[i + 2];
+  }
+
+  // 平均色
+  r = Math.round(r / len);
+  g = Math.round(g / len);
+  b = Math.round(b / len);
+
+  return `rgb(${r}, ${g}, ${b})`;
+}
+
+window.addEventListener("load", () => {
+  const header = document.querySelector(".header");
+
+  const img = new Image();
+  img.crossOrigin = "Anonymous";
+  img.src = "https://raw.githubusercontent.com/PG-Lou/pg-live-log/main/images/header.png";
+
+  img.onload = () => {
+    const avg = averageColor(img);
+    document.body.style.backgroundColor = avg;
+  };
+});
+
 
 
 
