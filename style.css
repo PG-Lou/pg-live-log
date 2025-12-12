@@ -9,11 +9,12 @@ body {
 .header {
   width: 100%;
   height: 200px;
+  min-height: 200px; /* ← これで絶対高さゼロにならない */
+  display: block;    /* ← ブロック要素を保証 */
   background-image: url("https://raw.githubusercontent.com/PG-Lou/pg-live-log/main/images/header.png");
   background-size: cover;
   background-position: center;
 }
-
 
 /* ===== TOUR BOX 全体 ===== */
 .tour {
@@ -158,6 +159,7 @@ input[type="checkbox"]:checked::after {
     font-size: 16px;
   }
 }
+
 
 
 
