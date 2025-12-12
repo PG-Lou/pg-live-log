@@ -155,6 +155,35 @@ bgSelect.addEventListener("change", () => {
 
     wrapper.appendChild(card);
 
+// ▼ユーザー入力の取得
+const userName = document.getElementById("user-name").value.trim();
+const userX = document.getElementById("user-x").value.trim();
+
+// ▼ユーザー名・X表示エリア
+if (userName || userX) {
+  const userBox = document.createElement("div");
+  userBox.style.fontSize = "18px";
+  userBox.style.fontWeight = "600";
+  userBox.style.marginBottom = "10px";
+
+  if (userName) {
+    const n = document.createElement("div");
+    n.textContent = userName;
+    userBox.appendChild(n);
+  }
+
+  if (userX) {
+    const x = document.createElement("div");
+    x.textContent = `X: ${userX}`;
+    x.style.fontSize = "14px";
+    x.style.opacity = "0.85";
+    userBox.appendChild(x);
+  }
+
+  card.appendChild(userBox);
+}
+    
+
     // コンテンツ作成（ツアーごとに見出し）
     let currentTour = "";
     checked.forEach(cb => {
@@ -277,6 +306,7 @@ window.addEventListener("load", () => {
     document.body.style.backgroundColor = avg;
   };
 });
+
 
 
 
