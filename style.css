@@ -4,6 +4,9 @@ body {
   padding: 20px;
   font-size: 17px;
   color: #222;
+
+  /* ★ 全体背景は少しだけ色を残す */
+  background: #f4f6fa;
 }
 
 /* ===== ヘッダー ===== */
@@ -15,15 +18,20 @@ body {
   background-image: url("https://raw.githubusercontent.com/PG-Lou/pg-live-log/main/images/header.png");
   background-size: cover;
   background-position: center;
+  margin-bottom: 20px;
 }
 
 /* ===== TOUR BOX 全体 ===== */
 .tour {
   margin-bottom: 18px;
-  border-radius: 14px;
+  border-radius: 16px;
   overflow: hidden;
-  border: 1px solid rgba(0,0,0,0.15);
-  /* ★ 背景はJSに完全に任せる */
+  border: 1px solid rgba(0,0,0,0.12);
+
+  /* ★ JSから入る radial-gradient を活かす */
+  background-repeat: no-repeat;
+  background-size: 140% 140%;   /* ← ここ超重要：もやもやが広がる */
+  background-position: center;
 }
 
 /* ===== SUMMARY（タイトル部分）===== */
@@ -38,11 +46,12 @@ summary {
   user-select: none;
   position: relative;
 
-  /* ▼ 文字が背景に埋もれないように */
-  background: rgba(255,255,255,0.35);
-  backdrop-filter: blur(2px);
+  /* ★ 白を薄くして下を透かす */
+  background: rgba(255,255,255,0.18);
+  backdrop-filter: blur(6px);
 }
 
+/* デフォルト三角消す */
 summary::-webkit-details-marker {
   display: none;
 }
@@ -61,11 +70,14 @@ details[open] summary::before {
 
 /* ===== 展開内容 ===== */
 .tour-content {
-  padding: 12px 20px 18px;
-  background: rgba(255,255,255,0.25);
-  backdrop-filter: blur(1px);
+  padding: 14px 20px 18px;
+
+  /* ★ ここも透明度を下げる */
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(4px);
 }
 
+/* 年 */
 .year-block strong {
   display: block;
   margin-top: 12px;
@@ -88,8 +100,8 @@ input[type="checkbox"] {
   width: 22px;
   height: 22px;
   border-radius: 6px;
-  border: 2px solid #666;
-  background: #fff;
+  border: 2px solid rgba(0,0,0,0.45);
+  background: rgba(255,255,255,0.9);
   cursor: pointer;
   box-sizing: border-box;
   position: relative;
@@ -136,6 +148,7 @@ input[type="checkbox"]:checked::after {
 
 /* ===== スマホ最適化 ===== */
 @media (max-width: 600px) {
+
   body {
     font-size: 16px;
     padding: 14px;
