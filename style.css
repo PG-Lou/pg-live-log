@@ -38,24 +38,24 @@ body {
   position: absolute;
   inset: 0;
   pointer-events: none;
+  z-index: 0;
+
   background:
     radial-gradient(circle at 20% 30%, rgba(160,200,255,0.55), transparent 60%),
-    radial-gradient(circle at 65% 25%, rgba(210,180,255,0.25), transparent 55%),
-    radial-gradient(circle at 40% 60%, rgba(140,220,255,0.40), transparent 50%),
-    radial-gradient(circle at 75% 75%, rgba(190,210,255,0.30), transparent 65%),
+    radial-gradient(circle at 65% 25%, rgba(210,180,255,0.35), transparent 55%),
+    radial-gradient(circle at 40% 60%, rgba(140,220,255,0.45), transparent 55%),
+    radial-gradient(circle at 75% 75%, rgba(190,210,255,0.35), transparent 65%),
     linear-gradient(
       0deg,
-      rgba(255,255,255,0.08),
-      rgba(255,255,255,0.12)
+      rgba(255,255,255,0.10),
+      rgba(255,255,255,0.15)
     );
 }
-
-
 
 /* ===== SUMMARY ===== */
 summary {
   position: relative;
-  z-index: 1;
+  z-index: 2;
 
   padding: 14px 16px;
   font-size: 19px;
@@ -66,8 +66,8 @@ summary {
   font-weight: bold;
   user-select: none;
 
-  /* 水彩を邪魔しない */
-  background: rgba(255,255,255,0.06);
+  /* 最低限の紙感 */
+  background: rgba(255,255,255,0.08);
 }
 
 summary::-webkit-details-marker {
@@ -89,34 +89,37 @@ details[open] summary::before {
 .tour-content {
   position: relative;
   z-index: 1;
-
   padding: 14px 20px 18px;
-
-  /* 紙っぽいベールだけ */
-  background: none;
 }
 
 /* ===== 年 ===== */
 .year-block strong {
-  display: block;
+  display: inline-block;
   margin-top: 12px;
   margin-bottom: 6px;
   font-size: 17px;
 
-  /* ★ここから追加 */
-  background: rgba(255,255,255,0.35);
-  padding: 4px 6px;
-  border-radius: 6px;
-  width: fit-content;
+  /* 年の紙ベール */
+  background: rgba(255,255,255,0.45);
+  padding: 4px 8px;
+  border-radius: 8px;
 }
 
 /* ===== 行 ===== */
 label {
+  position: relative;
+  z-index: 1;
+
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 8px 0;
+  padding: 6px 8px;
+  margin-bottom: 4px;
   font-size: 16px;
+
+  /* 行ごとの紙ベール（←効いてなかった原因はここ） */
+  background: rgba(255,255,255,0.35);
+  border-radius: 8px;
 }
 
 /* ===== チェックボックス ===== */
@@ -183,5 +186,3 @@ input[type="checkbox"]:checked::after {
     font-size: 15px;
   }
 }
-
-
