@@ -1,14 +1,7 @@
 [
   {
   "liveName": "20th LIVE CIRCUIT \"水\"",
-  "color": "
-    radial-gradient(circle at 20% 25%, rgba(180,220,255,0.45) 0%, transparent 55%),
-    radial-gradient(circle at 75% 20%, rgba(200,235,255,0.35) 0%, transparent 50%),
-    radial-gradient(circle at 40% 55%, rgba(210,200,255,0.35) 0%, transparent 55%),
-    radial-gradient(circle at 70% 65%, rgba(180,200,255,0.30) 0%, transparent 55%),
-    radial-gradient(circle at 30% 80%, rgba(235,245,255,0.40) 0%, transparent 60%),
-    linear-gradient(180deg, #eaf4ff, #dbeeff)
-    ",
+  "color": "radial-gradient(circle at 20% 25%, rgba(180,220,255,0.45) 0%, transparent 55%),radial-gradient(circle at 75% 20%, rgba(200,235,255,0.35) 0%, transparent 50%),radial-gradient(circle at 40% 55%, rgba(210,200,255,0.35) 0%, transparent 55%),radial-gradient(circle at 70% 65%, rgba(180,200,255,0.30) 0%, transparent 55%),radial-gradient(circle at 30% 80%, rgba(235,245,255,0.40) 0%, transparent 60%),linear-gradient(180deg, #eaf4ff, #dbeeff)",
   "years": [
     {
       "year": 2026,
