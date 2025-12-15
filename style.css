@@ -4,34 +4,35 @@ body {
   padding: 20px;
   font-size: 17px;
   color: #222;
-  background: hotpink;/* 全体の薄い背景 */
+
+  /* 背景は邪魔しない薄グレー */
+  background: #f4f6f9;
 }
 
 /* ===== ヘッダー ===== */
 .header {
   width: 100%;
   height: 200px;
-  min-height: 200px;
-  display: block;
   background-image: url("https://raw.githubusercontent.com/PG-Lou/pg-live-log/main/images/header.png");
   background-size: cover;
   background-position: center;
   margin-bottom: 20px;
+  border-radius: 14px;
 }
 
-/* ===== TOUR BOX 全体 ===== */
+/* ===== TOUR BOX ===== */
 .tour {
   margin-bottom: 18px;
-  border-radius: 14px;
+  border-radius: 16px;
   overflow: hidden;
-  border: 1px solid rgba(0,0,0,0.15);
 
-  /* === ここ重要 === */
-  /* background は JS 側で直接入れるので消す */
-  background: none;
+  /* 枠だけ */
+  border: 1px solid rgba(0,0,0,0.12);
+
+  /* ★ 背景は JS が直接入れるので触らない */
 }
 
-/* ===== SUMMARY（タイトル部分）===== */
+/* ===== SUMMARY ===== */
 summary {
   padding: 14px 16px;
   font-size: 19px;
@@ -43,10 +44,11 @@ summary {
   user-select: none;
   position: relative;
 
-  background: rgba(255,255,255,0.35);
-  backdrop-filter: blur(4px);
+  /* ★ 白をやめる */
+  background: transparent;
 }
 
+/* 矢印 */
 summary::-webkit-details-marker {
   display: none;
 }
@@ -64,11 +66,20 @@ details[open] summary::before {
 
 /* ===== 展開内容 ===== */
 .tour-content {
-  padding: 12px 20px 18px;
-  background: rgba(255,255,255,0.3);
-  backdrop-filter: blur(3px);
+  padding: 14px 20px 18px;
+
+  /* ★ ここがもやもやの正体 */
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(255,255,255,0.15),
+      rgba(255,255,255,0.35)
+    );
+
+  backdrop-filter: blur(6px);
 }
 
+/* ===== 年 ===== */
 .year-block strong {
   display: block;
   margin-top: 12px;
@@ -76,7 +87,7 @@ details[open] summary::before {
   font-size: 17px;
 }
 
-/* ===== 行（ラベル）===== */
+/* ===== 行 ===== */
 label {
   display: flex;
   align-items: center;
@@ -94,7 +105,6 @@ input[type="checkbox"] {
   border: 2px solid #666;
   background: #fff;
   cursor: pointer;
-  box-sizing: border-box;
   position: relative;
 }
 
@@ -120,7 +130,7 @@ input[type="checkbox"]:checked::after {
   border-bottom-color: white;
 }
 
-/* ===== ユーザー入力欄 ===== */
+/* ===== ユーザー入力 ===== */
 .user-info {
   margin: 15px 0 20px;
   display: flex;
@@ -133,11 +143,9 @@ input[type="checkbox"]:checked::after {
   font-size: 16px;
   border: 1px solid #ccc;
   border-radius: 8px;
-  width: 100%;
-  box-sizing: border-box;
 }
 
-/* ===== スマホ最適化 ===== */
+/* ===== スマホ ===== */
 @media (max-width: 600px) {
   body {
     font-size: 16px;
@@ -146,26 +154,9 @@ input[type="checkbox"]:checked::after {
 
   summary {
     font-size: 18px;
-    padding: 12px;
   }
 
   label {
     font-size: 15px;
-    gap: 12px;
-    padding: 10px 0;
-  }
-
-  input[type="checkbox"] {
-    width: 24px;
-    height: 24px;
-  }
-
-  .year-block strong {
-    font-size: 16px;
-  }
-
-  summary::before {
-    font-size: 16px;
   }
 }
-
