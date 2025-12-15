@@ -5,7 +5,7 @@ body {
   font-size: 17px;
   color: #222;
 
-  /* 背景は邪魔しない */
+  /* 全体背景はニュートラル */
   background: #f2f4f8;
 }
 
@@ -27,16 +27,15 @@ body {
   margin-bottom: 18px;
   border-radius: 18px;
   overflow: hidden;
-
   border: 1px solid rgba(0,0,0,0.12);
 
-  /* ★ 超重要：radial-gradientをそのままの座標で描画 */
+  /* ★ JSONのradial-gradientをそのまま活かす */
   background-repeat: no-repeat;
-  background-size: auto;      /* ← cover禁止 */
+  background-size: auto;      /* cover禁止 */
   background-position: center;
 }
 
-/* ===== SUMMARY ===== */
+/* ===== SUMMARY（閉じてる時）===== */
 summary {
   padding: 14px 16px;
   font-size: 19px;
@@ -49,14 +48,15 @@ summary {
   font-weight: bold;
   user-select: none;
 
-  /* ★ 水彩を殺さない最小限の白 */
-  background: rgba(255,255,255,0.05);
+  /* ★ 水彩を殺さない、ほぼ透明 */
+  background: rgba(255,255,255,0.04);
 }
 
 summary::-webkit-details-marker {
   display: none;
 }
 
+/* 矢印 */
 summary::before {
   content: "▶";
   font-size: 18px;
@@ -68,12 +68,16 @@ details[open] summary::before {
   content: "▼";
 }
 
-/* ===== 展開内容 ===== */
-.tour-content {
+/* ===== 展開内容（ここが本命）===== */
+details[open] .tour-content {
   padding: 14px 20px 18px;
 
-  /* ★ 白はほんのベール程度 */
-  background: rgba(255,255,255,0.12);
+  /* ★ 水彩紙＋にじみを色で足す */
+  background:
+    radial-gradient(circle at 25% 20%, rgba(255,255,255,0.35), transparent 70%),
+    radial-gradient(circle at 70% 35%, rgba(210,225,255,0.30), transparent 75%),
+    radial-gradient(circle at 40% 80%, rgba(255,255,255,0.25), transparent 75%),
+    rgba(255,255,255,0.08);
 }
 
 /* ===== 年 ===== */
