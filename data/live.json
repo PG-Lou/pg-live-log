@@ -1,7 +1,7 @@
 [
   {
     "liveName": "20th LIVE CIRCUIT “水”",
-    "color": "water-blue",
+    "color": "radial-gradient(circle at 20% 30%, rgba(170,210,255,0.55) 0%, rgba(170,210,255,0.35) 35%, transparent 60%),radial-gradient(circle at 60% 25%, rgba(200,180,255,0.45) 0%, rgba(200,180,255,0.30) 40%, transparent 65%),radial-gradient(circle at 40% 65%, rgba(160,200,255,0.40) 0%, rgba(160,200,255,0.25) 45%, transparent 70%),radial-gradient(circle at 75% 60%, rgba(190,220,255,0.45) 0%, rgba(190,220,255,0.30) 40%, transparent 65%),linear-gradient(180deg, #e9f3ff, #dfeeff)",
     "years": [
       {
         "year": 2026,
@@ -41,6 +41,70 @@
           { "date": "2026-06-20", "prefecture": "沖縄県", "venue": "沖縄コンベンションセンター 劇場棟" },
           { "date": "2026-07-07", "prefecture": "東京都", "venue": "東京ガーデンシアター" },
           { "date": "2026-07-08", "prefecture": "東京都", "venue": "東京ガーデンシアター" }
+        ]
+      }
+    ]
+  },
+
+  {
+    "liveName": "FANCLUB UNDERWORLD 6",
+    "color": "#6b9cff",
+    "years": [
+      {
+        "year": 2025,
+        "shows": [
+          { "date": "2025-09-29", "prefecture": "神奈川", "venue": "KT Zepp Yokohama" },
+          { "date": "2025-09-30", "prefecture": "神奈川", "venue": "KT Zepp Yokohama", "time": "AM" },
+          { "date": "2025-09-30", "prefecture": "神奈川", "venue": "KT Zepp Yokohama", "time": "PM" }
+        ]
+      }
+    ]
+  },
+
+  {
+    "liveName": "因島・横浜ロマンスポルノ'24 ～解放区～",
+    "color": "#7ac9ff",
+    "years": [
+      {
+        "year": 2024,
+        "shows": [
+          { "date": "2024-05-17", "prefecture": "神奈川", "venue": "横浜アリーナ" }
+        ]
+      }
+    ]
+  },
+
+  {
+    "liveName": "19th LIVE CIRCUIT “PG wasn't built in a day”",
+    "color": "#ffd659",
+    "years": [
+      {
+        "year": 2024,
+        "shows": [
+          { "date": "2024-09-04", "prefecture": "東京", "venue": "東京有明アリーナ" },
+          { "date": "2024-09-05", "prefecture": "東京", "venue": "東京有明アリーナ" },
+          { "date": "2024-09-06", "prefecture": "東京", "venue": "東京有明アリーナ" }
+        ]
+      }
+    ]
+  },
+
+  {
+    "liveName": "18th LIVE CIRCUIT “暁”",
+    "color": "#ff4500",
+    "years": [
+      {
+        "year": 2022,
+        "shows": [
+          { "date": "2022-09-22", "prefecture": "神奈川", "venue": "よこすか芸術劇場" },
+          { "date": "2022-09-27", "prefecture": "群馬", "venue": "高崎芸術劇場 大劇場" }
+        ]
+      },
+      {
+        "year": 2023,
+        "shows": [
+          { "date": "2023-05-10", "prefecture": "東京", "venue": "日本武道館" },
+          { "date": "2023-05-11", "prefecture": "東京", "venue": "日本武道館" }
         ]
       }
     ]
