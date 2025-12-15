@@ -31,7 +31,7 @@ body {
 
   /* ★ JSONのradial-gradientをそのまま活かす */
   background-repeat: no-repeat;
-  background-size: auto;      /* cover禁止 */
+  background-size: 600px 600px;
   background-position: center;
 }
 
@@ -161,3 +161,4 @@ input[type="checkbox"]:checked::after {
     font-size: 15px;
   }
 }
+
