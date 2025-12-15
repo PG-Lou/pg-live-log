@@ -5,7 +5,7 @@ body {
   font-size: 17px;
   color: #222;
 
-  /* 背景は主張しない */
+  /* 背景は邪魔しない */
   background: #f2f4f8;
 }
 
@@ -28,16 +28,15 @@ body {
   border-radius: 18px;
   overflow: hidden;
 
-  /* 枠だけ */
   border: 1px solid rgba(0,0,0,0.12);
 
-  /* ★ 重要：背景はJSが入れるradial-gradientをそのまま見せる */
+  /* ★ 超重要：radial-gradientをそのままの座標で描画 */
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: auto;      /* ← cover禁止 */
   background-position: center;
 }
 
-/* ===== SUMMARY（タイトル）===== */
+/* ===== SUMMARY ===== */
 summary {
   padding: 14px 16px;
   font-size: 19px;
@@ -50,18 +49,14 @@ summary {
   font-weight: bold;
   user-select: none;
 
-  /* ★ もやもやを潰さない：超うっすらだけ */
-  background: rgba(255,255,255,0.08);
-
-  /* ★ 絶対にblurしない */
-  backdrop-filter: none;
+  /* ★ 水彩を殺さない最小限の白 */
+  background: rgba(255,255,255,0.05);
 }
 
 summary::-webkit-details-marker {
   display: none;
 }
 
-/* 矢印 */
 summary::before {
   content: "▶";
   font-size: 18px;
@@ -77,11 +72,8 @@ details[open] summary::before {
 .tour-content {
   padding: 14px 20px 18px;
 
-  /* ★ 白は最小限・水彩を隠さない */
-  background: rgba(255,255,255,0.10);
-
-  /* ★ blurは完全に禁止 */
-  backdrop-filter: none;
+  /* ★ 白はほんのベール程度 */
+  background: rgba(255,255,255,0.12);
 }
 
 /* ===== 年 ===== */
