@@ -4,8 +4,6 @@ body {
   padding: 20px;
   font-size: 17px;
   color: #222;
-
-  /* 全体背景はニュートラル */
   background: #f2f4f8;
 }
 
@@ -14,49 +12,63 @@ body {
   width: 100%;
   height: 200px;
   margin-bottom: 20px;
-
   background-image: url("https://raw.githubusercontent.com/PG-Lou/pg-live-log/main/images/header.png");
   background-size: cover;
   background-position: center;
-
   border-radius: 16px;
 }
 
 /* ===== TOUR BOX ===== */
 .tour {
+  position: relative;
   margin-bottom: 18px;
   border-radius: 18px;
   overflow: hidden;
   border: 1px solid rgba(0,0,0,0.12);
 
-  /* ★ JSONのradial-gradientをそのまま活かす */
+  /* JSONの水彩ベース */
   background-repeat: no-repeat;
-  background-size: 600px 600px;
+  background-size: 120% 120%;
   background-position: center;
 }
 
-/* ===== SUMMARY（閉じてる時）===== */
+/* ===== 開いたときの水彩レイヤー（本命） ===== */
+.tour[open]::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+
+  background:
+    radial-gradient(circle at 20% 30%, rgba(180,210,255,0.45), transparent 65%),
+    radial-gradient(circle at 70% 25%, rgba(210,190,255,0.40), transparent 65%),
+    radial-gradient(circle at 45% 60%, rgba(170,220,255,0.35), transparent 70%),
+    radial-gradient(circle at 65% 80%, rgba(200,230,255,0.30), transparent 70%);
+}
+
+/* ===== SUMMARY ===== */
 summary {
+  position: relative;
+  z-index: 1;
+
   padding: 14px 16px;
   font-size: 19px;
   cursor: pointer;
-
   display: flex;
   align-items: center;
   gap: 10px;
-
   font-weight: bold;
   user-select: none;
 
-  /* ★ 水彩を殺さない、ほぼ透明 */
-  background: rgba(255,255,255,0.04);
+  /* 水彩を邪魔しない */
+  background: rgba(255,255,255,0.06);
 }
 
 summary::-webkit-details-marker {
   display: none;
 }
 
-/* 矢印 */
 summary::before {
   content: "▶";
   font-size: 18px;
@@ -68,16 +80,15 @@ details[open] summary::before {
   content: "▼";
 }
 
-/* ===== 展開内容（ここが本命）===== */
-details[open] .tour-content {
+/* ===== 展開内容 ===== */
+.tour-content {
+  position: relative;
+  z-index: 1;
+
   padding: 14px 20px 18px;
 
-  /* ★ 水彩紙＋にじみを色で足す */
-  background:
-    radial-gradient(circle at 25% 20%, rgba(255,255,255,0.35), transparent 70%),
-    radial-gradient(circle at 70% 35%, rgba(210,225,255,0.30), transparent 75%),
-    radial-gradient(circle at 40% 80%, rgba(255,255,255,0.25), transparent 75%),
-    rgba(255,255,255,0.08);
+  /* 紙っぽいベールだけ */
+  background: rgba(255,255,255,0.12);
 }
 
 /* ===== 年 ===== */
@@ -161,4 +172,3 @@ input[type="checkbox"]:checked::after {
     font-size: 15px;
   }
 }
-
