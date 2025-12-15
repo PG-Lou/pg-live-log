@@ -26,30 +26,33 @@ body {
   overflow: hidden;
   border: 1px solid rgba(0,0,0,0.12);
 
-  /* JSONの水彩ベース */
-  background-repeat: no-repeat;
-  background-size: 400px 400px;
-  background-position: center;
+  /* ベースは暗め・ムラあり */
+  background:
+    linear-gradient(
+      140deg,
+      #3f5f7a 0%,
+      #2f4f68 40%,
+      #355d7a 70%,
+      #2b4a63 100%
+    );
 }
 
-/* ===== 開いたときの水彩レイヤー（本命） ===== */
-.tour[open]::after {
+/* ===== 水彩の本体 ===== */
+.tour::after {
   content: "";
   position: absolute;
-  inset: 0;
+  inset: -20%;
   pointer-events: none;
-  z-index: 0;
 
   background:
-    radial-gradient(circle at 20% 30%, rgba(160,200,255,0.55), transparent 60%),
-    radial-gradient(circle at 65% 25%, rgba(210,180,255,0.35), transparent 55%),
-    radial-gradient(circle at 40% 60%, rgba(140,220,255,0.45), transparent 55%),
-    radial-gradient(circle at 75% 75%, rgba(190,210,255,0.35), transparent 65%),
-    linear-gradient(
-      0deg,
-      rgba(255,255,255,0.10),
-      rgba(255,255,255,0.15)
-    );
+    radial-gradient(circle at 20% 30%, rgba(80,130,180,0.55), transparent 55%),
+    radial-gradient(circle at 65% 20%, rgba(40,90,140,0.45), transparent 60%),
+    radial-gradient(circle at 40% 55%, rgba(30,70,120,0.50), transparent 58%),
+    radial-gradient(circle at 75% 70%, rgba(20,60,100,0.45), transparent 65%),
+    radial-gradient(circle at 30% 80%, rgba(60,110,160,0.35), transparent 70%);
+
+  filter: blur(18px);
+  opacity: 0.95;
 }
 
 /* ===== SUMMARY ===== */
@@ -186,3 +189,4 @@ input[type="checkbox"]:checked::after {
     font-size: 15px;
   }
 }
+
