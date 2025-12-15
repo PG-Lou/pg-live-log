@@ -92,7 +92,11 @@ details[open] summary::before {
 .tour-content {
   position: relative;
   z-index: 1;
-  padding: 14px 20px 18px;
+  padding: 16px 20px;
+
+  background: rgba(255,255,255,0.25);
+  backdrop-filter: blur(4px);
+  border-radius: 14px;
 }
 
 /* ===== 年 ===== */
@@ -189,4 +193,5 @@ input[type="checkbox"]:checked::after {
     font-size: 15px;
   }
 }
+
 
