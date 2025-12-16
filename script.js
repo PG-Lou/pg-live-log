@@ -26,11 +26,9 @@ document.addEventListener('DOMContentLoaded', () => {
       const details = document.createElement('details');
       details.className = 'tour';
 
-      // ★ グラデ or 単色どちらもそのまま background に入れる
+      // ★ 背景は JSON の color をそのまま使う
       if (live.color) {
         details.style.background = live.color;
-        details.style.backgroundRepeat = 'no-repeat';
-        details.style.backgroundSize = 'cover';
       } else {
         details.style.background = '#ddd';
       }
@@ -70,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       details.appendChild(content);
 
-      // ▼ 親チェック → 子チェックON/OFF（自動で開くが閉じない）
+      // ▼ 親チェック → 子チェックON/OFF（チェック時のみ開く）
       summary.querySelector('.tour-check').addEventListener('change', e => {
         const checked = e.target.checked;
         content.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = checked);
@@ -82,18 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ======================
-  // ボタン制御
-  // ======================
-  const bgSelect = document.getElementById('bg-select');
-  const exportBtn = document.getElementById('export-btn');
-  exportBtn.disabled = !bgSelect.value;
-
-  bgSelect.addEventListener('change', () => {
-    exportBtn.disabled = !bgSelect.value;
-  });
-
-  // ======================
-  // 画像出力（画面遷移）
+  // 画像出力
   // ======================
   async function exportImage() {
     const checked = document.querySelectorAll('.tour-content input[type="checkbox"]:checked');
@@ -101,9 +88,6 @@ document.addEventListener('DOMContentLoaded', () => {
       alert('チェックされた公演がありません');
       return;
     }
-
-    const bgStyle = bgSelect.value;
-    const colorName = bgSelect.selectedOptions?.[0]?.textContent || '';
 
     const WIDTH = 390;
     const HEIGHT = 844;
@@ -114,11 +98,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const wrapper = document.createElement('div');
     wrapper.style.width = WIDTH + 'px';
     wrapper.style.height = HEIGHT + 'px';
-    wrapper.style.background = bgStyle;
-    wrapper.style.backgroundRepeat = 'no-repeat';
-    wrapper.style.backgroundSize = 'cover';
     wrapper.style.position = 'relative';
     wrapper.style.fontFamily = 'Helvetica, Arial, sans-serif';
+
+    // ▼ 背景：最初に選ばれたライブの背景を使う
+    const first = JSON.parse(checked[0].dataset.show);
+    const tour = document.querySelector(
+      `.tour summary:contains("${first.live}")`
+    )?.parentElement;
+
+    if (tour?.style.background) {
+      wrapper.style.background = tour.style.background;
+    }
 
     // ▼ 白カード
     const card = document.createElement('div');
@@ -133,7 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     wrapper.appendChild(card);
 
-    // ▼ ユーザー名 + X（1行）
+    // ▼ ユーザー名 + X
     let userName = document.getElementById('user-name')?.value.trim() || '';
     let userX = document.getElementById('user-x')?.value.trim() || '';
     if (userX && !userX.startsWith('@')) userX = '@' + userX;
@@ -170,22 +161,8 @@ document.addEventListener('DOMContentLoaded', () => {
       card.appendChild(line);
     });
 
-    // ▼ 右下カラー名
-    if (colorName) {
-      const label = document.createElement('div');
-      label.textContent = 'カラーイメージ：' + colorName;
-      label.style.position = 'absolute';
-      label.style.right = '10px';
-      label.style.bottom = '10px';
-      label.style.fontSize = '12px';
-      label.style.color = '#fff';
-      label.style.textShadow = '0 0 6px rgba(0,0,0,0.5)';
-      wrapper.appendChild(label);
-    }
-
     exportArea.appendChild(wrapper);
 
-    // ▼ 画面遷移プレビュー
     html2canvas(wrapper, { scale: 2, useCORS: true }).then(canvas => {
       canvas.toBlob(blob => {
         const url = URL.createObjectURL(blob);
