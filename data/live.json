@@ -277,7 +277,111 @@
       ]
     }
   ]
-}
+},
 
+  {
+    "liveName": "16th LIVE CIRCUIT “UNFADED”",
+    "color": "radial-gradient(circle at 25% 30%, rgba(190,120,210,0.45), transparent 55%), radial-gradient(circle at 65% 40%, rgba(140,80,170,0.45), transparent 60%), radial-gradient(circle at 45% 65%, rgba(90,40,120,0.40), transparent 65%), linear-gradient(135deg, #0b0b12 0%, #1a1024 30%, #2d1740 55%, #5a2a6e 75%, #f5f2f8 100%)",
+    "years": [
+      {
+        "year": 2018,
+        "shows": [
+          { "date": "2018-12-15", "prefecture": "静岡県", "venue": "静岡エコパアリーナ" },
+          { "date": "2018-12-16", "prefecture": "静岡県", "venue": "静岡エコパアリーナ" },
+          { "date": "2018-12-22", "prefecture": "北海道", "venue": "北海道立総合体育センター 北海きたえーる" },
+          { "date": "2018-12-30", "prefecture": "大阪府", "venue": "大阪城ホール" },
+          { "date": "2018-12-31", "prefecture": "大阪府", "venue": "大阪城ホール ※カウントダウン公演" }
+        ]
+      },
+      {
+        "year": 2019,
+        "shows": [
+          { "date": "2019-01-26", "prefecture": "福井県", "venue": "サンドーム福井" },
+          { "date": "2019-01-31", "prefecture": "千葉県", "venue": "幕張イベントホール" },
+          { "date": "2019-02-01", "prefecture": "千葉県", "venue": "幕張イベントホール" },
+          { "date": "2019-02-16", "prefecture": "宮城県", "venue": "セキスイハイムスーパーアリーナ" },
+          { "date": "2019-02-23", "prefecture": "徳島県", "venue": "アスティとくしま" },
+          { "date": "2019-03-02", "prefecture": "福岡県", "venue": "マリンメッセ福岡" },
+          { "date": "2019-03-08", "prefecture": "神奈川県", "venue": "横浜アリーナ" },
+          { "date": "2019-03-09", "prefecture": "神奈川県", "venue": "横浜アリーナ" },
+          { "date": "2019-03-16", "prefecture": "三重県", "venue": "三重県営サンアリーナ" },
+          { "date": "2019-03-17", "prefecture": "三重県", "venue": "三重県営サンアリーナ" }
+        ]
+      }
+    ]
+  },
+
+  {
+    "liveName": "しまなみロマンスポルノ'18",
+    "color": "radial-gradient(circle at 20% 30%, rgba(255,220,120,0.45), transparent 55%), radial-gradient(circle at 70% 35%, rgba(120,180,255,0.45), transparent 60%), radial-gradient(circle at 45% 65%, rgba(255,170,90,0.40), transparent 65%), linear-gradient(135deg, #fff4c2 0%, #ffd86a 30%, #9fd0ff 55%, #6fb6ff 75%, #f6fbff 100%)",
+    "years": [
+      {
+        "year": 2018,
+        "shows": [
+          { "date": "2018-09-08", "prefecture": "広島県", "venue": "広島県立びんご運動公園" },
+          { "date": "2018-10-20", "prefecture": "広島県", "venue": "因島市民会館" }
+        ]
+      }
+    ]
+  },
+
+  {
+    "liveName": "15th LIVE CIRCUIT “BUTTERFLY EFFECT”",
+    "color": "radial-gradient(circle at 25% 30%, rgba(255,210,80,0.45), transparent 55%), radial-gradient(circle at 65% 40%, rgba(60,60,60,0.40), transparent 60%), linear-gradient(135deg, #0d0d0d 0%, #2a2a2a 30%, #ffd84d 55%, #ffea9a 75%, #fffdf3 100%)",
+    "years": [
+      {
+        "year": 2017,
+        "shows": [
+          { "date": "2017-11-17", "prefecture": "埼玉県", "venue": "三郷市文化会館 大ホール" },
+          { "date": "2017-11-20", "prefecture": "神奈川県", "venue": "カルッツかわさき (川崎市スポーツ・文化総合センター)" },
+          { "date": "2017-11-23", "prefecture": "北海道", "venue": "釧路市民文化会館 大ホール" },
+          { "date": "2017-11-25", "prefecture": "北海道", "venue": "ニトリ文化ホール" },
+          { "date": "2017-11-26", "prefecture": "北海道", "venue": "ニトリ文化ホール" },
+          { "date": "2017-12-05", "prefecture": "香川県", "venue": "レグザムホール (香川県県民ホール)" },
+          { "date": "2017-12-07", "prefecture": "鳥取県", "venue": "米子コンベンションセンター" },
+          { "date": "2017-12-09", "prefecture": "山口県", "venue": "周南市文化会館" },
+          { "date": "2017-12-11", "prefecture": "広島県", "venue": "広島文化学園HBGホール" },
+          { "date": "2017-12-12", "prefecture": "広島県", "venue": "広島文化学園HBGホール" }
+        ]
+      },
+      {
+        "year": 2018,
+        "shows": [
+          { "date": "2018-01-11", "prefecture": "岩手県", "venue": "盛岡市民文化ホール" },
+          { "date": "2018-01-13", "prefecture": "宮城県", "venue": "仙台サンプラザホール" },
+          { "date": "2018-01-14", "prefecture": "宮城県", "venue": "仙台サンプラザホール" },
+          { "date": "2018-01-17", "prefecture": "福岡県", "venue": "福岡サンパレス ホテル＆ホール" },
+          { "date": "2018-01-18", "prefecture": "福岡県", "venue": "福岡サンパレス ホテル＆ホール" },
+          { "date": "2018-01-20", "prefecture": "鹿児島県", "venue": "鹿児島市民文化ホール 第一ホール" },
+          { "date": "2018-01-22", "prefecture": "熊本県", "venue": "市民会館シアーズホーム夢ホール (熊本市民会館)" },
+          { "date": "2018-01-31", "prefecture": "東京都", "venue": "NHKホール" },
+          { "date": "2018-02-01", "prefecture": "東京都", "venue": "NHKホール" },
+          { "date": "2018-02-09", "prefecture": "山梨県", "venue": "コラニー文化ホール" },
+          { "date": "2018-02-13", "prefecture": "大阪府", "venue": "フェスティバルホール" },
+          { "date": "2018-02-14", "prefecture": "大阪府", "venue": "フェスティバルホール" },
+          { "date": "2018-02-16", "prefecture": "奈良県", "venue": "なら100年会館" },
+          { "date": "2018-02-21", "prefecture": "千葉県", "venue": "市川市文化会館" },
+          { "date": "2018-02-24", "prefecture": "三重県", "venue": "シンフォニアテクノロジー響ホール伊勢 (伊勢市観光文化会館)" },
+          { "date": "2018-02-26", "prefecture": "愛知県", "venue": "名古屋国際会議場 センチュリーホール" },
+          { "date": "2018-02-27", "prefecture": "愛知県", "venue": "名古屋国際会議場 センチュリーホール" },
+          { "date": "2018-03-02", "prefecture": "高知県", "venue": "高知県立県民文化ホール オレンジホール" },
+          { "date": "2018-03-04", "prefecture": "徳島県", "venue": "鳴門市文化会館" },
+          { "date": "2018-03-07", "prefecture": "静岡県", "venue": "富士市文化会館ロゼシアター" },
+          { "date": "2018-03-09", "prefecture": "静岡県", "venue": "アクトシティ浜松" },
+          { "date": "2018-03-12", "prefecture": "埼玉県", "venue": "大宮ソニックシティ 大ホール" },
+          { "date": "2018-03-14", "prefecture": "新潟県", "venue": "上越文化会館" },
+          { "date": "2018-03-16", "prefecture": "石川県", "venue": "金沢歌劇座" },
+          { "date": "2018-03-18", "prefecture": "福井県", "venue": "福井フェニックス・プラザ" },
+          { "date": "2018-03-20", "prefecture": "兵庫県", "venue": "神戸国際会館 こくさいホール" },
+          { "date": "2018-03-28", "prefecture": "福島県", "venue": "郡山市民文化センター ※振替公演" },
+          { "date": "2018-04-23", "prefecture": "東京都", "venue": "オリンパスホール八王子 ※振替公演" },
+          { "date": "2018-04-29", "prefecture": "神奈川県", "venue": "パシフィコ横浜 国立大ホール ※振替公演" }
+        ]
+      }
+    ]
+  }
+
+
+  
 
 ]
