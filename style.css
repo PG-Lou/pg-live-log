@@ -20,19 +20,49 @@ body {
 
 /* ===== ユーザー入力 ===== */
 .user-info {
-  margin: 12px 0 18px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+  margin: 18px 0 28px;
+  display: grid;
+  gap: 14px;
 }
 
+/* 入力欄本体 */
 .user-info input {
-  padding: 10px 12px;
+  appearance: none;
+  width: 100%;
+  padding: 14px 16px;
   font-size: 15px;
-  border-radius: 10px;
-  border: 1px solid rgba(0,0,0,.18);
-  background: #fff;
+  border-radius: 14px;
+
+  /* 枠線を消す */
+  border: none;
+
+  /* 背景をカード寄りに */
+  background: rgba(255,255,255,0.65);
+  backdrop-filter: blur(6px);
+
+  color: #1f2a35;
+  box-shadow:
+    inset 0 0 0 1px rgba(0,0,0,0.08),
+    0 2px 6px rgba(0,0,0,0.05);
+
+  transition: box-shadow 0.2s ease, background 0.2s ease;
 }
+
+/* フォーカス時 */
+.user-info input:focus {
+  outline: none;
+  background: rgba(255,255,255,0.85);
+  box-shadow:
+    inset 0 0 0 1.5px rgba(80,120,200,0.45),
+    0 4px 10px rgba(80,120,200,0.15);
+}
+
+/* プレースホルダー */
+.user-info input::placeholder {
+  color: rgba(30,40,55,0.45);
+  letter-spacing: 0.03em;
+}
+
 
 /* ===== ライブ一覧 ===== */
 .live-list {
@@ -250,6 +280,7 @@ body {
 body {
   padding-bottom: 150px; /* 下バーの高さ分 */
 }
+
 
 
 
