@@ -1,64 +1,54 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PG Live History</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-  <div class="header"></div>
-  <div class="user-info">
-  <input id="user-name" type="text" placeholder="あなたの名前（任意）">
-  <input id="user-x" type="text" placeholder="Xアカウント名（@不要・任意）">
-  </div>
-  <div id="live-list"></div>
-  <select id="bg-select">
-  <option value="" disabled selected>イメージカラー選択</option>
+  <header class="header"></header>
 
-  <option value="radial-gradient(circle at 20% 30%, #ffb6d9 0%, transparent 55%), radial-gradient(circle at 75% 25%, #ffcce8 0%, transparent 60%), radial-gradient(circle at 40% 80%, #fff5fb 0%, transparent 65%), #ffdcec">アゲハ蝶</option>
+  <section class="user-info">
+    <input id="user-name" type="text" placeholder="あなたの名前（任意）">
+    <input id="user-x" type="text" placeholder="Xアカウント名（@不要・任意）">
+  </section>
 
-  <option value="radial-gradient(circle at 25% 20%, #4a6cff 0%, transparent 55%), radial-gradient(circle at 80% 30%, #6fa8ff 0%, transparent 60%), radial-gradient(circle at 50% 85%, #d9e4ff 0%, transparent 65%), #6fa1ff">アポロ</option>
+  <!-- ライブ一覧 -->
+  <section id="live-list" class="live-list">
+    <!-- JSでここに挿入 -->
+  </section>
 
-  <option value="radial-gradient(circle at 20% 20%, #ff9c54 0%, transparent 55%), radial-gradient(circle at 75% 25%, #ffb98a 0%, transparent 60%), radial-gradient(circle at 50% 80%, #ffe1c8 0%, transparent 70%), #ffb37c">サウダージ</option>
+  <!-- 背景カラー選択 -->
+  <section class="bg-selector">
+    <select id="bg-select">
+      <option value="" disabled selected>イメージカラー選択</option>
 
-  <option value="radial-gradient(circle at 20% 30%, #102018 0%, transparent 60%), radial-gradient(circle at 70% 25%, #244a3a 0%, transparent 65%), radial-gradient(circle at 40% 80%, #496f5c 0%, transparent 70%), #1a2d24">メリッサ</option>
+      <option value="radial-gradient(circle at 20% 30%, #ffb6d9 0%, transparent 55%), radial-gradient(circle at 75% 25%, #ffcce8 0%, transparent 60%), radial-gradient(circle at 40% 80%, #fff5fb 0%, transparent 65%), #ffdcec">アゲハ蝶</option>
+      <option value="radial-gradient(circle at 25% 20%, #4a6cff 0%, transparent 55%), radial-gradient(circle at 80% 30%, #6fa8ff 0%, transparent 60%), radial-gradient(circle at 50% 85%, #d9e4ff 0%, transparent 65%), #6fa1ff">アポロ</option>
+      <option value="radial-gradient(circle at 20% 20%, #ff9c54 0%, transparent 55%), radial-gradient(circle at 75% 25%, #ffb98a 0%, transparent 60%), radial-gradient(circle at 50% 80%, #ffe1c8 0%, transparent 70%), #ffb37c">サウダージ</option>
+      <option value="radial-gradient(circle at 20% 30%, #102018 0%, transparent 60%), radial-gradient(circle at 70% 25%, #244a3a 0%, transparent 65%), radial-gradient(circle at 40% 80%, #496f5c 0%, transparent 70%), #1a2d24">メリッサ</option>
+      <option value="radial-gradient(circle at 20% 30%, #ffe26c 0%, transparent 55%), radial-gradient(circle at 60% 20%, #fff1a8 0%, transparent 60%), radial-gradient(circle at 50% 85%, #ffffff 0%, transparent 70%), #fff3c9">ハネウマライダー</option>
+      <option value="radial-gradient(circle at 20% 30%, #6ec8ff 0%, transparent 55%), radial-gradient(circle at 75% 20%, #a8e2ff 0%, transparent 60%), radial-gradient(circle at 50% 80%, #e5f7ff 0%, transparent 70%), #c8eaff">ネオメロドラマティック</option>
+      <option value="radial-gradient(circle at 30% 20%, #eaf6ff 0%, transparent 50%), radial-gradient(circle at 70% 35%, #ffffff 0%, transparent 60%), radial-gradient(circle at 45% 80%, #e4ecff 0%, transparent 65%), #f6f9ff">オレ、天使</option>
+      <option value="radial-gradient(circle at 25% 30%, #1e1e2d 0%, transparent 55%), radial-gradient(circle at 75% 25%, #374155 0%, transparent 60%), radial-gradient(circle at 50% 80%, #6b7688 0%, transparent 70%), #2a2f3d">ヴォイス</option>
+      <option value="radial-gradient(circle at 20% 30%, #ff9ca4 0%, transparent 55%), radial-gradient(circle at 70% 25%, #ffc8ce 0%, transparent 60%), radial-gradient(circle at 50% 80%, #ffeef0 0%, transparent 70%), #ffd6dd">愛が呼ぶほうへ</option>
+      <option value="radial-gradient(circle at 25% 25%, #7fd3ff 0%, transparent 55%), radial-gradient(circle at 70% 20%, #bceaff 0%, transparent 60%), radial-gradient(circle at 40% 80%, #ffffff 0%, transparent 70%), #cdebff">ミュージック・アワー</option>
+      <option value="radial-gradient(circle at 20% 30%, #ff9966 0%, transparent 55%), radial-gradient(circle at 75% 25%, #ffb3a4 0%, transparent 60%), radial-gradient(circle at 50% 85%, #ffd6eb 0%, transparent 70%), #ffb8a3">黄昏ロマンス</option>
+      <option value="radial-gradient(circle at 20% 30%, #71e0d7 0%, transparent 55%), radial-gradient(circle at 75% 25%, #a8f2eb 0%, transparent 60%), radial-gradient(circle at 50% 80%, #ffffff 0%, transparent 70%), #bff4ef">ブレス</option>
+      <option value="radial-gradient(circle at 20% 30%, #1d0033 0%, transparent 50%), radial-gradient(circle at 70% 20%, #3a1f55 0%, transparent 60%), radial-gradient(circle at 50% 80%, #6c4c80 0%, transparent 70%), #2d1a43">シスター</option>
+    </select>
+  </section>
 
-  <option value="radial-gradient(circle at 20% 30%, #ffe26c 0%, transparent 55%), radial-gradient(circle at 60% 20%, #fff1a8 0%, transparent 60%), radial-gradient(circle at 50% 85%, #ffffff 0%, transparent 70%), #fff3c9">ハネウマライダー</option>
+  <button id="export-btn" disabled>画像保存</button>
 
-  <option value="radial-gradient(circle at 20% 30%, #6ec8ff 0%, transparent 55%), radial-gradient(circle at 75% 20%, #a8e2ff 0%, transparent 60%), radial-gradient(circle at 50% 80%, #e5f7ff 0%, transparent 70%), #c8eaff">ネオメロドラマティック</option>
-
-  <option value="radial-gradient(circle at 30% 20%, #eaf6ff 0%, transparent 50%), radial-gradient(circle at 70% 35%, #ffffff 0%, transparent 60%), radial-gradient(circle at 45% 80%, #e4ecff 0%, transparent 65%), #f6f9ff">オレ、天使</option>
-
-  <option value="radial-gradient(circle at 25% 30%, #1e1e2d 0%, transparent 55%), radial-gradient(circle at 75% 25%, #374155 0%, transparent 60%), radial-gradient(circle at 50% 80%, #6b7688 0%, transparent 70%), #2a2f3d">ヴォイス</option>
-
-  <option value="radial-gradient(circle at 20% 30%, #ff9ca4 0%, transparent 55%), radial-gradient(circle at 70% 25%, #ffc8ce 0%, transparent 60%), radial-gradient(circle at 50% 80%, #ffeef0 0%, transparent 70%), #ffd6dd">愛が呼ぶほうへ</option>
-
-  <option value="radial-gradient(circle at 25% 25%, #7fd3ff 0%, transparent 55%), radial-gradient(circle at 70% 20%, #bceaff 0%, transparent 60%), radial-gradient(circle at 40% 80%, #ffffff 0%, transparent 70%), #cdebff">ミュージック・アワー</option>
-
-  <option value="radial-gradient(circle at 20% 30%, #ff9966 0%, transparent 55%), radial-gradient(circle at 75% 25%, #ffb3a4 0%, transparent 60%), radial-gradient(circle at 50% 85%, #ffd6eb 0%, transparent 70%), #ffb8a3">黄昏ロマンス</option>
-
-  <option value="radial-gradient(circle at 20% 30%, #71e0d7 0%, transparent 55%), radial-gradient(circle at 75% 25%, #a8f2eb 0%, transparent 60%), radial-gradient(circle at 50% 80%, #ffffff 0%, transparent 70%), #bff4ef">ブレス</option>
-
-  <option value="radial-gradient(circle at 20% 30%, #1d0033 0%, transparent 50%), radial-gradient(circle at 70% 20%, #3a1f55 0%, transparent 60%), radial-gradient(circle at 50% 80%, #6c4c80 0%, transparent 70%), #2d1a43">シスター</option>
-</select>
-
-<button id="export-btn" disabled>画像保存</button>
-
+  <!-- 画像出力用 -->
+  <div id="export-area" style="position:absolute; left:-9999px; top:-9999px;"></div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
   <script src="script.js"></script>
-  <div id="export-area" style="position:absolute; left:-9999px; top:-9999px;"></div>
+
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
