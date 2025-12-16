@@ -11,6 +11,7 @@
 
   <header class="header"></header>
 
+  <!-- ユーザー情報 -->
   <section class="user-info">
     <input id="user-name" type="text" placeholder="あなたの名前（任意）">
     <input id="user-x" type="text" placeholder="Xアカウント名（@不要・任意）">
@@ -21,8 +22,8 @@
     <!-- JSでここに挿入 -->
   </section>
 
-  <!-- 背景カラー選択 -->
-  <section class="bg-selector">
+  <!-- ▼▼ 操作エリア（横並び） ▼▼ -->
+  <section class="action-bar">
     <select id="bg-select">
       <option value="" disabled selected>イメージカラー選択</option>
 
@@ -40,9 +41,10 @@
       <option value="radial-gradient(circle at 20% 30%, #71e0d7 0%, transparent 55%), radial-gradient(circle at 75% 25%, #a8f2eb 0%, transparent 60%), radial-gradient(circle at 50% 80%, #ffffff 0%, transparent 70%), #bff4ef">ブレス</option>
       <option value="radial-gradient(circle at 20% 30%, #1d0033 0%, transparent 50%), radial-gradient(circle at 70% 20%, #3a1f55 0%, transparent 60%), radial-gradient(circle at 50% 80%, #6c4c80 0%, transparent 70%), #2d1a43">シスター</option>
     </select>
-  </section>
 
-  <button id="export-btn" disabled>画像保存</button>
+    <button id="export-btn" disabled>画像保存</button>
+  </section>
+  <!-- ▲▲ ここまで ▲▲ -->
 
   <!-- 画像出力用 -->
   <div id="export-area" style="position:absolute; left:-9999px; top:-9999px;"></div>
