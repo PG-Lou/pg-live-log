@@ -26,34 +26,10 @@ body {
   overflow: hidden;
   border: 1px solid rgba(0,0,0,0.08);
 
-  /* ベースの青（水彩紙） */
-  background:
-    linear-gradient(
-      135deg,
-      #6fa0c8 0%,
-      #5f8fb8 35%,
-      #6a9cc6 65%,
-      #5a88ad 100%
-    );
-}
-
-/* ===== 水彩の「もやもや本体」 ===== */
-.tour::before {
-  content: "";
-  position: absolute;
-  inset: -25%;
-  pointer-events: none;
-  z-index: 0;
-
-  background:
-    radial-gradient(circle at 18% 22%, rgba(120,170,220,0.55), transparent 55%),
-    radial-gradient(circle at 62% 18%, rgba(90,140,200,0.45), transparent 60%),
-    radial-gradient(circle at 38% 55%, rgba(70,120,180,0.50), transparent 58%),
-    radial-gradient(circle at 75% 70%, rgba(100,150,210,0.45), transparent 65%),
-    radial-gradient(circle at 28% 82%, rgba(130,180,230,0.35), transparent 70%);
-
-  filter: blur(22px);
-  opacity: 0.95;
+  /* 背景は JSON から入る */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 /* ===== SUMMARY ===== */
@@ -70,7 +46,7 @@ summary {
   font-weight: bold;
   user-select: none;
 
-  /* 文字が沈まない最低限の紙 */
+  /* 文字を読ませるための最小限の紙 */
   background: rgba(255,255,255,0.18);
 }
 
@@ -90,11 +66,11 @@ details[open] summary::before {
 }
 
 /* ===== 展開内容 ===== */
-.tour-content {.tour-content {
+.tour-content {
   position: relative;
   z-index: 1;
   padding: 16px 20px;
-  background: none; /* ← これが超重要 */
+  background: none;
 }
 
 /* ===== 年 ===== */
@@ -121,7 +97,6 @@ label {
   margin-bottom: 6px;
   font-size: 16px;
 
-  /* 行ごとの半透明紙 */
   background: rgba(255,255,255,0.42);
   border-radius: 10px;
 }
@@ -190,4 +165,3 @@ input[type="checkbox"]:checked::after {
     font-size: 15px;
   }
 }
-
