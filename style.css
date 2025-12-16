@@ -224,5 +224,32 @@ body {
   max-height: 16px;
 }
 
+/* ===== 下部固定アクションバー ===== */
+.bottom-bar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  padding: 12px 14px calc(12px + env(safe-area-inset-bottom));
+  background: rgba(255,255,255,.92);
+  backdrop-filter: blur(10px);
+
+  border-top: 1px solid rgba(0,0,0,.08);
+  z-index: 1000;
+}
+
+/* 中身を縦に並べる */
+.bottom-bar-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* bodyが隠れないように */
+body {
+  padding-bottom: 150px; /* 下バーの高さ分 */
+}
+
 
 
