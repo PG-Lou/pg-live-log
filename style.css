@@ -23,6 +23,8 @@ body {
   margin: 18px 0 28px;
   display: grid;
   gap: 14px;
+  max-width: 820px;
+  width: calc(100% - 32px);
 }
 
 /* 入力欄本体 */
@@ -280,6 +282,7 @@ body {
 body {
   padding-bottom: 150px; /* 下バーの高さ分 */
 }
+
 
 
 
