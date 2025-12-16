@@ -187,21 +187,23 @@ document.addEventListener('DOMContentLoaded', () => {
     urlLabel.style.letterSpacing = '0.02em';
     wrapper.appendChild(urlLabel);
     
-    // ===== 右下：イメージカラー =====
+    // ===== 右上：イメージカラー =====
     const bgSelect = document.getElementById('bg-select');
     if (bgSelect && bgSelect.selectedIndex > 0) {
-    const colorName = bgSelect.options[bgSelect.selectedIndex].text;
-  
-    const colorLabel = document.createElement('div');
-    colorLabel.textContent = `image color：♪${colorName}`;
-    colorLabel.style.position = 'absolute';
-    colorLabel.style.right = '20px';
-    colorLabel.style.bottom = '14px';
-    colorLabel.style.fontSize = '11px';
-    colorLabel.style.opacity = '0.55';
-    colorLabel.style.letterSpacing = '0.02em';
-    wrapper.appendChild(colorLabel);
+      const colorName = bgSelect.options[bgSelect.selectedIndex].text;
+    
+      const colorLabel = document.createElement('div');
+      colorLabel.textContent = `image color：♪${colorName}`;
+      colorLabel.style.position = 'absolute';
+      colorLabel.style.top = '14px';
+      colorLabel.style.right = '20px';
+      colorLabel.style.fontSize = '11px';
+      colorLabel.style.opacity = '0.55';
+      colorLabel.style.letterSpacing = '0.02em';
+    
+      wrapper.appendChild(colorLabel);
     }
+
 
 
 
@@ -276,5 +278,6 @@ document.addEventListener('DOMContentLoaded', () => {
     .addEventListener('change', updateExportButtonState);
 
 });
+
 
 
