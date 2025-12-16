@@ -1,7 +1,7 @@
 [
   {
     "liveName": "20th LIVE CIRCUIT “水”",
-    "color": "linear-gradient(180deg, #eaf6ff 0%, #cfe9ff 35%, #a9d6f5 60%, #8bbfdc 80%, #6aa6c8 100%)",
+    "color": "radial-gradient(circle at 20% 25%, rgba(220,235,255,0.45), transparent 55%), radial-gradient(circle at 70% 30%, rgba(200,220,255,0.40), transparent 60%), radial-gradient(circle at 45% 65%, rgba(210,220,255,0.35), transparent 65%), linear-gradient(135deg, #eaf2ff 0%, #dbe8f7 35%, #d6e1f3 55%, #e5eaf7 75%, #f5f7fb 100%)",
     "years": [
       {
         "year": 2026,
@@ -48,7 +48,7 @@
 
   {
   "liveName": "みなとみらいロマンスポルノ'25 ～THE OVEЯ～",
-  "color": "linear-gradient(180deg, #e3e7ec 0%, #cfd7df 35%, #b7c3cf 60%, #9fb0bf 80%, #879cac 100%)",
+  "color": "radial-gradient(circle at 25% 30%, rgba(190,200,210,0.45), transparent 60%), radial-gradient(circle at 65% 35%, rgba(170,180,190,0.40), transparent 65%), linear-gradient(135deg, #cfd6dc 0%, #bcc6cf 35%, #b5c0ca 55%, #c7cdd3 75%, #e3e6ea 100%)",
   "years": [
     {
       "year": 2025,
@@ -76,7 +76,7 @@
 
   {
   "liveName": "FANCLUB UNDERWORLD 6",
-  "color": "repeating-linear-gradient(45deg, rgba(255,255,255,0.9) 0px, rgba(255,255,255,0.9) 16px, rgba(245,170,200,0.95) 16px, rgba(245,170,200,0.95) 32px), linear-gradient(180deg, #f7c1d8, #f1a9c8)",
+  "color": "radial-gradient(circle at 20% 30%, rgba(255,220,235,0.55), transparent 55%), radial-gradient(circle at 70% 35%, rgba(255,200,225,0.45), transparent 60%), linear-gradient(135deg, #fff1f6 0%, #ffd9e6 35%, #ffc8db 55%, #ffdfe9 75%, #fff5f9 100%)",
   "years": [
     {
       "year": 2025,
@@ -114,7 +114,7 @@
 
   {
     "liveName": "因島・横浜ロマンスポルノ'24 ～解放区～",
-    "color": "#7ac9ff",
+    "color": "radial-gradient(circle at 25% 30%, rgba(170,230,210,0.50), transparent 55%), radial-gradient(circle at 65% 35%, rgba(240,230,170,0.45), transparent 60%), linear-gradient(135deg, #e6f6ef 0%, #cfeee0 35%, #eaf3c9 55%, #f6f3d8 75%, #fbfbf0 100%)",
     "years": [
       {
         "year": 2024,
@@ -127,7 +127,7 @@
 
   {
     "liveName": "19th LIVE CIRCUIT “PG wasn't built in a day”",
-    "color": "#ffd659",
+    "color": "radial-gradient(circle at 20% 25%, rgba(255,220,150,0.45), transparent 55%), radial-gradient(circle at 70% 25%, rgba(255,180,180,0.40), transparent 55%), radial-gradient(circle at 40% 60%, rgba(170,220,180,0.40), transparent 60%), radial-gradient(circle at 75% 65%, rgba(170,210,240,0.40), transparent 60%), linear-gradient(135deg, #fff3d8 0%, #ffe1d6 25%, #e6f3df 50%, #e1f0fa 75%, #f3f7ff 100%)",
     "years": [
       {
         "year": 2024,
