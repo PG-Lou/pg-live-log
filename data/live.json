@@ -267,7 +267,7 @@
 
   {
   "liveName": "NIPPONロマンスポルノ'19 〜神vs神〜",
-  "color": "radial-gradient(circle at 25% 30%, rgba(220,60,80,0.45), transparent 55%), radial-gradient(circle at 65% 35%, rgba(60,90,200,0.45), transparent 60%), linear-gradient(135deg, #7a0f18 0%, #b0182a 30%, #1c2c6b 60%, #2e4aa6 85%, #f2f4ff 100%)",
+  "color": "radial-gradient(circle at 25% 30%, rgba(200,120,130,0.30), transparent 55%), radial-gradient(circle at 65% 35%, rgba(120,140,200,0.30), transparent 60%), linear-gradient(135deg, #f5f0f2 0%, #efe7ea 40%, #e8ebf3 70%, #f7f8fc 100%)",
   "years": [
     {
       "year": 2019,
@@ -281,7 +281,7 @@
 
   {
     "liveName": "16th LIVE CIRCUIT “UNFADED”",
-    "color": "radial-gradient(circle at 25% 30%, rgba(220,150,230,0.50), transparent 55%), radial-gradient(circle at 65% 40%, rgba(200,110,220,0.45), transparent 60%), radial-gradient(circle at 45% 65%, rgba(160,90,200,0.40), transparent 65%), linear-gradient(135deg, #120a18 0%, #2a1236 30%, #4a1f5e 55%, #8a4fa3 75%, #f7effa 100%)",
+    "color": "radial-gradient(circle at 25% 30%, rgba(200,150,220,0.35), transparent 55%), radial-gradient(circle at 65% 40%, rgba(220,190,235,0.30), transparent 60%), linear-gradient(135deg, #f5eff8 0%, #ede4f2 40%, #e8e0ee 70%, #f9f6fb 100%)",
     "years": [
       {
         "year": 2018,
@@ -326,7 +326,7 @@
 
   {
     "liveName": "15th LIVE CIRCUIT “BUTTERFLY EFFECT”",
-    "color": "radial-gradient(circle at 25% 30%, rgba(255,210,80,0.45), transparent 55%), radial-gradient(circle at 65% 40%, rgba(60,60,60,0.40), transparent 60%), linear-gradient(135deg, #0d0d0d 0%, #2a2a2a 30%, #ffd84d 55%, #ffea9a 75%, #fffdf3 100%)",
+    "color": "radial-gradient(circle at 25% 30%, rgba(255,220,140,0.35), transparent 55%), radial-gradient(circle at 65% 40%, rgba(160,160,160,0.25), transparent 60%), linear-gradient(135deg, #f5f4ef 0%, #efeada 40%, #f5f1e3 70%, #fffdf6 100%)",
     "years": [
       {
         "year": 2017,
