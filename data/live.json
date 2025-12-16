@@ -141,7 +141,7 @@
   },
 {
   "liveName": "18th LIVE CIRCUIT “暁”",
-  "color": "radial-gradient(circle at 20% 30%, rgba(255,255,255,0.18), transparent 55%), radial-gradient(circle at 75% 70%, rgba(255,170,120,0.20), transparent 60%), linear-gradient(135deg, #1e2f45 0%, #2f4463 35%, #6a5a4a 60%, #b88a5a 78%, #f3f1ee 100%)",
+  "color": "radial-gradient(circle at 15% 25%, rgba(255,255,255,0.35), transparent 55%), radial-gradient(circle at 80% 75%, rgba(255,150,90,0.45), transparent 60%), linear-gradient(135deg, #162538 0%, #243a55 35%, #5b4a3a 60%, #c97b3f 78%, #f5f2ee 100%)",
   "years": [
     {
       "year": 2022,
