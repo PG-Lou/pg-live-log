@@ -75,11 +75,12 @@ document.addEventListener('DOMContentLoaded', () => {
           input.type = 'checkbox';
           input.className = 'show-check';
           input.dataset.show = JSON.stringify({
-            input.addEventListener('change', updateExportButtonState);
             live: live.liveName,
             year: y.year,
             show: s
           });
+
+          input.addEventListener('change', updateExportButtonState);
 
           const timeText = s.time ? `（${s.time === 'AM' ? '昼' : '夜'}）` : '';
           const text = document.createElement('span');
@@ -248,6 +249,7 @@ document.getElementById('bg-select')
 
 
 });
+
 
 
 
