@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const container = document.getElementById('live-list');
     container.innerHTML = '';
 
-    liveData.forEach((live, index) => {
+    liveData.forEach((live) => {
 
       const tour = document.createElement('section');
       tour.className = 'tour';
@@ -122,24 +122,30 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ======================
-// 画像保存ボタンの活性制御
-// ======================
-function updateExportButtonState() {
-  const hasCheckedShow = document.querySelectorAll('.show-check:checked').length > 0;
-  const bgSelected = document.getElementById('bg-select')?.value;
-
-  const btn = document.getElementById('export-btn');
-  btn.disabled = !(hasCheckedShow && bgSelected);
-}
-
+  // 画像保存ボタンの活性制御
+  // ======================
+  function updateExportButtonState() {
+    const hasCheckedShow = document.querySelectorAll('.show-check:checked').length > 0;
+    const bgSelected = document.getElementById('bg-select')?.value;
+    const btn = document.getElementById('export-btn');
+    btn.disabled = !(hasCheckedShow && bgSelected);
+  }
 
   // ======================
   // 画像出力
   // ======================
   async function exportImage() {
+    updateExportButtonState();
+
     const checked = document.querySelectorAll('.show-check:checked');
     if (checked.length === 0) {
       alert('チェックされた公演がありません');
+      return;
+    }
+
+    const bg = document.getElementById('bg-select')?.value;
+    if (!bg) {
+      alert('イメージカラーを選択してください');
       return;
     }
 
@@ -155,20 +161,14 @@ function updateExportButtonState() {
     wrapper.style.position = 'relative';
     wrapper.style.fontFamily = 'Helvetica, Arial, sans-serif';
 
-    // ▼ 背景（最初のライブ）
-    const first = JSON.parse(checked[0].dataset.show);
-    const tourEl = [...document.querySelectorAll('.tour')]
-      .find(t => t.querySelector('.liveTitle')?.textContent === first.live);
+    // ▼ 背景：bg-select の値を使う（元の仕様に戻す）
+    wrapper.style.background = bg;
 
-    if (tourEl?.style.background) {
-      wrapper.style.background = tourEl.style.background;
-    }
-
-    // ▼ 白カード
+    // ▼ 白カード（上下のバランスを中央寄りに）
     const card = document.createElement('div');
     card.style.width = 'calc(100% - 40px)';
-    card.style.height = 'calc(100% - 80px)';
-    card.style.margin = '40px 20px';
+    card.style.height = 'calc(100% - 120px)';
+    card.style.margin = '60px 20px';
     card.style.background = 'rgba(255,255,255,0.75)';
     card.style.borderRadius = '18px';
     card.style.padding = '20px';
@@ -229,27 +229,22 @@ function updateExportButtonState() {
   loadLiveData().then(renderList);
 
   // ===== 下部固定バー化 =====
-const bgSelector = document.querySelector('.bg-selector');
-const exportBtn = document.getElementById('export-btn');
+  const bgSelector = document.querySelector('.bg-selector');
+  const exportBtn = document.getElementById('export-btn');
 
-const bottomBar = document.createElement('div');
-bottomBar.className = 'bottom-bar';
+  const bottomBar = document.createElement('div');
+  bottomBar.className = 'bottom-bar';
 
-const inner = document.createElement('div');
-inner.className = 'bottom-bar-inner';
+  const inner = document.createElement('div');
+  inner.className = 'bottom-bar-inner';
 
-inner.appendChild(bgSelector);
-inner.appendChild(exportBtn);
+  inner.appendChild(bgSelector);
+  inner.appendChild(exportBtn);
 
-bottomBar.appendChild(inner);
-document.body.appendChild(bottomBar);
+  bottomBar.appendChild(inner);
+  document.body.appendChild(bottomBar);
 
-document.getElementById('bg-select')
-  .addEventListener('change', updateExportButtonState);
-
+  document.getElementById('bg-select')
+    .addEventListener('change', updateExportButtonState);
 
 });
-
-
-
-
