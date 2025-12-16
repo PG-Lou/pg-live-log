@@ -166,16 +166,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ▼ 白カード（上下のバランスを中央寄りに）
     const card = document.createElement('div');
-    card.style.width = 'calc(100% - 40px)';
-    card.style.height = 'calc(100% - 120px)';
-    card.style.margin = '60px 20px';
-    card.style.background = 'rgba(255,255,255,0.75)';
+    card.style.position = 'absolute';
+    card.style.inset = '40px 20px';
+    card.style.background = 'rgba(255,255,255,0.78)';
     card.style.borderRadius = '18px';
     card.style.padding = '20px';
     card.style.boxSizing = 'border-box';
     card.style.overflowY = 'auto';
 
     wrapper.appendChild(card);
+
 
     // ▼ ユーザー情報
     let userName = document.getElementById('user-name')?.value.trim() || '';
@@ -248,3 +248,4 @@ document.addEventListener('DOMContentLoaded', () => {
     .addEventListener('change', updateExportButtonState);
 
 });
+
