@@ -113,32 +113,60 @@
 },
 
   {
-    "liveName": "因島・横浜ロマンスポルノ'24 ～解放区～",
-    "color": "radial-gradient(circle at 25% 30%, rgba(170,230,210,0.50), transparent 55%), radial-gradient(circle at 65% 35%, rgba(240,230,170,0.45), transparent 60%), linear-gradient(135deg, #e6f6ef 0%, #cfeee0 35%, #eaf3c9 55%, #f6f3d8 75%, #fbfbf0 100%)",
-    "years": [
-      {
-        "year": 2024,
-        "shows": [
-          { "date": "2024-05-17", "prefecture": "神奈川", "venue": "横浜アリーナ" }
-        ]
-      }
-    ]
-  },
+  "liveName": "因島・横浜ロマンスポルノ'24 〜解放区〜",
+  "color": "radial-gradient(circle at 25% 30%, rgba(170,230,210,0.50), transparent 55%), radial-gradient(circle at 65% 35%, rgba(240,230,170,0.45), transparent 60%), linear-gradient(135deg, #e6f6ef 0%, #cfeee0 35%, #eaf3c9 55%, #f6f3d8 75%, #fbfbf0 100%)",
+  "years": [
+    {
+      "year": 2024,
+      "shows": [
+        {
+          "date": "2024-09-01",
+          "prefecture": "広島県",
+          "venue": "因島運動公園"
+        },
+        {
+          "date": "2024-09-07",
+          "prefecture": "神奈川県",
+          "venue": "横浜スタジアム"
+        },
+        {
+          "date": "2024-09-08",
+          "prefecture": "神奈川県",
+          "venue": "横浜スタジアム"
+        }
+      ]
+    }
+  ]
+},
 
   {
-    "liveName": "19th LIVE CIRCUIT “PG wasn't built in a day”",
-    "color": "radial-gradient(circle at 20% 25%, rgba(255,220,150,0.45), transparent 55%), radial-gradient(circle at 70% 25%, rgba(255,180,180,0.40), transparent 55%), radial-gradient(circle at 40% 60%, rgba(170,220,180,0.40), transparent 60%), radial-gradient(circle at 75% 65%, rgba(170,210,240,0.40), transparent 60%), linear-gradient(135deg, #fff3d8 0%, #ffe1d6 25%, #e6f3df 50%, #e1f0fa 75%, #f3f7ff 100%)",
-    "years": [
-      {
-        "year": 2024,
-        "shows": [
-          { "date": "2024-09-04", "prefecture": "東京", "venue": "東京有明アリーナ" },
-          { "date": "2024-09-05", "prefecture": "東京", "venue": "東京有明アリーナ" },
-          { "date": "2024-09-06", "prefecture": "東京", "venue": "東京有明アリーナ" }
-        ]
-      }
-    ]
-  },
+  "liveName": "19th LIVE CIRCUIT “PG wasn't built in a day”",
+  "color": "radial-gradient(circle at 20% 25%, rgba(255,220,150,0.45), transparent 55%), radial-gradient(circle at 70% 25%, rgba(255,180,180,0.40), transparent 55%), radial-gradient(circle at 40% 60%, rgba(170,220,180,0.40), transparent 60%), radial-gradient(circle at 75% 65%, rgba(170,210,240,0.40), transparent 60%), linear-gradient(135deg, #fff3d8 0%, #ffe1d6 25%, #e6f3df 50%, #e1f0fa 75%, #f3f7ff 100%)",
+  "years": [
+    {
+      "year": 2024,
+      "shows": [
+        { "date": "2024-01-13", "prefecture": "愛知県", "venue": "ポートメッセなごや 新第1展示館" },
+        { "date": "2024-01-14", "prefecture": "愛知県", "venue": "ポートメッセなごや 新第1展示館" },
+        { "date": "2024-01-20", "prefecture": "北海道", "venue": "北海道立総合体育センター 北海きたえーる" },
+        { "date": "2024-01-30", "prefecture": "大阪府", "venue": "大阪城ホール" },
+        { "date": "2024-01-31", "prefecture": "大阪府", "venue": "大阪城ホール" },
+        { "date": "2024-02-10", "prefecture": "埼玉県", "venue": "さいたまスーパーアリーナ" },
+        { "date": "2024-02-11", "prefecture": "埼玉県", "venue": "さいたまスーパーアリーナ" },
+        { "date": "2024-02-17", "prefecture": "宮城県", "venue": "ゼビオアリーナ仙台" },
+        { "date": "2024-02-18", "prefecture": "宮城県", "venue": "ゼビオアリーナ仙台" },
+        { "date": "2024-02-23", "prefecture": "徳島県", "venue": "アスティとくしま" },
+        { "date": "2024-03-09", "prefecture": "福岡県", "venue": "福岡国際センター" },
+        { "date": "2024-03-10", "prefecture": "福岡県", "venue": "福岡国際センター" },
+        { "date": "2024-03-16", "prefecture": "広島県", "venue": "広島グリーンアリーナ" },
+        { "date": "2024-03-23", "prefecture": "静岡県", "venue": "静岡エコパアリーナ" },
+        { "date": "2024-03-30", "prefecture": "東京都", "venue": "有明アリーナ" },
+        { "date": "2024-03-31", "prefecture": "東京都", "venue": "有明アリーナ" }
+      ]
+    }
+  ]
+},
+  
 {
   "liveName": "18th LIVE CIRCUIT “暁”",
   "color": "radial-gradient(circle at 15% 25%, rgba(255,255,255,0.35), transparent 55%), radial-gradient(circle at 80% 75%, rgba(255,150,90,0.45), transparent 60%), linear-gradient(135deg, #162538 0%, #243a55 35%, #5b4a3a 60%, #c97b3f 78%, #f5f2ee 100%)",
@@ -184,5 +212,72 @@
     }
   ]
 }
+  {
+  "liveName": "17th LIVE CIRCUIT「続・ポルノグラフィティ」",
+  "color": "radial-gradient(circle at 20% 30%, rgba(200,220,255,0.35), transparent 55%), radial-gradient(circle at 70% 35%, rgba(120,160,220,0.35), transparent 60%), linear-gradient(135deg, #0e1624 0%, #1a2a44 35%, #243e63 55%, #3a6fa1 75%, #f5f8ff 100%)",
+  "years": [
+    {
+      "year": 2021,
+      "shows": [
+        { "date": "2021-09-25", "prefecture": "東京都", "venue": "LINE CUBE SHIBUYA" },
+        { "date": "2021-10-01", "prefecture": "静岡県", "venue": "静岡市民文化会館 大ホール" },
+        { "date": "2021-10-05", "prefecture": "兵庫県", "venue": "神戸国際会館 こくさいホール" },
+        { "date": "2021-10-07", "prefecture": "滋賀県", "venue": "滋賀県立芸術劇場 びわ湖ホール" },
+        { "date": "2021-10-08", "prefecture": "奈良県", "venue": "なら100年会館 大ホール" },
+        { "date": "2021-10-11", "prefecture": "大阪府", "venue": "オリックス劇場" },
+        { "date": "2021-10-12", "prefecture": "大阪府", "venue": "オリックス劇場" },
+        { "date": "2021-10-15", "prefecture": "福岡県", "venue": "福岡サンパレス ホテル&ホール" },
+        { "date": "2021-10-16", "prefecture": "福岡県", "venue": "福岡サンパレス ホテル&ホール" },
+        { "date": "2021-10-25", "prefecture": "宮城県", "venue": "仙台サンプラザホール" },
+        { "date": "2021-10-26", "prefecture": "宮城県", "venue": "仙台サンプラザホール" },
+        { "date": "2021-10-28", "prefecture": "群馬県", "venue": "高崎芸術劇場 大劇場" },
+        { "date": "2021-11-02", "prefecture": "高知県", "venue": "高知県立県民文化ホール" },
+        { "date": "2021-11-04", "prefecture": "香川県", "venue": "サンポートホール高松" },
+        { "date": "2021-11-09", "prefecture": "石川県", "venue": "本多の森ホール" },
+        { "date": "2021-11-10", "prefecture": "石川県", "venue": "本多の森ホール" },
+        { "date": "2021-11-15", "prefecture": "神奈川県", "venue": "神奈川県民ホール 大ホール" },
+        { "date": "2021-11-25", "prefecture": "広島県", "venue": "広島文化学園HBGホール" },
+        { "date": "2021-11-26", "prefecture": "広島県", "venue": "広島文化学園HBGホール" },
+        { "date": "2021-11-28", "prefecture": "愛知県", "venue": "アイプラザ豊橋" },
+        { "date": "2021-11-30", "prefecture": "愛知県", "venue": "名古屋国際会議場 センチュリーホール" },
+        { "date": "2021-12-01", "prefecture": "愛知県", "venue": "名古屋国際会議場 センチュリーホール" },
+        { "date": "2021-12-06", "prefecture": "栃木県", "venue": "栃木県総合文化センター メインホール" },
+        { "date": "2021-12-08", "prefecture": "千葉県", "venue": "千葉県文化会館 大ホール" },
+        { "date": "2021-12-13", "prefecture": "北海道", "venue": "札幌文化芸術劇場hitaru" },
+        { "date": "2021-12-14", "prefecture": "北海道", "venue": "札幌文化芸術劇場hitaru" },
+        { "date": "2021-12-21", "prefecture": "東京都", "venue": "東京ガーデンシアター" },
+        { "date": "2021-12-22", "prefecture": "東京都", "venue": "東京ガーデンシアター" }
+      ]
+    }
+  ]
+},
+
+  {
+  "liveName": "CYBERロマンスポルノ'20 〜REUNION〜",
+  "color": "radial-gradient(circle at 30% 30%, rgba(255,200,220,0.45), transparent 55%), radial-gradient(circle at 70% 40%, rgba(200,220,255,0.35), transparent 60%), linear-gradient(135deg, #ffe6ee 0%, #ffd1e1 30%, #f2f6ff 55%, #dceeff 75%, #ffffff 100%)",
+  "years": [
+    {
+      "year": 2020,
+      "shows": [
+        { "date": "2020-12-04", "prefecture": "東京都", "venue": "LINE CUBE SHIBUYA" }
+      ]
+    }
+  ]
+},
+
+  {
+  "liveName": "20th Anniversary Special LIVE「NIPPONロマンスポルノ'19 〜神vs神〜」",
+  "color": "radial-gradient(circle at 25% 30%, rgba(255,210,140,0.45), transparent 55%), radial-gradient(circle at 65% 35%, rgba(160,140,220,0.40), transparent 60%), linear-gradient(135deg, #7a0f18 0%, #1c2c6b 30%, #4b2c7a 55%, #c9a44a 75%, #f8f2dc 100%)",
+  "years": [
+    {
+      "year": 2019,
+      "shows": [
+        { "date": "2019-09-07", "prefecture": "東京都", "venue": "東京ドーム" },
+        { "date": "2019-09-08", "prefecture": "東京都", "venue": "東京ドーム" }
+      ]
+    }
+  ]
+}
+
 
 ]
