@@ -119,6 +119,18 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ======================
+// 画像保存ボタンの活性制御
+// ======================
+function updateExportButtonState() {
+  const hasCheckedShow = document.querySelectorAll('.show-check:checked').length > 0;
+  const bgSelected = document.getElementById('bg-select')?.value;
+
+  const btn = document.getElementById('export-btn');
+  btn.disabled = !(hasCheckedShow && bgSelected);
+}
+
+
+  // ======================
   // 画像出力
   // ======================
   async function exportImage() {
@@ -230,4 +242,5 @@ bottomBar.appendChild(inner);
 document.body.appendChild(bottomBar);
 
 });
+
 
