@@ -91,7 +91,7 @@
 
   {
     "liveName": "18th LIVE CIRCUIT “暁”",
-    "color": "#ff4500",
+    "color": "linear-gradient(135deg, #0b1d33 0%, #1e3357 30%, #5a4a7a 55%, #d47a4f 75%, #ffd1a3 100%)",
     "years": [
       {
         "year": 2022,
