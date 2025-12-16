@@ -88,25 +88,50 @@
       }
     ]
   },
+{
+  "liveName": "18th LIVE CIRCUIT “暁”",
+  "color": "linear-gradient(135deg, #0b1d33 0%, #1e3357 30%, #5a4a7a 55%, #d47a4f 75%, #ffd1a3 100%)",
+  "years": [
+    {
+      "year": 2022,
+      "shows": [
+        { "date": "2022-09-22", "prefecture": "神奈川県", "venue": "よこすか芸術劇場" },
+        { "date": "2022-09-27", "prefecture": "群馬県", "venue": "高崎芸術劇場 大劇場" },
+        { "date": "2022-10-01", "prefecture": "和歌山県", "venue": "和歌山県民文化会館" },
+        { "date": "2022-10-03", "prefecture": "静岡県", "venue": "富士市文化会館 ロゼシアター 大ホール" },
+        { "date": "2022-10-10", "prefecture": "福井県", "venue": "フェニックス・プラザ" },
+        { "date": "2022-10-17", "prefecture": "大阪府", "venue": "オリックス劇場" },
+        { "date": "2022-10-18", "prefecture": "大阪府", "venue": "オリックス劇場" },
+        { "date": "2022-10-23", "prefecture": "広島県", "venue": "広島文化学園HBGホール" },
+        { "date": "2022-10-25", "prefecture": "愛媛県", "venue": "松山市民会館" },
+        { "date": "2022-10-28", "prefecture": "大分県", "venue": "iichikoグランシアタ" },
+        { "date": "2022-11-04", "prefecture": "新潟県", "venue": "新潟県民会館" },
+        { "date": "2022-11-07", "prefecture": "京都府", "venue": "ロームシアター京都" },
+        { "date": "2022-11-09", "prefecture": "兵庫県", "venue": "神戸国際会館 こくさいホール" },
+        { "date": "2022-11-16", "prefecture": "北海道", "venue": "函館市民会館 大ホール" },
+        { "date": "2022-11-18", "prefecture": "北海道", "venue": "札幌文化芸術劇場hitaru" },
+        { "date": "2022-11-22", "prefecture": "岡山県", "venue": "倉敷市民会館" },
+        { "date": "2022-11-24", "prefecture": "三重県", "venue": "三重県総合文化センター" },
+        { "date": "2022-11-28", "prefecture": "熊本県", "venue": "熊本城ホール メインホール" },
+        { "date": "2022-11-30", "prefecture": "福岡県", "venue": "福岡サンパレス ホテル＆ホール" },
+        { "date": "2022-12-05", "prefecture": "愛知県", "venue": "名古屋国際会議場 センチュリーホール" },
+        { "date": "2022-12-06", "prefecture": "愛知県", "venue": "名古屋国際会議場 センチュリーホール" },
+        { "date": "2022-12-09", "prefecture": "高知県", "venue": "高知県立県民文化ホール" },
+        { "date": "2022-12-16", "prefecture": "千葉県", "venue": "森のホール21" },
+        { "date": "2022-12-19", "prefecture": "宮城県", "venue": "仙台サンプラザホール" },
+        { "date": "2022-12-21", "prefecture": "福島県", "venue": "會津風雅堂" },
+        { "date": "2022-12-26", "prefecture": "東京都", "venue": "TOKYO DOME CITY HALL" },
+        { "date": "2022-12-27", "prefecture": "東京都", "venue": "TOKYO DOME CITY HALL" }
+      ]
+    },
+    {
+      "year": 2023,
+      "shows": [
+        { "date": "2023-01-23", "prefecture": "東京都", "venue": "日本武道館" },
+        { "date": "2023-01-24", "prefecture": "東京都", "venue": "日本武道館" }
+      ]
+    }
+  ]
+}
 
-  {
-    "liveName": "18th LIVE CIRCUIT “暁”",
-    "color": "linear-gradient(135deg, #0b1d33 0%, #1e3357 30%, #5a4a7a 55%, #d47a4f 75%, #ffd1a3 100%)",
-    "years": [
-      {
-        "year": 2022,
-        "shows": [
-          { "date": "2022-09-22", "prefecture": "神奈川", "venue": "よこすか芸術劇場" },
-          { "date": "2022-09-27", "prefecture": "群馬", "venue": "高崎芸術劇場 大劇場" }
-        ]
-      },
-      {
-        "year": 2023,
-        "shows": [
-          { "date": "2023-05-10", "prefecture": "東京", "venue": "日本武道館" },
-          { "date": "2023-05-11", "prefecture": "東京", "venue": "日本武道館" }
-        ]
-      }
-    ]
-  }
 ]
