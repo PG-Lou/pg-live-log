@@ -74,6 +74,8 @@ body {
   border: none;
   cursor: pointer;
   text-align: left;
+  color: #1f2a35;
+  -webkit-text-fill-color: #1f2a35;
 }
 
 /* ▼ 三角アイコン */
@@ -221,5 +223,6 @@ body {
   max-width: 16px;
   max-height: 16px;
 }
+
 
 
