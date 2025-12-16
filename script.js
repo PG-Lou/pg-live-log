@@ -22,60 +22,99 @@ document.addEventListener('DOMContentLoaded', () => {
     const container = document.getElementById('live-list');
     container.innerHTML = '';
 
-    liveData.forEach((live) => {
-      const details = document.createElement('details');
-      details.className = 'tour';
+    liveData.forEach((live, index) => {
 
-      // ★ 背景は JSON の color をそのまま使う
-      if (live.color) {
-        details.style.background = live.color;
-      } else {
-        details.style.background = '#ddd';
-      }
+      const tour = document.createElement('section');
+      tour.className = 'tour';
+      tour.style.background = live.color || '#ddd';
 
-      // ▼ summary
-      const summary = document.createElement('summary');
-      summary.innerHTML = `<input type="checkbox" class="tour-check"> ${live.liveName}`;
-      details.appendChild(summary);
+      // ===== ヘッダー =====
+      const header = document.createElement('button');
+      header.className = 'liveHeader';
+      header.type = 'button';
+      header.setAttribute('aria-expanded', 'false');
 
+      header.innerHTML = `
+        <span class="chev" aria-hidden="true">
+          <svg viewBox="0 0 20 20" class="chevIcon">
+            <path d="M7.5 4.5L13 10l-5.5 5.5"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.2"
+              stroke-linecap="round"
+              stroke-linejoin="round"/>
+          </svg>
+        </span>
+
+        <input type="checkbox" class="pgCheck tour-check">
+
+        <span class="liveTitle">${live.liveName}</span>
+      `;
+
+      tour.appendChild(header);
+
+      // ===== 中身 =====
       const content = document.createElement('div');
       content.className = 'tour-content';
+      content.hidden = true;
 
       live.years.forEach(y => {
-        const yBlock = document.createElement('div');
-        yBlock.className = 'year-block';
-        yBlock.innerHTML = `<strong>${y.year}</strong>`;
+        const yearBlock = document.createElement('div');
+        yearBlock.className = 'year-block';
+
+        const yearTitle = document.createElement('div');
+        yearTitle.className = 'year-title';
+        yearTitle.textContent = y.year;
+        yearBlock.appendChild(yearTitle);
 
         y.shows.forEach(s => {
           const label = document.createElement('label');
+          label.className = 'show-item';
+
           const input = document.createElement('input');
           input.type = 'checkbox';
+          input.className = 'show-check';
           input.dataset.show = JSON.stringify({
             live: live.liveName,
             year: y.year,
             show: s
           });
 
-          const timeText = s.time ? `(${s.time})` : '';
-          label.appendChild(input);
-          label.append(` ${s.date} ${timeText} — ${s.prefecture} — ${s.venue}`);
+          const timeText = s.time ? `（${s.time === 'AM' ? '昼' : '夜'}）` : '';
+          const text = document.createElement('span');
+          text.textContent = `${s.date.replace(/-/g, '/')} ${timeText} ${s.prefecture} ${s.venue}`;
 
-          yBlock.appendChild(label);
+          label.appendChild(input);
+          label.appendChild(text);
+          yearBlock.appendChild(label);
         });
 
-        content.appendChild(yBlock);
+        content.appendChild(yearBlock);
       });
 
-      details.appendChild(content);
+      tour.appendChild(content);
 
-      // ▼ 親チェック → 子チェックON/OFF（チェック時のみ開く）
-      summary.querySelector('.tour-check').addEventListener('change', e => {
+      // ===== 開閉制御 =====
+      header.addEventListener('click', e => {
+        if (e.target.closest('.pgCheck')) return;
+
+        const expanded = header.getAttribute('aria-expanded') === 'true';
+        header.setAttribute('aria-expanded', String(!expanded));
+        content.hidden = expanded;
+      });
+
+      // ===== 親チェック → 子チェック =====
+      header.querySelector('.tour-check').addEventListener('change', e => {
         const checked = e.target.checked;
-        content.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = checked);
-        if (checked) details.open = true;
+        content.querySelectorAll('.show-check').forEach(cb => cb.checked = checked);
+
+        if (checked) {
+          header.setAttribute('aria-expanded', 'true');
+          content.hidden = false;
+        }
       });
 
-      container.appendChild(details);
+      container.appendChild(tour);
     });
   }
 
@@ -83,7 +122,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // 画像出力
   // ======================
   async function exportImage() {
-    const checked = document.querySelectorAll('.tour-content input[type="checkbox"]:checked');
+    const checked = document.querySelectorAll('.show-check:checked');
     if (checked.length === 0) {
       alert('チェックされた公演がありません');
       return;
@@ -101,14 +140,13 @@ document.addEventListener('DOMContentLoaded', () => {
     wrapper.style.position = 'relative';
     wrapper.style.fontFamily = 'Helvetica, Arial, sans-serif';
 
-    // ▼ 背景：最初に選ばれたライブの背景を使う
+    // ▼ 背景（最初のライブ）
     const first = JSON.parse(checked[0].dataset.show);
-    const tour = document.querySelector(
-      `.tour summary:contains("${first.live}")`
-    )?.parentElement;
+    const tourEl = [...document.querySelectorAll('.tour')]
+      .find(t => t.querySelector('.liveTitle')?.textContent === first.live);
 
-    if (tour?.style.background) {
-      wrapper.style.background = tour.style.background;
+    if (tourEl?.style.background) {
+      wrapper.style.background = tourEl.style.background;
     }
 
     // ▼ 白カード
@@ -124,7 +162,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     wrapper.appendChild(card);
 
-    // ▼ ユーザー名 + X
+    // ▼ ユーザー情報
     let userName = document.getElementById('user-name')?.value.trim() || '';
     let userX = document.getElementById('user-x')?.value.trim() || '';
     if (userX && !userX.startsWith('@')) userX = '@' + userX;
@@ -149,14 +187,14 @@ document.addEventListener('DOMContentLoaded', () => {
         const h = document.createElement('div');
         h.textContent = '■ ' + currentTour;
         h.style.fontWeight = '700';
-        h.style.marginTop = '10px';
+        h.style.marginTop = '12px';
         card.appendChild(h);
       }
 
       const time = s.time === 'AM' ? '昼' : s.time === 'PM' ? '夜' : '';
       const line = document.createElement('div');
       line.textContent = `${s.date.replace(/-/g, '/')} ${time} ${s.prefecture} ${s.venue}`;
-      line.style.fontSize = '16px';
+      line.style.fontSize = '15px';
       line.style.paddingLeft = '8px';
       card.appendChild(line);
     });
