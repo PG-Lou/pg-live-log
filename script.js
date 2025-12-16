@@ -75,6 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
           input.type = 'checkbox';
           input.className = 'show-check';
           input.dataset.show = JSON.stringify({
+            input.addEventListener('change', updateExportButtonState);
             live: live.liveName,
             year: y.year,
             show: s
@@ -112,6 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
           header.setAttribute('aria-expanded', 'true');
           content.hidden = false;
         }
+        updateExportButtonState();
       });
 
       container.appendChild(tour);
@@ -241,6 +243,11 @@ inner.appendChild(exportBtn);
 bottomBar.appendChild(inner);
 document.body.appendChild(bottomBar);
 
+document.getElementById('bg-select')
+  .addEventListener('change', updateExportButtonState);
+
+
 });
+
 
 
