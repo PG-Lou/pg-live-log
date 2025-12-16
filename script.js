@@ -212,4 +212,22 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('export-btn').addEventListener('click', exportImage);
 
   loadLiveData().then(renderList);
+
+  // ===== 下部固定バー化 =====
+const bgSelector = document.querySelector('.bg-selector');
+const exportBtn = document.getElementById('export-btn');
+
+const bottomBar = document.createElement('div');
+bottomBar.className = 'bottom-bar';
+
+const inner = document.createElement('div');
+inner.className = 'bottom-bar-inner';
+
+inner.appendChild(bgSelector);
+inner.appendChild(exportBtn);
+
+bottomBar.appendChild(inner);
+document.body.appendChild(bottomBar);
+
 });
+
