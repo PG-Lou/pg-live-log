@@ -176,6 +176,34 @@ document.addEventListener('DOMContentLoaded', () => {
 
     wrapper.appendChild(card);
 
+    // ===== 左下：URL =====
+    const urlLabel = document.createElement('div');
+    urlLabel.textContent = 'https://pg-lou.github.io/pg-live-log/';
+    urlLabel.style.position = 'absolute';
+    urlLabel.style.left = '20px';
+    urlLabel.style.bottom = '14px';
+    urlLabel.style.fontSize = '11px';
+    urlLabel.style.opacity = '0.55';
+    urlLabel.style.letterSpacing = '0.02em';
+    wrapper.appendChild(urlLabel);
+    
+    // ===== 右下：イメージカラー =====
+    const bgSelect = document.getElementById('bg-select');
+    if (bgSelect && bgSelect.selectedIndex > 0) {
+    const colorName = bgSelect.options[bgSelect.selectedIndex].text;
+  
+    const colorLabel = document.createElement('div');
+    colorLabel.textContent = `image color：♪${colorName}`;
+    colorLabel.style.position = 'absolute';
+    colorLabel.style.right = '20px';
+    colorLabel.style.bottom = '14px';
+    colorLabel.style.fontSize = '11px';
+    colorLabel.style.opacity = '0.55';
+    colorLabel.style.letterSpacing = '0.02em';
+    wrapper.appendChild(colorLabel);
+    }
+
+
 
     // ▼ ユーザー情報
     let userName = document.getElementById('user-name')?.value.trim() || '';
@@ -248,4 +276,5 @@ document.addEventListener('DOMContentLoaded', () => {
     .addEventListener('change', updateExportButtonState);
 
 });
+
 
