@@ -163,14 +163,15 @@ document.addEventListener('DOMContentLoaded', () => {
       top.style.lineHeight = '1.25';
       top.style.wordBreak = 'break-all';   // ← ここが重要
       top.style.color = '#111';
-      top.style.textShadow = '0 1px 3px rgba(255,255,255,0.75)';
+      top.style.textShadow = '0 0 6px rgba(255,255,255,0.9),0 1px 3px rgba(255,255,255,0.9)';
+
       wrapper.appendChild(top);
     }
 
     /* ===== 白カード ===== */
     const card = document.createElement('div');
     card.style.position = 'absolute';
-    card.style.inset = '64px 20px 92px';
+    card.style.inset = '56px 20px 44px';
     card.style.background = 'rgba(255,255,255,0.8)';
     card.style.borderRadius = '18px';
     card.style.padding = '20px';
@@ -194,7 +195,8 @@ document.addEventListener('DOMContentLoaded', () => {
       const time = s.time === 'AM' ? '昼' : s.time === 'PM' ? '夜' : '';
       const line = document.createElement('div');
       line.textContent = `${s.date.replace(/-/g, '/')} ${time} ${s.prefecture} ${s.venue}`;
-      line.style.fontSize = '15px';
+      line.style.fontSize = '14px';
+      line.style.lineHeight = '1.45';
       line.style.paddingLeft = '8px';
       card.appendChild(line);
     });
@@ -210,6 +212,8 @@ document.addEventListener('DOMContentLoaded', () => {
     bottom.style.color = '#111';
     bottom.style.opacity = '0.6';
     bottom.style.textShadow = '0 1px 3px rgba(255,255,255,0.75)';
+    bottom.style.textShadow = '0 0 6px rgba(255,255,255,0.85),0 1px 2px rgba(255,255,255,0.85)';
+
 
     bottom.innerHTML = `
       <div>image color：♪${colorName}</div>
@@ -232,3 +236,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
   loadLiveData().then(renderList);
 });
+
