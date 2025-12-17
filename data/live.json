@@ -378,7 +378,159 @@
         ]
       }
     ]
-  }
+  },
+  {
+  "liveName": "色情塗鴉 Special Live in Taiwan",
+  "color": "radial-gradient(circle at 22% 28%, rgba(30,40,60,0.45), transparent 58%), radial-gradient(circle at 78% 26%, rgba(245,210,70,0.42), transparent 62%), radial-gradient(circle at 48% 78%, rgba(220,80,80,0.38), transparent 66%), radial-gradient(circle at 70% 74%, rgba(80,170,120,0.35), transparent 62%), #141414",
+  "years": [
+    {
+      "year": 2017,
+      "shows": [
+        { "date": "2017-03-25", "prefecture": "台湾", "venue": "Legacy Taipei" },
+        { "date": "2017-03-26", "prefecture": "台湾", "venue": "Legacy Taipei" }
+      ]
+    }
+  ]
+},
+{
+  "liveName": "横浜ロマンスポルノ'16 ～THE WAY～",
+  "color": "radial-gradient(circle at 25% 28%, rgba(85,105,130,0.45), transparent 60%), radial-gradient(circle at 75% 30%, rgba(140,155,170,0.40), transparent 65%), radial-gradient(circle at 45% 80%, rgba(255,255,255,0.20), transparent 70%), #131824",
+  "years": [
+    {
+      "year": 2016,
+      "shows": [
+        { "date": "2016-09-03", "prefecture": "神奈川県", "venue": "横浜スタジアム" },
+        { "date": "2016-09-04", "prefecture": "神奈川県", "venue": "横浜スタジアム" }
+      ]
+    }
+  ]
+},
+{
+  "liveName": "FANCLUB UNDERWORLD 5",
+  "color": "radial-gradient(circle at 22% 28%, rgba(140,70,45,0.48), transparent 58%), radial-gradient(circle at 78% 26%, rgba(70,40,25,0.42), transparent 62%), radial-gradient(circle at 50% 78%, rgba(170,125,90,0.36), transparent 66%), #2a1912",
+  "years": [
+    {
+      "year": 2016,
+      "shows": [
+        { "date": "2016-02-01", "prefecture": "愛知県", "venue": "Zepp Nagoya" },
+        { "date": "2016-02-02", "prefecture": "愛知県", "venue": "Zepp Nagoya" },
+        { "date": "2016-02-08", "prefecture": "北海道", "venue": "Zepp Sapporo" },
+        { "date": "2016-02-15", "prefecture": "福岡県", "venue": "Zepp Fukuoka" },
+        { "date": "2016-02-17", "prefecture": "広島県", "venue": "CLUB QUATTRO" },
+        { "date": "2016-02-18", "prefecture": "広島県", "venue": "CLUB QUATTRO" },
+        { "date": "2016-02-22", "prefecture": "大阪府", "venue": "Zepp Namba(OSAKA)" },
+
+        { "date": "2016-02-23", "prefecture": "大阪府", "venue": "Zepp Namba(OSAKA)", "time": "AM" },
+        { "date": "2016-02-23", "prefecture": "大阪府", "venue": "Zepp Namba(OSAKA)", "time": "PM" },
+
+        { "date": "2016-03-02", "prefecture": "東京都", "venue": "Zepp DiverCity(TOKYO)" },
+
+        { "date": "2016-03-03", "prefecture": "東京都", "venue": "Zepp DiverCity(TOKYO)", "time": "AM" },
+        { "date": "2016-03-03", "prefecture": "東京都", "venue": "Zepp DiverCity(TOKYO)", "time": "PM" }
+      ]
+    }
+  ]
+},
+{
+  "liveName": "14thライヴサーキット \"The dice are cast\"",
+  "color": "radial-gradient(circle at 24% 26%, rgba(255,255,255,0.55), transparent 60%), radial-gradient(circle at 76% 28%, rgba(245,215,90,0.42), transparent 64%), radial-gradient(circle at 52% 80%, rgba(255,255,255,0.22), transparent 70%), #1a1a1a",
+  "years": [
+    {
+      "year": 2015,
+      "shows": [
+        { "date": "2015-09-03", "prefecture": "神奈川県", "venue": "よこすか芸術劇場" },
+        { "date": "2015-09-05", "prefecture": "静岡県", "venue": "富士市文化会館ロゼシアター" },
+        { "date": "2015-09-06", "prefecture": "静岡県", "venue": "アクトシティ浜松" },
+        { "date": "2015-09-09", "prefecture": "千葉県", "venue": "市川市文化会館" },
+        { "date": "2015-09-12", "prefecture": "福岡県", "venue": "福岡サンパレスホテル＆ホール" },
+        { "date": "2015-09-13", "prefecture": "福岡県", "venue": "福岡サンパレスホテル＆ホール" },
+        { "date": "2015-09-15", "prefecture": "熊本県", "venue": "市民会館崇城大学ホール" },
+        { "date": "2015-09-16", "prefecture": "宮崎県", "venue": "都城市総合文化ホール" },
+        { "date": "2015-09-19", "prefecture": "沖縄県", "venue": "沖縄コンベンション劇場" },
+        { "date": "2015-09-24", "prefecture": "埼玉県", "venue": "大宮ソニックシティ" },
+        { "date": "2015-09-28", "prefecture": "大阪府", "venue": "フェスティバルホール" },
+        { "date": "2015-09-29", "prefecture": "大阪府", "venue": "フェスティバルホール" },
+        { "date": "2015-10-02", "prefecture": "滋賀県", "venue": "滋賀県立芸術劇場 びわ湖ホール" },
+        { "date": "2015-10-04", "prefecture": "奈良県", "venue": "なら100年会館" },
+        { "date": "2015-10-06", "prefecture": "香川県", "venue": "アルファあなぶきホール" },
+        { "date": "2015-10-08", "prefecture": "岐阜県", "venue": "長良川国際会議場" },
+        { "date": "2015-10-09", "prefecture": "三重県", "venue": "三重県文化会館" },
+        { "date": "2015-10-12", "prefecture": "鳥取県", "venue": "とりぎん文化会館" },
+        { "date": "2015-10-15", "prefecture": "愛知県", "venue": "名古屋国際会議場センチュリーホール" },
+        { "date": "2015-10-16", "prefecture": "愛知県", "venue": "名古屋国際会議場センチュリーホール" },
+        { "date": "2015-10-18", "prefecture": "岐阜県", "venue": "高山市民文化会館" },
+        { "date": "2015-10-23", "prefecture": "東京都", "venue": "日本武道館" },
+        { "date": "2015-10-24", "prefecture": "東京都", "venue": "日本武道館" },
+        { "date": "2015-10-27", "prefecture": "宮城県", "venue": "仙台サンプラザホール" },
+        { "date": "2015-10-28", "prefecture": "宮城県", "venue": "仙台サンプラザホール" },
+        { "date": "2015-10-30", "prefecture": "青森県", "venue": "八戸市公会堂" },
+        { "date": "2015-11-03", "prefecture": "北海道", "venue": "旭川市民文化会館" },
+        { "date": "2015-11-05", "prefecture": "北海道", "venue": "ニトリ文化ホール" },
+        { "date": "2015-11-06", "prefecture": "北海道", "venue": "ニトリ文化ホール" },
+        { "date": "2015-11-09", "prefecture": "長野県", "venue": "上田市交流文化芸術センター" },
+        { "date": "2015-11-11", "prefecture": "石川県", "venue": "本多の森ホール" },
+        { "date": "2015-11-12", "prefecture": "石川県", "venue": "本多の森ホール" },
+        { "date": "2015-11-15", "prefecture": "広島県", "venue": "広島文化学園HBGホール" },
+        { "date": "2015-11-16", "prefecture": "広島県", "venue": "広島文化学園HBGホール" },
+        { "date": "2015-11-18", "prefecture": "愛媛県", "venue": "松山市民会館" },
+        { "date": "2015-11-19", "prefecture": "高知県", "venue": "高知県立県民文化ホール" },
+        { "date": "2015-11-23", "prefecture": "福島県", "venue": "福島県文化センター" },
+        { "date": "2015-12-15", "prefecture": "神奈川県", "venue": "横浜アリーナ" },
+        { "date": "2015-12-16", "prefecture": "神奈川県", "venue": "横浜アリーナ" },
+        { "date": "2015-12-21", "prefecture": "大阪府", "venue": "大阪城ホール" },
+        { "date": "2015-12-22", "prefecture": "大阪府", "venue": "大阪城ホール" }
+      ]
+    }
+  ]
+},
+{
+  "liveName": "神戸・横浜ロマンスポルノ'14 〜惑ワ不ノ森〜",
+  "color": "radial-gradient(circle at 22% 28%, rgba(60,140,90,0.48), transparent 58%), radial-gradient(circle at 78% 26%, rgba(245,210,70,0.40), transparent 62%), radial-gradient(circle at 52% 78%, rgba(120,80,170,0.35), transparent 66%), radial-gradient(circle at 36% 52%, rgba(230,90,90,0.30), transparent 62%), #173526",
+  "years": [
+    {
+      "year": 2014,
+      "shows": [
+        { "date": "2014-09-13", "prefecture": "兵庫県", "venue": "ほっともっとフィールド神戸" },
+        { "date": "2014-09-20", "prefecture": "神奈川県", "venue": "横浜スタジアム" },
+        { "date": "2014-09-21", "prefecture": "神奈川県", "venue": "横浜スタジアム" }
+      ]
+    }
+  ]
+},
+{
+  "liveName": "13thライヴサーキット \"ラヴ・E・メール・フロム・1999\"",
+  "color": "radial-gradient(circle at 20% 28%, rgba(255,235,130,0.55), transparent 60%), radial-gradient(circle at 78% 30%, rgba(140,210,255,0.50), transparent 65%), radial-gradient(circle at 45% 80%, rgba(255,255,255,0.28), transparent 70%), linear-gradient(135deg, #fff6bf 0%, #e6f6ff 55%, #f8fbff 100%)",
+  "years": [
+    {
+      "year": 2013,
+      "shows": [
+        { "date": "2013-12-05", "prefecture": "東京都", "venue": "EX THEATER ROPPONGI" },
+        { "date": "2013-12-14", "prefecture": "広島県", "venue": "広島グリーンアリーナ" },
+        { "date": "2013-12-22", "prefecture": "北海道", "venue": "北海道立総合体育センター 北海きたえーる" },
+        { "date": "2013-12-28", "prefecture": "愛知県", "venue": "日本ガイシホール" },
+        { "date": "2013-12-29", "prefecture": "愛知県", "venue": "日本ガイシホール" }
+      ]
+    },
+    {
+      "year": 2014,
+      "shows": [
+        { "date": "2014-01-18", "prefecture": "埼玉県", "venue": "さいたまスーパーアリーナ" },
+        { "date": "2014-01-19", "prefecture": "埼玉県", "venue": "さいたまスーパーアリーナ" },
+        { "date": "2014-01-30", "prefecture": "大阪府", "venue": "大阪城ホール" },
+        { "date": "2014-02-01", "prefecture": "大阪府", "venue": "大阪城ホール" },
+        { "date": "2014-02-02", "prefecture": "大阪府", "venue": "大阪城ホール" },
+        { "date": "2014-02-08", "prefecture": "徳島県", "venue": "アスティとくしま" },
+        { "date": "2014-02-22", "prefecture": "宮城県", "venue": "セキスイハイムスーパーアリーナ" },
+        { "date": "2014-03-01", "prefecture": "神奈川県", "venue": "横浜アリーナ" },
+        { "date": "2014-03-02", "prefecture": "神奈川県", "venue": "横浜アリーナ" },
+        { "date": "2014-03-15", "prefecture": "福井県", "venue": "サンドーム福井" },
+        { "date": "2014-03-21", "prefecture": "静岡県", "venue": "静岡エコパアリーナ" },
+        { "date": "2014-03-29", "prefecture": "福岡県", "venue": "マリンメッセ福岡" }
+      ]
+    }
+  ]
+}
+
 
 
   
