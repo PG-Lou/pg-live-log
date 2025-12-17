@@ -381,7 +381,7 @@
   },
   {
   "liveName": "色情塗鴉 Special Live in Taiwan",
-  "color": "radial-gradient(circle at 22% 28%, rgba(30,40,60,0.45), transparent 58%), radial-gradient(circle at 78% 26%, rgba(245,210,70,0.42), transparent 62%), radial-gradient(circle at 48% 78%, rgba(220,80,80,0.38), transparent 66%), radial-gradient(circle at 70% 74%, rgba(80,170,120,0.35), transparent 62%), #141414",
+  "color": "radial-gradient(circle at 30% 30%, rgba(80,120,170,0.35), transparent 60%), radial-gradient(circle at 70% 70%, rgba(230,200,120,0.30), transparent 65%), linear-gradient(135deg, #15171a 0%, #1f2630 45%, #2a2f36 100%)",
   "years": [
     {
       "year": 2017,
@@ -394,7 +394,7 @@
 },
 {
   "liveName": "横浜ロマンスポルノ'16 ～THE WAY～",
-  "color": "radial-gradient(circle at 25% 28%, rgba(85,105,130,0.45), transparent 60%), radial-gradient(circle at 75% 30%, rgba(140,155,170,0.40), transparent 65%), radial-gradient(circle at 45% 80%, rgba(255,255,255,0.20), transparent 70%), #131824",
+  "color": "radial-gradient(circle at 30% 35%, rgba(120,150,180,0.35), transparent 60%), linear-gradient(135deg, #2b3036 0%, #3a414a 45%, #5a6470 100%)",
   "years": [
     {
       "year": 2016,
@@ -407,7 +407,7 @@
 },
 {
   "liveName": "FANCLUB UNDERWORLD 5",
-  "color": "radial-gradient(circle at 22% 28%, rgba(140,70,45,0.48), transparent 58%), radial-gradient(circle at 78% 26%, rgba(70,40,25,0.42), transparent 62%), radial-gradient(circle at 50% 78%, rgba(170,125,90,0.36), transparent 66%), #2a1912",
+  "color": "radial-gradient(circle at 35% 35%, rgba(170,110,90,0.35), transparent 60%), linear-gradient(135deg, #3b2a22 0%, #4a352b 45%, #6a4a3a 100%)",
   "years": [
     {
       "year": 2016,
@@ -433,7 +433,7 @@
 },
 {
   "liveName": "14thライヴサーキット \"The dice are cast\"",
-  "color": "radial-gradient(circle at 24% 26%, rgba(255,255,255,0.55), transparent 60%), radial-gradient(circle at 76% 28%, rgba(245,215,90,0.42), transparent 64%), radial-gradient(circle at 52% 80%, rgba(255,255,255,0.22), transparent 70%), #1a1a1a",
+  "color": "radial-gradient(circle at 30% 30%, rgba(245,225,140,0.45), transparent 60%), linear-gradient(135deg, #f5f5f2 0%, #e8e4d6 40%, #3a3a3a 100%)",
   "years": [
     {
       "year": 2015,
@@ -485,7 +485,7 @@
 },
 {
   "liveName": "神戸・横浜ロマンスポルノ'14 〜惑ワ不ノ森〜",
-  "color": "radial-gradient(circle at 22% 28%, rgba(60,140,90,0.48), transparent 58%), radial-gradient(circle at 78% 26%, rgba(245,210,70,0.40), transparent 62%), radial-gradient(circle at 52% 78%, rgba(120,80,170,0.35), transparent 66%), radial-gradient(circle at 36% 52%, rgba(230,90,90,0.30), transparent 62%), #173526",
+  "color": "radial-gradient(circle at 30% 30%, rgba(190,210,120,0.40), transparent 60%), linear-gradient(135deg, #2f3f2f 0%, #4a5a3a 45%, #7a8a5a 100%)",
   "years": [
     {
       "year": 2014,
@@ -499,7 +499,7 @@
 },
 {
   "liveName": "13thライヴサーキット \"ラヴ・E・メール・フロム・1999\"",
-  "color": "radial-gradient(circle at 20% 28%, rgba(255,235,130,0.55), transparent 60%), radial-gradient(circle at 78% 30%, rgba(140,210,255,0.50), transparent 65%), radial-gradient(circle at 45% 80%, rgba(255,255,255,0.28), transparent 70%), linear-gradient(135deg, #fff6bf 0%, #e6f6ff 55%, #f8fbff 100%)",
+  "color": "radial-gradient(circle at 25% 30%, rgba(255,240,150,0.45), transparent 60%), radial-gradient(circle at 70% 35%, rgba(180,220,255,0.45), transparent 65%), linear-gradient(135deg, #fff6c8 0%, #e8f4ff 50%, #f6fbff 100%)",
   "years": [
     {
       "year": 2013,
