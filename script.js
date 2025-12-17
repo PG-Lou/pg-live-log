@@ -121,6 +121,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  const bgSelect = document.getElementById('bg-select');
+  if (bgSelect) {
+    bgSelect.addEventListener('change', updateExportButtonState);
+  }
+
+
   // ======================
   // 画像保存ボタンの活性制御
   // ======================
@@ -278,6 +284,7 @@ document.addEventListener('DOMContentLoaded', () => {
     .addEventListener('change', updateExportButtonState);
 
 });
+
 
 
 
