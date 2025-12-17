@@ -164,13 +164,16 @@ document.addEventListener('DOMContentLoaded', () => {
       top.style.left = '20px';
       top.style.fontSize = '15px';
       top.style.fontWeight = '600';
+      top.style.color = '#111';
+      top.style.textShadow = '0 1px 3px rgba(255,255,255,0.6)';
+
       wrapper.appendChild(top);
     }
 
     // ===== 白カード =====
     const card = document.createElement('div');
     card.style.position = 'absolute';
-    card.style.inset = '40px 20px';
+    card.style.inset = '56px 20px 64px';
     card.style.background = 'rgba(255,255,255,0.78)';
     card.style.borderRadius = '18px';
     card.style.padding = '20px';
@@ -204,10 +207,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const bottom = document.createElement('div');
     bottom.style.position = 'absolute';
     bottom.style.right = '20px';
-    bottom.style.bottom = '16px';
+    bottom.style.bottom = '24px';
     bottom.style.textAlign = 'right';
     bottom.style.fontSize = '11px';
     bottom.style.opacity = '0.55';
+    bottom.style.lineHeight = '1.4';
+    bottom.style.color = '#111';
+    bottom.style.textShadow = '0 1px 3px rgba(255,255,255,0.6)';
+
 
     const colorLine = document.createElement('div');
     colorLine.textContent = `image color：♪${colorName}`;
@@ -234,3 +241,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
   loadLiveData().then(renderList);
 });
+
