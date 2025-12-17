@@ -205,7 +205,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const bottom = document.createElement('div');
     bottom.style.position = 'absolute';
     bottom.style.right = '20px';
-    bottom.style.bottom = '20px';
+    bottom.style.bottom = '10px';
     bottom.style.textAlign = 'right';
     bottom.style.fontSize = '11px';
     bottom.style.lineHeight = '1.45';
@@ -236,5 +236,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   loadLiveData().then(renderList);
 });
+
 
 
