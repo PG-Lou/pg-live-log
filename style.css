@@ -20,14 +20,18 @@ body {
    ヘッダー
 ========================= */
 .header {
-  width: 100%;
+  width: calc(100% + 32px);
+  margin-left: -16px;
+  margin-right: -16px;
+
   height: 180px;
-  margin-bottom: 20px;
-  border-radius: 18px;
+  margin-bottom: 18px;
   background-image: url("https://raw.githubusercontent.com/PG-Lou/pg-live-log/main/images/header.png");
   background-size: cover;
   background-position: center;
+  border-radius: 18px;
 }
+
 
 
 /* =========================
@@ -274,3 +278,4 @@ body {
 .action-bar #export-btn:disabled {
   opacity: 0.35;
 }
+
