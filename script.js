@@ -27,7 +27,6 @@ document.addEventListener('DOMContentLoaded', () => {
       tour.className = 'tour';
       tour.style.background = live.color || '#ddd';
 
-      // ===== ヘッダー =====
       const header = document.createElement('button');
       header.className = 'liveHeader';
       header.type = 'button';
@@ -50,7 +49,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
       tour.appendChild(header);
 
-      // ===== 中身 =====
       const content = document.createElement('div');
       content.className = 'tour-content';
       content.hidden = true;
@@ -91,7 +89,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
       tour.appendChild(content);
 
-      // ===== 開閉制御 =====
       header.addEventListener('click', e => {
         if (e.target.closest('.pgCheck')) return;
         const expanded = header.getAttribute('aria-expanded') === 'true';
@@ -99,7 +96,6 @@ document.addEventListener('DOMContentLoaded', () => {
         content.hidden = expanded;
       });
 
-      // ===== 親チェック → 子チェック =====
       header.querySelector('.tour-check').addEventListener('change', e => {
         const checked = e.target.checked;
         content.querySelectorAll('.show-check').forEach(cb => cb.checked = checked);
@@ -115,13 +111,12 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ======================
-  // 画像保存ボタン活性制御
+  // ボタン活性制御
   // ======================
   function updateExportButtonState() {
     const hasCheckedShow = document.querySelectorAll('.show-check:checked').length > 0;
     const bgSelected = document.getElementById('bg-select')?.value;
-    const btn = document.getElementById('export-btn');
-    btn.disabled = !(hasCheckedShow && bgSelected);
+    document.getElementById('export-btn').disabled = !(hasCheckedShow && bgSelected);
   }
 
   document.getElementById('bg-select')
@@ -151,7 +146,7 @@ document.addEventListener('DOMContentLoaded', () => {
     wrapper.style.background = bg;
     wrapper.style.fontFamily = 'Helvetica, Arial, sans-serif';
 
-    // ===== 上：名前 + X =====
+    /* ===== 上：名前＋X（折り返し対応・省略なし） ===== */
     let userName = document.getElementById('user-name').value.trim();
     let userX = document.getElementById('user-x').value.trim();
     if (userX && !userX.startsWith('@')) userX = '@' + userX;
@@ -162,25 +157,26 @@ document.addEventListener('DOMContentLoaded', () => {
       top.style.position = 'absolute';
       top.style.top = '16px';
       top.style.left = '20px';
+      top.style.right = '20px';
       top.style.fontSize = '15px';
       top.style.fontWeight = '600';
+      top.style.lineHeight = '1.25';
+      top.style.wordBreak = 'break-all';   // ← ここが重要
       top.style.color = '#111';
-      top.style.textShadow = '0 1px 3px rgba(255,255,255,0.6)';
-
+      top.style.textShadow = '0 1px 3px rgba(255,255,255,0.75)';
       wrapper.appendChild(top);
     }
 
-    // ===== 白カード =====
+    /* ===== 白カード ===== */
     const card = document.createElement('div');
     card.style.position = 'absolute';
-    card.style.inset = '56px 20px 64px';
-    card.style.background = 'rgba(255,255,255,0.78)';
+    card.style.inset = '64px 20px 92px';
+    card.style.background = 'rgba(255,255,255,0.8)';
     card.style.borderRadius = '18px';
     card.style.padding = '20px';
     card.style.overflowY = 'auto';
     wrapper.appendChild(card);
 
-    // ===== 公演一覧 =====
     let currentTour = '';
     checked.forEach(cb => {
       const data = JSON.parse(cb.dataset.show);
@@ -203,29 +199,24 @@ document.addEventListener('DOMContentLoaded', () => {
       card.appendChild(line);
     });
 
-    // ===== 右下：2段 =====
+    /* ===== 右下：2段（少し上げて余裕） ===== */
     const bottom = document.createElement('div');
     bottom.style.position = 'absolute';
     bottom.style.right = '20px';
-    bottom.style.bottom = '24px';
+    bottom.style.bottom = '28px';   // ← 余裕を持たせた
     bottom.style.textAlign = 'right';
     bottom.style.fontSize = '11px';
-    bottom.style.opacity = '0.55';
-    bottom.style.lineHeight = '1.4';
+    bottom.style.lineHeight = '1.45';
     bottom.style.color = '#111';
-    bottom.style.textShadow = '0 1px 3px rgba(255,255,255,0.6)';
+    bottom.style.opacity = '0.6';
+    bottom.style.textShadow = '0 1px 3px rgba(255,255,255,0.75)';
 
+    bottom.innerHTML = `
+      <div>image color：♪${colorName}</div>
+      <div>https://pg-lou.github.io/pg-live-log/</div>
+    `;
 
-    const colorLine = document.createElement('div');
-    colorLine.textContent = `image color：♪${colorName}`;
-
-    const urlLine = document.createElement('div');
-    urlLine.textContent = 'https://pg-lou.github.io/pg-live-log/';
-
-    bottom.appendChild(colorLine);
-    bottom.appendChild(urlLine);
     wrapper.appendChild(bottom);
-
     exportArea.appendChild(wrapper);
 
     html2canvas(wrapper, { scale: 2 }).then(canvas => {
@@ -241,4 +232,3 @@ document.addEventListener('DOMContentLoaded', () => {
 
   loadLiveData().then(renderList);
 });
-
