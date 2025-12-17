@@ -22,8 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const container = document.getElementById('live-list');
     container.innerHTML = '';
 
-    liveData.forEach((live) => {
-
+    liveData.forEach(live => {
       const tour = document.createElement('section');
       tour.className = 'tour';
       tour.style.background = live.color || '#ddd';
@@ -45,9 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
               stroke-linejoin="round"/>
           </svg>
         </span>
-
         <input type="checkbox" class="pgCheck tour-check">
-
         <span class="liveTitle">${live.liveName}</span>
       `;
 
@@ -60,7 +57,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
       live.years.forEach(y => {
         const yearBlock = document.createElement('div');
-        yearBlock.className = 'year-block';
 
         const yearTitle = document.createElement('div');
         yearTitle.className = 'year-title';
@@ -79,7 +75,6 @@ document.addEventListener('DOMContentLoaded', () => {
             year: y.year,
             show: s
           });
-
           input.addEventListener('change', updateExportButtonState);
 
           const timeText = s.time ? `（${s.time === 'AM' ? '昼' : '夜'}）` : '';
@@ -99,7 +94,6 @@ document.addEventListener('DOMContentLoaded', () => {
       // ===== 開閉制御 =====
       header.addEventListener('click', e => {
         if (e.target.closest('.pgCheck')) return;
-
         const expanded = header.getAttribute('aria-expanded') === 'true';
         header.setAttribute('aria-expanded', String(!expanded));
         content.hidden = expanded;
@@ -109,7 +103,6 @@ document.addEventListener('DOMContentLoaded', () => {
       header.querySelector('.tour-check').addEventListener('change', e => {
         const checked = e.target.checked;
         content.querySelectorAll('.show-check').forEach(cb => cb.checked = checked);
-
         if (checked) {
           header.setAttribute('aria-expanded', 'true');
           content.hidden = false;
@@ -121,14 +114,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  const bgSelect = document.getElementById('bg-select');
-  if (bgSelect) {
-    bgSelect.addEventListener('change', updateExportButtonState);
-  }
-
-
   // ======================
-  // 画像保存ボタンの活性制御
+  // 画像保存ボタン活性制御
   // ======================
   function updateExportButtonState() {
     const hasCheckedShow = document.querySelectorAll('.show-check:checked').length > 0;
@@ -137,23 +124,19 @@ document.addEventListener('DOMContentLoaded', () => {
     btn.disabled = !(hasCheckedShow && bgSelected);
   }
 
+  document.getElementById('bg-select')
+    .addEventListener('change', updateExportButtonState);
+
   // ======================
   // 画像出力
   // ======================
   async function exportImage() {
-    updateExportButtonState();
-
     const checked = document.querySelectorAll('.show-check:checked');
-    if (checked.length === 0) {
-      alert('チェックされた公演がありません');
-      return;
-    }
+    if (!checked.length) return;
 
-    const bg = document.getElementById('bg-select')?.value;
-    if (!bg) {
-      alert('イメージカラーを選択してください');
-      return;
-    }
+    const bgSelect = document.getElementById('bg-select');
+    const bg = bgSelect.value;
+    const colorName = bgSelect.options[bgSelect.selectedIndex].text;
 
     const WIDTH = 390;
     const HEIGHT = 844;
@@ -165,69 +148,36 @@ document.addEventListener('DOMContentLoaded', () => {
     wrapper.style.width = WIDTH + 'px';
     wrapper.style.height = HEIGHT + 'px';
     wrapper.style.position = 'relative';
+    wrapper.style.background = bg;
     wrapper.style.fontFamily = 'Helvetica, Arial, sans-serif';
 
-    // ▼ 背景：bg-select の値を使う（元の仕様に戻す）
-    wrapper.style.background = bg;
+    // ===== 上：名前 + X =====
+    let userName = document.getElementById('user-name').value.trim();
+    let userX = document.getElementById('user-x').value.trim();
+    if (userX && !userX.startsWith('@')) userX = '@' + userX;
 
-    // ▼ 白カード（上下のバランスを中央寄りに）
+    if (userName || userX) {
+      const top = document.createElement('div');
+      top.textContent = userName + (userX ? ' ' + userX : '');
+      top.style.position = 'absolute';
+      top.style.top = '16px';
+      top.style.left = '20px';
+      top.style.fontSize = '15px';
+      top.style.fontWeight = '600';
+      wrapper.appendChild(top);
+    }
+
+    // ===== 白カード =====
     const card = document.createElement('div');
     card.style.position = 'absolute';
     card.style.inset = '40px 20px';
     card.style.background = 'rgba(255,255,255,0.78)';
     card.style.borderRadius = '18px';
     card.style.padding = '20px';
-    card.style.boxSizing = 'border-box';
     card.style.overflowY = 'auto';
-
     wrapper.appendChild(card);
 
-    // ===== 左下：URL =====
-    const urlLabel = document.createElement('div');
-    urlLabel.textContent = 'https://pg-lou.github.io/pg-live-log/';
-    urlLabel.style.position = 'absolute';
-    urlLabel.style.left = '20px';
-    urlLabel.style.bottom = '14px';
-    urlLabel.style.fontSize = '11px';
-    urlLabel.style.opacity = '0.55';
-    urlLabel.style.letterSpacing = '0.02em';
-    wrapper.appendChild(urlLabel);
-    
-    // ===== 右上：イメージカラー =====
-    const bgSelect = document.getElementById('bg-select');
-    if (bgSelect && bgSelect.selectedIndex > 0) {
-      const colorName = bgSelect.options[bgSelect.selectedIndex].text;
-    
-      const colorLabel = document.createElement('div');
-      colorLabel.textContent = `image color：♪${colorName}`;
-      colorLabel.style.position = 'absolute';
-      colorLabel.style.top = '14px';
-      colorLabel.style.right = '20px';
-      colorLabel.style.fontSize = '11px';
-      colorLabel.style.opacity = '0.55';
-      colorLabel.style.letterSpacing = '0.02em';
-    
-      wrapper.appendChild(colorLabel);
-    }
-
-
-
-
-    // ▼ ユーザー情報
-    let userName = document.getElementById('user-name')?.value.trim() || '';
-    let userX = document.getElementById('user-x')?.value.trim() || '';
-    if (userX && !userX.startsWith('@')) userX = '@' + userX;
-
-    if (userName || userX) {
-      const line = document.createElement('div');
-      line.style.fontSize = '18px';
-      line.style.fontWeight = '600';
-      line.style.marginBottom = '14px';
-      line.textContent = userName + (userX ? ' ' + userX : '');
-      card.appendChild(line);
-    }
-
-    // ▼ 公演一覧
+    // ===== 公演一覧 =====
     let currentTour = '';
     checked.forEach(cb => {
       const data = JSON.parse(cb.dataset.show);
@@ -250,9 +200,28 @@ document.addEventListener('DOMContentLoaded', () => {
       card.appendChild(line);
     });
 
+    // ===== 右下：2段 =====
+    const bottom = document.createElement('div');
+    bottom.style.position = 'absolute';
+    bottom.style.right = '20px';
+    bottom.style.bottom = '16px';
+    bottom.style.textAlign = 'right';
+    bottom.style.fontSize = '11px';
+    bottom.style.opacity = '0.55';
+
+    const colorLine = document.createElement('div');
+    colorLine.textContent = `image color：♪${colorName}`;
+
+    const urlLine = document.createElement('div');
+    urlLine.textContent = 'https://pg-lou.github.io/pg-live-log/';
+
+    bottom.appendChild(colorLine);
+    bottom.appendChild(urlLine);
+    wrapper.appendChild(bottom);
+
     exportArea.appendChild(wrapper);
 
-    html2canvas(wrapper, { scale: 2, useCORS: true }).then(canvas => {
+    html2canvas(wrapper, { scale: 2 }).then(canvas => {
       canvas.toBlob(blob => {
         const url = URL.createObjectURL(blob);
         window.location.href = url;
@@ -260,31 +229,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  document.getElementById('export-btn').addEventListener('click', exportImage);
+  document.getElementById('export-btn')
+    .addEventListener('click', exportImage);
 
   loadLiveData().then(renderList);
-
-  // ===== 下部固定バー化 =====
-  const bgSelector = document.querySelector('.bg-selector');
-  const exportBtn = document.getElementById('export-btn');
-
-  const bottomBar = document.createElement('div');
-  bottomBar.className = 'bottom-bar';
-
-  const inner = document.createElement('div');
-  inner.className = 'bottom-bar-inner';
-
-  inner.appendChild(bgSelector);
-  inner.appendChild(exportBtn);
-
-  bottomBar.appendChild(inner);
-  document.body.appendChild(bottomBar);
-
-  document.getElementById('bg-select')
-    .addEventListener('change', updateExportButtonState);
-
 });
-
-
-
-
