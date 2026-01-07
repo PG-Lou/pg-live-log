@@ -464,4 +464,47 @@ document.addEventListener('DOMContentLoaded', () => {
     .addEventListener('click', exportImage);
 
   loadLiveData().then(renderList);
+
+    // ======================
+  // はじめにモーダル
+  // ======================
+  const aboutOpenBtn = document.getElementById('about-open');
+  const aboutModal = document.getElementById('about-modal');
+
+  function openAbout() {
+    if (!aboutModal) return;
+    aboutModal.hidden = false;
+
+    // 背景スクロール止め
+    document.body.style.overflow = 'hidden';
+
+    // フォーカス
+    const panel = aboutModal.querySelector('.modal-panel');
+    panel && panel.focus();
+  }
+
+  function closeAbout() {
+    if (!aboutModal) return;
+    aboutModal.hidden = true;
+
+    // 背景スクロール戻す
+    document.body.style.overflow = '';
+
+    // ボタンに戻す
+    aboutOpenBtn && aboutOpenBtn.focus();
+  }
+
+  aboutOpenBtn && aboutOpenBtn.addEventListener('click', openAbout);
+
+  aboutModal && aboutModal.addEventListener('click', (e) => {
+    const closeTarget = e.target.closest('[data-close="about"]');
+    if (closeTarget) closeAbout();
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (!aboutModal || aboutModal.hidden) return;
+    if (e.key === 'Escape') closeAbout();
+  });
+
 });
+
