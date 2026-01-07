@@ -123,21 +123,52 @@ document.addEventListener('DOMContentLoaded', () => {
     .addEventListener('change', updateExportButtonState);
 
   // ======================
-  // 画像出力
+  // 画像出力（分割対応）
   // ======================
-  async function exportImage() {
-    const checked = document.querySelectorAll('.show-check:checked');
-    if (!checked.length) return;
+  function downloadBlob(blob, filename) {
+    const a = document.createElement('a');
+    const url = URL.createObjectURL(blob);
+    a.href = url;
+    a.download = filename;
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+  }
 
-    const bgSelect = document.getElementById('bg-select');
-    const bg = bgSelect.value;
-    const colorName = bgSelect.options[bgSelect.selectedIndex].text;
+  function getCheckedShowsInOrder() {
+    const checked = Array.from(document.querySelectorAll('.show-check:checked'));
 
+    // DOM順（=一覧順）で並ぶので、そのままでOK
+    return checked.map(cb => {
+      const data = JSON.parse(cb.dataset.show);
+      const s = data.show;
+      const time = s.time === 'AM' ? '昼' : s.time === 'PM' ? '夜' : '';
+      return {
+        live: data.live,
+        date: s.date,
+        lineText: `${s.date.replace(/-/g, '/')} ${time} ${s.prefecture} ${s.venue}`.replace(/\s+/g, ' ').trim()
+      };
+    });
+  }
+
+  function buildBlocks(items) {
+    const blocks = [];
+    let current = null;
+
+    for (const it of items) {
+      if (!current || current.live !== it.live) {
+        current = { live: it.live, lines: [] };
+        blocks.push(current);
+      }
+      current.lines.push(it.lineText);
+    }
+    return blocks;
+  }
+
+  function createExportWrapper({ bg, colorName, totalCount, pageIndex, pageCount }) {
     const WIDTH = 390;
     const HEIGHT = 844;
-
-    const exportArea = document.getElementById('export-area');
-    exportArea.innerHTML = '';
 
     const wrapper = document.createElement('div');
     wrapper.style.width = WIDTH + 'px';
@@ -146,96 +177,4 @@ document.addEventListener('DOMContentLoaded', () => {
     wrapper.style.background = bg;
     wrapper.style.fontFamily = 'Helvetica, Arial, sans-serif';
 
-    /* ===== 上：名前＋X（折り返し対応・省略なし） ===== */
-    let userName = document.getElementById('user-name').value.trim();
-    let userX = document.getElementById('user-x').value.trim();
-    if (userX && !userX.startsWith('@')) userX = '@' + userX;
-
-    if (userName || userX) {
-      const top = document.createElement('div');
-      top.textContent = userName + (userX ? ' ' + userX : '');
-      top.style.position = 'absolute';
-      top.style.top = '16px';
-      top.style.left = '20px';
-      top.style.right = '20px';
-      top.style.fontSize = '15px';
-      top.style.fontWeight = '600';
-      top.style.lineHeight = '1.25';
-      top.style.wordBreak = 'break-all';   // ← ここが重要
-      top.style.color = '#111';
-      top.style.textShadow = '0 0 6px rgba(255,255,255,0.9),0 1px 3px rgba(255,255,255,0.9)';
-
-      wrapper.appendChild(top);
-    }
-
-    /* ===== 白カード ===== */
-    const card = document.createElement('div');
-    card.style.position = 'absolute';
-    card.style.inset = '56px 20px 44px';
-    card.style.background = 'rgba(255,255,255,0.8)';
-    card.style.borderRadius = '18px';
-    card.style.padding = '20px';
-    card.style.overflowY = 'auto';
-    wrapper.appendChild(card);
-
-    let currentTour = '';
-    checked.forEach(cb => {
-      const data = JSON.parse(cb.dataset.show);
-      const s = data.show;
-
-      if (data.live !== currentTour) {
-        currentTour = data.live;
-        const h = document.createElement('div');
-        h.textContent = '■ ' + currentTour;
-        h.style.fontWeight = '700';
-        h.style.marginTop = '12px';
-        card.appendChild(h);
-      }
-
-      const time = s.time === 'AM' ? '昼' : s.time === 'PM' ? '夜' : '';
-      const line = document.createElement('div');
-      line.textContent = `${s.date.replace(/-/g, '/')} ${time} ${s.prefecture} ${s.venue}`;
-      line.style.fontSize = '14px';
-      line.style.lineHeight = '1.45';
-      line.style.paddingLeft = '8px';
-      card.appendChild(line);
-    });
-
-    /* ===== 右下：2段（少し上げて余裕） ===== */
-    const bottom = document.createElement('div');
-    bottom.style.position = 'absolute';
-    bottom.style.right = '20px';
-    bottom.style.bottom = '10px';
-    bottom.style.textAlign = 'right';
-    bottom.style.fontSize = '11px';
-    bottom.style.lineHeight = '1.45';
-    bottom.style.color = '#111';
-    bottom.style.opacity = '0.6';
-    bottom.style.textShadow = '0 1px 3px rgba(255,255,255,0.75)';
-    bottom.style.textShadow = '0 0 6px rgba(255,255,255,0.85),0 1px 2px rgba(255,255,255,0.85)';
-
-
-    bottom.innerHTML = `
-      <div>image color：♪${colorName}</div>
-      <div>https://pg-lou.github.io/pg-live-log/</div>
-    `;
-
-    wrapper.appendChild(bottom);
-    exportArea.appendChild(wrapper);
-
-    html2canvas(wrapper, { scale: 2 }).then(canvas => {
-      canvas.toBlob(blob => {
-        const url = URL.createObjectURL(blob);
-        window.location.href = url;
-      });
-    });
-  }
-
-  document.getElementById('export-btn')
-    .addEventListener('click', exportImage);
-
-  loadLiveData().then(renderList);
-});
-
-
-
+    //
