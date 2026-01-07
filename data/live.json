@@ -536,7 +536,127 @@
       ]
     }        
   ]
-}
+},
+
+  {
+    "liveName": "12thライヴサーキット \"PANORAMA×42\"",
+    "color": "radial-gradient(circle at 18% 25%, rgba(255,240,170,0.55), transparent 58%), radial-gradient(circle at 70% 32%, rgba(255,210,120,0.40), transparent 62%), radial-gradient(circle at 45% 72%, rgba(255,250,230,0.55), transparent 66%), linear-gradient(135deg, #fff6d6 0%, #ffe4a8 28%, #f4c85b 52%, #ffeabf 72%, #fffaf0 100%)",
+    "years": [
+      {
+        "year": 2012,
+        "shows": [
+          { "date": "2012-07-13", "prefecture": "埼玉県", "venue": "戸田市文化会館" },
+          { "date": "2012-07-16", "prefecture": "愛媛県", "venue": "ひめぎんホール" },
+          { "date": "2012-07-18", "prefecture": "広島県", "venue": "広島市文化交流会館" },
+          { "date": "2012-07-20", "prefecture": "山口県", "venue": "周南市文化会館" },
+          { "date": "2012-07-23", "prefecture": "栃木県", "venue": "栃木県総合文化センター" },
+          { "date": "2012-08-03", "prefecture": "長崎県", "venue": "長崎県ブリックホール" },
+          { "date": "2012-08-06", "prefecture": "鹿児島県", "venue": "鹿児島市民文化ホール" },
+          { "date": "2012-08-08", "prefecture": "福岡県", "venue": "福岡サンパレスホテル&ホール" },
+          { "date": "2012-08-11", "prefecture": "青森県", "venue": "リンクステーションホール青森" },
+          { "date": "2012-08-12", "prefecture": "岩手県", "venue": "盛岡市民文化ホール" },
+          { "date": "2012-08-19", "prefecture": "山梨県", "venue": "コラニー文化ホール" },
+          { "date": "2012-08-25", "prefecture": "石川県", "venue": "本多の森ホール" },
+          { "date": "2012-08-26", "prefecture": "福井県", "venue": "福井フェニックスプラザ" },
+          { "date": "2012-08-28", "prefecture": "静岡県", "venue": "静岡市民文化会館" },
+          { "date": "2012-09-08", "prefecture": "沖縄県", "venue": "宜野湾海浜公園屋外劇場 ※2012ポルノグラフテー" },
+          { "date": "2012-09-26", "prefecture": "東京都", "venue": "日本武道館" },
+          { "date": "2012-09-27", "prefecture": "東京都", "venue": "日本武道館" },
+          { "date": "2012-09-28", "prefecture": "東京都", "venue": "日本武道館" },
+          { "date": "2012-10-01", "prefecture": "埼玉県", "venue": "大宮ソニックシティ" },
+          { "date": "2012-10-10", "prefecture": "新潟県", "venue": "新潟県民会館" },
+          { "date": "2012-10-12", "prefecture": "福島県", "venue": "會津風雅堂" },
+          { "date": "2012-10-13", "prefecture": "山形県", "venue": "山形県県民会館" },
+          { "date": "2012-10-15", "prefecture": "宮城県", "venue": "仙台サンプラザホール" },
+          { "date": "2012-10-18", "prefecture": "群馬県", "venue": "ベイシア文化ホール" },
+          { "date": "2012-10-23", "prefecture": "三重県", "venue": "四日市市文化会館" },
+          { "date": "2012-10-25", "prefecture": "奈良県", "venue": "なら100年会館" },
+          { "date": "2012-10-27", "prefecture": "徳島県", "venue": "鳴門市文化会館" },
+          { "date": "2012-10-29", "prefecture": "岡山県", "venue": "倉敷市民会館" },
+          { "date": "2012-11-07", "prefecture": "北海道", "venue": "函館市民会館" },
+          { "date": "2012-11-09", "prefecture": "北海道", "venue": "稚内総合文化センター" },
+          { "date": "2012-11-12", "prefecture": "北海道", "venue": "ニトリ文化ホール" },
+          { "date": "2012-11-16", "prefecture": "長野県", "venue": "長野県松本文化会館" },
+          { "date": "2012-11-20", "prefecture": "和歌山県", "venue": "和歌山市民会館" },
+          { "date": "2012-11-22", "prefecture": "島根県", "venue": "島根県民会館" },
+          { "date": "2012-11-24", "prefecture": "香川県", "venue": "アルファあなぶきホール" },
+          { "date": "2012-11-26", "prefecture": "兵庫県", "venue": "神戸国際会館こくさいホール" },
+          { "date": "2012-12-18", "prefecture": "神奈川県", "venue": "横浜アリーナ" },
+          { "date": "2012-12-19", "prefecture": "神奈川県", "venue": "横浜アリーナ" },
+          { "date": "2012-12-22", "prefecture": "愛知県", "venue": "日本ガイシホール" },
+          { "date": "2012-12-23", "prefecture": "愛知県", "venue": "日本ガイシホール" },
+          { "date": "2012-12-26", "prefecture": "大阪府", "venue": "大阪城ホール" },
+          { "date": "2012-12-27", "prefecture": "大阪府", "venue": "大阪城ホール" }
+        ]
+      }
+    ]
+  },
+  {
+    "liveName": "FANCLUB UNDERWORLD 4 \"lab\"",
+    "color": "radial-gradient(circle at 20% 28%, rgba(205,235,255,0.55), transparent 58%), radial-gradient(circle at 72% 35%, rgba(140,185,255,0.40), transparent 62%), radial-gradient(circle at 46% 75%, rgba(210,235,255,0.35), transparent 66%), linear-gradient(135deg, #f1f8ff 0%, #d7ecff 32%, #b8dbff 55%, #d8e8ff 75%, #f7fbff 100%)",
+    "years": [
+      {
+        "year": 2012,
+        "shows": [
+          { "date": "2012-05-07", "prefecture": "大阪府", "venue": "Zepp Namba(OSAKA)" },
+          { "date": "2012-05-08", "prefecture": "大阪府", "venue": "Zepp Namba(OSAKA)", "time": "AM" },
+          { "date": "2012-05-08", "prefecture": "大阪府", "venue": "Zepp Namba(OSAKA)", "time": "PM" },
+          { "date": "2012-05-10", "prefecture": "広島県", "venue": "広島アステールプラザ" },
+          { "date": "2012-05-14", "prefecture": "東京都", "venue": "Zepp DiverCity(TOKYO)" },
+          { "date": "2012-05-15", "prefecture": "東京都", "venue": "Zepp DiverCity(TOKYO)", "time": "AM" },
+          { "date": "2012-05-15", "prefecture": "東京都", "venue": "Zepp DiverCity(TOKYO)", "time": "PM" },
+          { "date": "2012-05-18", "prefecture": "新潟県", "venue": "新潟市民芸術文化会館 りゅーとぴあ" },
+          { "date": "2012-05-21", "prefecture": "福岡県", "venue": "Zepp Fukuoka" },
+          { "date": "2012-05-23", "prefecture": "愛媛県", "venue": "松山市総合コミュニティセンター" },
+          { "date": "2012-05-28", "prefecture": "北海道", "venue": "Zepp Sapporo" },
+          { "date": "2012-05-30", "prefecture": "宮城県", "venue": "Zepp Sendai" },
+          { "date": "2012-05-31", "prefecture": "宮城県", "venue": "Zepp Sendai" },
+          { "date": "2012-06-04", "prefecture": "愛知県", "venue": "Zepp Nagoya" },
+          { "date": "2012-06-05", "prefecture": "愛知県", "venue": "Zepp Nagoya" }
+        ]
+      }
+    ]
+  },
+  {
+    "liveName": "幕張ロマンスポルノ'11 〜DAYS OF WONDER〜",
+    "color": "radial-gradient(circle at 18% 25%, rgba(255,190,205,0.55), transparent 58%), radial-gradient(circle at 72% 32%, rgba(170,205,255,0.45), transparent 62%), radial-gradient(circle at 46% 72%, rgba(215,235,255,0.35), transparent 66%), linear-gradient(135deg, #fff2f5 0%, #ffd4dd 28%, #d7e9ff 55%, #b9d6ff 78%, #f7fbff 100%)",
+    "years": [
+      {
+        "year": 2011,
+        "shows": [
+          { "date": "2011-12-24", "prefecture": "千葉県", "venue": "幕張メッセ国際展示場 9-11ホール" },
+          { "date": "2011-12-25", "prefecture": "千葉県", "venue": "幕張メッセ国際展示場 9-11ホール" },
+          { "date": "2011-12-31", "prefecture": "千葉県", "venue": "幕張メッセ国際展示場 9-11ホール ※カウントダウン公演" }
+        ]
+      }
+    ]
+  },
+  {
+    "liveName": "東北ロマンスポルノ'11 〜ポルノ港〜",
+    "color": "radial-gradient(circle at 20% 28%, rgba(255,235,170,0.55), transparent 58%), radial-gradient(circle at 74% 35%, rgba(160,210,255,0.45), transparent 62%), radial-gradient(circle at 46% 75%, rgba(210,235,255,0.35), transparent 66%), linear-gradient(135deg, #fff7d8 0%, #ffeaa8 30%, #d8ecff 60%, #a9d0ff 82%, #f7fbff 100%)",
+    "years": [
+      {
+        "year": 2011,
+        "shows": [
+          { "date": "2011-10-28", "prefecture": "宮城県", "venue": "Zepp Sendai ※振替公演/love up! 会員限定", "time": "AM" },
+          { "date": "2011-10-28", "prefecture": "宮城県", "venue": "Zepp Sendai ※振替公演/love up! 会員限定", "time": "PM" }
+        ]
+      }
+    ]
+  },
+  {
+    "liveName": "つま恋ロマンスポルノ'11 〜ポルノ丸〜",
+    "color": "radial-gradient(circle at 18% 25%, rgba(255,185,165,0.55), transparent 58%), radial-gradient(circle at 72% 32%, rgba(135,200,255,0.45), transparent 62%), radial-gradient(circle at 46% 72%, rgba(215,235,255,0.35), transparent 66%), linear-gradient(135deg, #fff0ea 0%, #ffd2c6 30%, #dff0ff 58%, #b4d9ff 82%, #f7fbff 100%)",
+    "years": [
+      {
+        "year": 2011,
+        "shows": [
+          { "date": "2011-09-10", "prefecture": "静岡県", "venue": "ヤマハリゾートつま恋" },
+          { "date": "2011-09-11", "prefecture": "静岡県", "venue": "ヤマハリゾートつま恋" }
+        ]
+      }
+    ]
+  }
 
 
 
