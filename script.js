@@ -213,32 +213,59 @@ document.addEventListener('DOMContentLoaded', () => {
     wrapper.style.background = bg;
     wrapper.style.fontFamily = 'Helvetica, Arial, sans-serif';
 
+    // ===== 上部：左（名前1行 + X2行目小さめ）／右（バッジ固定） =====
     let userName = document.getElementById('user-name').value.trim();
     let userX = document.getElementById('user-x').value.trim();
     if (userX && !userX.startsWith('@')) userX = '@' + userX;
 
-    const topText = userName + (userX ? ' ' + userX : '');
-    if (topText) {
-      const top = document.createElement('div');
-      top.textContent = topText;
-      top.style.position = 'absolute';
-      top.style.top = '16px';
-      top.style.left = '20px';
-      top.style.right = '110px';
-      top.style.fontSize = '15px';
-      top.style.fontWeight = '600';
-      top.style.lineHeight = '1.25';
-      top.style.wordBreak = 'break-all';
-      top.style.color = '#111';
-      top.style.textShadow = '0 0 6px rgba(255,255,255,0.85),0 1px 2px rgba(255,255,255,0.85)';
-      wrapper.appendChild(top);
+    const topRow = document.createElement('div');
+    topRow.style.position = 'absolute';
+    topRow.style.top = '16px';
+    topRow.style.left = '20px';
+    topRow.style.right = '20px';
+    topRow.style.display = 'flex';
+    topRow.style.alignItems = 'flex-start';
+    topRow.style.justifyContent = 'space-between';
+    topRow.style.gap = '10px';
+
+    const topLeft = document.createElement('div');
+    topLeft.style.flex = '1 1 auto';
+    topLeft.style.minWidth = '0';
+    topLeft.style.display = 'flex';
+    topLeft.style.flexDirection = 'column';
+    topLeft.style.gap = '2px';
+    topLeft.style.color = '#111';
+    topLeft.style.textShadow = '0 0 6px rgba(255,255,255,0.85),0 1px 2px rgba(255,255,255,0.85)';
+
+    if (userName) {
+      const nameEl = document.createElement('div');
+      nameEl.textContent = userName;
+      nameEl.style.fontSize = '15px';
+      nameEl.style.fontWeight = '600';
+      nameEl.style.lineHeight = '1.25';
+      // 省略はしない方針だけど、万一の保険でレイアウト崩壊を防ぐ
+      nameEl.style.whiteSpace = 'nowrap';
+      nameEl.style.overflow = 'hidden';
+      nameEl.style.textOverflow = 'clip';
+      topLeft.appendChild(nameEl);
+    }
+
+    if (userX) {
+      const xEl = document.createElement('div');
+      xEl.textContent = userX;
+      xEl.style.fontSize = '13px';
+      xEl.style.fontWeight = '500';
+      xEl.style.lineHeight = '1.25';
+      xEl.style.opacity = '0.85';
+      xEl.style.whiteSpace = 'nowrap';
+      xEl.style.overflow = 'hidden';
+      xEl.style.textOverflow = 'clip';
+      topLeft.appendChild(xEl);
     }
 
     const badge = document.createElement('div');
     badge.textContent = `✔ ${totalCount}公演${pageCount > 1 ? `  (${pageIndex}/${pageCount})` : ''}`;
-    badge.style.position = 'absolute';
-    badge.style.top = '18px';
-    badge.style.right = '20px';
+    badge.style.flex = '0 0 auto';
     badge.style.fontSize = '12px';
     badge.style.fontWeight = '700';
     badge.style.padding = '6px 10px';
@@ -246,7 +273,17 @@ document.addEventListener('DOMContentLoaded', () => {
     badge.style.background = 'rgba(255,255,255,0.75)';
     badge.style.color = '#111';
     badge.style.textShadow = '0 0 6px rgba(255,255,255,0.85)';
-    wrapper.appendChild(badge);
+    badge.style.marginTop = '2px';
+
+    if (userName || userX) {
+      topRow.appendChild(topLeft);
+    } else {
+      const spacer = document.createElement('div');
+      spacer.style.flex = '1 1 auto';
+      topRow.appendChild(spacer);
+    }
+    topRow.appendChild(badge);
+    wrapper.appendChild(topRow);
 
     const card = document.createElement('div');
     card.style.position = 'absolute';
@@ -384,7 +421,6 @@ document.addEventListener('DOMContentLoaded', () => {
           fits(page.content, testWrap, maxHeight) || page.content.childElementCount === 0;
 
         if (!canPutHeaderAndOne) {
-          // ★修正：新ページを作るのは「まだ4枚未満」のときだけ
           if (pages.length >= 4) {
             suppressedStarted = true;
             suppressedCount += (block.lines.length - lineIdx);
@@ -418,7 +454,6 @@ document.addEventListener('DOMContentLoaded', () => {
         if (lineIdx < block.lines.length) {
           isContinuation = true;
 
-          // ★修正：ここも同様に、5枚目を作らず「入らない分だけ省略」へ
           if (pages.length >= 4) {
             suppressedStarted = true;
             suppressedCount += (block.lines.length - lineIdx);
@@ -478,6 +513,16 @@ document.addEventListener('DOMContentLoaded', () => {
     .addEventListener('click', exportImage);
 
   loadLiveData().then(renderList);
+
+  // ======================
+  // ★追加：入力欄の文字数制限（固定）
+  // 名前：全角想定で12文字
+  // X：半角想定で15文字（@不要入力）
+  // ======================
+  const nameInput = document.getElementById('user-name');
+  const xInput = document.getElementById('user-x');
+  if (nameInput) nameInput.maxLength = 12;
+  if (xInput) xInput.maxLength = 15;
 
   // ======================
   // はじめにモーダル
