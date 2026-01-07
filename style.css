@@ -276,3 +276,15 @@ body {
 .action-bar #export-btn:disabled {
   opacity: 0.35;
 }
+
+/* =========================
+   export-area（html2canvas用）
+========================= */
+#export-area {
+  position: fixed;
+  left: -99999px;
+  top: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
