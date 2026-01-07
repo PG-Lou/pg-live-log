@@ -656,6 +656,231 @@
         ]
       }
     ]
+  },
+  {
+    "liveName": "11thライヴサーキット \"∠TARGET\"",
+    "color": "radial-gradient(circle at 18% 25%, rgba(255,240,170,0.55), transparent 58%), radial-gradient(circle at 72% 35%, rgba(210,215,225,0.45), transparent 62%), radial-gradient(circle at 46% 75%, rgba(255,250,235,0.45), transparent 66%), linear-gradient(135deg, #fff6d6 0%, #ffe4a8 30%, #d7dbe2 58%, #f0f2f6 78%, #fffaf0 100%)",
+    "years": [
+      {
+        "year": 2010,
+        "shows": [
+          { "date": "2010-05-15", "prefecture": "埼玉県", "venue": "三郷市文化会館" },
+          { "date": "2010-05-18", "prefecture": "静岡県", "venue": "富士市文化会館ロゼシアター" },
+          { "date": "2010-05-20", "prefecture": "福井県", "venue": "福井フェニックスプラザ" },
+          { "date": "2010-05-21", "prefecture": "石川県", "venue": "本多の森ホール" },
+          { "date": "2010-05-23", "prefecture": "静岡県", "venue": "静岡市文化会館" },
+          { "date": "2010-05-26", "prefecture": "東京都", "venue": "NHKホール" },
+          { "date": "2010-05-27", "prefecture": "東京都", "venue": "NHKホール" },
+          { "date": "2010-05-31", "prefecture": "神奈川県", "venue": "神奈川県民ホール" },
+          { "date": "2010-06-01", "prefecture": "神奈川県", "venue": "神奈川県民ホール" },
+          { "date": "2010-06-03", "prefecture": "東京都", "venue": "渋谷C.C.Lemonホール" },
+          { "date": "2010-06-04", "prefecture": "東京都", "venue": "渋谷C.C.Lemonホール" },
+          { "date": "2010-06-08", "prefecture": "新潟県", "venue": "長岡市立劇場" },
+          { "date": "2010-06-09", "prefecture": "新潟県", "venue": "新潟県民会館" },
+          { "date": "2010-06-11", "prefecture": "長野県", "venue": "ホクト文化ホール" },
+          { "date": "2010-06-14", "prefecture": "宮城県", "venue": "仙台サンプラザホール" },
+          { "date": "2010-06-16", "prefecture": "福島県", "venue": "いわき芸術文化交流館アリオス" },
+          { "date": "2010-06-18", "prefecture": "岩手県", "venue": "盛岡市民文化ホール" },
+          { "date": "2010-06-19", "prefecture": "青森県", "venue": "青森市文化会館" },
+          { "date": "2010-06-25", "prefecture": "北海道", "venue": "帯広市民文化ホール" },
+          { "date": "2010-06-27", "prefecture": "北海道", "venue": "旭川市民文化会館" },
+          { "date": "2010-06-29", "prefecture": "北海道", "venue": "苫小牧市民会館" },
+          { "date": "2010-06-30", "prefecture": "北海道", "venue": "ニトリ文化ホール" },
+          { "date": "2010-07-06", "prefecture": "埼玉県", "venue": "大宮ソニックシティ" },
+          { "date": "2010-07-11", "prefecture": "大阪府", "venue": "大阪国際会議場メインホール" },
+          { "date": "2010-07-12", "prefecture": "大阪府", "venue": "大阪国際会議場メインホール" },
+          { "date": "2010-07-14", "prefecture": "兵庫県", "venue": "神戸国際会館こくさいホール" },
+          { "date": "2010-07-15", "prefecture": "兵庫県", "venue": "姫路市文化センター" },
+          { "date": "2010-07-19", "prefecture": "愛知県", "venue": "名古屋国際会議場センチュリーホール" },
+          { "date": "2010-07-20", "prefecture": "愛知県", "venue": "名古屋国際会議場センチュリーホール" },
+          { "date": "2010-07-22", "prefecture": "愛知県", "venue": "名古屋国際会議場センチュリーホール" },
+          { "date": "2010-07-23", "prefecture": "愛知県", "venue": "名古屋国際会議場センチュリーホール" },
+          { "date": "2010-08-19", "prefecture": "栃木県", "venue": "栃木県総合文化センター" },
+          { "date": "2010-08-24", "prefecture": "三重県", "venue": "三重県文化会館" },
+          { "date": "2010-08-26", "prefecture": "広島県", "venue": "ふくやま芸術文化ホールリーデンローズ" },
+          { "date": "2010-08-28", "prefecture": "鳥取県", "venue": "米子コンベンションセンター" },
+          { "date": "2010-08-30", "prefecture": "広島県", "venue": "広島厚生年金会館" },
+          { "date": "2010-08-31", "prefecture": "広島県", "venue": "広島厚生年金会館" },
+          { "date": "2010-09-02", "prefecture": "山口県", "venue": "周南市文化会館" },
+          { "date": "2010-09-04", "prefecture": "岐阜県", "venue": "土岐市文化プラザ" },
+          { "date": "2010-09-07", "prefecture": "千葉県", "venue": "千葉県文化会館" },
+          { "date": "2010-09-08", "prefecture": "千葉県", "venue": "千葉県文化会館" },
+          { "date": "2010-09-12", "prefecture": "和歌山県", "venue": "和歌山県民文化会館" },
+          { "date": "2010-09-13", "prefecture": "滋賀県", "venue": "滋賀県立芸術劇場びわ湖ホール" },
+          { "date": "2010-09-15", "prefecture": "大阪府", "venue": "大阪国際会議場メインホール" },
+          { "date": "2010-09-16", "prefecture": "大阪府", "venue": "大阪国際会議場メインホール" },
+          { "date": "2010-09-20", "prefecture": "徳島県", "venue": "徳島市立文化センター" },
+          { "date": "2010-09-22", "prefecture": "香川県", "venue": "アルファあなぶきホール" },
+          { "date": "2010-09-24", "prefecture": "愛媛県", "venue": "ひめぎんホール" },
+          { "date": "2010-09-27", "prefecture": "東京都", "venue": "JCBホール" },
+          { "date": "2010-09-28", "prefecture": "東京都", "venue": "JCBホール" },
+          { "date": "2010-10-01", "prefecture": "熊本県", "venue": "崇城大学市民ホール" },
+          { "date": "2010-10-03", "prefecture": "鹿児島県", "venue": "鹿児島市民文化ホール" },
+          { "date": "2010-10-05", "prefecture": "福岡県", "venue": "福岡サンパレスホテル＆ホール" },
+          { "date": "2010-10-06", "prefecture": "長崎県", "venue": "長崎ブリックホール" },
+          { "date": "2010-10-09", "prefecture": "沖縄県", "venue": "沖縄コンベンション劇場" },
+          { "date": "2010-10-10", "prefecture": "沖縄県", "venue": "沖縄コンベンション劇場" },
+          { "date": "2010-12-30", "prefecture": "神奈川県", "venue": "横浜アリーナ ※love up! 会員限定" },
+          { "date": "2010-12-31", "prefecture": "神奈川県", "venue": "横浜アリーナ ※love up! 会員限定/カウントダウン公演" }
+        ]
+      }
+    ]
+  },
+
+  {
+    "liveName": "東京ロマンスポルノ'09 〜愛と青春の日々〜",
+    "color": "radial-gradient(circle at 18% 25%, rgba(255,190,200,0.55), transparent 58%), radial-gradient(circle at 72% 30%, rgba(170,210,255,0.45), transparent 62%), radial-gradient(circle at 48% 72%, rgba(180,235,200,0.40), transparent 66%), linear-gradient(135deg, #fff2f5 0%, #ffd0db 28%, #dff0ff 52%, #c9f1dd 74%, #f7fbff 100%)",
+    "years": [
+      {
+        "year": 2009,
+        "shows": [
+          { "date": "2009-11-28", "prefecture": "東京都", "venue": "東京ドーム" }
+        ]
+      }
+    ]
+  },
+
+  {
+    "liveName": "10thライヴサーキット \"ロイヤル ストレート フラッシュ\"",
+    "color": "radial-gradient(circle at 20% 28%, rgba(210,255,200,0.55), transparent 58%), radial-gradient(circle at 74% 35%, rgba(255,235,160,0.45), transparent 62%), radial-gradient(circle at 46% 75%, rgba(230,255,220,0.35), transparent 66%), linear-gradient(135deg, #f1ffe8 0%, #d7f8c4 32%, #fff0b0 58%, #dff2c8 76%, #f7fff2 100%)",
+    "years": [
+      {
+        "year": 2009,
+        "shows": [
+          { "date": "2009-01-30", "prefecture": "大阪府", "venue": "Zepp Osaka ※love up! 会員限定" },
+          { "date": "2009-02-05", "prefecture": "大阪府", "venue": "大阪城ホール" },
+          { "date": "2009-02-06", "prefecture": "大阪府", "venue": "大阪城ホール" },
+          { "date": "2009-02-14", "prefecture": "静岡県", "venue": "静岡エコパアリーナ" },
+          { "date": "2009-02-15", "prefecture": "静岡県", "venue": "静岡エコパアリーナ" },
+          { "date": "2009-02-27", "prefecture": "広島県", "venue": "広島サンプラザホール" },
+          { "date": "2009-02-28", "prefecture": "広島県", "venue": "広島サンプラザホール" },
+          { "date": "2009-03-06", "prefecture": "三重県", "venue": "三重県営サンアリーナ" },
+          { "date": "2009-03-07", "prefecture": "三重県", "venue": "三重県営サンアリーナ" },
+          { "date": "2009-03-14", "prefecture": "福岡県", "venue": "マリンメッセ福岡" },
+          { "date": "2009-03-15", "prefecture": "福岡県", "venue": "マリンメッセ福岡" },
+          { "date": "2009-03-20", "prefecture": "埼玉県", "venue": "さいたまスーパーアリーナ" },
+          { "date": "2009-03-21", "prefecture": "埼玉県", "venue": "さいたまスーパーアリーナ" },
+          { "date": "2009-03-22", "prefecture": "埼玉県", "venue": "さいたまスーパーアリーナ" },
+          { "date": "2009-03-28", "prefecture": "兵庫県", "venue": "神戸ワールド記念ホール" },
+          { "date": "2009-03-29", "prefecture": "兵庫県", "venue": "神戸ワールド記念ホール" },
+          { "date": "2009-04-04", "prefecture": "北海道", "venue": "北海道立総合体育センター 北海きたえーる" },
+          { "date": "2009-04-05", "prefecture": "北海道", "venue": "北海道立総合体育センター 北海きたえーる" },
+          { "date": "2009-04-11", "prefecture": "宮城県", "venue": "仙台市体育館" },
+          { "date": "2009-04-12", "prefecture": "宮城県", "venue": "仙台市体育館" },
+          { "date": "2009-04-18", "prefecture": "愛媛県", "venue": "愛媛県武道館" },
+          { "date": "2009-04-19", "prefecture": "愛媛県", "venue": "愛媛県武道館" },
+          { "date": "2009-04-25", "prefecture": "新潟県", "venue": "朱鷺メッセ・新潟コンベンションセンター" },
+          { "date": "2009-04-26", "prefecture": "新潟県", "venue": "朱鷺メッセ・新潟コンベンションセンター" },
+          { "date": "2009-05-02", "prefecture": "愛知県", "venue": "日本ガイシホール" },
+          { "date": "2009-05-03", "prefecture": "愛知県", "venue": "日本ガイシホール" },
+          { "date": "2009-05-20", "prefecture": "東京都", "venue": "国立代々木競技場 第一体育館 ※追加公演" },
+          { "date": "2009-05-22", "prefecture": "東京都", "venue": "国立代々木競技場 第一体育館 ※追加公演" },
+          { "date": "2009-05-23", "prefecture": "東京都", "venue": "国立代々木競技場 第一体育館 ※追加公演" },
+          { "date": "2009-05-24", "prefecture": "東京都", "venue": "国立代々木競技場 第一体育館 ※追加公演" }
+        ]
+      }
+    ]
+  },
+
+  {
+    "liveName": "FANCLUB UNDERWORLD 3",
+    "color": "radial-gradient(circle at 20% 28%, rgba(205,220,255,0.55), transparent 58%), radial-gradient(circle at 74% 35%, rgba(170,190,245,0.40), transparent 62%), radial-gradient(circle at 46% 75%, rgba(220,235,255,0.35), transparent 66%), linear-gradient(135deg, #f2f6ff 0%, #dbe5ff 32%, #bfcdf0 55%, #d9e2ff 75%, #f7f9ff 100%)",
+    "years": [
+      {
+        "year": 2008,
+        "shows": [
+          { "date": "2008-10-27", "prefecture": "神奈川県", "venue": "横浜BLITZ" },
+          { "date": "2008-10-28", "prefecture": "神奈川県", "venue": "横浜BLITZ" },
+          { "date": "2008-10-31", "prefecture": "新潟県", "venue": "NIIGATA LOTS" },
+          { "date": "2008-11-05", "prefecture": "広島県", "venue": "広島クラブクアトロ", "time": "AM" },
+          { "date": "2008-11-05", "prefecture": "広島県", "venue": "広島クラブクアトロ", "time": "PM" },
+          { "date": "2008-11-07", "prefecture": "愛媛県", "venue": "松山市総合コミュニティーセンター" },
+          { "date": "2008-11-10", "prefecture": "福岡県", "venue": "Zepp Fukuoka" },
+          { "date": "2008-11-13", "prefecture": "北海道", "venue": "Zepp Sapporo" },
+          { "date": "2008-11-15", "prefecture": "宮城県", "venue": "Zepp Sendai", "time": "AM" },
+          { "date": "2008-11-15", "prefecture": "宮城県", "venue": "Zepp Sendai", "time": "PM" },
+          { "date": "2008-11-20", "prefecture": "愛知県", "venue": "Zepp Nagoya", "time": "AM" },
+          { "date": "2008-11-20", "prefecture": "愛知県", "venue": "Zepp Nagoya", "time": "PM" },
+          { "date": "2008-11-25", "prefecture": "大阪府", "venue": "Zepp Osaka" },
+          { "date": "2008-11-26", "prefecture": "大阪府", "venue": "Zepp Osaka", "time": "AM" },
+          { "date": "2008-11-26", "prefecture": "大阪府", "venue": "Zepp Osaka", "time": "PM" },
+          { "date": "2008-12-12", "prefecture": "東京都", "venue": "Zepp Tokyo" },
+          { "date": "2008-12-13", "prefecture": "東京都", "venue": "Zepp Tokyo", "time": "AM" },
+          { "date": "2008-12-13", "prefecture": "東京都", "venue": "Zepp Tokyo", "time": "PM" }
+        ]
+      }
+    ]
+  },
+
+  {
+    "liveName": "10th Anniversary Project 『開会宣言LIVE』横浜・淡路ロマンスポルノ'08 〜10イヤーズ ギフト〜",
+    "color": "radial-gradient(circle at 18% 25%, rgba(235,240,248,0.60), transparent 58%), radial-gradient(circle at 72% 35%, rgba(255,235,170,0.45), transparent 62%), radial-gradient(circle at 46% 75%, rgba(250,250,255,0.45), transparent 66%), linear-gradient(135deg, #f4f6fb 0%, #e1e6ef 32%, #ffe9b0 58%, #f7f3da 76%, #fbfbff 100%)",
+    "years": [
+      {
+        "year": 2008,
+        "shows": [
+          { "date": "2008-09-06", "prefecture": "神奈川県", "venue": "横浜スタジアム" },
+          { "date": "2008-09-07", "prefecture": "神奈川県", "venue": "横浜スタジアム" },
+          { "date": "2008-09-14", "prefecture": "兵庫県", "venue": "国営明石海峡公園芝生広場" },
+          { "date": "2008-09-15", "prefecture": "兵庫県", "venue": "国営明石海峡公園芝生広場" }
+        ]
+      }
+    ]
+  },
+
+  {
+    "liveName": "9thライヴサーキット \"ポルノグラフィティがやってきた\"",
+    "color": "radial-gradient(circle at 20% 28%, rgba(255,246,230,0.65), transparent 58%), radial-gradient(circle at 74% 35%, rgba(245,224,195,0.45), transparent 62%), radial-gradient(circle at 46% 75%, rgba(225,195,165,0.30), transparent 66%), linear-gradient(135deg, #fff8ee 0%, #f6e3cf 32%, #edd2b7 55%, #f7efe5 76%, #fffaf4 100%)",
+    "years": [
+      {
+        "year": 2007,
+        "shows": [
+          { "date": "2007-11-26", "prefecture": "東京都", "venue": "新木場studioCOAST" },
+          { "date": "2007-11-27", "prefecture": "東京都", "venue": "新木場studioCOAST" },
+          { "date": "2007-12-02", "prefecture": "宮城県", "venue": "Zepp Sendai" },
+          { "date": "2007-12-03", "prefecture": "宮城県", "venue": "Zepp Sendai" },
+          { "date": "2007-12-05", "prefecture": "宮城県", "venue": "Zepp Sendai" },
+          { "date": "2007-12-06", "prefecture": "宮城県", "venue": "Zepp Sendai" },
+          { "date": "2007-12-10", "prefecture": "大阪府", "venue": "Zepp Osaka" },
+          { "date": "2007-12-11", "prefecture": "大阪府", "venue": "Zepp Osaka" },
+          { "date": "2007-12-13", "prefecture": "大阪府", "venue": "Zepp Osaka" },
+          { "date": "2007-12-14", "prefecture": "大阪府", "venue": "Zepp Osaka" },
+          { "date": "2007-12-16", "prefecture": "高知県", "venue": "高知BAY5 SQUARE" },
+          { "date": "2007-12-17", "prefecture": "高知県", "venue": "高知BAY5 SQUARE" },
+          { "date": "2007-12-24", "prefecture": "広島県", "venue": "広島CLUB QUATTRO" },
+          { "date": "2007-12-25", "prefecture": "広島県", "venue": "広島CLUB QUATTRO" },
+          { "date": "2007-12-27", "prefecture": "神奈川県", "venue": "横浜BLITZ" },
+          { "date": "2007-12-28", "prefecture": "神奈川県", "venue": "横浜BLITZ" }
+        ]
+      },
+      {
+        "year": 2008,
+        "shows": [
+          { "date": "2008-01-07", "prefecture": "北海道", "venue": "Zepp Sapporo" },
+          { "date": "2008-01-08", "prefecture": "北海道", "venue": "Zepp Sapporo" },
+          { "date": "2008-01-10", "prefecture": "北海道", "venue": "Zepp Sapporo" },
+          { "date": "2008-01-11", "prefecture": "北海道", "venue": "Zepp Sapporo" },
+          { "date": "2008-01-15", "prefecture": "福岡県", "venue": "Zepp Fukuoka" },
+          { "date": "2008-01-16", "prefecture": "福岡県", "venue": "Zepp Fukuoka" },
+          { "date": "2008-01-18", "prefecture": "福岡県", "venue": "Zepp Fukuoka" },
+          { "date": "2008-01-19", "prefecture": "福岡県", "venue": "Zepp Fukuoka" },
+          { "date": "2008-01-22", "prefecture": "愛知県", "venue": "Zepp Nagoya" },
+          { "date": "2008-01-23", "prefecture": "愛知県", "venue": "Zepp Nagoya" },
+          { "date": "2008-01-25", "prefecture": "愛知県", "venue": "Zepp Nagoya" },
+          { "date": "2008-01-26", "prefecture": "愛知県", "venue": "Zepp Nagoya" },
+          { "date": "2008-01-29", "prefecture": "東京都", "venue": "Zepp Tokyo" },
+          { "date": "2008-01-30", "prefecture": "東京都", "venue": "Zepp Tokyo" },
+          { "date": "2008-02-01", "prefecture": "東京都", "venue": "Zepp Tokyo" },
+          { "date": "2008-02-02", "prefecture": "東京都", "venue": "Zepp Tokyo" },
+          { "date": "2008-02-14", "prefecture": "千葉県", "venue": "市川市文化会館" },
+          { "date": "2008-02-20", "prefecture": "富山県", "venue": "富山オーバードホール" },
+          { "date": "2008-02-22", "prefecture": "京都府", "venue": "京都会館" },
+          { "date": "2008-02-27", "prefecture": "宮崎県", "venue": "宮崎市民文化ホール" },
+          { "date": "2008-02-29", "prefecture": "佐賀県", "venue": "佐賀市文化会館" },
+          { "date": "2008-03-02", "prefecture": "大分県", "venue": "iichiko グランシアタ" }
+        ]
+      }
+    ]
   }
 
 
