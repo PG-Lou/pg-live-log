@@ -203,7 +203,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const badge = document.createElement('div');
     badge.textContent = `✔ ${totalCount}公演${pageCount > 1 ? `  (${pageIndex}/${pageCount})` : ''}`;
     badge.style.position = 'absolute';
-    badge.style.top = '16px';
+    badge.style.top = '18px';
     badge.style.right = '20px';
     badge.style.fontSize = '12px';
     badge.style.fontWeight = '700';
@@ -217,10 +217,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // ===== 白カード（詰まり改善：上の余白をちょい詰め） =====
     const card = document.createElement('div');
     card.style.position = 'absolute';
-    card.style.inset = '52px 20px 52px';     // 56→52（少し上げる）
+    card.style.inset = '52px 20px 44px';
     card.style.background = 'rgba(255,255,255,0.8)';
     card.style.borderRadius = '18px';
-    card.style.padding = '16px 18px';        // 20→16（上が下がりすぎ対策）
+    card.style.padding = '16px 18px';
     card.style.overflow = 'hidden';
     wrapper.appendChild(card);
 
@@ -268,7 +268,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const line = document.createElement('div');
     line.textContent = text;
     line.style.fontSize = '14px';
-    line.style.lineHeight = '1.45';
+    line.style.lineHeight = '1.38';
     line.style.paddingLeft = '8px';
     line.style.wordBreak = 'break-word';
     return line;
@@ -450,3 +450,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
   loadLiveData().then(renderList);
 });
+
