@@ -125,15 +125,32 @@ document.addEventListener('DOMContentLoaded', () => {
   // ======================
   // 画像出力（分割対応）
   // ======================
-  function downloadBlob(blob, filename) {
-    const a = document.createElement('a');
-    const url = URL.createObjectURL(blob);
-    a.href = url;
-    a.download = filename;
-    document.body.appendChild(a);
-    a.click();
-    a.remove();
-    setTimeout(() => URL.revokeObjectURL(url), 1000);
+  function openImageInNewTab(dataUrl, title) {
+    const w = window.open('', '_blank');
+    if (!w) {
+      alert('ポップアップがブロックされました。ブラウザ設定で許可してください。');
+      return;
+    }
+
+    w.document.open();
+    w.document.write(`
+      <!doctype html>
+      <html>
+        <head>
+          <meta charset="utf-8" />
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <title>${title || 'PG LIVE LOG export'}</title>
+          <style>
+            html, body { margin: 0; padding: 0; background: #111; }
+            img { width: 100%; height: auto; display: block; }
+          </style>
+        </head>
+        <body>
+          <img src="${dataUrl}" alt="export" />
+        </body>
+      </html>
+    `);
+    w.document.close();
   }
 
   function getCheckedShowsInOrder() {
@@ -429,16 +446,14 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    // 生成 → まとめてDL
+    // 生成 → 新タブ表示（ページごと）
     // html2canvasは重いので順番に
     for (let i = 0; i < pages.length; i++) {
       const p = pages[i];
       const canvas = await html2canvas(p.wrapper, { scale: 2 });
 
-      const blob = await new Promise(resolve => canvas.toBlob(resolve, 'image/png'));
-      if (!blob) continue;
-
-      downloadBlob(blob, `pg-live-log_${i + 1}of${pages.length}.png`);
+      const dataUrl = canvas.toDataURL('image/png');
+      openImageInNewTab(dataUrl, `pg-live-log_${i + 1}of${pages.length}`);
     }
 
     // export-area掃除
@@ -450,4 +465,3 @@ document.addEventListener('DOMContentLoaded', () => {
 
   loadLiveData().then(renderList);
 });
-
