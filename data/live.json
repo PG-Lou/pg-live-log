@@ -527,7 +527,14 @@
         { "date": "2014-03-21", "prefecture": "静岡県", "venue": "静岡エコパアリーナ" },
         { "date": "2014-03-29", "prefecture": "福岡県", "venue": "マリンメッセ福岡" }
       ]
-    }
+    },
+    
+    {
+      "year": 2013,
+      "shows": [
+        { "date": "2013-12-05", "prefecture": "東京都", "venue": "EX THEATER ROPPONGI（プレライヴ）" },
+      ]
+    }        
   ]
 }
 
