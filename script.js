@@ -176,7 +176,6 @@ document.addEventListener('DOMContentLoaded', () => {
   function getCheckedShowsInOrder() {
     const checked = Array.from(document.querySelectorAll('.show-check:checked'));
 
-    // DOM順（=一覧順）で並ぶので、そのままでOK
     return checked.map(cb => {
       const data = JSON.parse(cb.dataset.show);
       const s = data.show;
@@ -214,7 +213,6 @@ document.addEventListener('DOMContentLoaded', () => {
     wrapper.style.background = bg;
     wrapper.style.fontFamily = 'Helvetica, Arial, sans-serif';
 
-    // ===== 上：名前＋X =====
     let userName = document.getElementById('user-name').value.trim();
     let userX = document.getElementById('user-x').value.trim();
     if (userX && !userX.startsWith('@')) userX = '@' + userX;
@@ -236,7 +234,6 @@ document.addEventListener('DOMContentLoaded', () => {
       wrapper.appendChild(top);
     }
 
-    // ===== 右上：合計数（ついでにページ番号） =====
     const badge = document.createElement('div');
     badge.textContent = `✔ ${totalCount}公演${pageCount > 1 ? `  (${pageIndex}/${pageCount})` : ''}`;
     badge.style.position = 'absolute';
@@ -251,7 +248,6 @@ document.addEventListener('DOMContentLoaded', () => {
     badge.style.textShadow = '0 0 6px rgba(255,255,255,0.85)';
     wrapper.appendChild(badge);
 
-    // ===== 白カード（詰まり改善：上の余白をちょい詰め） =====
     const card = document.createElement('div');
     card.style.position = 'absolute';
     card.style.inset = '52px 20px 44px';
@@ -261,7 +257,6 @@ document.addEventListener('DOMContentLoaded', () => {
     card.style.overflow = 'hidden';
     wrapper.appendChild(card);
 
-    // ===== 中身コンテナ（測定＆配置用） =====
     const content = document.createElement('div');
     content.style.position = 'relative';
     content.style.width = '100%';
@@ -269,7 +264,6 @@ document.addEventListener('DOMContentLoaded', () => {
     content.style.overflow = 'hidden';
     card.appendChild(content);
 
-    // ===== 右下：フッター =====
     const bottom = document.createElement('div');
     bottom.style.position = 'absolute';
     bottom.style.right = '20px';
@@ -289,9 +283,20 @@ document.addEventListener('DOMContentLoaded', () => {
     return { wrapper, card, content, WIDTH, HEIGHT };
   }
 
+  // ★修正：<s>...</s> を span.strike にしてHTMLとして描画（生HTMLは使わない）
   function makeHeaderEl(titleText) {
     const h = document.createElement('div');
-    h.textContent = titleText;
+
+    const escaped = titleText
+      .replaceAll('&', '&amp;')
+      .replaceAll('<', '&lt;')
+      .replaceAll('>', '&gt;');
+
+    h.innerHTML = escaped.replace(
+      /&lt;s&gt;([\s\S]*?)&lt;\/s&gt;/g,
+      '<span class="strike">$1</span>'
+    );
+
     h.style.fontWeight = '800';
     h.style.fontSize = '16px';
     h.style.lineHeight = '1.25';
@@ -332,14 +337,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const exportArea = document.getElementById('export-area');
     exportArea.innerHTML = '';
 
-    // ---- まず1ページ作って、カード内の「入る高さ」を確定 ----
     const tmp = createExportWrapper({ bg, colorName, totalCount, pageIndex: 1, pageCount: 1 });
     exportArea.appendChild(tmp.wrapper);
-
-    // contentが入る最大高さ（px）
     const maxHeight = tmp.content.clientHeight;
-
-    // tmpは測定用なので消す（あとで本番作る）
     exportArea.innerHTML = '';
 
     const pages = [];
@@ -354,12 +354,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     page = newPage();
 
-    // ブロック単位詰め込み
-    // ルール：
-    // - ライブ名だけでページ終わらない（ライブ名＋最低1行が入らないなら次ページ）
-    // - 1ライブが長い時は分割OK、2ページ目以降は（続き）を付ける
     let blockIndex = 0;
     let suppressedCount = 0;
+    let suppressedStarted = false;
 
     for (const block of blocks) {
       blockIndex++;
@@ -368,34 +365,17 @@ document.addEventListener('DOMContentLoaded', () => {
       let isContinuation = false;
 
       while (lineIdx < block.lines.length) {
-        // 4枚上限：4枚目で溢れたら省略
-        if (pages.length === 4) {
-          // 4枚目にはこれ以上追加しないで、残り数を省略として数える
-          suppressedCount += (block.lines.length - lineIdx);
+        if (suppressedStarted) break;
 
-          // さらに後続ブロックも全部省略
-          for (let b = blockIndex; b < blocks.length; b++) {
-            suppressedCount += blocks[b].lines.length;
-          }
-          // ループを全部抜ける
-          lineIdx = block.lines.length;
-          blockIndex = blocks.length;
-          break;
-        }
-
-        // ヘッダー文言（続き対応）
         const headerText = '■ ' + block.live + (isContinuation ? '（続き）' : '');
 
-        // 「ヘッダーだけ」禁止のため、ヘッダー＋最低1行が入るか先に判定
         const headerEl = makeHeaderEl(headerText);
         const firstLineEl = makeLineEl(block.lines[lineIdx]);
 
-        // 先頭ブロックは上の余白を詰める（最初の始まりが下がりすぎ問題）
         if (page.content.childElementCount === 0) {
           headerEl.style.marginTop = '0px';
         }
 
-        // いまのページに「ヘッダー+1行」が入らないなら次ページへ（ただしページが空なら強制入れる）
         const testWrap = document.createElement('div');
         testWrap.appendChild(headerEl.cloneNode(true));
         testWrap.appendChild(firstLineEl.cloneNode(true));
@@ -404,23 +384,29 @@ document.addEventListener('DOMContentLoaded', () => {
           fits(page.content, testWrap, maxHeight) || page.content.childElementCount === 0;
 
         if (!canPutHeaderAndOne) {
-          // 次ページへ
+          // ★修正：新ページを作るのは「まだ4枚未満」のときだけ
+          if (pages.length >= 4) {
+            suppressedStarted = true;
+            suppressedCount += (block.lines.length - lineIdx);
+            for (let b = blockIndex; b < blocks.length; b++) {
+              suppressedCount += blocks[b].lines.length;
+            }
+            break;
+          }
+
           page = newPage();
           continue;
         }
 
-        // ヘッダーを追加
         const realHeader = makeHeaderEl(headerText);
         if (page.content.childElementCount === 0) {
           realHeader.style.marginTop = '0px';
         }
         page.content.appendChild(realHeader);
 
-        // 公演行を入るだけ詰める
         while (lineIdx < block.lines.length) {
           const lineEl = makeLineEl(block.lines[lineIdx]);
 
-          // offsetHeightはappend前だと0になり得るので、一旦テストしてから入れる
           if (fits(page.content, lineEl, maxHeight)) {
             page.content.appendChild(lineEl);
             lineIdx++;
@@ -430,14 +416,25 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         if (lineIdx < block.lines.length) {
-          // まだ残ってるので次ページへ、続き扱い
           isContinuation = true;
+
+          // ★修正：ここも同様に、5枚目を作らず「入らない分だけ省略」へ
+          if (pages.length >= 4) {
+            suppressedStarted = true;
+            suppressedCount += (block.lines.length - lineIdx);
+            for (let b = blockIndex; b < blocks.length; b++) {
+              suppressedCount += blocks[b].lines.length;
+            }
+            break;
+          }
+
           page = newPage();
         }
       }
+
+      if (suppressedStarted) break;
     }
 
-    // 4枚目に省略文言を入れる
     if (suppressedCount > 0 && pages.length > 0) {
       const last = pages[Math.min(3, pages.length - 1)];
       const note = document.createElement('div');
@@ -449,7 +446,6 @@ document.addEventListener('DOMContentLoaded', () => {
       last.content.appendChild(note);
     }
 
-    // ページ番号を正しく反映（badgeの (x/y) を更新）
     const pageCount = pages.length;
     pages.forEach((p, i) => {
       const badge = p.wrapper.querySelector('div[style*="border-radius: 999px"]');
@@ -458,7 +454,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    // 生成 → まとめて「1タブ」に表示
     const urls = [];
 
     for (let i = 0; i < pages.length; i++) {
@@ -472,7 +467,6 @@ document.addEventListener('DOMContentLoaded', () => {
       urls.push(url);
     }
 
-    // export-area掃除
     exportArea.innerHTML = '';
 
     if (urls.length) {
@@ -494,11 +488,8 @@ document.addEventListener('DOMContentLoaded', () => {
   function openAbout() {
     if (!aboutModal) return;
     aboutModal.hidden = false;
-
-    // 背景スクロール止め
     document.body.style.overflow = 'hidden';
 
-    // フォーカス
     const panel = aboutModal.querySelector('.modal-panel');
     panel && panel.focus();
   }
@@ -506,11 +497,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function closeAbout() {
     if (!aboutModal) return;
     aboutModal.hidden = true;
-
-    // 背景スクロール戻す
     document.body.style.overflow = '';
-
-    // ボタンに戻す
     aboutOpenBtn && aboutOpenBtn.focus();
   }
 
