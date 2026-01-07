@@ -295,7 +295,7 @@ body {
 }
 
 /* =========================
-   上部：はじめにボタン
+   上部：はじめに（テキストリンク）
 ========================= */
 .top-actions{
   max-width: 820px;
@@ -304,32 +304,57 @@ body {
   justify-content: flex-start;
 }
 
+/* もともとの “ボタン” をリンクっぽく */
 .about-btn{
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  padding: 10px 12px;
-  border-radius: 14px;
-  border: 1px solid rgba(0,0,0,0.08);
-  background: rgba(255,255,255,0.75);
-  backdrop-filter: blur(6px);
-  color: #1f2a35;
+  gap: 8px;
+
+  /* ボタンっぽさ消す */
+  padding: 4px 2px;
+  border: none;
+  background: transparent;
+  box-shadow: none;
+
+  /* 文字リンクのトーン */
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(31,42,53,0.75);
   cursor: pointer;
-  font-weight: 650;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+
+  /* 下線はホバー時だけ */
+  text-decoration: none;
+  text-underline-offset: 3px;
 }
 
+/* “i” も控えめに */
 .about-i{
-  width: 22px;
-  height: 22px;
+  width: 16px;
+  height: 16px;
   border-radius: 999px;
   display: grid;
   place-items: center;
-  border: 1.5px solid rgba(0,0,0,0.35);
-  background: rgba(255,255,255,0.9);
-  font-size: 13px;
-  font-weight: 800;
+
+  border: 1px solid rgba(31,42,53,0.25);
+  background: transparent;
+  color: rgba(31,42,53,0.7);
+
+  font-size: 11px;
+  font-weight: 700;
   line-height: 1;
+}
+
+/* マウスの時だけ、リンクだよ感 */
+.about-btn:hover{
+  color: rgba(31,42,53,1);
+  text-decoration: underline;
+}
+
+/* キーボード操作のフォーカスも同じ見え方に */
+.about-btn:focus-visible{
+  outline: none;
+  color: rgba(31,42,53,1);
+  text-decoration: underline;
 }
 
 /* =========================
@@ -447,4 +472,5 @@ body {
 .modal-footer{
   flex: 0 0 auto;
 }
+
 
