@@ -125,30 +125,50 @@ document.addEventListener('DOMContentLoaded', () => {
   // ======================
   // 画像出力（分割対応）
   // ======================
-  function openImageInNewTab(dataUrl, title) {
+  function openPreviewTab(imageUrls, title) {
     const w = window.open('', '_blank');
     if (!w) {
       alert('ポップアップがブロックされました。ブラウザ設定で許可してください。');
       return;
     }
 
+    const safeTitle = title || 'PG LIVE LOG export preview';
+    const safeUrls = imageUrls.map(u => String(u));
+
     w.document.open();
     w.document.write(`
-      <!doctype html>
-      <html>
-        <head>
-          <meta charset="utf-8" />
-          <meta name="viewport" content="width=device-width, initial-scale=1" />
-          <title>${title || 'PG LIVE LOG export'}</title>
-          <style>
-            html, body { margin: 0; padding: 0; background: #111; }
-            img { width: 100%; height: auto; display: block; }
-          </style>
-        </head>
-        <body>
-          <img src="${dataUrl}" alt="export" />
-        </body>
-      </html>
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>${safeTitle}</title>
+  <style>
+    body { margin: 0; padding: 16px; font-family: -apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif; background: #f2f4f8; }
+    .wrap { max-width: 420px; margin: 0 auto; }
+    .hint { font-size: 13px; color: rgba(0,0,0,0.65); margin: 0 0 12px; }
+    .imgbox { background: #fff; border-radius: 14px; padding: 10px; box-shadow: 0 6px 18px rgba(0,0,0,0.10); margin-bottom: 14px; }
+    img { width: 100%; height: auto; display: block; border-radius: 10px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <p class="hint">画像を長押し/右クリックで保存できます（端末/ブラウザによって表記が違います）。</p>
+    ${safeUrls.map((u, i) => `
+      <div class="imgbox">
+        <img src="${u}" alt="export ${i + 1}">
+      </div>
+    `).join('')}
+  </div>
+
+  <script>
+    window.addEventListener('beforeunload', () => {
+      const urls = ${JSON.stringify(safeUrls)};
+      urls.forEach(u => { try { URL.revokeObjectURL(u); } catch(e){} });
+    });
+  </script>
+</body>
+</html>
     `);
     w.document.close();
   }
@@ -291,12 +311,6 @@ document.addEventListener('DOMContentLoaded', () => {
     return line;
   }
 
-  function getLineHeightPx(el) {
-    const lh = window.getComputedStyle(el).lineHeight;
-    const n = parseFloat(lh);
-    return Number.isFinite(n) ? n : 20;
-  }
-
   function fits(container, testEl, maxHeightPx) {
     container.appendChild(testEl);
     const ok = container.scrollHeight <= maxHeightPx + 0.5;
@@ -395,8 +409,7 @@ document.addEventListener('DOMContentLoaded', () => {
           continue;
         }
 
-        // ヘッダーを追加（まだそのブロックのヘッダーを入れていない場合）
-        // ※ページ内に同ブロックの途中があれば既にヘッダー入ってるので、ここでは毎回新しく始める想定
+        // ヘッダーを追加
         const realHeader = makeHeaderEl(headerText);
         if (page.content.childElementCount === 0) {
           realHeader.style.marginTop = '0px';
@@ -407,11 +420,11 @@ document.addEventListener('DOMContentLoaded', () => {
         while (lineIdx < block.lines.length) {
           const lineEl = makeLineEl(block.lines[lineIdx]);
 
-          if (page.content.scrollHeight + lineEl.offsetHeight <= maxHeight + 0.5) {
+          // offsetHeightはappend前だと0になり得るので、一旦テストしてから入れる
+          if (fits(page.content, lineEl, maxHeight)) {
             page.content.appendChild(lineEl);
             lineIdx++;
           } else {
-            // 入らない → 次ページへ
             break;
           }
         }
@@ -439,25 +452,32 @@ document.addEventListener('DOMContentLoaded', () => {
     // ページ番号を正しく反映（badgeの (x/y) を更新）
     const pageCount = pages.length;
     pages.forEach((p, i) => {
-      // badgeは wrapper直下の2つ目として作ってるので安全に探す
       const badge = p.wrapper.querySelector('div[style*="border-radius: 999px"]');
       if (badge) {
         badge.textContent = `✔ ${totalCount}公演${pageCount > 1 ? `  (${i + 1}/${pageCount})` : ''}`;
       }
     });
 
-    // 生成 → 新タブ表示（ページごと）
-    // html2canvasは重いので順番に
+    // 生成 → まとめて「1タブ」に表示
+    const urls = [];
+
     for (let i = 0; i < pages.length; i++) {
       const p = pages[i];
       const canvas = await html2canvas(p.wrapper, { scale: 2 });
 
-      const dataUrl = canvas.toDataURL('image/png');
-      openImageInNewTab(dataUrl, `pg-live-log_${i + 1}of${pages.length}`);
+      const blob = await new Promise(resolve => canvas.toBlob(resolve, 'image/png'));
+      if (!blob) continue;
+
+      const url = URL.createObjectURL(blob);
+      urls.push(url);
     }
 
     // export-area掃除
     exportArea.innerHTML = '';
+
+    if (urls.length) {
+      openPreviewTab(urls, `pg-live-log_${pages.length}pages`);
+    }
   }
 
   document.getElementById('export-btn')
@@ -465,7 +485,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   loadLiveData().then(renderList);
 
-    // ======================
+  // ======================
   // はじめにモーダル
   // ======================
   const aboutOpenBtn = document.getElementById('about-open');
@@ -507,4 +527,3 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 });
-
