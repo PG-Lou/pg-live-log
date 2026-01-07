@@ -11,6 +11,57 @@
 
   <header class="header"></header>
 
+  <!-- はじめにボタン -->
+<div class="top-actions">
+  <button id="about-open" class="about-btn" type="button" aria-haspopup="dialog" aria-controls="about-modal">
+    <span class="about-i" aria-hidden="true">i</span>
+    <span>はじめに</span>
+  </button>
+</div>
+
+<!-- モーダル -->
+<div id="about-modal" class="modal" hidden>
+  <div class="modal-backdrop" data-close="about"></div>
+
+  <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="about-title" tabindex="-1">
+    <div class="modal-header">
+      <h2 id="about-title" class="modal-title">はじめに</h2>
+      <button class="modal-close" type="button" aria-label="閉じる" data-close="about">×</button>
+    </div>
+
+    <div class="modal-body">
+      <p>
+        このサイトは <strong>個人の趣味</strong> で作った参戦ログ管理ツールです。<br>
+        権利侵害を目的としたものではありません。<strong>常識の範囲で楽しんでください。</strong>
+      </p>
+
+      <div class="modal-box">
+        <div class="modal-box-title">不具合・誤りの連絡</div>
+        <p>バグや誤りを見つけたら、X（旧Twitter）<strong>るぅ @pg_akatsuki_8</strong> まで連絡ください。</p>
+      </div>
+
+      <h3 class="modal-h3">使い方</h3>
+      <ol class="modal-ol">
+        <li>上の入力欄に「名前」「XのID（任意）」を入れる</li>
+        <li>ライブを開いて、参加した公演にチェックを入れる（ツアー名横のチェックで一括もOK）</li>
+        <li>下の「背景」を選ぶ</li>
+        <li>「画像出力」を押すと、チェックした公演が画像になります（多い場合は自動で分割）</li>
+      </ol>
+
+      <h3 class="modal-h3">QRコードについて</h3>
+      <ul class="modal-ul">
+        <li>出力画像にQRコードを付けると、画像を取り込むだけでサイト側のチェックを自動反映できる構想です。</li>
+        <li>現時点では <strong>実装準備中</strong>（または未実装）です。対応したらここにも追記します。</li>
+      </ul>
+    </div>
+
+    <div class="modal-footer">
+      <button class="modal-ok" type="button" data-close="about">OK</button>
+    </div>
+  </div>
+</div>
+
+  
   <!-- ユーザー情報 -->
   <section class="user-info">
     <input id="user-name" type="text" placeholder="あなたの名前（任意）" maxlength="20">
@@ -54,4 +105,5 @@
 
 </body>
 </html>
+
 
