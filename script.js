@@ -384,7 +384,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const tmp = createExportWrapper({ bg, colorName, totalCount, pageIndex: 1, pageCount: 1 });
     exportArea.appendChild(tmp.wrapper);
-    const maxHeight = tmp.content.clientHeight;
+    const maxHeight = tmp.content.clientHeight - 8;
     exportArea.innerHTML = '';
 
     const pages = [];
@@ -567,6 +567,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 });
+
 
 
 
