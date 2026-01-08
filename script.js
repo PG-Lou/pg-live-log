@@ -225,7 +225,6 @@ document.addEventListener('DOMContentLoaded', () => {
     topRow.style.right = '20px';
     topRow.style.display = 'flex';
     topRow.style.alignItems = 'flex-start';
-    topRow.style.justifyContent = 'space-between';
     topRow.style.gap = '10px';
 
     const topLeft = document.createElement('div');
@@ -265,7 +264,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const badge = document.createElement('div');
     badge.textContent = `✔ ${totalCount}公演${pageCount > 1 ? `  (${pageIndex}/${pageCount})` : ''}`;
-    badge.style.flex = '0 0 auto';
+
+    // flexから切り離す
+    badge.style.position = 'absolute';
+    badge.style.top = '16px';
+    badge.style.right = '20px';
+    
     badge.style.fontSize = '12px';
     badge.style.fontWeight = '700';
     badge.style.padding = '6px 10px';
@@ -273,7 +277,7 @@ document.addEventListener('DOMContentLoaded', () => {
     badge.style.background = 'rgba(255,255,255,0.75)';
     badge.style.color = '#111';
     badge.style.textShadow = '0 0 6px rgba(255,255,255,0.85)';
-    badge.style.marginTop = '2px';
+
 
     if (userName || userX) {
       topRow.appendChild(topLeft);
@@ -560,3 +564,4 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 });
+
