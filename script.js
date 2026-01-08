@@ -220,7 +220,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const topRow = document.createElement('div');
     topRow.style.position = 'absolute';
-    topRow.style.top = '16px';
+    topRow.style.top = '14px';
     topRow.style.left = '20px';
     topRow.style.right = '20px';
     topRow.style.display = 'flex';
@@ -233,7 +233,7 @@ document.addEventListener('DOMContentLoaded', () => {
     topLeft.style.minWidth = '0';
     topLeft.style.display = 'flex';
     topLeft.style.flexDirection = 'column';
-    topLeft.style.gap = '2px';
+    topLeft.style.gap = '0px'; // ← @をもうちょい上に寄せる
     topLeft.style.color = '#111';
     topLeft.style.textShadow = '0 0 6px rgba(255,255,255,0.85),0 1px 2px rgba(255,255,255,0.85)';
 
@@ -242,8 +242,7 @@ document.addEventListener('DOMContentLoaded', () => {
       nameEl.textContent = userName;
       nameEl.style.fontSize = '15px';
       nameEl.style.fontWeight = '600';
-      nameEl.style.lineHeight = '1.25';
-      // 省略はしない方針だけど、万一の保険でレイアウト崩壊を防ぐ
+      nameEl.style.lineHeight = '1.18';  // ←詰める
       nameEl.style.whiteSpace = 'nowrap';
       nameEl.style.overflow = 'hidden';
       nameEl.style.textOverflow = 'clip';
@@ -255,8 +254,9 @@ document.addEventListener('DOMContentLoaded', () => {
       xEl.textContent = userX;
       xEl.style.fontSize = '13px';
       xEl.style.fontWeight = '500';
-      xEl.style.lineHeight = '1.25';
+      xEl.style.lineHeight = '1.10';     // ←さらに詰める
       xEl.style.opacity = '0.85';
+      xEl.style.marginTop = '-1px';      // ←ほんの少し上げる
       xEl.style.whiteSpace = 'nowrap';
       xEl.style.overflow = 'hidden';
       xEl.style.textOverflow = 'clip';
@@ -287,7 +287,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const card = document.createElement('div');
     card.style.position = 'absolute';
-    card.style.inset = '52px 20px 44px';
+    // ★下が切れる対策：下余白を少し増やしてカードを上に広げる
+    card.style.inset = '54px 20px 56px';
     card.style.background = 'rgba(255,255,255,0.8)';
     card.style.borderRadius = '18px';
     card.style.padding = '16px 18px';
@@ -512,10 +513,8 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('export-btn')
     .addEventListener('click', exportImage);
 
-  loadLiveData().then(renderList);
-
   // ======================
-  // ★追加：入力欄の文字数制限（固定）
+  // ★入力欄の文字数制限（固定）
   // 名前：全角想定で12文字
   // X：半角想定で15文字（@不要入力）
   // ======================
@@ -523,6 +522,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const xInput = document.getElementById('user-x');
   if (nameInput) nameInput.maxLength = 12;
   if (xInput) xInput.maxLength = 15;
+
+  loadLiveData().then(renderList);
 
   // ======================
   // はじめにモーダル
