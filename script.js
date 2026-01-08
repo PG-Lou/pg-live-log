@@ -372,7 +372,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const bgSelect = document.getElementById('bg-select');
     const bg = bgSelect.value;
-    const colorName = bgSelect.options[bgSelect.selectedIndex].text;
+    const selectedOption = bgSelect.options[bgSelect.selectedIndex];
+    const colorName = selectedOption.dataset.label || selectedOption.text;
+
 
     const blocks = buildBlocks(items);
     const totalCount = items.length;
@@ -565,5 +567,6 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 });
+
 
 
