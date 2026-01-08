@@ -31,27 +31,27 @@
 
     <div class="modal-body">
       <p>
-        このサイトは <strong>個人の趣味</strong> で作った参戦ログ管理ツールです。<br>
-        権利侵害を目的としたものではありません。<strong>常識の範囲で楽しんでください。</strong>
+        このサイトは <strong>個人の趣味</strong> で作ったライブ参戦ログ管理ツールです。<br>
+        権利侵害を目的としたものではありません。<strong>個人使用の範囲で楽しんでください。</strong>
       </p>
 
       <div class="modal-box">
         <div class="modal-box-title">不具合・誤りの連絡</div>
-        <p>バグや誤りを見つけたら、X（旧Twitter）<strong>るぅ @pg_akatsuki_8</strong> まで連絡ください。</p>
+        <p>バグや誤りを見つけたら、X<strong>るぅ （@pg_akatsuki_8）</strong> まで連絡ください。</p>
       </div>
 
       <h3 class="modal-h3">使い方</h3>
       <ol class="modal-ol">
-        <li>上の入力欄に「名前」「XのID（任意）」を入れる</li>
+        <li>上の入力欄に「名前」「XのID」を入れる　※任意で画像の表示にのみ使用します</li>
         <li>ライブを開いて、参加した公演にチェックを入れる（ツアー名横のチェックで一括もOK）</li>
         <li>下の「背景」を選ぶ</li>
-        <li>「画像出力」を押すと、チェックした公演が画像になります（多い場合は自動で分割）</li>
+        <li>「画像出力」を押すと、チェックした公演が画像になります（多い場合は自動で4つまで分割）</li>
       </ol>
 
       <h3 class="modal-h3">QRコードについて</h3>
       <ul class="modal-ul">
         <li>出力画像にQRコードを付けると、画像を取り込むだけでサイト側のチェックを自動反映できる構想です。</li>
-        <li>現時点では <strong>実装準備中</strong>（または未実装）です。対応したらここにも追記します。</li>
+        <li>現時点では <strong>実装準備中</strong>です。対応したらここにも追記します。</li>
       </ul>
     </div>
 
@@ -64,7 +64,7 @@
   
   <!-- ユーザー情報 -->
   <section class="user-info">
-    <input id="user-name" type="text" placeholder="あなたの名前（任意）" maxlength="20">
+    <input id="user-name" type="text" placeholder="名前（任意）" maxlength="20">
     <input id="user-x" type="text" placeholder="Xアカウント名（@不要・任意）" maxlength="15">
   </section>
 
@@ -79,16 +79,13 @@
       <option value="" disabled selected>イメージカラー選択</option>
 
       <option value="radial-gradient(circle at 20% 30%, #ffb6d9 0%, transparent 55%), radial-gradient(circle at 75% 25%, #ffcce8 0%, transparent 60%), radial-gradient(circle at 40% 80%, #fff5fb 0%, transparent 65%), #ffdcec">アゲハ蝶</option>
-      <option value="radial-gradient(circle at 25% 20%, #4a6cff 0%, transparent 55%), radial-gradient(circle at 80% 30%, #6fa8ff 0%, transparent 60%), radial-gradient(circle at 50% 85%, #d9e4ff 0%, transparent 65%), #6fa1ff">アポロ</option>
-      <option value="radial-gradient(circle at 20% 20%, #ff9c54 0%, transparent 55%), radial-gradient(circle at 75% 25%, #ffb98a 0%, transparent 60%), radial-gradient(circle at 50% 80%, #ffe1c8 0%, transparent 70%), #ffb37c">サウダージ</option>
-      <option value="radial-gradient(circle at 20% 30%, #102018 0%, transparent 60%), radial-gradient(circle at 70% 25%, #244a3a 0%, transparent 65%), radial-gradient(circle at 40% 80%, #496f5c 0%, transparent 70%), #1a2d24">メリッサ</option>
-      <option value="radial-gradient(circle at 20% 30%, #ffe26c 0%, transparent 55%), radial-gradient(circle at 60% 20%, #fff1a8 0%, transparent 60%), radial-gradient(circle at 50% 85%, #ffffff 0%, transparent 70%), #fff3c9">ハネウマライダー</option>
-      <option value="radial-gradient(circle at 20% 30%, #6ec8ff 0%, transparent 55%), radial-gradient(circle at 75% 20%, #a8e2ff 0%, transparent 60%), radial-gradient(circle at 50% 80%, #e5f7ff 0%, transparent 70%), #c8eaff">ネオメロドラマティック</option>
-      <option value="radial-gradient(circle at 30% 20%, #eaf6ff 0%, transparent 50%), radial-gradient(circle at 70% 35%, #ffffff 0%, transparent 60%), radial-gradient(circle at 45% 80%, #e4ecff 0%, transparent 65%), #f6f9ff">オレ、天使</option>
+      <option value="radial-gradient(circle at 20% 20%, #ff9c54 0%, transparent 55%), radial-gradient(circle at 75% 25%, #ffb98a 0%, transparent 60%), radial-gradient(circle at 50% 80%, #ffe1c8 0%, transparent 70%), #ffb37c">サウダージ（オレンジ）</option>
+      <option value="radial-gradient(circle at 20% 30%, #ffe26c 0%, transparent 55%), radial-gradient(circle at 60% 20%, #fff1a8 0%, transparent 60%), radial-gradient(circle at 50% 85%, #ffffff 0%, transparent 70%), #fff3c9">THE REVO（イエロー）</option>
+      <option value="radial-gradient(circle at 30% 20%, #eaf6ff 0%, transparent 50%), radial-gradient(circle at 70% 35%, #ffffff 0%, transparent 60%), radial-gradient(circle at 45% 80%, #e4ecff 0%, transparent 65%), #f6f9ff"></option>
       <option value="radial-gradient(circle at 25% 30%, #1e1e2d 0%, transparent 55%), radial-gradient(circle at 75% 25%, #374155 0%, transparent 60%), radial-gradient(circle at 50% 80%, #6b7688 0%, transparent 70%), #2a2f3d">ヴォイス</option>
       <option value="radial-gradient(circle at 20% 30%, #ff9ca4 0%, transparent 55%), radial-gradient(circle at 70% 25%, #ffc8ce 0%, transparent 60%), radial-gradient(circle at 50% 80%, #ffeef0 0%, transparent 70%), #ffd6dd">愛が呼ぶほうへ</option>
-      <option value="radial-gradient(circle at 25% 25%, #7fd3ff 0%, transparent 55%), radial-gradient(circle at 70% 20%, #bceaff 0%, transparent 60%), radial-gradient(circle at 40% 80%, #ffffff 0%, transparent 70%), #cdebff">ミュージック・アワー</option>
-      <option value="radial-gradient(circle at 20% 30%, #ff9966 0%, transparent 55%), radial-gradient(circle at 75% 25%, #ffb3a4 0%, transparent 60%), radial-gradient(circle at 50% 85%, #ffd6eb 0%, transparent 70%), #ffb8a3">黄昏ロマンス</option>
+      <option value="radial-gradient(circle at 25% 25%, #7fd3ff 0%, transparent 55%), radial-gradient(circle at 70% 20%, #bceaff 0%, transparent 60%), radial-gradient(circle at 40% 80%, #ffffff 0%, transparent 70%), #cdebff">THE DAY（ブルー）</option>
+      <option value="radial-gradient(circle at 20% 30%, #ff9966 0%, transparent 55%), radial-gradient(circle at 75% 25%, #ffb3a4 0%, transparent 60%), radial-gradient(circle at 50% 85%, #ffd6eb 0%, transparent 70%), #ffb8a3">黄昏ロマンス（ピンクオレンジ）</option>
       <option value="radial-gradient(circle at 20% 30%, #71e0d7 0%, transparent 55%), radial-gradient(circle at 75% 25%, #a8f2eb 0%, transparent 60%), radial-gradient(circle at 50% 80%, #ffffff 0%, transparent 70%), #bff4ef">ブレス</option>
       <option value="radial-gradient(circle at 20% 30%, #1d0033 0%, transparent 50%), radial-gradient(circle at 70% 20%, #3a1f55 0%, transparent 60%), radial-gradient(circle at 50% 80%, #6c4c80 0%, transparent 70%), #2d1a43">シスター</option>
     </select>
@@ -105,5 +102,6 @@
 
 </body>
 </html>
+
 
 
