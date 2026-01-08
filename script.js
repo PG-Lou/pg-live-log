@@ -253,9 +253,8 @@ document.addEventListener('DOMContentLoaded', () => {
       xEl.textContent = userX;
       xEl.style.fontSize = '13px';
       xEl.style.fontWeight = '500';
-      xEl.style.lineHeight = '1.10';     // ←さらに詰める
+      xEl.style.lineHeight = '1.4';
       xEl.style.opacity = '0.85';
-      xEl.style.marginTop = '-1px';      // ←ほんの少し上げる
       xEl.style.whiteSpace = 'nowrap';
       xEl.style.overflow = 'hidden';
       xEl.style.textOverflow = 'clip';
@@ -277,7 +276,9 @@ document.addEventListener('DOMContentLoaded', () => {
     badge.style.background = 'rgba(255,255,255,0.75)';
     badge.style.color = '#111';
     badge.style.textShadow = '0 0 6px rgba(255,255,255,0.85)';
-
+    badge.style.marginTop = '0';
+    topRow.style.alignItems = 'center';
+    topLeft.style.paddingTop = '1px';
 
     if (userName || userX) {
       topRow.appendChild(topLeft);
@@ -564,4 +565,5 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 });
+
 
