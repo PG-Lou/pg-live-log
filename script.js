@@ -263,20 +263,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const badge = document.createElement('div');
     badge.textContent = `✔ ${totalCount}公演${pageCount > 1 ? `  (${pageIndex}/${pageCount})` : ''}`;
-
-    // flexから切り離す
-    badge.style.position = 'absolute';
-    badge.style.top = '16px';
-    badge.style.right = '20px';
-    
+    badge.style.flex = '0 0 auto';
+    badge.style.display = 'inline-flex';
+    badge.style.alignItems = 'center';
+    badge.style.justifyContent = 'center';
     badge.style.fontSize = '12px';
     badge.style.fontWeight = '700';
+    badge.style.lineHeight = '1';
     badge.style.padding = '6px 10px';
     badge.style.borderRadius = '999px';
     badge.style.background = 'rgba(255,255,255,0.75)';
     badge.style.color = '#111';
     badge.style.textShadow = '0 0 6px rgba(255,255,255,0.85)';
     badge.style.marginTop = '0';
+    badge.style.alignSelf = 'flex-start';
     topRow.style.alignItems = 'center';
     topLeft.style.paddingTop = '1px';
 
@@ -310,7 +310,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const bottom = document.createElement('div');
     bottom.style.position = 'absolute';
     bottom.style.right = '20px';
-    bottom.style.bottom = '10px';
+    bottom.style.bottom = '14px';
     bottom.style.textAlign = 'right';
     bottom.style.fontSize = '11px';
     bottom.style.lineHeight = '1.45';
@@ -567,6 +567,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 });
+
 
 
 
