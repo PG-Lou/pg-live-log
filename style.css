@@ -287,12 +287,11 @@ body {
 ========================= */
 #export-area {
   position: fixed;
-  left: -99999px;
+  left: -10000px;
   top: 0;
-  width: 1px;
-  height: 1px;
   overflow: hidden;
 }
+
 
 /* =========================
    上部：はじめに（テキストリンク）
@@ -472,5 +471,6 @@ body {
 .modal-footer{
   flex: 0 0 auto;
 }
+
 
 
