@@ -175,18 +175,35 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function getCheckedShowsInOrder() {
     const checked = Array.from(document.querySelectorAll('.show-check:checked'));
-
+  
+    // 今日（00:00基準）
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+  
     return checked.map(cb => {
       const data = JSON.parse(cb.dataset.show);
       const s = data.show;
-      const time = s.time === 'AM' ? '昼' : s.time === 'PM' ? '夜' : '';
+  
+      const time =
+        s.time === 'AM' ? '昼' :
+        s.time === 'PM' ? '夜' : '';
+  
+      // 公演日（00:00基準）
+      const showDate = new Date(s.date);
+      showDate.setHours(0, 0, 0, 0);
+  
+      const isFuture = showDate > today;
+  
       return {
         live: data.live,
         date: s.date,
-        lineText: `${s.date.replace(/-/g, '/')} ${time} ${s.prefecture} ${s.venue}`.replace(/\s+/g, ' ').trim()
+        lineText: `${s.date.replace(/-/g, '/')} ${time} ${s.prefecture} ${s.venue}${isFuture ? '（予定）' : ''}`
+          .replace(/\s+/g, ' ')
+          .trim()
       };
     });
   }
+
 
   function buildBlocks(items) {
     const blocks = [];
@@ -367,6 +384,9 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   async function exportImage() {
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+
     const items = getCheckedShowsInOrder();
     if (!items.length) return;
 
@@ -573,6 +593,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 });
+
 
 
 
