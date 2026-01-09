@@ -384,7 +384,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const tmp = createExportWrapper({ bg, colorName, totalCount, pageIndex: 1, pageCount: 1 });
     exportArea.appendChild(tmp.wrapper);
-    const maxHeight = tmp.content.clientHeight - 8;
+
+    let maxHeight = tmp.content.clientHeight;
+    if (!maxHeight || maxHeight < 50) {
+      // HEIGHT 844 / card inset 52,44 / padding 16*2 → おおよそ 716
+      maxHeight = 716;
+    }
+    
     exportArea.innerHTML = '';
 
     const pages = [];
@@ -567,6 +573,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 });
+
 
 
 
