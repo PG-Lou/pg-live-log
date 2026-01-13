@@ -43,22 +43,24 @@ document.addEventListener('DOMContentLoaded', () => {
       });
   }
 
-  function createQrElement(text) {
+function createQrElement(text) {
   const box = document.createElement('div');
-  box.style.width = '72px';
-  box.style.height = '72px';
+  box.style.width = '92px';
+  box.style.height = '92px';
   box.style.background = '#fff';
-  box.style.padding = '4px';
-  box.style.borderRadius = '8px';
+  box.style.padding = '8px';
+  box.style.borderRadius = '12px';
   box.style.boxSizing = 'border-box';
-
+  box.style.overflow = 'hidden';
+  box.style.opacity = '1';
+  
   const inner = document.createElement('div');
   box.appendChild(inner);
 
   new QRCode(inner, {
     text,
-    width: 64,
-    height: 64,
+    width: 76,
+    height: 76,
     correctLevel: QRCode.CorrectLevel.M
   });
 
@@ -460,29 +462,19 @@ document.addEventListener('DOMContentLoaded', () => {
     content.style.overflow = 'hidden';
     card.appendChild(content);
 
-    // ===== 下部（左下）：復元用URLを埋め込み =====
+    // ===== 下部：QRだけ（URL文字は表示しない） =====
     const bottom = document.createElement('div');
     bottom.style.position = 'absolute';
     bottom.style.left = '20px';
     bottom.style.right = '20px';
-    bottom.style.bottom = '14px';
+    bottom.style.bottom = '16px';           // 少しだけ上げる（切れ対策）
     bottom.style.display = 'flex';
+    bottom.style.justifyContent = 'flex-end';
     bottom.style.alignItems = 'flex-end';
     bottom.style.gap = '10px';
-    bottom.style.fontSize = '11px';
-    bottom.style.lineHeight = '1.35';
-    bottom.style.color = '#111';
-    bottom.style.opacity = '0.6';
-    bottom.style.textShadow = '0 0 6px rgba(255,255,255,0.85),0 1px 2px rgba(255,255,255,0.85)';
     
-    // 左：テキスト
-    const textWrap = document.createElement('div');
-    textWrap.style.flex = '1 1 auto';
-    textWrap.innerHTML = `
-      <div>image color：♪${colorName}</div>
-      <div style="word-break: break-all; font-size:10px;">${shareUrl}</div>
-    `;
-    bottom.appendChild(textWrap);
+    // ※ opacity は bottom 全体には掛けない（QRが薄くなるから）
+    bottom.style.textShadow = '0 0 6px rgba(255,255,255,0.85),0 1px 2px rgba(255,255,255,0.85)';
     
     // 右：QR
     if (shareUrl && typeof QRCode !== 'undefined') {
@@ -753,4 +745,5 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 });
+
 
