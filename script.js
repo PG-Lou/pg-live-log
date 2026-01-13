@@ -26,6 +26,28 @@ document.addEventListener('DOMContentLoaded', () => {
       .toUpperCase();
   }
 
+  // ======================
+  // ★ 公演用ハッシュID生成
+  // ======================
+  function fnv1a32(str) {
+    let h = 0x811c9dc5;
+    for (let i = 0; i < str.length; i++) {
+      h ^= str.charCodeAt(i);
+      h = (h * 0x01000193) >>> 0;
+    }
+    return h >>> 0;
+  }
+  
+  function makeShowKey(liveName, show) {
+    return `${liveName}|${show.date}|${show.venue}|${show.time || ''}`;
+  }
+  
+  // QR・保存用の短いID（数字）
+  function makeShortShowId(liveName, show) {
+    return String(fnv1a32(makeShowKey(liveName, show)));
+  }
+
+  
   function makeShowId(liveName, show) {
     return [
       norm(liveName),
@@ -39,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
     return Array.from(document.querySelectorAll('.show-check:checked'))
       .map(cb => {
         const data = JSON.parse(cb.dataset.show);
-        return makeShowId(data.live, data.show);
+        return makeShortShowId(data.live, data.show);
       });
   }
 
@@ -178,7 +200,7 @@ function createQrElement(text) {
 
     document.querySelectorAll('.show-check').forEach(cb => {
       const d = JSON.parse(cb.dataset.show);
-      const id = makeShowId(d.live, d.show);
+      const id = makeShortShowId(d.live, d.show);
       cb.checked = checkedSet.has(id);
     });
 
@@ -792,6 +814,7 @@ function createQrElement(text) {
   });
 
 });
+
 
 
 
