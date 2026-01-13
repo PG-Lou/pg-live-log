@@ -44,25 +44,40 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 function createQrElement(text) {
+  const boxSize = 72;     // 見た目のサイズ（小さめ）
+  const pad = 6;          // 余白（quiet zone）
+  const innerSize = boxSize - pad * 2;
+
   const box = document.createElement('div');
-  box.style.width = '92px';
-  box.style.height = '92px';
+  box.style.width = boxSize + 'px';
+  box.style.height = boxSize + 'px';
   box.style.background = '#fff';
-  box.style.padding = '8px';
+  box.style.padding = pad + 'px';
   box.style.borderRadius = '12px';
   box.style.boxSizing = 'border-box';
   box.style.overflow = 'hidden';
   box.style.opacity = '1';
-  
+
   const inner = document.createElement('div');
+  inner.style.width = innerSize + 'px';
+  inner.style.height = innerSize + 'px';
   box.appendChild(inner);
 
   new QRCode(inner, {
     text,
-    width: 76,
-    height: 76,
-    correctLevel: QRCode.CorrectLevel.M
+    width: innerSize,
+    height: innerSize,
+    correctLevel: QRCode.CorrectLevel.H // 読み取り強くする
   });
+
+  // 生成物が canvas/img/table どれでも、にじみを抑える
+  const q = inner.querySelector('canvas, img, table');
+  if (q) {
+    q.style.width = innerSize + 'px';
+    q.style.height = innerSize + 'px';
+    q.style.display = 'block';
+    q.style.imageRendering = 'pixelated';
+  }
 
   return box;
 }
@@ -465,18 +480,12 @@ function createQrElement(text) {
     // ===== 下部：QRだけ（URL文字は表示しない） =====
     const bottom = document.createElement('div');
     bottom.style.position = 'absolute';
-    bottom.style.left = '20px';
-    bottom.style.right = '20px';
-    bottom.style.bottom = '16px';           // 少しだけ上げる（切れ対策）
+    bottom.style.right = '28px';   // 端から少し内側へ
+    bottom.style.bottom = '28px';  // 端から少し内側へ
     bottom.style.display = 'flex';
     bottom.style.justifyContent = 'flex-end';
     bottom.style.alignItems = 'flex-end';
-    bottom.style.gap = '10px';
     
-    // ※ opacity は bottom 全体には掛けない（QRが薄くなるから）
-    bottom.style.textShadow = '0 0 6px rgba(255,255,255,0.85),0 1px 2px rgba(255,255,255,0.85)';
-    
-    // 右：QR
     if (shareUrl && typeof QRCode !== 'undefined') {
       const qr = createQrElement(shareUrl);
       bottom.appendChild(qr);
@@ -745,5 +754,6 @@ function createQrElement(text) {
   });
 
 });
+
 
 
