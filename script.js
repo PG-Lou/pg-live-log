@@ -44,40 +44,56 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 function createQrElement(text) {
-  const boxSize = 72;     // 見た目のサイズ（小さめ）
-  const pad = 6;          // 余白（quiet zone）
-  const innerSize = boxSize - pad * 2;
+  const boxSize = 64;   // 表示サイズ（小さめ）
+  const pad = 6;        // 余白（quiet zone）
+  const imgSize = boxSize - pad * 2;
 
   const box = document.createElement('div');
   box.style.width = boxSize + 'px';
   box.style.height = boxSize + 'px';
   box.style.background = '#fff';
   box.style.padding = pad + 'px';
-  box.style.borderRadius = '12px';
+  box.style.borderRadius = '10px';
   box.style.boxSizing = 'border-box';
-  box.style.overflow = 'hidden';
   box.style.opacity = '1';
 
-  const inner = document.createElement('div');
-  inner.style.width = innerSize + 'px';
-  inner.style.height = innerSize + 'px';
-  box.appendChild(inner);
+  // 一旦でかいQRを作ってPNG化（ここが重要）
+  const tmp = document.createElement('div');
+  tmp.style.position = 'fixed';
+  tmp.style.left = '-9999px';
+  tmp.style.top = '-9999px';
+  document.body.appendChild(tmp);
 
-  new QRCode(inner, {
+  const GEN = 256; // 生成解像度（高めの方が綺麗）
+  new QRCode(tmp, {
     text,
-    width: innerSize,
-    height: innerSize,
-    correctLevel: QRCode.CorrectLevel.H // 読み取り強くする
+    width: GEN,
+    height: GEN,
+    correctLevel: QRCode.CorrectLevel.H
   });
 
-  // 生成物が canvas/img/table どれでも、にじみを抑える
-  const q = inner.querySelector('canvas, img, table');
-  if (q) {
-    q.style.width = innerSize + 'px';
-    q.style.height = innerSize + 'px';
-    q.style.display = 'block';
-    q.style.imageRendering = 'pixelated';
+  // qrcodejsは canvas / img / table の可能性がある
+  let dataUrl = null;
+
+  const canvas = tmp.querySelector('canvas');
+  if (canvas) {
+    dataUrl = canvas.toDataURL('image/png');
+  } else {
+    const img = tmp.querySelector('img');
+    if (img && img.src) dataUrl = img.src;
   }
+
+  tmp.remove();
+
+  // PNGを<img>として貼る（html2canvasで崩れない）
+  const out = document.createElement('img');
+  out.src = dataUrl || '';
+  out.alt = 'QR';
+  out.style.width = imgSize + 'px';
+  out.style.height = imgSize + 'px';
+  out.style.display = 'block';
+  out.style.imageRendering = 'pixelated'; // にじみ抑制
+  box.appendChild(out);
 
   return box;
 }
@@ -477,19 +493,41 @@ function createQrElement(text) {
     content.style.overflow = 'hidden';
     card.appendChild(content);
 
-    // ===== 下部：QRだけ（URL文字は表示しない） =====
+    // ===== 下部：左にQR、右にテキスト（被らない） =====
     const bottom = document.createElement('div');
     bottom.style.position = 'absolute';
-    bottom.style.right = '28px';   // 端から少し内側へ
-    bottom.style.bottom = '28px';  // 端から少し内側へ
+    bottom.style.left = '20px';
+    bottom.style.right = '20px';
+    bottom.style.bottom = '14px';
     bottom.style.display = 'flex';
-    bottom.style.justifyContent = 'flex-end';
+    bottom.style.justifyContent = 'space-between';
     bottom.style.alignItems = 'flex-end';
+    bottom.style.gap = '12px';
     
+    // 左：QR（左下固定）
+    const leftBox = document.createElement('div');
+    leftBox.style.flex = '0 0 auto';
     if (shareUrl && typeof QRCode !== 'undefined') {
-      const qr = createQrElement(shareUrl);
-      bottom.appendChild(qr);
+      leftBox.appendChild(createQrElement(shareUrl));
     }
+    bottom.appendChild(leftBox);
+    
+    // 右：image color + サイトURL（今まで通り）
+    const rightBox = document.createElement('div');
+    rightBox.style.flex = '1 1 auto';
+    rightBox.style.textAlign = 'right';
+    rightBox.style.fontSize = '11px';
+    rightBox.style.lineHeight = '1.45';
+    rightBox.style.color = '#111';
+    rightBox.style.opacity = '0.6';
+    rightBox.style.textShadow = '0 0 6px rgba(255,255,255,0.85),0 1px 2px rgba(255,255,255,0.85)';
+    
+    // ★ここはあなたの元の表示を維持
+    rightBox.innerHTML = `
+      <div>image color：♪${colorName}</div>
+      <div>https://pg-lou.github.io/pg-live-log/</div>
+    `;
+    bottom.appendChild(rightBox);
     
     wrapper.appendChild(bottom);
 
@@ -754,6 +792,7 @@ function createQrElement(text) {
   });
 
 });
+
 
 
 
