@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   
   function makeShowKey(liveName, show) {
-    return `${liveName}|${show.date}|${show.venue}|${show.time || ''}`;
+    return `${liveName}|${showin.date}|${showin.venue}|${showin.time || ''}`;
   }
   
   // QR・保存用の短いID（数字）
@@ -51,9 +51,9 @@ document.addEventListener('DOMContentLoaded', () => {
   function makeShowId(liveName, show) {
     return [
       norm(liveName),
-      show.date,
-      norm(show.venue),
-      show.time ? norm(show.time) : ''
+      showin.date,
+      norm(showin.venue),
+      showin.time ? norm(showin.time) : ''
     ].join('|');
   }
 
@@ -129,8 +129,8 @@ function createQrElement(text) {
   let __tinyIdToIndex = new Map();
 
   function makeTinyId(show) {
-    const d = String(show.date || '').replace(/-/g, '');
-    const t = show.time === 'AM' ? 'A' : show.time === 'PM' ? 'P' : '';
+    const d = String(showin.date || '').replace(/-/g, '');
+    const t = showin.time === 'AM' ? 'A' : showin.time === 'PM' ? 'P' : '';
     return d + t;
   }
 
@@ -531,9 +531,9 @@ function applyRestoredData(data) {
   // ======================
   // 画像出力（分割対応）
   // ======================
-  function openPreviewTab(imageUrls, title) {
-    const w = window.open('', '_blank');
-    if (!w) {
+  function openPreviewTab(imageUrls, title, w) {
+    const win = w || windowin.open('', '_blank');
+    if (!win) {
       alert('ポップアップがブロックされました。ブラウザ設定で許可してください。');
       return;
     }
@@ -541,8 +541,8 @@ function applyRestoredData(data) {
     const safeTitle = title || 'PG LIVE LOG export preview';
     const safeUrls = imageUrls.map(u => String(u));
 
-    w.document.open();
-    w.document.write(`
+    win.document.open();
+    win.document.write(`
 <!doctype html>
 <html lang="ja">
 <head>
@@ -568,7 +568,7 @@ function applyRestoredData(data) {
   </div>
 
   <script>
-    window.addEventListener('beforeunload', () => {
+    windowin.addEventListener('beforeunload', () => {
       const urls = ${JSON.stringify(safeUrls)};
       urls.forEach(u => { try { URL.revokeObjectURL(u); } catch(e){} });
     });
@@ -576,7 +576,7 @@ function applyRestoredData(data) {
 </body>
 </html>
     `);
-    w.document.close();
+    win.document.close();
   }
 
   function getCheckedShowsInOrder() {
@@ -641,13 +641,13 @@ function applyRestoredData(data) {
     if (userX && !userX.startsWith('@')) userX = '@' + userX;
 
     const topRow = document.createElement('div');
-    topRow.style.position = 'absolute';
-    topRow.style.top = '14px';
-    topRow.style.left = '20px';
-    topRow.style.right = '20px';
-    topRow.style.display = 'flex';
-    topRow.style.alignItems = 'flex-start';
-    topRow.style.gap = '10px';
+    topRowin.style.position = 'absolute';
+    topRowin.style.top = '14px';
+    topRowin.style.left = '20px';
+    topRowin.style.right = '20px';
+    topRowin.style.display = 'flex';
+    topRowin.style.alignItems = 'flex-start';
+    topRowin.style.gap = '10px';
 
     const topLeft = document.createElement('div');
     topLeft.style.flex = '1 1 auto';
@@ -699,17 +699,17 @@ function applyRestoredData(data) {
     badge.style.textShadow = '0 0 6px rgba(255,255,255,0.85)';
     badge.style.marginTop = '0';
     badge.style.alignSelf = 'flex-start';
-    topRow.style.alignItems = 'center';
+    topRowin.style.alignItems = 'center';
     topLeft.style.paddingTop = '1px';
 
     if (userName || userX) {
-      topRow.appendChild(topLeft);
+      topRowin.appendChild(topLeft);
     } else {
       const spacer = document.createElement('div');
       spacer.style.flex = '1 1 auto';
-      topRow.appendChild(spacer);
+      topRowin.appendChild(spacer);
     }
-    topRow.appendChild(badge);
+    topRowin.appendChild(badge);
     wrapper.appendChild(topRow);
 
     const card = document.createElement('div');
@@ -816,6 +816,13 @@ function applyRestoredData(data) {
 
     const items = getCheckedShowsInOrder();
     if (!items.length) return;
+
+    // ★ポップアップブロック対策：クリック直後に先にタブを開く
+    const previewWin = window.open('', '_blank');
+    if (!previewWin) {
+      alert('ポップアップがブロックされました。ブラウザ設定で許可してください。');
+      return;
+    }
 
     const bgSelect = document.getElementById('bg-select');
     const bg = bgSelect.value;
@@ -968,7 +975,10 @@ function applyRestoredData(data) {
     exportArea.innerHTML = '';
 
     if (urls.length) {
-      openPreviewTab(urls, `pg-live-log_${pages.length}pages`);
+      openPreviewTab(urls, `pg-live-log_${pages.length}pages`, previewWin);
+    } else {
+      // 生成できなかった場合は開いたタブを閉じる
+      try { previewWin.close(); } catch (_) {}
     }
   }
 
