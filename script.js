@@ -532,7 +532,8 @@ function applyRestoredData(data) {
   // 画像出力（分割対応）
   // ======================
   function openPreviewTab(imageUrls, title, w) {
-    const win = w || windowin.open('', '_blank');
+    const win = w || window.open('', '_blank');
+    try { win && win.focus && win.focus(); } catch (_) {}
     if (!win) {
       alert('ポップアップがブロックされました。ブラウザ設定で許可してください。');
       return;
@@ -819,6 +820,7 @@ function applyRestoredData(data) {
 
     // ★ポップアップブロック対策：クリック直後に先にタブを開く
     const previewWin = window.open('', '_blank');
+    try { previewWin && previewWin.focus && previewWin.focus(); } catch (_) {}
     if (!previewWin) {
       alert('ポップアップがブロックされました。ブラウザ設定で許可してください。');
       return;
