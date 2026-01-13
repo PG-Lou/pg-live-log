@@ -66,8 +66,9 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 function createQrElement(text) {
-  const boxSize = 64;   // 表示サイズ（小さめ）
-  const pad = 6;        // 余白（quiet zone）
+  // できるだけ小さく、でも読み取りは死なないバランス
+  const boxSize = 60;  // 外枠サイズ
+  const pad = 4;       // quiet zone（最低限）
   const imgSize = boxSize - pad * 2;
 
   const box = document.createElement('div');
@@ -75,11 +76,11 @@ function createQrElement(text) {
   box.style.height = boxSize + 'px';
   box.style.background = '#fff';
   box.style.padding = pad + 'px';
-  box.style.borderRadius = '10px';
+  box.style.borderRadius = '0px'; // ★角丸なし
   box.style.boxSizing = 'border-box';
   box.style.opacity = '1';
 
-  // 一旦でかいQRを作ってPNG化（ここが重要）
+  // 一旦大きめで作ってPNG化 → 縮小表示（html2canvasでも崩れにくい）
   const tmp = document.createElement('div');
   tmp.style.position = 'fixed';
   tmp.style.left = '-9999px';
@@ -91,7 +92,8 @@ function createQrElement(text) {
     text,
     width: GEN,
     height: GEN,
-    correctLevel: QRCode.CorrectLevel.H
+    // ★Hは細かくなりがちなのでMに落として読み取り優先
+    correctLevel: QRCode.CorrectLevel.M
   });
 
   // qrcodejsは canvas / img / table の可能性がある
@@ -107,7 +109,6 @@ function createQrElement(text) {
 
   tmp.remove();
 
-  // PNGを<img>として貼る（html2canvasで崩れない）
   const out = document.createElement('img');
   out.src = dataUrl || '';
   out.alt = 'QR';
@@ -119,6 +120,7 @@ function createQrElement(text) {
 
   return box;
 }
+
 
   // ======================
   // ★ v2: QR用（ビット列） - 日付+AM/PMでインデックス化
@@ -173,39 +175,14 @@ function createQrElement(text) {
       const idx = __tinyIdToIndex.get(id);
       if (idx !== undefined) setBit(bytes, idx);
     });
-    return base64UrlEncode(bytes);
+
+    // ★末尾の0をトリム（短くなりやすい）
+    let last = bytes.length - 1;
+    while (last >= 0 && bytes[last] === 0) last--;
+    const trimmed = bytes.slice(0, Math.max(1, last + 1));
+
+    return base64UrlEncode(trimmed);
   }
-
-  function applyBitsetB64(b64) {
-    const bytes = base64UrlDecode(b64);
-    document.querySelectorAll('.show-check').forEach(cb => {
-      const d = JSON.parse(cb.dataset.show);
-      const id = makeTinyId(d.show);
-      const idx = __tinyIdToIndex.get(id);
-      cb.checked = (idx !== undefined && (idx >> 3) < bytes.length) ? getBit(bytes, idx) : false;
-    });
-    updateExportButtonState();
-  }
-
-
-
-  
-// ======================
-// ★ 範囲（レンジ）方式 v3: #r=...
-//   - 大量チェックでも短くなりやすい
-//   - tinyIdの順番表（__tinyIdList / __tinyIdToIndex）を使う
-// ======================
-function getCheckedIndexes() {
-  const idxs = [];
-  document.querySelectorAll('.show-check:checked').forEach(cb => {
-    const d = JSON.parse(cb.dataset.show);
-    const id = makeTinyId(d.show);
-    const idx = __tinyIdToIndex.get(id);
-    if (idx !== undefined) idxs.push(idx);
-  });
-  idxs.sort((a, b) => a - b);
-  return idxs;
-}
 
 function indexesToRanges(idxs) {
   if (!idxs || idxs.length === 0) return '';
@@ -258,22 +235,77 @@ function applyRanges(rangeStr) {
 }
 
 
+function encodeDeltaBase36(idxs) {
+  if (!idxs || idxs.length === 0) return '';
+  const sorted = idxs.slice().sort((a, b) => a - b);
+  const parts = [];
+  let prev = 0;
+  for (let i = 0; i < sorted.length; i++) {
+    const cur = sorted[i];
+    const d = (i === 0) ? cur : (cur - prev);
+    parts.push(d.toString(36));
+    prev = cur;
+  }
+  return parts.join('.');
+}
+
+function decodeDeltaBase36(str) {
+  if (!str) return [];
+  const parts = String(str).split('.');
+  const idxs = [];
+  let cur = 0;
+  for (let i = 0; i < parts.length; i++) {
+    const d = parseInt(parts[i], 36);
+    if (!Number.isFinite(d)) break;
+    cur = (i === 0) ? d : (cur + d);
+    idxs.push(cur);
+  }
+  return idxs;
+}
+
+// ----------------------
+// ★最短を自動選択してURL化
+//   r: レンジ
+//   d: 差分(base36)
+//   b: ビット列(base64url)
+// ----------------------
 function makeShareUrl() {
-  // v3: #r=...&n=...&x=...  （大量チェックでも短くなりやすい）
   let userName = document.getElementById('user-name')?.value?.trim() || '';
   let userX = document.getElementById('user-x')?.value?.trim() || '';
   if (userX && !userX.startsWith('@')) userX = '@' + userX;
 
+  const base = `${location.origin}${location.pathname}`;
+  const params = new URLSearchParams();
+
+  // まずはチェック状態を取る（tinyIndex前提）
   if (__tinyIdList && __tinyIdList.length > 0) {
     const idxs = getCheckedIndexes();
-    const r = indexesToRanges(idxs);
 
-    const base = `${location.origin}${location.pathname}`;
-    const params = new URLSearchParams();
-    // r は空でもセットしておく（読み込み側で「全解除」ができる）
-    params.set('r', r);
+    const r = indexesToRanges(idxs);
+    const d = encodeDeltaBase36(idxs);
+
+    // ビット列は最悪ケースに強い（ただし長くなることもある）
+    const b = getCheckedBitsetB64();
+
+    // 最短を選ぶ
+    let mode = 'r';
+    let payload = r;
+
+    if (typeof d === 'string' && d.length > 0 && (payload === '' || d.length < payload.length)) {
+      mode = 'd';
+      payload = d;
+    }
+    if (typeof b === 'string' && b.length > 0 && (payload === '' || b.length < payload.length)) {
+      mode = 'b';
+      payload = b;
+    }
+
+    // 空でもセットしておく（復元側で全解除ができる）
+    params.set(mode, payload);
+
     if (userName) params.set('n', userName);
     if (userX) params.set('x', userX);
+
     return `${base}#${params.toString()}`;
   }
 
@@ -283,13 +315,13 @@ function makeShareUrl() {
     const payload = { v: 1, n: userName, x: userX, c: getCheckedShowIds() };
     const json = JSON.stringify(payload);
     const encoded = encodeURIComponent(json);
-    return `${location.origin}${location.pathname}#s0=${encoded}`;
+    return `${base}#s0=${encoded}`;
   }
 
   const payload = { v: 1, n: userName, x: userX, c: getCheckedShowIds() };
   const json = JSON.stringify(payload);
   const compressed = LZString.compressToEncodedURIComponent(json);
-  return `${location.origin}${location.pathname}#s=${compressed}`;
+  return `${base}#s=${compressed}`;
 }
 
 
@@ -310,18 +342,33 @@ function restoreFromUrl() {
       if (xEl && typeof x === 'string') xEl.value = x.replace(/^@/, '');
 
       // v3: #r=...（レンジ）
-      if (params.has('r')) {
-        const r = params.get('r') || '';
-        applyRanges(r);
-        return;
-      }
+if (params.has('r')) {
+  const r = params.get('r') || '';
+  applyRanges(r);
+  return;
+}
 
-      // v2互換: #b=...（ビット列）
-      const b = params.get('b');
-      if (b) {
-        applyBitsetB64(b);
-        return;
-      }
+// v3: #d=...（差分 base36）
+const d = params.get('d');
+if (d !== null) {
+  const idxs = decodeDeltaBase36(d);
+  const checked = new Set(idxs);
+  document.querySelectorAll('.show-check').forEach(cb => {
+    const dd = JSON.parse(cb.dataset.show);
+    const id = makeTinyId(dd.show);
+    const idx = __tinyIdToIndex.get(id);
+    cb.checked = (idx !== undefined) && checked.has(idx);
+  });
+  updateExportButtonState();
+  return;
+}
+
+// v2互換: #b=...（ビット列）
+const b = params.get('b');
+if (b) {
+  applyBitsetB64(b);
+  return;
+}
     }
 
     // ---- ここから下は過去URL互換（#s= / #s0=） ----
@@ -668,7 +715,7 @@ function applyRestoredData(data) {
     const card = document.createElement('div');
     card.style.position = 'absolute';
     // ★下が切れる対策：下余白を少し増やしてカードを上に広げる
-    card.style.inset = '54px 20px 56px';
+    card.style.inset = '54px 20px 110px'; // ★下部(QR/テキスト)と被らないように確保
     card.style.background = 'rgba(255,255,255,0.8)';
     card.style.borderRadius = '18px';
     card.style.padding = '16px 18px';
@@ -685,9 +732,9 @@ function applyRestoredData(data) {
     // ===== 下部：左にQR、右にテキスト（被らない） =====
     const bottom = document.createElement('div');
     bottom.style.position = 'absolute';
-    bottom.style.left = '20px';
-    bottom.style.right = '20px';
-    bottom.style.bottom = '14px';
+    bottom.style.left = '8px'; // ★もっと左下へ
+    bottom.style.right = '16px';
+    bottom.style.bottom = '6px'; // ★もっと下へ
     bottom.style.display = 'flex';
     bottom.style.justifyContent = 'space-between';
     bottom.style.alignItems = 'flex-end';
