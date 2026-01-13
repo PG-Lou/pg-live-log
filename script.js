@@ -65,6 +65,81 @@ document.addEventListener('DOMContentLoaded', () => {
       });
   }
 
+
+  // ======================
+  // ★QR/URL用：最短ID（日付 + AM/PM）＆ビット列
+  // - 公演数が増えてもQRが読めるように、チェック状態は「ビット列」でURLに埋め込みます
+  // - JSON構造は一切変更しません（data/live.json そのまま）
+  // ======================
+  let __tinyIdList = [];
+  let __tinyIdToIndex = new Map();
+
+  function makeTinyId(show) {
+    const d = (show?.date || '').replace(/-/g, '');
+    const t = show?.time === 'AM' ? 'A' : show?.time === 'PM' ? 'P' : '';
+    return d + t; // 例: 20260418P
+  }
+
+  function buildTinyIndex(liveData) {
+    const list = [];
+    for (const live of liveData) {
+      for (const y of live.years || []) {
+        for (const s of y.shows || []) {
+          list.push(makeTinyId(s));
+        }
+      }
+    }
+    __tinyIdList = list;
+    __tinyIdToIndex = new Map(list.map((id, i) => [id, i]));
+  }
+
+  function setBit(bytes, i) {
+    bytes[i >> 3] |= (1 << (i & 7));
+  }
+  function getBit(bytes, i) {
+    return (bytes[i >> 3] & (1 << (i & 7))) !== 0;
+  }
+
+  function base64UrlEncode(bytes) {
+    let bin = '';
+    for (const b of bytes) bin += String.fromCharCode(b);
+    return btoa(bin).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+  }
+  function base64UrlDecode(str) {
+    const pad = '='.repeat((4 - (str.length % 4)) % 4);
+    const bin = atob((str + pad).replace(/-/g, '+').replace(/_/g, '/'));
+    const bytes = new Uint8Array(bin.length);
+    for (let i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
+    return bytes;
+  }
+
+  function getCheckedBitsetB64() {
+    const bytes = new Uint8Array(Math.ceil(__tinyIdList.length / 8));
+
+    document.querySelectorAll('.show-check:checked').forEach(cb => {
+      const d = JSON.parse(cb.dataset.show);
+      const id = makeTinyId(d.show);
+      const idx = __tinyIdToIndex.get(id);
+      if (idx !== undefined) setBit(bytes, idx);
+    });
+
+    return base64UrlEncode(bytes);
+  }
+
+  function applyBitsetB64(b64) {
+    const bytes = base64UrlDecode(b64);
+
+    document.querySelectorAll('.show-check').forEach(cb => {
+      const d = JSON.parse(cb.dataset.show);
+      const id = makeTinyId(d.show);
+      const idx = __tinyIdToIndex.get(id);
+      cb.checked = (idx !== undefined && (idx >> 3) < bytes.length) ? getBit(bytes, idx) : false;
+    });
+
+    updateExportButtonState();
+  }
+
+
 function createQrElement(text) {
   const boxSize = 64;   // 表示サイズ（小さめ）
   const pad = 6;        // 余白（quiet zone）
@@ -91,7 +166,7 @@ function createQrElement(text) {
     text,
     width: GEN,
     height: GEN,
-    correctLevel: QRCode.CorrectLevel.H
+    correctLevel: QRCode.CorrectLevel.M
   });
 
   // qrcodejsは canvas / img / table の可能性がある
@@ -121,21 +196,24 @@ function createQrElement(text) {
 }
 
 
+  
   function makeShareUrl() {
-    // lz-string が必要
-    if (typeof LZString === 'undefined') {
-      console.warn('LZString が見つかりません。lz-string を読み込んでください。');
-      // フォールバック：圧縮なし（長くなる可能性あり）
-      let userName = document.getElementById('user-name')?.value?.trim() || '';
-      let userX = document.getElementById('user-x')?.value?.trim() || '';
-      if (userX && !userX.startsWith('@')) userX = '@' + userX;
+    let userName = document.getElementById('user-name')?.value?.trim() || '';
+    let userX = document.getElementById('user-x')?.value?.trim() || '';
+    if (userX && !userX.startsWith('@')) userX = '@' + userX;
 
-      const payload = { v: 1, n: userName, x: userX, c: getCheckedShowIds() };
-      const json = JSON.stringify(payload);
-      const encoded = encodeURIComponent(json);
+    // v2: bitset（大量チェックでも短い）
+    const b = getCheckedBitsetB64();
 
-      return `${location.origin}${location.pathname}#s0=${encoded}`;
-    }
+    const base = `${location.origin}${location.pathname}`;
+    const params = new URLSearchParams();
+    params.set('b', b);
+    if (userName) params.set('n', userName);
+    if (userX) params.set('x', userX);
+
+    return `${base}#${params.toString()}`;
+  }
+
 
     let userName = document.getElementById('user-name')?.value?.trim() || '';
     let userX = document.getElementById('user-x')?.value?.trim() || '';
@@ -157,7 +235,28 @@ function createQrElement(text) {
   function restoreFromUrl() {
     try {
       const hash = location.hash || '';
+      if (!hash) return;
 
+      // v2: #b=...&n=...&x=...
+      if (hash.startsWith('#')) {
+        const params = new URLSearchParams(hash.slice(1));
+        const b = params.get('b');
+        if (b) {
+          const nameEl = document.getElementById('user-name');
+          const xEl = document.getElementById('user-x');
+
+          const n = params.get('n');
+          const x = params.get('x');
+
+          if (nameEl && typeof n === 'string') nameEl.value = n;
+          if (xEl && typeof x === 'string') xEl.value = x.replace(/^@/, '');
+
+          applyBitsetB64(b);
+          return;
+        }
+      }
+
+      // ---- ここから下は過去URL互換（#s= / #s0=） ----
       // 圧縮版: #s=...
       let m = hash.match(/(?:^|[#&])s=([^&]+)/);
       if (m) {
@@ -775,6 +874,7 @@ function createQrElement(text) {
   loadLiveData()
     .then(liveData => {
       renderList(liveData);
+      buildTinyIndex(liveData);
       restoreFromUrl();
       updateExportButtonState();
     });
