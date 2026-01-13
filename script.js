@@ -189,90 +189,170 @@ function createQrElement(text) {
 
 
 
-  function makeShareUrl() {
-    // v2: #b=...&n=...&x=...
-    let userName = document.getElementById('user-name')?.value?.trim() || '';
-    let userX = document.getElementById('user-x')?.value?.trim() || '';
-    if (userX && !userX.startsWith('@')) userX = '@' + userX;
+  
+// ======================
+// ★ 範囲（レンジ）方式 v3: #r=...
+//   - 大量チェックでも短くなりやすい
+//   - tinyIdの順番表（__tinyIdList / __tinyIdToIndex）を使う
+// ======================
+function getCheckedIndexes() {
+  const idxs = [];
+  document.querySelectorAll('.show-check:checked').forEach(cb => {
+    const d = JSON.parse(cb.dataset.show);
+    const id = makeTinyId(d.show);
+    const idx = __tinyIdToIndex.get(id);
+    if (idx !== undefined) idxs.push(idx);
+  });
+  idxs.sort((a, b) => a - b);
+  return idxs;
+}
 
-    if (__tinyIdList && __tinyIdList.length > 0) {
-      const b = getCheckedBitsetB64();
-      const base = `${location.origin}${location.pathname}`;
-      const params = new URLSearchParams();
-      params.set('b', b);
-      if (userName) params.set('n', userName);
-      if (userX) params.set('x', userX);
-      return `${base}#${params.toString()}`;
+function indexesToRanges(idxs) {
+  if (!idxs || idxs.length === 0) return '';
+  const parts = [];
+  let start = idxs[0];
+  let prev = idxs[0];
+
+  for (let i = 1; i < idxs.length; i++) {
+    const cur = idxs[i];
+    if (cur === prev + 1) {
+      prev = cur;
+      continue;
     }
+    parts.push(start === prev ? String(start) : `${start}-${prev}`);
+    start = prev = cur;
+  }
+  parts.push(start === prev ? String(start) : `${start}-${prev}`);
+  return parts.join(',');
+}
 
-    // 念のためのフォールバック（旧方式）
-    if (typeof LZString === 'undefined') {
-      console.warn('LZString が見つかりません。lz-string を読み込んでください。');
-      const payload = { v: 1, n: userName, x: userX, c: getCheckedShowIds() };
-      const json = JSON.stringify(payload);
-      const encoded = encodeURIComponent(json);
-      return `${location.origin}${location.pathname}#s0=${encoded}`;
+function applyRanges(rangeStr) {
+  const checked = new Set();
+
+  if (typeof rangeStr === 'string' && rangeStr.length > 0) {
+    for (const token of rangeStr.split(',')) {
+      if (!token) continue;
+      const seg = token.split('-');
+      if (seg.length === 1) {
+        const v = parseInt(seg[0], 10);
+        if (!Number.isNaN(v)) checked.add(v);
+      } else {
+        const a = parseInt(seg[0], 10);
+        const b = parseInt(seg[1], 10);
+        if (Number.isNaN(a) || Number.isNaN(b)) continue;
+        const from = Math.min(a, b);
+        const to = Math.max(a, b);
+        for (let i = from; i <= to; i++) checked.add(i);
+      }
     }
-
-    const payload = { v: 1, n: userName, x: userX, c: getCheckedShowIds() };
-    const json = JSON.stringify(payload);
-    const compressed = LZString.compressToEncodedURIComponent(json);
-    return `${location.origin}${location.pathname}#s=${compressed}`;
   }
 
-  function restoreFromUrl() {
-    try {
-      const hash = location.hash || '';
-      if (!hash) return;
+  document.querySelectorAll('.show-check').forEach(cb => {
+    const d = JSON.parse(cb.dataset.show);
+    const id = makeTinyId(d.show);
+    const idx = __tinyIdToIndex.get(id);
+    cb.checked = (idx !== undefined) && checked.has(idx);
+  });
 
-      // v2: #b=...&n=...&x=...
-      if (hash.startsWith('#')) {
-        const params = new URLSearchParams(hash.slice(1));
-        const b = params.get('b');
-        if (b) {
-          const nameEl = document.getElementById('user-name');
-          const xEl = document.getElementById('user-x');
+  updateExportButtonState();
+}
 
-          const n = params.get('n');
-          const x = params.get('x');
 
-          if (nameEl && typeof n === 'string') nameEl.value = n;
-          if (xEl && typeof x === 'string') xEl.value = x.replace(/^@/, '');
+function makeShareUrl() {
+  // v3: #r=...&n=...&x=...  （大量チェックでも短くなりやすい）
+  let userName = document.getElementById('user-name')?.value?.trim() || '';
+  let userX = document.getElementById('user-x')?.value?.trim() || '';
+  if (userX && !userX.startsWith('@')) userX = '@' + userX;
 
-          applyBitsetB64(b);
-          return;
-        }
-      }
+  if (__tinyIdList && __tinyIdList.length > 0) {
+    const idxs = getCheckedIndexes();
+    const r = indexesToRanges(idxs);
 
-      // ---- ここから下は過去URL互換（#s= / #s0=） ----
-      // 圧縮版: #s=...
-      let m = hash.match(/(?:^|[#&])s=([^&]+)/);
-      if (m) {
-        if (typeof LZString === 'undefined') {
-          console.warn('LZString が見つからないため、復元できません（#s=）。');
-          return;
-        }
-        const json = LZString.decompressFromEncodedURIComponent(m[1]);
-        if (!json) return;
+    const base = `${location.origin}${location.pathname}`;
+    const params = new URLSearchParams();
+    // r は空でもセットしておく（読み込み側で「全解除」ができる）
+    params.set('r', r);
+    if (userName) params.set('n', userName);
+    if (userX) params.set('x', userX);
+    return `${base}#${params.toString()}`;
+  }
 
-        const data = JSON.parse(json);
-        applyRestoredData(data);
+  // 念のためのフォールバック（旧方式）
+  if (typeof LZString === 'undefined') {
+    console.warn('LZString が見つかりません。lz-string を読み込んでください。');
+    const payload = { v: 1, n: userName, x: userX, c: getCheckedShowIds() };
+    const json = JSON.stringify(payload);
+    const encoded = encodeURIComponent(json);
+    return `${location.origin}${location.pathname}#s0=${encoded}`;
+  }
+
+  const payload = { v: 1, n: userName, x: userX, c: getCheckedShowIds() };
+  const json = JSON.stringify(payload);
+  const compressed = LZString.compressToEncodedURIComponent(json);
+  return `${location.origin}${location.pathname}#s=${compressed}`;
+}
+
+
+function restoreFromUrl() {
+  try {
+    const hash = location.hash || '';
+    if (!hash) return;
+
+    if (hash.startsWith('#')) {
+      const params = new URLSearchParams(hash.slice(1));
+
+      // name / x は v3, v2, v1 どの方式でも共通で拾う
+      const nameEl = document.getElementById('user-name');
+      const xEl = document.getElementById('user-x');
+      const n = params.get('n');
+      const x = params.get('x');
+      if (nameEl && typeof n === 'string') nameEl.value = n;
+      if (xEl && typeof x === 'string') xEl.value = x.replace(/^@/, '');
+
+      // v3: #r=...（レンジ）
+      if (params.has('r')) {
+        const r = params.get('r') || '';
+        applyRanges(r);
         return;
       }
 
-      // フォールバック非圧縮: #s0=...
-      m = hash.match(/(?:^|[#&])s0=([^&]+)/);
-      if (m) {
-        const json = decodeURIComponent(m[1]);
-        const data = JSON.parse(json);
-        applyRestoredData(data);
+      // v2互換: #b=...（ビット列）
+      const b = params.get('b');
+      if (b) {
+        applyBitsetB64(b);
+        return;
       }
-    } catch (e) {
-      console.warn('URL復元に失敗しました:', e);
     }
-  }
 
-  function applyRestoredData(data) {
+    // ---- ここから下は過去URL互換（#s= / #s0=） ----
+    // 圧縮版: #s=...
+    let m = hash.match(/(?:^|[#&])s=([^&]+)/);
+    if (m) {
+      if (typeof LZString === 'undefined') {
+        console.warn('LZString が見つからないため、復元できません（#s=）。');
+        return;
+      }
+      const json = LZString.decompressFromEncodedURIComponent(m[1]);
+      if (!json) return;
+
+      const data = JSON.parse(json);
+      applyRestoredData(data);
+      return;
+    }
+
+    // フォールバック非圧縮: #s0=...
+    m = hash.match(/(?:^|[#&])s0=([^&]+)/);
+    if (m) {
+      const json = decodeURIComponent(m[1]);
+      const data = JSON.parse(json);
+      applyRestoredData(data);
+    }
+  } catch (e) {
+    console.warn('URL復元に失敗しました:', e);
+  }
+}
+
+function applyRestoredData(data) {
     if (!data || data.v !== 1) return;
 
     const nameEl = document.getElementById('user-name');
