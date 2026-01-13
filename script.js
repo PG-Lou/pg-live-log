@@ -43,6 +43,29 @@ document.addEventListener('DOMContentLoaded', () => {
       });
   }
 
+  function createQrElement(text) {
+  const box = document.createElement('div');
+  box.style.width = '72px';
+  box.style.height = '72px';
+  box.style.background = '#fff';
+  box.style.padding = '4px';
+  box.style.borderRadius = '8px';
+  box.style.boxSizing = 'border-box';
+
+  const inner = document.createElement('div');
+  box.appendChild(inner);
+
+  new QRCode(inner, {
+    text,
+    width: 64,
+    height: 64,
+    correctLevel: QRCode.CorrectLevel.M
+  });
+
+  return box;
+}
+
+
   function makeShareUrl() {
     // lz-string が必要
     if (typeof LZString === 'undefined') {
@@ -443,16 +466,30 @@ document.addEventListener('DOMContentLoaded', () => {
     bottom.style.left = '20px';
     bottom.style.right = '20px';
     bottom.style.bottom = '14px';
-    bottom.style.textAlign = 'left';
+    bottom.style.display = 'flex';
+    bottom.style.alignItems = 'flex-end';
+    bottom.style.gap = '10px';
     bottom.style.fontSize = '11px';
     bottom.style.lineHeight = '1.35';
     bottom.style.color = '#111';
     bottom.style.opacity = '0.6';
     bottom.style.textShadow = '0 0 6px rgba(255,255,255,0.85),0 1px 2px rgba(255,255,255,0.85)';
-    bottom.innerHTML = `
+    
+    // 左：テキスト
+    const textWrap = document.createElement('div');
+    textWrap.style.flex = '1 1 auto';
+    textWrap.innerHTML = `
       <div>image color：♪${colorName}</div>
-      <div style="word-break: break-all; font-size:10px;">${shareUrl || 'https://pg-lou.github.io/pg-live-log/'}</div>
+      <div style="word-break: break-all; font-size:10px;">${shareUrl}</div>
     `;
+    bottom.appendChild(textWrap);
+    
+    // 右：QR
+    if (shareUrl && typeof QRCode !== 'undefined') {
+      const qr = createQrElement(shareUrl);
+      bottom.appendChild(qr);
+    }
+    
     wrapper.appendChild(bottom);
 
     return { wrapper, card, content, WIDTH, HEIGHT };
@@ -716,3 +753,4 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 });
+
