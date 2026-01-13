@@ -16,6 +16,120 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ======================
+  // ★QR/URL用：公演ID生成（JSON構造は変えない）
+  // ======================
+  function norm(s) {
+    return (s || '')
+      .trim()
+      .replace(/\s+/g, ' ')
+      .replace(/[’']/g, "'")
+      .toUpperCase();
+  }
+
+  function makeShowId(liveName, show) {
+    return [
+      norm(liveName),
+      show.date,
+      norm(show.venue),
+      show.time ? norm(show.time) : ''
+    ].join('|');
+  }
+
+  function getCheckedShowIds() {
+    return Array.from(document.querySelectorAll('.show-check:checked'))
+      .map(cb => {
+        const data = JSON.parse(cb.dataset.show);
+        return makeShowId(data.live, data.show);
+      });
+  }
+
+  function makeShareUrl() {
+    // lz-string が必要
+    if (typeof LZString === 'undefined') {
+      console.warn('LZString が見つかりません。lz-string を読み込んでください。');
+      // フォールバック：圧縮なし（長くなる可能性あり）
+      let userName = document.getElementById('user-name')?.value?.trim() || '';
+      let userX = document.getElementById('user-x')?.value?.trim() || '';
+      if (userX && !userX.startsWith('@')) userX = '@' + userX;
+
+      const payload = { v: 1, n: userName, x: userX, c: getCheckedShowIds() };
+      const json = JSON.stringify(payload);
+      const encoded = encodeURIComponent(json);
+
+      return `${location.origin}${location.pathname}#s0=${encoded}`;
+    }
+
+    let userName = document.getElementById('user-name')?.value?.trim() || '';
+    let userX = document.getElementById('user-x')?.value?.trim() || '';
+    if (userX && !userX.startsWith('@')) userX = '@' + userX;
+
+    const payload = {
+      v: 1,
+      n: userName,
+      x: userX,
+      c: getCheckedShowIds()
+    };
+
+    const json = JSON.stringify(payload);
+    const compressed = LZString.compressToEncodedURIComponent(json);
+
+    return `${location.origin}${location.pathname}#s=${compressed}`;
+  }
+
+  function restoreFromUrl() {
+    try {
+      const hash = location.hash || '';
+
+      // 圧縮版: #s=...
+      let m = hash.match(/(?:^|[#&])s=([^&]+)/);
+      if (m) {
+        if (typeof LZString === 'undefined') {
+          console.warn('LZString が見つからないため、復元できません（#s=）。');
+          return;
+        }
+        const json = LZString.decompressFromEncodedURIComponent(m[1]);
+        if (!json) return;
+
+        const data = JSON.parse(json);
+        applyRestoredData(data);
+        return;
+      }
+
+      // フォールバック非圧縮: #s0=...
+      m = hash.match(/(?:^|[#&])s0=([^&]+)/);
+      if (m) {
+        const json = decodeURIComponent(m[1]);
+        const data = JSON.parse(json);
+        applyRestoredData(data);
+      }
+    } catch (e) {
+      console.warn('URL復元に失敗しました:', e);
+    }
+  }
+
+  function applyRestoredData(data) {
+    if (!data || data.v !== 1) return;
+
+    const nameEl = document.getElementById('user-name');
+    const xEl = document.getElementById('user-x');
+
+    if (nameEl && typeof data.n === 'string') nameEl.value = data.n;
+
+    // 入力欄は @なし運用なので取り除く
+    if (xEl && typeof data.x === 'string') xEl.value = data.x.replace(/^@/, '');
+
+    const checkedSet = new Set(Array.isArray(data.c) ? data.c : []);
+
+    document.querySelectorAll('.show-check').forEach(cb => {
+      const d = JSON.parse(cb.dataset.show);
+      const id = makeShowId(d.live, d.show);
+      cb.checked = checkedSet.has(id);
+    });
+
+    updateExportButtonState();
+  }
+
+  // ======================
   // ライブ一覧描画
   // ======================
   function renderList(liveData) {
@@ -204,7 +318,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-
   function buildBlocks(items) {
     const blocks = [];
     let current = null;
@@ -219,7 +332,7 @@ document.addEventListener('DOMContentLoaded', () => {
     return blocks;
   }
 
-  function createExportWrapper({ bg, colorName, totalCount, pageIndex, pageCount }) {
+  function createExportWrapper({ bg, colorName, totalCount, pageIndex, pageCount, shareUrl }) {
     const WIDTH = 390;
     const HEIGHT = 844;
 
@@ -324,19 +437,21 @@ document.addEventListener('DOMContentLoaded', () => {
     content.style.overflow = 'hidden';
     card.appendChild(content);
 
+    // ===== 下部（左下）：復元用URLを埋め込み =====
     const bottom = document.createElement('div');
     bottom.style.position = 'absolute';
+    bottom.style.left = '20px';
     bottom.style.right = '20px';
     bottom.style.bottom = '14px';
-    bottom.style.textAlign = 'right';
+    bottom.style.textAlign = 'left';
     bottom.style.fontSize = '11px';
-    bottom.style.lineHeight = '1.45';
+    bottom.style.lineHeight = '1.35';
     bottom.style.color = '#111';
     bottom.style.opacity = '0.6';
     bottom.style.textShadow = '0 0 6px rgba(255,255,255,0.85),0 1px 2px rgba(255,255,255,0.85)';
     bottom.innerHTML = `
       <div>image color：♪${colorName}</div>
-      <div>https://pg-lou.github.io/pg-live-log/</div>
+      <div style="word-break: break-all; font-size:10px;">${shareUrl || 'https://pg-lou.github.io/pg-live-log/'}</div>
     `;
     wrapper.appendChild(bottom);
 
@@ -395,14 +510,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const selectedOption = bgSelect.options[bgSelect.selectedIndex];
     const colorName = selectedOption.dataset.label || selectedOption.text;
 
-
     const blocks = buildBlocks(items);
     const totalCount = items.length;
 
     const exportArea = document.getElementById('export-area');
     exportArea.innerHTML = '';
 
-    const tmp = createExportWrapper({ bg, colorName, totalCount, pageIndex: 1, pageCount: 1 });
+    // ★ここで復元用URLを生成（チェック＋名前＋Xを含む）
+    const shareUrl = makeShareUrl();
+
+    const tmp = createExportWrapper({ bg, colorName, totalCount, pageIndex: 1, pageCount: 1, shareUrl });
     exportArea.appendChild(tmp.wrapper);
 
     let maxHeight = tmp.content.clientHeight;
@@ -410,14 +527,14 @@ document.addEventListener('DOMContentLoaded', () => {
       // HEIGHT 844 / card inset 52,44 / padding 16*2 → おおよそ 716
       maxHeight = 716;
     }
-    
+
     exportArea.innerHTML = '';
 
     const pages = [];
     let page = null;
 
     const newPage = () => {
-      const p = createExportWrapper({ bg, colorName, totalCount, pageIndex: 1, pageCount: 1 });
+      const p = createExportWrapper({ bg, colorName, totalCount, pageIndex: 1, pageCount: 1, shareUrl });
       exportArea.appendChild(p.wrapper);
       pages.push(p);
       return p;
@@ -556,7 +673,13 @@ document.addEventListener('DOMContentLoaded', () => {
   if (nameInput) nameInput.maxLength = 12;
   if (xInput) xInput.maxLength = 15;
 
-  loadLiveData().then(renderList);
+  // ★描画後にURL復元（DOMができてからじゃないとチェック付けられない）
+  loadLiveData()
+    .then(liveData => {
+      renderList(liveData);
+      restoreFromUrl();
+      updateExportButtonState();
+    });
 
   // ======================
   // はじめにモーダル
@@ -593,10 +716,3 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 });
-
-
-
-
-
-
-
