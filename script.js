@@ -65,81 +65,6 @@ document.addEventListener('DOMContentLoaded', () => {
       });
   }
 
-
-  // ======================
-  // ★QR/URL用：最短ID（日付 + AM/PM）＆ビット列
-  // - 公演数が増えてもQRが読めるように、チェック状態は「ビット列」でURLに埋め込みます
-  // - JSON構造は一切変更しません（data/live.json そのまま）
-  // ======================
-  let __tinyIdList = [];
-  let __tinyIdToIndex = new Map();
-
-  function makeTinyId(show) {
-    const d = (show?.date || '').replace(/-/g, '');
-    const t = show?.time === 'AM' ? 'A' : show?.time === 'PM' ? 'P' : '';
-    return d + t; // 例: 20260418P
-  }
-
-  function buildTinyIndex(liveData) {
-    const list = [];
-    for (const live of liveData) {
-      for (const y of live.years || []) {
-        for (const s of y.shows || []) {
-          list.push(makeTinyId(s));
-        }
-      }
-    }
-    __tinyIdList = list;
-    __tinyIdToIndex = new Map(list.map((id, i) => [id, i]));
-  }
-
-  function setBit(bytes, i) {
-    bytes[i >> 3] |= (1 << (i & 7));
-  }
-  function getBit(bytes, i) {
-    return (bytes[i >> 3] & (1 << (i & 7))) !== 0;
-  }
-
-  function base64UrlEncode(bytes) {
-    let bin = '';
-    for (const b of bytes) bin += String.fromCharCode(b);
-    return btoa(bin).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
-  }
-  function base64UrlDecode(str) {
-    const pad = '='.repeat((4 - (str.length % 4)) % 4);
-    const bin = atob((str + pad).replace(/-/g, '+').replace(/_/g, '/'));
-    const bytes = new Uint8Array(bin.length);
-    for (let i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
-    return bytes;
-  }
-
-  function getCheckedBitsetB64() {
-    const bytes = new Uint8Array(Math.ceil(__tinyIdList.length / 8));
-
-    document.querySelectorAll('.show-check:checked').forEach(cb => {
-      const d = JSON.parse(cb.dataset.show);
-      const id = makeTinyId(d.show);
-      const idx = __tinyIdToIndex.get(id);
-      if (idx !== undefined) setBit(bytes, idx);
-    });
-
-    return base64UrlEncode(bytes);
-  }
-
-  function applyBitsetB64(b64) {
-    const bytes = base64UrlDecode(b64);
-
-    document.querySelectorAll('.show-check').forEach(cb => {
-      const d = JSON.parse(cb.dataset.show);
-      const id = makeTinyId(d.show);
-      const idx = __tinyIdToIndex.get(id);
-      cb.checked = (idx !== undefined && (idx >> 3) < bytes.length) ? getBit(bytes, idx) : false;
-    });
-
-    updateExportButtonState();
-  }
-
-
 function createQrElement(text) {
   const boxSize = 64;   // 表示サイズ（小さめ）
   const pad = 6;        // 余白（quiet zone）
@@ -166,7 +91,7 @@ function createQrElement(text) {
     text,
     width: GEN,
     height: GEN,
-    correctLevel: QRCode.CorrectLevel.M
+    correctLevel: QRCode.CorrectLevel.H
   });
 
   // qrcodejsは canvas / img / table の可能性がある
@@ -195,40 +120,103 @@ function createQrElement(text) {
   return box;
 }
 
+  // ======================
+  // ★ v2: QR用（ビット列） - 日付+AM/PMでインデックス化
+  // ======================
+  let __tinyIdList = [];
+  let __tinyIdToIndex = new Map();
 
-  
-  function makeShareUrl() {
-    let userName = document.getElementById('user-name')?.value?.trim() || '';
-    let userX = document.getElementById('user-x')?.value?.trim() || '';
-    if (userX && !userX.startsWith('@')) userX = '@' + userX;
+  function makeTinyId(show) {
+    const d = String(show.date || '').replace(/-/g, '');
+    const t = show.time === 'AM' ? 'A' : show.time === 'PM' ? 'P' : '';
+    return d + t;
+  }
 
-    // v2: bitset（大量チェックでも短い）
-    const b = getCheckedBitsetB64();
+  function buildTinyIndex(liveData) {
+    const list = [];
+    liveData.forEach(live => {
+      (live.years || []).forEach(y => {
+        (y.shows || []).forEach(s => {
+          list.push(makeTinyId(s));
+        });
+      });
+    });
+    __tinyIdList = list;
+    __tinyIdToIndex = new Map(list.map((id, i) => [id, i]));
+  }
 
-    const base = `${location.origin}${location.pathname}`;
-    const params = new URLSearchParams();
-    params.set('b', b);
-    if (userName) params.set('n', userName);
-    if (userX) params.set('x', userX);
+  function setBit(bytes, i) {
+    bytes[i >> 3] |= (1 << (i & 7));
+  }
+  function getBit(bytes, i) {
+    return (bytes[i >> 3] & (1 << (i & 7))) !== 0;
+  }
 
-    return `${base}#${params.toString()}`;
+  function base64UrlEncode(bytes) {
+    let bin = '';
+    for (const b of bytes) bin += String.fromCharCode(b);
+    return btoa(bin).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+  }
+  function base64UrlDecode(str) {
+    const pad = '='.repeat((4 - (str.length % 4)) % 4);
+    const bin = atob((str + pad).replace(/-/g, '+').replace(/_/g, '/'));
+    const bytes = new Uint8Array(bin.length);
+    for (let i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
+    return bytes;
+  }
+
+  function getCheckedBitsetB64() {
+    const bytes = new Uint8Array(Math.ceil(__tinyIdList.length / 8));
+    document.querySelectorAll('.show-check:checked').forEach(cb => {
+      const d = JSON.parse(cb.dataset.show);
+      const id = makeTinyId(d.show);
+      const idx = __tinyIdToIndex.get(id);
+      if (idx !== undefined) setBit(bytes, idx);
+    });
+    return base64UrlEncode(bytes);
+  }
+
+  function applyBitsetB64(b64) {
+    const bytes = base64UrlDecode(b64);
+    document.querySelectorAll('.show-check').forEach(cb => {
+      const d = JSON.parse(cb.dataset.show);
+      const id = makeTinyId(d.show);
+      const idx = __tinyIdToIndex.get(id);
+      cb.checked = (idx !== undefined && (idx >> 3) < bytes.length) ? getBit(bytes, idx) : false;
+    });
+    updateExportButtonState();
   }
 
 
+
+  function makeShareUrl() {
+    // v2: #b=...&n=...&x=...
     let userName = document.getElementById('user-name')?.value?.trim() || '';
     let userX = document.getElementById('user-x')?.value?.trim() || '';
     if (userX && !userX.startsWith('@')) userX = '@' + userX;
 
-    const payload = {
-      v: 1,
-      n: userName,
-      x: userX,
-      c: getCheckedShowIds()
-    };
+    if (__tinyIdList && __tinyIdList.length > 0) {
+      const b = getCheckedBitsetB64();
+      const base = `${location.origin}${location.pathname}`;
+      const params = new URLSearchParams();
+      params.set('b', b);
+      if (userName) params.set('n', userName);
+      if (userX) params.set('x', userX);
+      return `${base}#${params.toString()}`;
+    }
 
+    // 念のためのフォールバック（旧方式）
+    if (typeof LZString === 'undefined') {
+      console.warn('LZString が見つかりません。lz-string を読み込んでください。');
+      const payload = { v: 1, n: userName, x: userX, c: getCheckedShowIds() };
+      const json = JSON.stringify(payload);
+      const encoded = encodeURIComponent(json);
+      return `${location.origin}${location.pathname}#s0=${encoded}`;
+    }
+
+    const payload = { v: 1, n: userName, x: userX, c: getCheckedShowIds() };
     const json = JSON.stringify(payload);
     const compressed = LZString.compressToEncodedURIComponent(json);
-
     return `${location.origin}${location.pathname}#s=${compressed}`;
   }
 
