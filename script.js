@@ -39,8 +39,9 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   
   function makeShowKey(liveName, show) {
-    return `${liveName}|${showin.date}|${showin.venue}|${showin.time || ''}`;
+    return `${liveName}|${show.date}|${show.venue}|${show.time || ''}`;
   }
+
   
   // QR・保存用の短いID（数字）
   function makeShortShowId(liveName, show) {
@@ -51,11 +52,12 @@ document.addEventListener('DOMContentLoaded', () => {
   function makeShowId(liveName, show) {
     return [
       norm(liveName),
-      showin.date,
-      norm(showin.venue),
-      showin.time ? norm(showin.time) : ''
+      show.date,
+      norm(show.venue),
+      show.time ? norm(show.time) : ''
     ].join('|');
   }
+
 
   function getCheckedShowIds() {
     return Array.from(document.querySelectorAll('.show-check:checked'))
@@ -129,10 +131,11 @@ function createQrElement(text) {
   let __tinyIdToIndex = new Map();
 
   function makeTinyId(show) {
-    const d = String(showin.date || '').replace(/-/g, '');
-    const t = showin.time === 'AM' ? 'A' : showin.time === 'PM' ? 'P' : '';
+    const d = (show.date || '').replace(/-/g, ''); // YYYYMMDD
+    const t = show.time === 'AM' ? 'A' : show.time === 'PM' ? 'P' : '';
     return d + t;
   }
+
 
   function buildTinyIndex(liveData) {
     const list = [];
@@ -1041,6 +1044,7 @@ function applyRestoredData(data) {
   });
 
 });
+
 
 
 
