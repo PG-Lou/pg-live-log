@@ -266,6 +266,18 @@ function decodeDeltaBase36(str) {
   return idxs;
 }
 
+function getCheckedIndexes() {
+  const idxs = [];
+  document.querySelectorAll('.show-check:checked').forEach(cb => {
+    const d = JSON.parse(cb.dataset.show);
+    const id = makeTinyId(d.show);
+    const idx = __tinyIdToIndex.get(id);
+    if (idx !== undefined) idxs.push(idx);
+  });
+  idxs.sort((a, b) => a - b);
+  return idxs;
+}
+  
 // ----------------------
 // ★最短を自動選択してURL化
 //   r: レンジ
@@ -1044,6 +1056,7 @@ function applyRestoredData(data) {
   });
 
 });
+
 
 
 
