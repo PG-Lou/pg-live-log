@@ -584,7 +584,7 @@ function applyRestoredData(data) {
   </div>
 
   <script>
-    windowin.addEventListener('beforeunload', () => {
+    window.addEventListener('beforeunload', () => {
       const urls = ${JSON.stringify(safeUrls)};
       urls.forEach(u => { try { URL.revokeObjectURL(u); } catch(e){} });
     });
@@ -731,7 +731,7 @@ function applyRestoredData(data) {
     const card = document.createElement('div');
     card.style.position = 'absolute';
     // ★下が切れる対策：下余白を少し増やしてカードを上に広げる
-    card.style.inset = '54px 20px 110px'; // ★下部(QR/テキスト)と被らないように確保
+    card.style.inset = '54px 20px 78px'; // ★下部(QR/テキスト)と被らないように確保
     card.style.background = 'rgba(255,255,255,0.8)';
     card.style.borderRadius = '18px';
     card.style.padding = '16px 18px';
