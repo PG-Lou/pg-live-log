@@ -342,52 +342,51 @@ function makeShareUrl() {
 
 function restoreFromUrl() {
   try {
+    // 新方式：? から読む（優先）
     const search = location.search || '';
-    if (!search) return;
-    
-    const params = new URLSearchParams(search.slice(1));
+    const params = new URLSearchParams(search.startsWith('?') ? search.slice(1) : search);
 
+    // name / x は共通
+    const nameEl = document.getElementById('user-name');
+    const xEl = document.getElementById('user-x');
+    const n = params.get('n');
+    const x = params.get('x');
+    if (nameEl && typeof n === 'string') nameEl.value = n;
+    if (xEl && typeof x === 'string') xEl.value = x.replace(/^@/, '');
 
-      // name / x は v3, v2, v1 どの方式でも共通で拾う
-      const nameEl = document.getElementById('user-name');
-      const xEl = document.getElementById('user-x');
-      const n = params.get('n');
-      const x = params.get('x');
-      if (nameEl && typeof n === 'string') nameEl.value = n;
-      if (xEl && typeof x === 'string') xEl.value = x.replace(/^@/, '');
-
-      // v3: #r=...（レンジ）
-if (params.has('r')) {
-  const r = params.get('r') || '';
-  applyRanges(r);
-  return;
-}
-
-// v3: #d=...（差分 base36）
-const d = params.get('d');
-if (d !== null) {
-  const idxs = decodeDeltaBase36(d);
-  const checked = new Set(idxs);
-  document.querySelectorAll('.show-check').forEach(cb => {
-    const dd = JSON.parse(cb.dataset.show);
-    const id = makeTinyId(dd.show);
-    const idx = __tinyIdToIndex.get(id);
-    cb.checked = (idx !== undefined) && checked.has(idx);
-  });
-  updateExportButtonState();
-  return;
-}
-
-// v2互換: #b=...（ビット列）
-const b = params.get('b');
-if (b) {
-  applyBitsetB64(b);
-  return;
-}
+    // v3: r（レンジ）
+    if (params.has('r')) {
+      applyRanges(params.get('r') || '');
+      return;
     }
 
-    // ---- ここから下は過去URL互換（#s= / #s0=） ----
-    // 圧縮版: #s=...
+    // v3: d（差分 base36）
+    const d = params.get('d');
+    if (d !== null) {
+      const idxs = decodeDeltaBase36(d);
+      const checked = new Set(idxs);
+      document.querySelectorAll('.show-check').forEach(cb => {
+        const dd = JSON.parse(cb.dataset.show);
+        const id = makeTinyId(dd.show);
+        const idx = __tinyIdToIndex.get(id);
+        cb.checked = (idx !== undefined) && checked.has(idx);
+      });
+      updateExportButtonState();
+      return;
+    }
+
+    // v2互換: b（ビット列）
+    const b = params.get('b');
+    if (b) {
+      // ※元コードに applyBitsetB64 がある前提。無いなら次で直す
+      applyBitsetB64(b);
+      return;
+    }
+
+    // ---- ここから旧方式互換（#s= / #s0=） ----
+    const hash = location.hash || '';
+    if (!hash) return;
+
     let m = hash.match(/(?:^|[#&])s=([^&]+)/);
     if (m) {
       if (typeof LZString === 'undefined') {
@@ -396,18 +395,15 @@ if (b) {
       }
       const json = LZString.decompressFromEncodedURIComponent(m[1]);
       if (!json) return;
-
-      const data = JSON.parse(json);
-      applyRestoredData(data);
+      applyRestoredData(JSON.parse(json));
       return;
     }
 
-    // フォールバック非圧縮: #s0=...
     m = hash.match(/(?:^|[#&])s0=([^&]+)/);
     if (m) {
       const json = decodeURIComponent(m[1]);
-      const data = JSON.parse(json);
-      applyRestoredData(data);
+      applyRestoredData(JSON.parse(json));
+      return;
     }
   } catch (e) {
     console.warn('URL復元に失敗しました:', e);
@@ -1056,6 +1052,7 @@ function applyRestoredData(data) {
   });
 
 });
+
 
 
 
