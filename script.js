@@ -748,9 +748,9 @@ function applyRestoredData(data) {
     // ===== 下部：左にQR、右にテキスト（被らない） =====
     const bottom = document.createElement('div');
     bottom.style.position = 'absolute';
-    bottom.style.left = '8px'; // ★もっと左下へ
+    bottom.style.left = '8px';
     bottom.style.right = '16px';
-    bottom.style.bottom = '6px'; // ★もっと下へ
+    bottom.style.bottom = '14px';
     bottom.style.display = 'flex';
     bottom.style.justifyContent = 'space-between';
     bottom.style.alignItems = 'flex-end';
@@ -1056,6 +1056,7 @@ function applyRestoredData(data) {
   });
 
 });
+
 
 
 
