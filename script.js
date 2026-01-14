@@ -731,7 +731,7 @@ function applyRestoredData(data) {
     const card = document.createElement('div');
     card.style.position = 'absolute';
     // ★下が切れる対策：下余白を少し増やしてカードを上に広げる
-    card.style.inset = '54px 20px 75px';
+    card.style.inset = '54px 20px 80px';
     card.style.background = 'rgba(255,255,255,0.8)';
     card.style.borderRadius = '18px';
     card.style.padding = '16px 18px';
@@ -1056,6 +1056,7 @@ function applyRestoredData(data) {
   });
 
 });
+
 
 
 
