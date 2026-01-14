@@ -169,6 +169,24 @@ function createQrElement(text) {
     for (let i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
     return bytes;
   }
+  
+  function applyBitsetB64(b64) {
+  const bytes = base64UrlDecode(b64);
+
+  document.querySelectorAll('.show-check').forEach(cb => {
+    const d = JSON.parse(cb.dataset.show);
+    const id = makeTinyId(d.show);
+    const idx = __tinyIdToIndex.get(id);
+    if (idx === undefined) {
+      cb.checked = false;
+      return;
+    }
+    cb.checked = getBit(bytes, idx);
+  });
+
+  updateExportButtonState();
+}
+
 
   function getCheckedBitsetB64() {
     const bytes = new Uint8Array(Math.ceil(__tinyIdList.length / 8));
@@ -1052,6 +1070,7 @@ function applyRestoredData(data) {
   });
 
 });
+
 
 
 
