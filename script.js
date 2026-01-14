@@ -321,7 +321,7 @@ function makeShareUrl() {
     if (userName) params.set('n', userName);
     if (userX) params.set('x', userX);
 
-    return `${base}#${params.toString()}`;
+    return `${base}?${params.toString()}`;
   }
 
   // 念のためのフォールバック（旧方式）
@@ -342,11 +342,11 @@ function makeShareUrl() {
 
 function restoreFromUrl() {
   try {
-    const hash = location.hash || '';
-    if (!hash) return;
+    const search = location.search || '';
+    if (!search) return;
+    
+    const params = new URLSearchParams(search.slice(1));
 
-    if (hash.startsWith('#')) {
-      const params = new URLSearchParams(hash.slice(1));
 
       // name / x は v3, v2, v1 どの方式でも共通で拾う
       const nameEl = document.getElementById('user-name');
@@ -1056,6 +1056,7 @@ function applyRestoredData(data) {
   });
 
 });
+
 
 
 
