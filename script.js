@@ -657,13 +657,13 @@ function applyRestoredData(data) {
     if (userX && !userX.startsWith('@')) userX = '@' + userX;
 
     const topRow = document.createElement('div');
-    topRowin.style.position = 'absolute';
-    topRowin.style.top = '14px';
-    topRowin.style.left = '20px';
-    topRowin.style.right = '20px';
-    topRowin.style.display = 'flex';
-    topRowin.style.alignItems = 'flex-start';
-    topRowin.style.gap = '10px';
+    topRow.style.position = 'absolute';
+    topRow.style.top = '14px';
+    topRow.style.left = '20px';
+    topRow.style.right = '20px';
+    topRow.style.display = 'flex';
+    topRow.style.alignItems = 'flex-start';
+    topRow.style.gap = '10px';
 
     const topLeft = document.createElement('div');
     topLeft.style.flex = '1 1 auto';
@@ -715,17 +715,17 @@ function applyRestoredData(data) {
     badge.style.textShadow = '0 0 6px rgba(255,255,255,0.85)';
     badge.style.marginTop = '0';
     badge.style.alignSelf = 'flex-start';
-    topRowin.style.alignItems = 'center';
+    topRow.style.alignItems = 'center';
     topLeft.style.paddingTop = '1px';
 
     if (userName || userX) {
-      topRowin.appendChild(topLeft);
+      topRow.appendChild(topLeft);
     } else {
       const spacer = document.createElement('div');
       spacer.style.flex = '1 1 auto';
-      topRowin.appendChild(spacer);
+      topRow.appendChild(spacer);
     }
-    topRowin.appendChild(badge);
+    topRow.appendChild(badge);
     wrapper.appendChild(topRow);
 
     const card = document.createElement('div');
@@ -1056,6 +1056,7 @@ function applyRestoredData(data) {
   });
 
 });
+
 
 
 
