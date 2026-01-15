@@ -548,7 +548,119 @@ function applyRestoredData(data) {
   // ======================
   // ボタン活性制御
   // ======================
-  function updateExportButtonState() {
+  
+
+  // ======================
+  // ★ 自動保存（localStorage）
+  //   - 名前 / X：debounce（入力が止まってから保存）
+  //   - チェック：変更時に即保存
+  //   - 30日経過したら自動削除
+  // ======================
+  const DRAFT_KEY = 'pgll_draft_v1';
+  const DRAFT_TTL_MS = 30 * 24 * 60 * 60 * 1000; // 30日
+
+  function debounce(fn, delay = 300) {
+    let timer;
+    return function (...args) {
+      clearTimeout(timer);
+      timer = setTimeout(() => fn.apply(this, args), delay);
+    };
+  }
+
+  function chooseShortestPayload(idxs) {
+    const r = indexesToRanges(idxs);
+    const d = encodeDeltaBase36(idxs);
+    const b = getCheckedBitsetB64();
+
+    let mode = 'r';
+    let payload = r;
+
+    if (typeof d === 'string' && d.length > 0 && (payload === '' || d.length < payload.length)) {
+      mode = 'd';
+      payload = d;
+    }
+    if (typeof b === 'string' && b.length > 0 && (payload === '' || b.length < payload.length)) {
+      mode = 'b';
+      payload = b;
+    }
+    return { mode, payload };
+  }
+
+  function saveDraftNow() {
+    try {
+      const name = document.getElementById('user-name')?.value?.trim() || '';
+      let x = document.getElementById('user-x')?.value?.trim() || '';
+      if (x && !x.startsWith('@')) x = '@' + x;
+
+      // tinyIndexが未構築ならチェックは保存しない（一覧描画前の事故防止）
+      let mode = '';
+      let payload = '';
+
+      if (__tinyIdList && __tinyIdList.length > 0) {
+        const idxs = getCheckedIndexes();
+        const chosen = chooseShortestPayload(idxs);
+        mode = chosen.mode;
+        payload = chosen.payload;
+      }
+
+      const data = { t: Date.now(), n: name, x, m: mode, p: payload };
+      localStorage.setItem(DRAFT_KEY, JSON.stringify(data));
+    } catch (e) {
+      // 何もしない（保存できなくても動作は継続）
+    }
+  }
+
+  const saveDraftDebounced = debounce(saveDraftNow, 300);
+
+  function restoreDraft() {
+    try {
+      const raw = localStorage.getItem(DRAFT_KEY);
+      if (!raw) return;
+
+      const data = JSON.parse(raw);
+      if (!data || !data.t) return;
+
+      // 30日超えは削除
+      if (Date.now() - data.t > DRAFT_TTL_MS) {
+        localStorage.removeItem(DRAFT_KEY);
+        return;
+      }
+
+      // URLが指定している内容は優先（ドラフトで上書きしない）
+      const search = location.search || '';
+      const params = new URLSearchParams(search.startsWith('?') ? search.slice(1) : search);
+      const urlHasChecks = params.has('r') || params.has('d') || params.has('b') || (location.hash || '').length > 1;
+      const urlHasName = params.has('n');
+      const urlHasX = params.has('x');
+
+      const nameEl = document.getElementById('user-name');
+      const xEl = document.getElementById('user-x');
+
+      if (!urlHasName && nameEl && typeof data.n === 'string') nameEl.value = data.n;
+      if (!urlHasX && xEl && typeof data.x === 'string') xEl.value = data.x.replace(/^@/, '');
+
+      if (!urlHasChecks && data.m && typeof data.p === 'string' && __tinyIdList && __tinyIdList.length > 0) {
+        if (data.m === 'r') applyRanges(data.p || '');
+        else if (data.m === 'd') {
+          const idxs = decodeDeltaBase36(data.p || '');
+          const checked = new Set(idxs);
+          document.querySelectorAll('.show-check').forEach(cb => {
+            const dd = JSON.parse(cb.dataset.show);
+            const id = makeTinyId(dd.show);
+            const idx = __tinyIdToIndex.get(id);
+            cb.checked = (idx !== undefined) && checked.has(idx);
+          });
+          updateExportButtonState();
+        } else if (data.m === 'b') {
+          applyBitsetB64(data.p || '');
+        }
+      }
+    } catch (e) {
+      // 何もしない（復元失敗しても動作は継続）
+    }
+  }
+
+function updateExportButtonState() {
     const hasCheckedShow = document.querySelectorAll('.show-check:checked').length > 0;
     const bgSelected = document.getElementById('bg-select')?.value;
     document.getElementById('export-btn').disabled = !(hasCheckedShow && bgSelected);
@@ -1026,12 +1138,35 @@ function applyRestoredData(data) {
   if (nameInput) nameInput.maxLength = 12;
   if (xInput) xInput.maxLength = 15;
 
+  // ======================
+  // ★ 自動保存：イベント設定
+  //   - 名前 / X：debounce保存
+  //   - チェック：変更時に即保存
+  // ======================
+  if (nameInput) nameInput.addEventListener('input', saveDraftDebounced);
+  if (xInput) xInput.addEventListener('input', saveDraftDebounced);
+
+  // show-check / tour-check の変更で即保存（ツアー一括チェックも拾う）
+  document.addEventListener('change', (e) => {
+    const t = e.target;
+    if (!t || !t.classList) return;
+
+    if (t.classList.contains('show-check')) {
+      saveDraftNow();
+    } else if (t.classList.contains('tour-check')) {
+      // まとめて子要素を変更した直後に保存したいので1tick遅らせる
+      setTimeout(saveDraftNow, 0);
+    }
+  });
+
+
   // ★描画後にURL復元（DOMができてからじゃないとチェック付けられない）
   loadLiveData()
     .then(liveData => {
       renderList(liveData);
       buildTinyIndex(liveData);
       restoreFromUrl();
+      restoreDraft();
       updateExportButtonState();
     });
 
@@ -1070,20 +1205,5 @@ function applyRestoredData(data) {
   });
 
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
