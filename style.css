@@ -472,5 +472,10 @@ body {
   flex: 0 0 auto;
 }
 
+/* iPhoneの下（ホームバー）に潜らないようにする */
+.modal-panel {
+  padding-bottom: calc(16px + env(safe-area-inset-bottom));
+}
+
 
 
