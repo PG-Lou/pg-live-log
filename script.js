@@ -357,7 +357,21 @@ function makeShareUrl() {
   return `${base}#s=${compressed}`;
 }
 
+function stripStateParamsFromUrl() {
+  try {
+    const url = new URL(location.href);
 
+    // チェック状態だけ消す（名前とXは残す）
+    url.searchParams.delete('b');
+    url.searchParams.delete('r');
+    url.searchParams.delete('d');
+
+    // 履歴を増やさずURLだけ差し替え
+    history.replaceState(null, '', url.toString());
+  } catch (e) {}
+}
+
+  
 function restoreFromUrl() {
   try {
     // 新方式：? から読む（優先）
@@ -375,6 +389,7 @@ function restoreFromUrl() {
     // v3: r（レンジ）
     if (params.has('r')) {
       applyRanges(params.get('r') || '');
+      stripStateParamsFromUrl(); // ★追加：一度復元したらURLの状態を消す
       return;
     }
 
@@ -390,14 +405,15 @@ function restoreFromUrl() {
         cb.checked = (idx !== undefined) && checked.has(idx);
       });
       updateExportButtonState();
+      stripStateParamsFromUrl(); // ★追加
       return;
     }
 
     // v2互換: b（ビット列）
     const b = params.get('b');
     if (b) {
-      // ※元コードに applyBitsetB64 がある前提。無いなら次で直す
       applyBitsetB64(b);
+      stripStateParamsFromUrl(); // ★追加
       return;
     }
 
@@ -1205,5 +1221,6 @@ function updateExportButtonState() {
   });
 
 });
+
 
 
