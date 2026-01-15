@@ -504,7 +504,7 @@
     {
       "year": 2013,
       "shows": [
-        { "date": "2013-12-05", "prefecture": "東京都", "venue": "EX THEATER ROPPONGI" },
+        { "date": "2013-12-05", "prefecture": "東京都", "venue": "EX THEATER ROPPONGI（プレライヴ）" },
         { "date": "2013-12-14", "prefecture": "広島県", "venue": "広島グリーンアリーナ" },
         { "date": "2013-12-22", "prefecture": "北海道", "venue": "北海道立総合体育センター 北海きたえーる" },
         { "date": "2013-12-28", "prefecture": "愛知県", "venue": "日本ガイシホール" },
@@ -526,13 +526,6 @@
         { "date": "2014-03-15", "prefecture": "福井県", "venue": "サンドーム福井" },
         { "date": "2014-03-21", "prefecture": "静岡県", "venue": "静岡エコパアリーナ" },
         { "date": "2014-03-29", "prefecture": "福岡県", "venue": "マリンメッセ福岡" }
-      ]
-    },
-    
-    {
-      "year": 2013,
-      "shows": [
-        { "date": "2013-12-05", "prefecture": "東京都", "venue": "EX THEATER ROPPONGI（プレライヴ）" }
       ]
     }        
   ]
