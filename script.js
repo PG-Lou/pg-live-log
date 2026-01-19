@@ -1,3 +1,21 @@
+// =====================
+// 初期URL判定フラグ
+// =====================
+const INITIAL_URL_HAS_CHECKS = (() => {
+  try {
+    const params = new URLSearchParams(location.search.startsWith('?')
+      ? location.search.slice(1)
+      : location.search
+    );
+    return params.has('r') || params.has('d') || params.has('b')
+      || ((location.hash || '').length > 1);
+  } catch {
+    return false;
+  }
+})();
+
+
+
 document.addEventListener('DOMContentLoaded', () => {
 
   // ======================
@@ -645,7 +663,8 @@ function applyRestoredData(data) {
       // URLが指定している内容は優先（ドラフトで上書きしない）
       const search = location.search || '';
       const params = new URLSearchParams(search.startsWith('?') ? search.slice(1) : search);
-      const urlHasChecks = params.has('r') || params.has('d') || params.has('b') || (location.hash || '').length > 1;
+      // stripで消されるので「初回URLにあったか」を使う
+      const urlHasChecks = INITIAL_URL_HAS_CHECKS;
       const urlHasName = params.has('n');
       const urlHasX = params.has('x');
 
