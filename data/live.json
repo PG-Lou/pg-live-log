@@ -6,279 +6,812 @@
       {
         "year": 2026,
         "shows": [
-          { "date": "2026-02-27", "prefecture": "千葉県", "venue": "市原市市民会館 大ホール" },
-          { "date": "2026-03-03", "prefecture": "兵庫県", "venue": "神戸国際会館 こくさいホール" },
-          { "date": "2026-03-05", "prefecture": "鳥取県", "venue": "米子コンベンションセンター 多目的ホール" },
-          { "date": "2026-03-06", "prefecture": "島根県", "venue": "島根県芸術文化センター「グラントワ」大ホール" },
-          { "date": "2026-03-19", "prefecture": "静岡県", "venue": "アクトシティ浜松 大ホール" },
-          { "date": "2026-03-23", "prefecture": "大阪府", "venue": "フェスティバルホール" },
-          { "date": "2026-03-24", "prefecture": "大阪府", "venue": "フェスティバルホール" },
-          { "date": "2026-03-27", "prefecture": "新潟県", "venue": "新潟県民会館" },
-          { "date": "2026-04-02", "prefecture": "京都府", "venue": "ロームシアター京都 メインホール" },
-          { "date": "2026-04-04", "prefecture": "福井県", "venue": "フェニックス・プラザ エルピス 大ホール" },
-          { "date": "2026-04-06", "prefecture": "石川県", "venue": "金沢歌劇座" },
-          { "date": "2026-04-10", "prefecture": "香川県", "venue": "レグザムホール 大ホール" },
-          { "date": "2026-04-13", "prefecture": "愛媛県", "venue": "松山市民会館 大ホール" },
-          { "date": "2026-04-18", "prefecture": "北海道", "venue": "帯広市民文化ホール 大ホール" },
-          { "date": "2026-04-20", "prefecture": "北海道", "venue": "札幌文化芸術劇場hitaru" },
-          { "date": "2026-04-21", "prefecture": "北海道", "venue": "札幌文化芸術劇場hitaru" },
-          { "date": "2026-04-24", "prefecture": "東京都", "venue": "府中の森芸術劇場 どりーむホール" },
-          { "date": "2026-04-26", "prefecture": "茨城県", "venue": "ザ・ヒロサワ・シティ会館 大ホール" },
-          { "date": "2026-05-06", "prefecture": "東京都", "venue": "SGCホール有明" },
-          { "date": "2026-05-08", "prefecture": "広島県", "venue": "広島文化学園HBGホール" },
-          { "date": "2026-05-09", "prefecture": "広島県", "venue": "広島文化学園HBGホール" },
-          { "date": "2026-05-15", "prefecture": "秋田県", "venue": "あきた芸術劇場ミルハス 大ホール" },
-          { "date": "2026-05-17", "prefecture": "岩手県", "venue": "トーサイクラシックホール岩手 大ホール" },
-          { "date": "2026-05-19", "prefecture": "宮城県", "venue": "仙台サンプラザホール" },
-          { "date": "2026-05-20", "prefecture": "宮城県", "venue": "仙台サンプラザホール" },
-          { "date": "2026-05-29", "prefecture": "三重県", "venue": "三重県文化会館 大ホール" },
-          { "date": "2026-05-30", "prefecture": "岐阜県", "venue": "長良川国際会議場 メインホール" },
-          { "date": "2026-06-09", "prefecture": "愛知県", "venue": "Niterra日本特殊陶業市民会館 フォレストホール" },
-          { "date": "2026-06-10", "prefecture": "愛知県", "venue": "Niterra日本特殊陶業市民会館 フォレストホール" },
-          { "date": "2026-06-14", "prefecture": "長崎県", "venue": "アルカスSASEBO 大ホール" },
-          { "date": "2026-06-16", "prefecture": "福岡県", "venue": "福岡サンパレス ホテル&ホール" },
-          { "date": "2026-06-17", "prefecture": "福岡県", "venue": "福岡サンパレス ホテル&ホール" },
-          { "date": "2026-06-20", "prefecture": "沖縄県", "venue": "沖縄コンベンションセンター 劇場棟" },
-          { "date": "2026-07-07", "prefecture": "東京都", "venue": "東京ガーデンシアター" },
-          { "date": "2026-07-08", "prefecture": "東京都", "venue": "東京ガーデンシアター" }
+          {
+            "date": "2026-02-27",
+            "prefecture": "千葉県",
+            "venue": "市原市市民会館 大ホール",
+            "hidden": true
+          },
+          {
+            "date": "2026-03-03",
+            "prefecture": "兵庫県",
+            "venue": "神戸国際会館 こくさいホール",
+            "hidden": true
+          },
+          {
+            "date": "2026-03-05",
+            "prefecture": "鳥取県",
+            "venue": "米子コンベンションセンター 多目的ホール",
+            "hidden": true
+          },
+          {
+            "date": "2026-03-06",
+            "prefecture": "島根県",
+            "venue": "島根県芸術文化センター「グラントワ」大ホール",
+            "hidden": true
+          },
+          {
+            "date": "2026-03-19",
+            "prefecture": "静岡県",
+            "venue": "アクトシティ浜松 大ホール"
+          },
+          {
+            "date": "2026-03-23",
+            "prefecture": "大阪府",
+            "venue": "フェスティバルホール"
+          },
+          {
+            "date": "2026-03-24",
+            "prefecture": "大阪府",
+            "venue": "フェスティバルホール"
+          },
+          {
+            "date": "2026-03-27",
+            "prefecture": "新潟県",
+            "venue": "新潟県民会館"
+          },
+          {
+            "date": "2026-04-02",
+            "prefecture": "京都府",
+            "venue": "ロームシアター京都 メインホール"
+          },
+          {
+            "date": "2026-04-04",
+            "prefecture": "福井県",
+            "venue": "フェニックス・プラザ エルピス 大ホール"
+          },
+          {
+            "date": "2026-04-06",
+            "prefecture": "石川県",
+            "venue": "金沢歌劇座"
+          },
+          {
+            "date": "2026-04-10",
+            "prefecture": "香川県",
+            "venue": "レグザムホール 大ホール"
+          },
+          {
+            "date": "2026-04-13",
+            "prefecture": "愛媛県",
+            "venue": "松山市民会館 大ホール"
+          },
+          {
+            "date": "2026-04-18",
+            "prefecture": "北海道",
+            "venue": "帯広市民文化ホール 大ホール"
+          },
+          {
+            "date": "2026-04-20",
+            "prefecture": "北海道",
+            "venue": "札幌文化芸術劇場hitaru"
+          },
+          {
+            "date": "2026-04-21",
+            "prefecture": "北海道",
+            "venue": "札幌文化芸術劇場hitaru"
+          },
+          {
+            "date": "2026-04-24",
+            "prefecture": "東京都",
+            "venue": "府中の森芸術劇場 どりーむホール"
+          },
+          {
+            "date": "2026-04-26",
+            "prefecture": "茨城県",
+            "venue": "ザ・ヒロサワ・シティ会館 大ホール"
+          },
+          {
+            "date": "2026-05-06",
+            "prefecture": "東京都",
+            "venue": "SGCホール有明"
+          },
+          {
+            "date": "2026-05-08",
+            "prefecture": "広島県",
+            "venue": "広島文化学園HBGホール"
+          },
+          {
+            "date": "2026-05-09",
+            "prefecture": "広島県",
+            "venue": "広島文化学園HBGホール"
+          },
+          {
+            "date": "2026-05-15",
+            "prefecture": "秋田県",
+            "venue": "あきた芸術劇場ミルハス 大ホール"
+          },
+          {
+            "date": "2026-05-17",
+            "prefecture": "岩手県",
+            "venue": "トーサイクラシックホール岩手 大ホール"
+          },
+          {
+            "date": "2026-05-19",
+            "prefecture": "宮城県",
+            "venue": "仙台サンプラザホール"
+          },
+          {
+            "date": "2026-05-20",
+            "prefecture": "宮城県",
+            "venue": "仙台サンプラザホール"
+          },
+          {
+            "date": "2026-05-29",
+            "prefecture": "三重県",
+            "venue": "三重県文化会館 大ホール"
+          },
+          {
+            "date": "2026-05-30",
+            "prefecture": "岐阜県",
+            "venue": "長良川国際会議場 メインホール"
+          },
+          {
+            "date": "2026-06-09",
+            "prefecture": "愛知県",
+            "venue": "Niterra日本特殊陶業市民会館 フォレストホール"
+          },
+          {
+            "date": "2026-06-10",
+            "prefecture": "愛知県",
+            "venue": "Niterra日本特殊陶業市民会館 フォレストホール"
+          },
+          {
+            "date": "2026-06-14",
+            "prefecture": "長崎県",
+            "venue": "アルカスSASEBO 大ホール"
+          },
+          {
+            "date": "2026-06-16",
+            "prefecture": "福岡県",
+            "venue": "福岡サンパレス ホテル&ホール"
+          },
+          {
+            "date": "2026-06-17",
+            "prefecture": "福岡県",
+            "venue": "福岡サンパレス ホテル&ホール"
+          },
+          {
+            "date": "2026-06-20",
+            "prefecture": "沖縄県",
+            "venue": "沖縄コンベンションセンター 劇場棟"
+          },
+          {
+            "date": "2026-07-07",
+            "prefecture": "東京都",
+            "venue": "東京ガーデンシアター"
+          },
+          {
+            "date": "2026-07-08",
+            "prefecture": "東京都",
+            "venue": "東京ガーデンシアター"
+          },
+          {
+            "date": "2026-06-03",
+            "prefecture": "鳥取県",
+            "venue": "米子コンベンションセンター 多目的ホール",
+            "qrAppend": true
+          },
+          {
+            "date": "2026-06-05",
+            "prefecture": "島根県",
+            "venue": "島根県芸術文化センター「グラントワ」大ホール",
+            "qrAppend": true
+          },
+          {
+            "date": "2026-06-25",
+            "prefecture": "千葉県",
+            "venue": "市原市市民会館 大ホール",
+            "qrAppend": true
+          },
+          {
+            "date": "2026-06-30",
+            "prefecture": "兵庫県",
+            "venue": "神戸国際会館 こくさいホール",
+            "qrAppend": true
+          }
         ]
       }
     ]
   },
-
   {
-  "liveName": "みなとみらいロマンスポルノ'25 ～THE OVEЯ～",
-  "color": "radial-gradient(circle at 25% 30%, rgba(190,200,210,0.45), transparent 60%), radial-gradient(circle at 65% 35%, rgba(170,180,190,0.40), transparent 65%), linear-gradient(135deg, #cfd6dc 0%, #bcc6cf 35%, #b5c0ca 55%, #c7cdd3 75%, #e3e6ea 100%)",
-  "years": [
-    {
-      "year": 2025,
-      "shows": [
-        {
-          "date": "2025-12-28",
-          "prefecture": "神奈川県",
-          "venue": "ぴあアリーナMM"
-        },
-        {
-          "date": "2025-12-29",
-          "prefecture": "神奈川県",
-          "venue": "ぴあアリーナMM"
-        },
-        {
-          "date": "2025-12-31",
-          "prefecture": "神奈川県",
-          "venue": "ぴあアリーナMM"
-        }
-      ]
-    }
-  ]
-},
-
-
+    "liveName": "みなとみらいロマンスポルノ'25 ～THE OVEЯ～",
+    "color": "radial-gradient(circle at 25% 30%, rgba(190,200,210,0.45), transparent 60%), radial-gradient(circle at 65% 35%, rgba(170,180,190,0.40), transparent 65%), linear-gradient(135deg, #cfd6dc 0%, #bcc6cf 35%, #b5c0ca 55%, #c7cdd3 75%, #e3e6ea 100%)",
+    "years": [
+      {
+        "year": 2025,
+        "shows": [
+          {
+            "date": "2025-12-28",
+            "prefecture": "神奈川県",
+            "venue": "ぴあアリーナMM"
+          },
+          {
+            "date": "2025-12-29",
+            "prefecture": "神奈川県",
+            "venue": "ぴあアリーナMM"
+          },
+          {
+            "date": "2025-12-31",
+            "prefecture": "神奈川県",
+            "venue": "ぴあアリーナMM"
+          }
+        ]
+      }
+    ]
+  },
   {
-  "liveName": "FANCLUB UNDERWORLD 6",
-  "color": "radial-gradient(circle at 20% 30%, rgba(255,220,235,0.55), transparent 55%), radial-gradient(circle at 70% 35%, rgba(255,200,225,0.45), transparent 60%), linear-gradient(135deg, #fff1f6 0%, #ffd9e6 35%, #ffc8db 55%, #ffdfe9 75%, #fff5f9 100%)",
-  "years": [
-    {
-      "year": 2025,
-      "shows": [
-        { "date": "2025-09-29", "prefecture": "神奈川県", "venue": "KT Zepp Yokohama" },
-        { "date": "2025-09-30", "prefecture": "神奈川県", "venue": "KT Zepp Yokohama", "time": "AM" },
-        { "date": "2025-09-30", "prefecture": "神奈川県", "venue": "KT Zepp Yokohama", "time": "PM" },
-
-        { "date": "2025-10-04", "prefecture": "愛知県", "venue": "COMTEC PORTBASE" },
-        { "date": "2025-10-05", "prefecture": "愛知県", "venue": "COMTEC PORTBASE" },
-
-        { "date": "2025-10-08", "prefecture": "北海道", "venue": "Zepp Sapporo" },
-        { "date": "2025-10-10", "prefecture": "新潟県", "venue": "NIIGATA LOTS" },
-
-        { "date": "2025-10-14", "prefecture": "大阪府", "venue": "Zepp OSAKA BAYSIDE" },
-        { "date": "2025-10-15", "prefecture": "大阪府", "venue": "Zepp OSAKA BAYSIDE", "time": "AM" },
-        { "date": "2025-10-15", "prefecture": "大阪府", "venue": "Zepp OSAKA BAYSIDE", "time": "PM" },
-
-        { "date": "2025-10-19", "prefecture": "香川県", "venue": "高松festhalle" },
-
-        { "date": "2025-10-22", "prefecture": "広島県", "venue": "広島 CLUB QUATTRO" },
-        { "date": "2025-10-23", "prefecture": "広島県", "venue": "広島 CLUB QUATTRO" },
-
-        { "date": "2025-10-25", "prefecture": "福岡県", "venue": "Zepp Fukuoka" },
-
-        { "date": "2025-10-28", "prefecture": "東京都", "venue": "Zepp Haneda" },
-        { "date": "2025-10-29", "prefecture": "東京都", "venue": "Zepp Haneda", "time": "AM" },
-        { "date": "2025-10-29", "prefecture": "東京都", "venue": "Zepp Haneda", "time": "PM" },
-
-        { "date": "2025-10-31", "prefecture": "宮城県", "venue": "SENDAI GIGS" }
-      ]
-    }
-  ]
-},
-
+    "liveName": "FANCLUB UNDERWORLD 6",
+    "color": "radial-gradient(circle at 20% 30%, rgba(255,220,235,0.55), transparent 55%), radial-gradient(circle at 70% 35%, rgba(255,200,225,0.45), transparent 60%), linear-gradient(135deg, #fff1f6 0%, #ffd9e6 35%, #ffc8db 55%, #ffdfe9 75%, #fff5f9 100%)",
+    "years": [
+      {
+        "year": 2025,
+        "shows": [
+          {
+            "date": "2025-09-29",
+            "prefecture": "神奈川県",
+            "venue": "KT Zepp Yokohama"
+          },
+          {
+            "date": "2025-09-30",
+            "prefecture": "神奈川県",
+            "venue": "KT Zepp Yokohama",
+            "time": "AM"
+          },
+          {
+            "date": "2025-09-30",
+            "prefecture": "神奈川県",
+            "venue": "KT Zepp Yokohama",
+            "time": "PM"
+          },
+          {
+            "date": "2025-10-04",
+            "prefecture": "愛知県",
+            "venue": "COMTEC PORTBASE"
+          },
+          {
+            "date": "2025-10-05",
+            "prefecture": "愛知県",
+            "venue": "COMTEC PORTBASE"
+          },
+          {
+            "date": "2025-10-08",
+            "prefecture": "北海道",
+            "venue": "Zepp Sapporo"
+          },
+          {
+            "date": "2025-10-10",
+            "prefecture": "新潟県",
+            "venue": "NIIGATA LOTS"
+          },
+          {
+            "date": "2025-10-14",
+            "prefecture": "大阪府",
+            "venue": "Zepp OSAKA BAYSIDE"
+          },
+          {
+            "date": "2025-10-15",
+            "prefecture": "大阪府",
+            "venue": "Zepp OSAKA BAYSIDE",
+            "time": "AM"
+          },
+          {
+            "date": "2025-10-15",
+            "prefecture": "大阪府",
+            "venue": "Zepp OSAKA BAYSIDE",
+            "time": "PM"
+          },
+          {
+            "date": "2025-10-19",
+            "prefecture": "香川県",
+            "venue": "高松festhalle"
+          },
+          {
+            "date": "2025-10-22",
+            "prefecture": "広島県",
+            "venue": "広島 CLUB QUATTRO"
+          },
+          {
+            "date": "2025-10-23",
+            "prefecture": "広島県",
+            "venue": "広島 CLUB QUATTRO"
+          },
+          {
+            "date": "2025-10-25",
+            "prefecture": "福岡県",
+            "venue": "Zepp Fukuoka"
+          },
+          {
+            "date": "2025-10-28",
+            "prefecture": "東京都",
+            "venue": "Zepp Haneda"
+          },
+          {
+            "date": "2025-10-29",
+            "prefecture": "東京都",
+            "venue": "Zepp Haneda",
+            "time": "AM"
+          },
+          {
+            "date": "2025-10-29",
+            "prefecture": "東京都",
+            "venue": "Zepp Haneda",
+            "time": "PM"
+          },
+          {
+            "date": "2025-10-31",
+            "prefecture": "宮城県",
+            "venue": "SENDAI GIGS"
+          }
+        ]
+      }
+    ]
+  },
   {
-  "liveName": "因島・横浜ロマンスポルノ'24 〜解放区〜",
-  "color": "radial-gradient(circle at 25% 30%, rgba(170,230,210,0.50), transparent 55%), radial-gradient(circle at 65% 35%, rgba(240,230,170,0.45), transparent 60%), linear-gradient(135deg, #e6f6ef 0%, #cfeee0 35%, #eaf3c9 55%, #f6f3d8 75%, #fbfbf0 100%)",
-  "years": [
-    {
-      "year": 2024,
-      "shows": [
-        {
-          "date": "2024-09-01",
-          "prefecture": "広島県",
-          "venue": "因島運動公園"
-        },
-        {
-          "date": "2024-09-07",
-          "prefecture": "神奈川県",
-          "venue": "横浜スタジアム"
-        },
-        {
-          "date": "2024-09-08",
-          "prefecture": "神奈川県",
-          "venue": "横浜スタジアム"
-        }
-      ]
-    }
-  ]
-},
-
+    "liveName": "因島・横浜ロマンスポルノ'24 〜解放区〜",
+    "color": "radial-gradient(circle at 25% 30%, rgba(170,230,210,0.50), transparent 55%), radial-gradient(circle at 65% 35%, rgba(240,230,170,0.45), transparent 60%), linear-gradient(135deg, #e6f6ef 0%, #cfeee0 35%, #eaf3c9 55%, #f6f3d8 75%, #fbfbf0 100%)",
+    "years": [
+      {
+        "year": 2024,
+        "shows": [
+          {
+            "date": "2024-09-01",
+            "prefecture": "広島県",
+            "venue": "因島運動公園"
+          },
+          {
+            "date": "2024-09-07",
+            "prefecture": "神奈川県",
+            "venue": "横浜スタジアム"
+          },
+          {
+            "date": "2024-09-08",
+            "prefecture": "神奈川県",
+            "venue": "横浜スタジアム"
+          }
+        ]
+      }
+    ]
+  },
   {
-  "liveName": "19th LIVE CIRCUIT “PG wasn't built in a day”",
-  "color": "radial-gradient(circle at 20% 25%, rgba(255,220,150,0.45), transparent 55%), radial-gradient(circle at 70% 25%, rgba(255,180,180,0.40), transparent 55%), radial-gradient(circle at 40% 60%, rgba(170,220,180,0.40), transparent 60%), radial-gradient(circle at 75% 65%, rgba(170,210,240,0.40), transparent 60%), linear-gradient(135deg, #fff3d8 0%, #ffe1d6 25%, #e6f3df 50%, #e1f0fa 75%, #f3f7ff 100%)",
-  "years": [
-    {
-      "year": 2024,
-      "shows": [
-        { "date": "2024-01-13", "prefecture": "愛知県", "venue": "ポートメッセなごや 新第1展示館" },
-        { "date": "2024-01-14", "prefecture": "愛知県", "venue": "ポートメッセなごや 新第1展示館" },
-        { "date": "2024-01-20", "prefecture": "北海道", "venue": "北海道立総合体育センター 北海きたえーる" },
-        { "date": "2024-01-30", "prefecture": "大阪府", "venue": "大阪城ホール" },
-        { "date": "2024-01-31", "prefecture": "大阪府", "venue": "大阪城ホール" },
-        { "date": "2024-02-10", "prefecture": "埼玉県", "venue": "さいたまスーパーアリーナ" },
-        { "date": "2024-02-11", "prefecture": "埼玉県", "venue": "さいたまスーパーアリーナ" },
-        { "date": "2024-02-17", "prefecture": "宮城県", "venue": "ゼビオアリーナ仙台" },
-        { "date": "2024-02-18", "prefecture": "宮城県", "venue": "ゼビオアリーナ仙台" },
-        { "date": "2024-02-23", "prefecture": "徳島県", "venue": "アスティとくしま" },
-        { "date": "2024-03-09", "prefecture": "福岡県", "venue": "福岡国際センター" },
-        { "date": "2024-03-10", "prefecture": "福岡県", "venue": "福岡国際センター" },
-        { "date": "2024-03-16", "prefecture": "広島県", "venue": "広島グリーンアリーナ" },
-        { "date": "2024-03-23", "prefecture": "静岡県", "venue": "静岡エコパアリーナ" },
-        { "date": "2024-03-30", "prefecture": "東京都", "venue": "有明アリーナ" },
-        { "date": "2024-03-31", "prefecture": "東京都", "venue": "有明アリーナ" }
-      ]
-    }
-  ]
-},
-  
-{
-  "liveName": "18th LIVE CIRCUIT “暁”",
-  "color": "radial-gradient(circle at 15% 25%, rgba(255,255,255,0.35), transparent 55%), radial-gradient(circle at 80% 75%, rgba(255,150,90,0.45), transparent 60%), linear-gradient(135deg, #162538 0%, #243a55 35%, #5b4a3a 60%, #c97b3f 78%, #f5f2ee 100%)",
-  "years": [
-    {
-      "year": 2022,
-      "shows": [
-        { "date": "2022-09-22", "prefecture": "神奈川県", "venue": "よこすか芸術劇場" },
-        { "date": "2022-09-27", "prefecture": "群馬県", "venue": "高崎芸術劇場 大劇場" },
-        { "date": "2022-10-01", "prefecture": "和歌山県", "venue": "和歌山県民文化会館" },
-        { "date": "2022-10-03", "prefecture": "静岡県", "venue": "富士市文化会館 ロゼシアター 大ホール" },
-        { "date": "2022-10-10", "prefecture": "福井県", "venue": "フェニックス・プラザ" },
-        { "date": "2022-10-17", "prefecture": "大阪府", "venue": "オリックス劇場" },
-        { "date": "2022-10-18", "prefecture": "大阪府", "venue": "オリックス劇場" },
-        { "date": "2022-10-23", "prefecture": "広島県", "venue": "広島文化学園HBGホール" },
-        { "date": "2022-10-25", "prefecture": "愛媛県", "venue": "松山市民会館" },
-        { "date": "2022-10-28", "prefecture": "大分県", "venue": "iichikoグランシアタ" },
-        { "date": "2022-11-04", "prefecture": "新潟県", "venue": "新潟県民会館" },
-        { "date": "2022-11-07", "prefecture": "京都府", "venue": "ロームシアター京都" },
-        { "date": "2022-11-09", "prefecture": "兵庫県", "venue": "神戸国際会館 こくさいホール" },
-        { "date": "2022-11-16", "prefecture": "北海道", "venue": "函館市民会館 大ホール" },
-        { "date": "2022-11-18", "prefecture": "北海道", "venue": "札幌文化芸術劇場hitaru" },
-        { "date": "2022-11-22", "prefecture": "岡山県", "venue": "倉敷市民会館" },
-        { "date": "2022-11-24", "prefecture": "三重県", "venue": "三重県総合文化センター" },
-        { "date": "2022-11-28", "prefecture": "熊本県", "venue": "熊本城ホール メインホール" },
-        { "date": "2022-11-30", "prefecture": "福岡県", "venue": "福岡サンパレス ホテル＆ホール" },
-        { "date": "2022-12-05", "prefecture": "愛知県", "venue": "名古屋国際会議場 センチュリーホール" },
-        { "date": "2022-12-06", "prefecture": "愛知県", "venue": "名古屋国際会議場 センチュリーホール" },
-        { "date": "2022-12-09", "prefecture": "高知県", "venue": "高知県立県民文化ホール" },
-        { "date": "2022-12-16", "prefecture": "千葉県", "venue": "森のホール21" },
-        { "date": "2022-12-19", "prefecture": "宮城県", "venue": "仙台サンプラザホール" },
-        { "date": "2022-12-21", "prefecture": "福島県", "venue": "會津風雅堂" },
-        { "date": "2022-12-26", "prefecture": "東京都", "venue": "TOKYO DOME CITY HALL" },
-        { "date": "2022-12-27", "prefecture": "東京都", "venue": "TOKYO DOME CITY HALL" }
-      ]
-    },
-    {
-      "year": 2023,
-      "shows": [
-        { "date": "2023-01-23", "prefecture": "東京都", "venue": "日本武道館" },
-        { "date": "2023-01-24", "prefecture": "東京都", "venue": "日本武道館" }
-      ]
-    }
-  ]
-},
+    "liveName": "19th LIVE CIRCUIT “PG wasn't built in a day”",
+    "color": "radial-gradient(circle at 20% 25%, rgba(255,220,150,0.45), transparent 55%), radial-gradient(circle at 70% 25%, rgba(255,180,180,0.40), transparent 55%), radial-gradient(circle at 40% 60%, rgba(170,220,180,0.40), transparent 60%), radial-gradient(circle at 75% 65%, rgba(170,210,240,0.40), transparent 60%), linear-gradient(135deg, #fff3d8 0%, #ffe1d6 25%, #e6f3df 50%, #e1f0fa 75%, #f3f7ff 100%)",
+    "years": [
+      {
+        "year": 2024,
+        "shows": [
+          {
+            "date": "2024-01-13",
+            "prefecture": "愛知県",
+            "venue": "ポートメッセなごや 新第1展示館"
+          },
+          {
+            "date": "2024-01-14",
+            "prefecture": "愛知県",
+            "venue": "ポートメッセなごや 新第1展示館"
+          },
+          {
+            "date": "2024-01-20",
+            "prefecture": "北海道",
+            "venue": "北海道立総合体育センター 北海きたえーる"
+          },
+          {
+            "date": "2024-01-30",
+            "prefecture": "大阪府",
+            "venue": "大阪城ホール"
+          },
+          {
+            "date": "2024-01-31",
+            "prefecture": "大阪府",
+            "venue": "大阪城ホール"
+          },
+          {
+            "date": "2024-02-10",
+            "prefecture": "埼玉県",
+            "venue": "さいたまスーパーアリーナ"
+          },
+          {
+            "date": "2024-02-11",
+            "prefecture": "埼玉県",
+            "venue": "さいたまスーパーアリーナ"
+          },
+          {
+            "date": "2024-02-17",
+            "prefecture": "宮城県",
+            "venue": "ゼビオアリーナ仙台"
+          },
+          {
+            "date": "2024-02-18",
+            "prefecture": "宮城県",
+            "venue": "ゼビオアリーナ仙台"
+          },
+          {
+            "date": "2024-02-23",
+            "prefecture": "徳島県",
+            "venue": "アスティとくしま"
+          },
+          {
+            "date": "2024-03-09",
+            "prefecture": "福岡県",
+            "venue": "福岡国際センター"
+          },
+          {
+            "date": "2024-03-10",
+            "prefecture": "福岡県",
+            "venue": "福岡国際センター"
+          },
+          {
+            "date": "2024-03-16",
+            "prefecture": "広島県",
+            "venue": "広島グリーンアリーナ"
+          },
+          {
+            "date": "2024-03-23",
+            "prefecture": "静岡県",
+            "venue": "静岡エコパアリーナ"
+          },
+          {
+            "date": "2024-03-30",
+            "prefecture": "東京都",
+            "venue": "有明アリーナ"
+          },
+          {
+            "date": "2024-03-31",
+            "prefecture": "東京都",
+            "venue": "有明アリーナ"
+          }
+        ]
+      }
+    ]
+  },
   {
-  "liveName": "17th LIVE CIRCUIT “続・ポルノグラフィティ”",
-  "color": "radial-gradient(circle at 20% 30%, rgba(210,230,255,0.45), transparent 55%), radial-gradient(circle at 70% 35%, rgba(160,200,255,0.40), transparent 60%), radial-gradient(circle at 45% 65%, rgba(220,235,255,0.35), transparent 65%), linear-gradient(135deg, #2a3f66 0%, #355a8c 35%, #4f7fb0 55%, #8fb6e0 75%, #f5f8ff 100%)",
-  "years": [
-    {
-      "year": 2021,
-      "shows": [
-        { "date": "2021-09-25", "prefecture": "東京都", "venue": "LINE CUBE SHIBUYA" },
-        { "date": "2021-10-01", "prefecture": "静岡県", "venue": "静岡市民文化会館 大ホール" },
-        { "date": "2021-10-05", "prefecture": "兵庫県", "venue": "神戸国際会館 こくさいホール" },
-        { "date": "2021-10-07", "prefecture": "滋賀県", "venue": "滋賀県立芸術劇場 びわ湖ホール" },
-        { "date": "2021-10-08", "prefecture": "奈良県", "venue": "なら100年会館 大ホール" },
-        { "date": "2021-10-11", "prefecture": "大阪府", "venue": "オリックス劇場" },
-        { "date": "2021-10-12", "prefecture": "大阪府", "venue": "オリックス劇場" },
-        { "date": "2021-10-15", "prefecture": "福岡県", "venue": "福岡サンパレス ホテル&ホール" },
-        { "date": "2021-10-16", "prefecture": "福岡県", "venue": "福岡サンパレス ホテル&ホール" },
-        { "date": "2021-10-25", "prefecture": "宮城県", "venue": "仙台サンプラザホール" },
-        { "date": "2021-10-26", "prefecture": "宮城県", "venue": "仙台サンプラザホール" },
-        { "date": "2021-10-28", "prefecture": "群馬県", "venue": "高崎芸術劇場 大劇場" },
-        { "date": "2021-11-02", "prefecture": "高知県", "venue": "高知県立県民文化ホール" },
-        { "date": "2021-11-04", "prefecture": "香川県", "venue": "サンポートホール高松" },
-        { "date": "2021-11-09", "prefecture": "石川県", "venue": "本多の森ホール" },
-        { "date": "2021-11-10", "prefecture": "石川県", "venue": "本多の森ホール" },
-        { "date": "2021-11-15", "prefecture": "神奈川県", "venue": "神奈川県民ホール 大ホール" },
-        { "date": "2021-11-25", "prefecture": "広島県", "venue": "広島文化学園HBGホール" },
-        { "date": "2021-11-26", "prefecture": "広島県", "venue": "広島文化学園HBGホール" },
-        { "date": "2021-11-28", "prefecture": "愛知県", "venue": "アイプラザ豊橋" },
-        { "date": "2021-11-30", "prefecture": "愛知県", "venue": "名古屋国際会議場 センチュリーホール" },
-        { "date": "2021-12-01", "prefecture": "愛知県", "venue": "名古屋国際会議場 センチュリーホール" },
-        { "date": "2021-12-06", "prefecture": "栃木県", "venue": "栃木県総合文化センター メインホール" },
-        { "date": "2021-12-08", "prefecture": "千葉県", "venue": "千葉県文化会館 大ホール" },
-        { "date": "2021-12-13", "prefecture": "北海道", "venue": "札幌文化芸術劇場hitaru" },
-        { "date": "2021-12-14", "prefecture": "北海道", "venue": "札幌文化芸術劇場hitaru" },
-        { "date": "2021-12-21", "prefecture": "東京都", "venue": "東京ガーデンシアター" },
-        { "date": "2021-12-22", "prefecture": "東京都", "venue": "東京ガーデンシアター" }
-      ]
-    }
-  ]
-},
-
+    "liveName": "18th LIVE CIRCUIT “暁”",
+    "color": "radial-gradient(circle at 15% 25%, rgba(255,255,255,0.35), transparent 55%), radial-gradient(circle at 80% 75%, rgba(255,150,90,0.45), transparent 60%), linear-gradient(135deg, #162538 0%, #243a55 35%, #5b4a3a 60%, #c97b3f 78%, #f5f2ee 100%)",
+    "years": [
+      {
+        "year": 2022,
+        "shows": [
+          {
+            "date": "2022-09-22",
+            "prefecture": "神奈川県",
+            "venue": "よこすか芸術劇場"
+          },
+          {
+            "date": "2022-09-27",
+            "prefecture": "群馬県",
+            "venue": "高崎芸術劇場 大劇場"
+          },
+          {
+            "date": "2022-10-01",
+            "prefecture": "和歌山県",
+            "venue": "和歌山県民文化会館"
+          },
+          {
+            "date": "2022-10-03",
+            "prefecture": "静岡県",
+            "venue": "富士市文化会館 ロゼシアター 大ホール"
+          },
+          {
+            "date": "2022-10-10",
+            "prefecture": "福井県",
+            "venue": "フェニックス・プラザ"
+          },
+          {
+            "date": "2022-10-17",
+            "prefecture": "大阪府",
+            "venue": "オリックス劇場"
+          },
+          {
+            "date": "2022-10-18",
+            "prefecture": "大阪府",
+            "venue": "オリックス劇場"
+          },
+          {
+            "date": "2022-10-23",
+            "prefecture": "広島県",
+            "venue": "広島文化学園HBGホール"
+          },
+          {
+            "date": "2022-10-25",
+            "prefecture": "愛媛県",
+            "venue": "松山市民会館"
+          },
+          {
+            "date": "2022-10-28",
+            "prefecture": "大分県",
+            "venue": "iichikoグランシアタ"
+          },
+          {
+            "date": "2022-11-04",
+            "prefecture": "新潟県",
+            "venue": "新潟県民会館"
+          },
+          {
+            "date": "2022-11-07",
+            "prefecture": "京都府",
+            "venue": "ロームシアター京都"
+          },
+          {
+            "date": "2022-11-09",
+            "prefecture": "兵庫県",
+            "venue": "神戸国際会館 こくさいホール"
+          },
+          {
+            "date": "2022-11-16",
+            "prefecture": "北海道",
+            "venue": "函館市民会館 大ホール"
+          },
+          {
+            "date": "2022-11-18",
+            "prefecture": "北海道",
+            "venue": "札幌文化芸術劇場hitaru"
+          },
+          {
+            "date": "2022-11-22",
+            "prefecture": "岡山県",
+            "venue": "倉敷市民会館"
+          },
+          {
+            "date": "2022-11-24",
+            "prefecture": "三重県",
+            "venue": "三重県総合文化センター"
+          },
+          {
+            "date": "2022-11-28",
+            "prefecture": "熊本県",
+            "venue": "熊本城ホール メインホール"
+          },
+          {
+            "date": "2022-11-30",
+            "prefecture": "福岡県",
+            "venue": "福岡サンパレス ホテル＆ホール"
+          },
+          {
+            "date": "2022-12-05",
+            "prefecture": "愛知県",
+            "venue": "名古屋国際会議場 センチュリーホール"
+          },
+          {
+            "date": "2022-12-06",
+            "prefecture": "愛知県",
+            "venue": "名古屋国際会議場 センチュリーホール"
+          },
+          {
+            "date": "2022-12-09",
+            "prefecture": "高知県",
+            "venue": "高知県立県民文化ホール"
+          },
+          {
+            "date": "2022-12-16",
+            "prefecture": "千葉県",
+            "venue": "森のホール21"
+          },
+          {
+            "date": "2022-12-19",
+            "prefecture": "宮城県",
+            "venue": "仙台サンプラザホール"
+          },
+          {
+            "date": "2022-12-21",
+            "prefecture": "福島県",
+            "venue": "會津風雅堂"
+          },
+          {
+            "date": "2022-12-26",
+            "prefecture": "東京都",
+            "venue": "TOKYO DOME CITY HALL"
+          },
+          {
+            "date": "2022-12-27",
+            "prefecture": "東京都",
+            "venue": "TOKYO DOME CITY HALL"
+          }
+        ]
+      },
+      {
+        "year": 2023,
+        "shows": [
+          {
+            "date": "2023-01-23",
+            "prefecture": "東京都",
+            "venue": "日本武道館"
+          },
+          {
+            "date": "2023-01-24",
+            "prefecture": "東京都",
+            "venue": "日本武道館"
+          }
+        ]
+      }
+    ]
+  },
   {
-  "liveName": "CYBERロマンスポルノ'20 〜REUNION〜",
-  "color": "radial-gradient(circle at 30% 30%, rgba(255,170,200,0.50), transparent 55%), radial-gradient(circle at 70% 40%, rgba(170,200,255,0.45), transparent 60%), linear-gradient(135deg, #ffcadb 0%, #f5a8c6 30%, #dfe9ff 55%, #bcd9ff 75%, #f8fbff 100%)",
-  "years": [
-    {
-      "year": 2020,
-      "shows": [
-        { "date": "2020-12-04", "prefecture": "東京都", "venue": "LINE CUBE SHIBUYA" }
-      ]
-    }
-  ]
-},
-
+    "liveName": "17th LIVE CIRCUIT “続・ポルノグラフィティ”",
+    "color": "radial-gradient(circle at 20% 30%, rgba(210,230,255,0.45), transparent 55%), radial-gradient(circle at 70% 35%, rgba(160,200,255,0.40), transparent 60%), radial-gradient(circle at 45% 65%, rgba(220,235,255,0.35), transparent 65%), linear-gradient(135deg, #2a3f66 0%, #355a8c 35%, #4f7fb0 55%, #8fb6e0 75%, #f5f8ff 100%)",
+    "years": [
+      {
+        "year": 2021,
+        "shows": [
+          {
+            "date": "2021-09-25",
+            "prefecture": "東京都",
+            "venue": "LINE CUBE SHIBUYA"
+          },
+          {
+            "date": "2021-10-01",
+            "prefecture": "静岡県",
+            "venue": "静岡市民文化会館 大ホール"
+          },
+          {
+            "date": "2021-10-05",
+            "prefecture": "兵庫県",
+            "venue": "神戸国際会館 こくさいホール"
+          },
+          {
+            "date": "2021-10-07",
+            "prefecture": "滋賀県",
+            "venue": "滋賀県立芸術劇場 びわ湖ホール"
+          },
+          {
+            "date": "2021-10-08",
+            "prefecture": "奈良県",
+            "venue": "なら100年会館 大ホール"
+          },
+          {
+            "date": "2021-10-11",
+            "prefecture": "大阪府",
+            "venue": "オリックス劇場"
+          },
+          {
+            "date": "2021-10-12",
+            "prefecture": "大阪府",
+            "venue": "オリックス劇場"
+          },
+          {
+            "date": "2021-10-15",
+            "prefecture": "福岡県",
+            "venue": "福岡サンパレス ホテル&ホール"
+          },
+          {
+            "date": "2021-10-16",
+            "prefecture": "福岡県",
+            "venue": "福岡サンパレス ホテル&ホール"
+          },
+          {
+            "date": "2021-10-25",
+            "prefecture": "宮城県",
+            "venue": "仙台サンプラザホール"
+          },
+          {
+            "date": "2021-10-26",
+            "prefecture": "宮城県",
+            "venue": "仙台サンプラザホール"
+          },
+          {
+            "date": "2021-10-28",
+            "prefecture": "群馬県",
+            "venue": "高崎芸術劇場 大劇場"
+          },
+          {
+            "date": "2021-11-02",
+            "prefecture": "高知県",
+            "venue": "高知県立県民文化ホール"
+          },
+          {
+            "date": "2021-11-04",
+            "prefecture": "香川県",
+            "venue": "サンポートホール高松"
+          },
+          {
+            "date": "2021-11-09",
+            "prefecture": "石川県",
+            "venue": "本多の森ホール"
+          },
+          {
+            "date": "2021-11-10",
+            "prefecture": "石川県",
+            "venue": "本多の森ホール"
+          },
+          {
+            "date": "2021-11-15",
+            "prefecture": "神奈川県",
+            "venue": "神奈川県民ホール 大ホール"
+          },
+          {
+            "date": "2021-11-25",
+            "prefecture": "広島県",
+            "venue": "広島文化学園HBGホール"
+          },
+          {
+            "date": "2021-11-26",
+            "prefecture": "広島県",
+            "venue": "広島文化学園HBGホール"
+          },
+          {
+            "date": "2021-11-28",
+            "prefecture": "愛知県",
+            "venue": "アイプラザ豊橋"
+          },
+          {
+            "date": "2021-11-30",
+            "prefecture": "愛知県",
+            "venue": "名古屋国際会議場 センチュリーホール"
+          },
+          {
+            "date": "2021-12-01",
+            "prefecture": "愛知県",
+            "venue": "名古屋国際会議場 センチュリーホール"
+          },
+          {
+            "date": "2021-12-06",
+            "prefecture": "栃木県",
+            "venue": "栃木県総合文化センター メインホール"
+          },
+          {
+            "date": "2021-12-08",
+            "prefecture": "千葉県",
+            "venue": "千葉県文化会館 大ホール"
+          },
+          {
+            "date": "2021-12-13",
+            "prefecture": "北海道",
+            "venue": "札幌文化芸術劇場hitaru"
+          },
+          {
+            "date": "2021-12-14",
+            "prefecture": "北海道",
+            "venue": "札幌文化芸術劇場hitaru"
+          },
+          {
+            "date": "2021-12-21",
+            "prefecture": "東京都",
+            "venue": "東京ガーデンシアター"
+          },
+          {
+            "date": "2021-12-22",
+            "prefecture": "東京都",
+            "venue": "東京ガーデンシアター"
+          }
+        ]
+      }
+    ]
+  },
   {
-  "liveName": "NIPPONロマンスポルノ'19 〜神vs神〜",
-  "color": "radial-gradient(circle at 25% 30%, rgba(200,120,130,0.30), transparent 55%), radial-gradient(circle at 65% 35%, rgba(120,140,200,0.30), transparent 60%), linear-gradient(135deg, #f5f0f2 0%, #efe7ea 40%, #e8ebf3 70%, #f7f8fc 100%)",
-  "years": [
-    {
-      "year": 2019,
-      "shows": [
-        { "date": "2019-09-07", "prefecture": "東京都", "venue": "東京ドーム" },
-        { "date": "2019-09-08", "prefecture": "東京都", "venue": "東京ドーム" }
-      ]
-    }
-  ]
-},
-
+    "liveName": "CYBERロマンスポルノ'20 〜REUNION〜",
+    "color": "radial-gradient(circle at 30% 30%, rgba(255,170,200,0.50), transparent 55%), radial-gradient(circle at 70% 40%, rgba(170,200,255,0.45), transparent 60%), linear-gradient(135deg, #ffcadb 0%, #f5a8c6 30%, #dfe9ff 55%, #bcd9ff 75%, #f8fbff 100%)",
+    "years": [
+      {
+        "year": 2020,
+        "shows": [
+          {
+            "date": "2020-12-04",
+            "prefecture": "東京都",
+            "venue": "LINE CUBE SHIBUYA"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "liveName": "NIPPONロマンスポルノ'19 〜神vs神〜",
+    "color": "radial-gradient(circle at 25% 30%, rgba(200,120,130,0.30), transparent 55%), radial-gradient(circle at 65% 35%, rgba(120,140,200,0.30), transparent 60%), linear-gradient(135deg, #f5f0f2 0%, #efe7ea 40%, #e8ebf3 70%, #f7f8fc 100%)",
+    "years": [
+      {
+        "year": 2019,
+        "shows": [
+          {
+            "date": "2019-09-07",
+            "prefecture": "東京都",
+            "venue": "東京ドーム"
+          },
+          {
+            "date": "2019-09-08",
+            "prefecture": "東京都",
+            "venue": "東京ドーム"
+          }
+        ]
+      }
+    ]
+  },
   {
     "liveName": "16th LIVE CIRCUIT “UNFADED”",
     "color": "radial-gradient(circle at 25% 30%, rgba(200,150,220,0.35), transparent 55%), radial-gradient(circle at 65% 40%, rgba(220,190,235,0.30), transparent 60%), linear-gradient(135deg, #f5eff8 0%, #ede4f2 40%, #e8e0ee 70%, #f9f6fb 100%)",
@@ -286,31 +819,90 @@
       {
         "year": 2018,
         "shows": [
-          { "date": "2018-12-15", "prefecture": "静岡県", "venue": "静岡エコパアリーナ" },
-          { "date": "2018-12-16", "prefecture": "静岡県", "venue": "静岡エコパアリーナ" },
-          { "date": "2018-12-22", "prefecture": "北海道", "venue": "北海道立総合体育センター 北海きたえーる" },
-          { "date": "2018-12-30", "prefecture": "大阪府", "venue": "大阪城ホール" },
-          { "date": "2018-12-31", "prefecture": "大阪府", "venue": "大阪城ホール" }
+          {
+            "date": "2018-12-15",
+            "prefecture": "静岡県",
+            "venue": "静岡エコパアリーナ"
+          },
+          {
+            "date": "2018-12-16",
+            "prefecture": "静岡県",
+            "venue": "静岡エコパアリーナ"
+          },
+          {
+            "date": "2018-12-22",
+            "prefecture": "北海道",
+            "venue": "北海道立総合体育センター 北海きたえーる"
+          },
+          {
+            "date": "2018-12-30",
+            "prefecture": "大阪府",
+            "venue": "大阪城ホール"
+          },
+          {
+            "date": "2018-12-31",
+            "prefecture": "大阪府",
+            "venue": "大阪城ホール"
+          }
         ]
       },
       {
         "year": 2019,
         "shows": [
-          { "date": "2019-01-26", "prefecture": "福井県", "venue": "サンドーム福井" },
-          { "date": "2019-01-31", "prefecture": "千葉県", "venue": "幕張イベントホール" },
-          { "date": "2019-02-01", "prefecture": "千葉県", "venue": "幕張イベントホール" },
-          { "date": "2019-02-16", "prefecture": "宮城県", "venue": "セキスイハイムスーパーアリーナ" },
-          { "date": "2019-02-23", "prefecture": "徳島県", "venue": "アスティとくしま" },
-          { "date": "2019-03-02", "prefecture": "福岡県", "venue": "マリンメッセ福岡" },
-          { "date": "2019-03-08", "prefecture": "神奈川県", "venue": "横浜アリーナ" },
-          { "date": "2019-03-09", "prefecture": "神奈川県", "venue": "横浜アリーナ" },
-          { "date": "2019-03-16", "prefecture": "三重県", "venue": "三重県営サンアリーナ" },
-          { "date": "2019-03-17", "prefecture": "三重県", "venue": "三重県営サンアリーナ" }
+          {
+            "date": "2019-01-26",
+            "prefecture": "福井県",
+            "venue": "サンドーム福井"
+          },
+          {
+            "date": "2019-01-31",
+            "prefecture": "千葉県",
+            "venue": "幕張イベントホール"
+          },
+          {
+            "date": "2019-02-01",
+            "prefecture": "千葉県",
+            "venue": "幕張イベントホール"
+          },
+          {
+            "date": "2019-02-16",
+            "prefecture": "宮城県",
+            "venue": "セキスイハイムスーパーアリーナ"
+          },
+          {
+            "date": "2019-02-23",
+            "prefecture": "徳島県",
+            "venue": "アスティとくしま"
+          },
+          {
+            "date": "2019-03-02",
+            "prefecture": "福岡県",
+            "venue": "マリンメッセ福岡"
+          },
+          {
+            "date": "2019-03-08",
+            "prefecture": "神奈川県",
+            "venue": "横浜アリーナ"
+          },
+          {
+            "date": "2019-03-09",
+            "prefecture": "神奈川県",
+            "venue": "横浜アリーナ"
+          },
+          {
+            "date": "2019-03-16",
+            "prefecture": "三重県",
+            "venue": "三重県営サンアリーナ"
+          },
+          {
+            "date": "2019-03-17",
+            "prefecture": "三重県",
+            "venue": "三重県営サンアリーナ"
+          }
         ]
       }
     ]
   },
-
   {
     "liveName": "しまなみロマンスポルノ'18 ～Deep Breath～",
     "color": "radial-gradient(circle at 20% 30%, rgba(255,220,120,0.50), transparent 55%), radial-gradient(circle at 70% 30%, rgba(255,160,90,0.45), transparent 60%), radial-gradient(circle at 50% 65%, rgba(120,190,255,0.45), transparent 65%), linear-gradient(135deg, #fff3b0 0%, #ffcc66 25%, #ff9f43 45%, #6fb6ff 70%, #eaf6ff 100%)",
@@ -318,12 +910,15 @@
       {
         "year": 2018,
         "shows": [
-          { "date": "2018-09-08", "prefecture": "広島県", "venue": "広島県立びんご運動公園" }
+          {
+            "date": "2018-09-08",
+            "prefecture": "広島県",
+            "venue": "広島県立びんご運動公園"
+          }
         ]
       }
     ]
   },
-
   {
     "liveName": "15th LIVE CIRCUIT “BUTTERFLY EFFECT”",
     "color": "radial-gradient(circle at 25% 30%, rgba(255,220,140,0.35), transparent 55%), radial-gradient(circle at 65% 40%, rgba(160,160,160,0.25), transparent 60%), linear-gradient(135deg, #f5f4ef 0%, #efeada 40%, #f5f1e3 70%, #fffdf6 100%)",
@@ -331,206 +926,670 @@
       {
         "year": 2017,
         "shows": [
-          { "date": "2017-11-17", "prefecture": "埼玉県", "venue": "三郷市文化会館 大ホール" },
-          { "date": "2017-11-20", "prefecture": "神奈川県", "venue": "カルッツかわさき (川崎市スポーツ・文化総合センター)" },
-          { "date": "2017-11-23", "prefecture": "北海道", "venue": "釧路市民文化会館 大ホール" },
-          { "date": "2017-11-25", "prefecture": "北海道", "venue": "ニトリ文化ホール" },
-          { "date": "2017-11-26", "prefecture": "北海道", "venue": "ニトリ文化ホール" },
-          { "date": "2017-12-05", "prefecture": "香川県", "venue": "レグザムホール (香川県県民ホール)" },
-          { "date": "2017-12-07", "prefecture": "鳥取県", "venue": "米子コンベンションセンター" },
-          { "date": "2017-12-09", "prefecture": "山口県", "venue": "周南市文化会館" },
-          { "date": "2017-12-11", "prefecture": "広島県", "venue": "広島文化学園HBGホール" },
-          { "date": "2017-12-12", "prefecture": "広島県", "venue": "広島文化学園HBGホール" }
+          {
+            "date": "2017-11-17",
+            "prefecture": "埼玉県",
+            "venue": "三郷市文化会館 大ホール"
+          },
+          {
+            "date": "2017-11-20",
+            "prefecture": "神奈川県",
+            "venue": "カルッツかわさき (川崎市スポーツ・文化総合センター)"
+          },
+          {
+            "date": "2017-11-23",
+            "prefecture": "北海道",
+            "venue": "釧路市民文化会館 大ホール"
+          },
+          {
+            "date": "2017-11-25",
+            "prefecture": "北海道",
+            "venue": "ニトリ文化ホール"
+          },
+          {
+            "date": "2017-11-26",
+            "prefecture": "北海道",
+            "venue": "ニトリ文化ホール"
+          },
+          {
+            "date": "2017-12-05",
+            "prefecture": "香川県",
+            "venue": "レグザムホール (香川県県民ホール)"
+          },
+          {
+            "date": "2017-12-07",
+            "prefecture": "鳥取県",
+            "venue": "米子コンベンションセンター"
+          },
+          {
+            "date": "2017-12-09",
+            "prefecture": "山口県",
+            "venue": "周南市文化会館"
+          },
+          {
+            "date": "2017-12-11",
+            "prefecture": "広島県",
+            "venue": "広島文化学園HBGホール"
+          },
+          {
+            "date": "2017-12-12",
+            "prefecture": "広島県",
+            "venue": "広島文化学園HBGホール"
+          }
         ]
       },
       {
         "year": 2018,
         "shows": [
-          { "date": "2018-01-11", "prefecture": "岩手県", "venue": "盛岡市民文化ホール" },
-          { "date": "2018-01-13", "prefecture": "宮城県", "venue": "仙台サンプラザホール" },
-          { "date": "2018-01-14", "prefecture": "宮城県", "venue": "仙台サンプラザホール" },
-          { "date": "2018-01-17", "prefecture": "福岡県", "venue": "福岡サンパレス ホテル＆ホール" },
-          { "date": "2018-01-18", "prefecture": "福岡県", "venue": "福岡サンパレス ホテル＆ホール" },
-          { "date": "2018-01-20", "prefecture": "鹿児島県", "venue": "鹿児島市民文化ホール 第一ホール" },
-          { "date": "2018-01-22", "prefecture": "熊本県", "venue": "市民会館シアーズホーム夢ホール (熊本市民会館)" },
-          { "date": "2018-01-31", "prefecture": "東京都", "venue": "NHKホール" },
-          { "date": "2018-02-01", "prefecture": "東京都", "venue": "NHKホール" },
-          { "date": "2018-02-09", "prefecture": "山梨県", "venue": "コラニー文化ホール" },
-          { "date": "2018-02-13", "prefecture": "大阪府", "venue": "フェスティバルホール" },
-          { "date": "2018-02-14", "prefecture": "大阪府", "venue": "フェスティバルホール" },
-          { "date": "2018-02-16", "prefecture": "奈良県", "venue": "なら100年会館" },
-          { "date": "2018-02-21", "prefecture": "千葉県", "venue": "市川市文化会館" },
-          { "date": "2018-02-24", "prefecture": "三重県", "venue": "シンフォニアテクノロジー響ホール伊勢 (伊勢市観光文化会館)" },
-          { "date": "2018-02-26", "prefecture": "愛知県", "venue": "名古屋国際会議場 センチュリーホール" },
-          { "date": "2018-02-27", "prefecture": "愛知県", "venue": "名古屋国際会議場 センチュリーホール" },
-          { "date": "2018-03-02", "prefecture": "高知県", "venue": "高知県立県民文化ホール オレンジホール" },
-          { "date": "2018-03-04", "prefecture": "徳島県", "venue": "鳴門市文化会館" },
-          { "date": "2018-03-07", "prefecture": "静岡県", "venue": "富士市文化会館ロゼシアター" },
-          { "date": "2018-03-09", "prefecture": "静岡県", "venue": "アクトシティ浜松" },
-          { "date": "2018-03-12", "prefecture": "埼玉県", "venue": "大宮ソニックシティ 大ホール" },
-          { "date": "2018-03-14", "prefecture": "新潟県", "venue": "上越文化会館" },
-          { "date": "2018-03-16", "prefecture": "石川県", "venue": "金沢歌劇座" },
-          { "date": "2018-03-18", "prefecture": "福井県", "venue": "福井フェニックス・プラザ" },
-          { "date": "2018-03-20", "prefecture": "兵庫県", "venue": "神戸国際会館 こくさいホール" },
-          { "date": "2018-03-28", "prefecture": "福島県", "venue": "郡山市民文化センター ※振替公演" },
-          { "date": "2018-04-23", "prefecture": "東京都", "venue": "オリンパスホール八王子 ※振替公演" },
-          { "date": "2018-04-29", "prefecture": "神奈川県", "venue": "パシフィコ横浜 国立大ホール ※振替公演" }
+          {
+            "date": "2018-01-11",
+            "prefecture": "岩手県",
+            "venue": "盛岡市民文化ホール"
+          },
+          {
+            "date": "2018-01-13",
+            "prefecture": "宮城県",
+            "venue": "仙台サンプラザホール"
+          },
+          {
+            "date": "2018-01-14",
+            "prefecture": "宮城県",
+            "venue": "仙台サンプラザホール"
+          },
+          {
+            "date": "2018-01-17",
+            "prefecture": "福岡県",
+            "venue": "福岡サンパレス ホテル＆ホール"
+          },
+          {
+            "date": "2018-01-18",
+            "prefecture": "福岡県",
+            "venue": "福岡サンパレス ホテル＆ホール"
+          },
+          {
+            "date": "2018-01-20",
+            "prefecture": "鹿児島県",
+            "venue": "鹿児島市民文化ホール 第一ホール"
+          },
+          {
+            "date": "2018-01-22",
+            "prefecture": "熊本県",
+            "venue": "市民会館シアーズホーム夢ホール (熊本市民会館)"
+          },
+          {
+            "date": "2018-01-31",
+            "prefecture": "東京都",
+            "venue": "NHKホール"
+          },
+          {
+            "date": "2018-02-01",
+            "prefecture": "東京都",
+            "venue": "NHKホール"
+          },
+          {
+            "date": "2018-02-09",
+            "prefecture": "山梨県",
+            "venue": "コラニー文化ホール"
+          },
+          {
+            "date": "2018-02-13",
+            "prefecture": "大阪府",
+            "venue": "フェスティバルホール"
+          },
+          {
+            "date": "2018-02-14",
+            "prefecture": "大阪府",
+            "venue": "フェスティバルホール"
+          },
+          {
+            "date": "2018-02-16",
+            "prefecture": "奈良県",
+            "venue": "なら100年会館"
+          },
+          {
+            "date": "2018-02-21",
+            "prefecture": "千葉県",
+            "venue": "市川市文化会館"
+          },
+          {
+            "date": "2018-02-24",
+            "prefecture": "三重県",
+            "venue": "シンフォニアテクノロジー響ホール伊勢 (伊勢市観光文化会館)"
+          },
+          {
+            "date": "2018-02-26",
+            "prefecture": "愛知県",
+            "venue": "名古屋国際会議場 センチュリーホール"
+          },
+          {
+            "date": "2018-02-27",
+            "prefecture": "愛知県",
+            "venue": "名古屋国際会議場 センチュリーホール"
+          },
+          {
+            "date": "2018-03-02",
+            "prefecture": "高知県",
+            "venue": "高知県立県民文化ホール オレンジホール"
+          },
+          {
+            "date": "2018-03-04",
+            "prefecture": "徳島県",
+            "venue": "鳴門市文化会館"
+          },
+          {
+            "date": "2018-03-07",
+            "prefecture": "静岡県",
+            "venue": "富士市文化会館ロゼシアター"
+          },
+          {
+            "date": "2018-03-09",
+            "prefecture": "静岡県",
+            "venue": "アクトシティ浜松"
+          },
+          {
+            "date": "2018-03-12",
+            "prefecture": "埼玉県",
+            "venue": "大宮ソニックシティ 大ホール"
+          },
+          {
+            "date": "2018-03-14",
+            "prefecture": "新潟県",
+            "venue": "上越文化会館"
+          },
+          {
+            "date": "2018-03-16",
+            "prefecture": "石川県",
+            "venue": "金沢歌劇座"
+          },
+          {
+            "date": "2018-03-18",
+            "prefecture": "福井県",
+            "venue": "福井フェニックス・プラザ"
+          },
+          {
+            "date": "2018-03-20",
+            "prefecture": "兵庫県",
+            "venue": "神戸国際会館 こくさいホール"
+          },
+          {
+            "date": "2018-03-28",
+            "prefecture": "福島県",
+            "venue": "郡山市民文化センター ※振替公演"
+          },
+          {
+            "date": "2018-04-23",
+            "prefecture": "東京都",
+            "venue": "オリンパスホール八王子 ※振替公演"
+          },
+          {
+            "date": "2018-04-29",
+            "prefecture": "神奈川県",
+            "venue": "パシフィコ横浜 国立大ホール ※振替公演"
+          }
         ]
       }
     ]
   },
   {
-  "liveName": "色情塗鴉 Special Live in Taiwan",
-  "color": "radial-gradient(circle at 18% 25%, rgba(255,230,235,0.60), transparent 58%), radial-gradient(circle at 70% 32%, rgba(255,210,220,0.45), transparent 62%), radial-gradient(circle at 45% 70%, rgba(255,245,248,0.55), transparent 65%), radial-gradient(circle at 82% 78%, rgba(210,70,85,0.22), transparent 60%), linear-gradient(135deg, #fff7f9 0%, #ffe3e8 28%, #ffd1d9 48%, #ffffff 72%, #f3f5f8 100%)",
-  "years": [
-    {
-      "year": 2017,
-      "shows": [
-        { "date": "2017-03-25", "prefecture": "台湾", "venue": "Legacy Taipei" },
-        { "date": "2017-03-26", "prefecture": "台湾", "venue": "Legacy Taipei" }
-      ]
-    }
-  ]
-},
-{
-  "liveName": "横浜ロマンスポルノ'16 ～THE WAY～",
-  "color": "radial-gradient(circle at 20% 28%, rgba(220,245,255,0.55), transparent 58%), radial-gradient(circle at 72% 32%, rgba(190,230,255,0.45), transparent 62%), radial-gradient(circle at 46% 72%, rgba(210,235,255,0.35), transparent 66%), linear-gradient(135deg, #f2fbff 0%, #dff3ff 32%, #cfeaff 52%, #deefff 72%, #f6fbff 100%)",
-  "years": [
-    {
-      "year": 2016,
-      "shows": [
-        { "date": "2016-09-03", "prefecture": "神奈川県", "venue": "横浜スタジアム" },
-        { "date": "2016-09-04", "prefecture": "神奈川県", "venue": "横浜スタジアム" }
-      ]
-    }
-  ]
-},
-{
-  "liveName": "FANCLUB UNDERWORLD 5",
-  "color": "radial-gradient(circle at 22% 30%, rgba(255,245,232,0.65), transparent 58%), radial-gradient(circle at 72% 35%, rgba(245,225,200,0.45), transparent 62%), radial-gradient(circle at 48% 75%, rgba(225,200,170,0.30), transparent 66%), linear-gradient(135deg, #fff7ee 0%, #f6e6d3 33%, #edd9c1 52%, #f7efe5 74%, #fffaf4 100%)",
-  "years": [
-    {
-      "year": 2016,
-      "shows": [
-        { "date": "2016-02-01", "prefecture": "愛知県", "venue": "Zepp Nagoya" },
-        { "date": "2016-02-02", "prefecture": "愛知県", "venue": "Zepp Nagoya" },
-        { "date": "2016-02-08", "prefecture": "北海道", "venue": "Zepp Sapporo" },
-        { "date": "2016-02-15", "prefecture": "福岡県", "venue": "Zepp Fukuoka" },
-        { "date": "2016-02-17", "prefecture": "広島県", "venue": "CLUB QUATTRO" },
-        { "date": "2016-02-18", "prefecture": "広島県", "venue": "CLUB QUATTRO" },
-        { "date": "2016-02-22", "prefecture": "大阪府", "venue": "Zepp Namba(OSAKA)" },
-
-        { "date": "2016-02-23", "prefecture": "大阪府", "venue": "Zepp Namba(OSAKA)", "time": "AM" },
-        { "date": "2016-02-23", "prefecture": "大阪府", "venue": "Zepp Namba(OSAKA)", "time": "PM" },
-
-        { "date": "2016-03-02", "prefecture": "東京都", "venue": "Zepp DiverCity(TOKYO)" },
-
-        { "date": "2016-03-03", "prefecture": "東京都", "venue": "Zepp DiverCity(TOKYO)", "time": "AM" },
-        { "date": "2016-03-03", "prefecture": "東京都", "venue": "Zepp DiverCity(TOKYO)", "time": "PM" }
-      ]
-    }
-  ]
-},
-{
-  "liveName": "14thライヴサーキット \"The dice are cast\"",
-  "color": "radial-gradient(circle at 30% 30%, rgba(245,225,140,0.45), transparent 60%), linear-gradient(135deg, #f5f5f2 0%, #e8e4d6 40%, #3a3a3a 100%)",
-  "years": [
-    {
-      "year": 2015,
-      "shows": [
-        { "date": "2015-09-03", "prefecture": "神奈川県", "venue": "よこすか芸術劇場" },
-        { "date": "2015-09-05", "prefecture": "静岡県", "venue": "富士市文化会館ロゼシアター" },
-        { "date": "2015-09-06", "prefecture": "静岡県", "venue": "アクトシティ浜松" },
-        { "date": "2015-09-09", "prefecture": "千葉県", "venue": "市川市文化会館" },
-        { "date": "2015-09-12", "prefecture": "福岡県", "venue": "福岡サンパレスホテル＆ホール" },
-        { "date": "2015-09-13", "prefecture": "福岡県", "venue": "福岡サンパレスホテル＆ホール" },
-        { "date": "2015-09-15", "prefecture": "熊本県", "venue": "市民会館崇城大学ホール" },
-        { "date": "2015-09-16", "prefecture": "宮崎県", "venue": "都城市総合文化ホール" },
-        { "date": "2015-09-19", "prefecture": "沖縄県", "venue": "沖縄コンベンション劇場" },
-        { "date": "2015-09-24", "prefecture": "埼玉県", "venue": "大宮ソニックシティ" },
-        { "date": "2015-09-28", "prefecture": "大阪府", "venue": "フェスティバルホール" },
-        { "date": "2015-09-29", "prefecture": "大阪府", "venue": "フェスティバルホール" },
-        { "date": "2015-10-02", "prefecture": "滋賀県", "venue": "滋賀県立芸術劇場 びわ湖ホール" },
-        { "date": "2015-10-04", "prefecture": "奈良県", "venue": "なら100年会館" },
-        { "date": "2015-10-06", "prefecture": "香川県", "venue": "アルファあなぶきホール" },
-        { "date": "2015-10-08", "prefecture": "岐阜県", "venue": "長良川国際会議場" },
-        { "date": "2015-10-09", "prefecture": "三重県", "venue": "三重県文化会館" },
-        { "date": "2015-10-12", "prefecture": "鳥取県", "venue": "とりぎん文化会館" },
-        { "date": "2015-10-15", "prefecture": "愛知県", "venue": "名古屋国際会議場センチュリーホール" },
-        { "date": "2015-10-16", "prefecture": "愛知県", "venue": "名古屋国際会議場センチュリーホール" },
-        { "date": "2015-10-18", "prefecture": "岐阜県", "venue": "高山市民文化会館" },
-        { "date": "2015-10-23", "prefecture": "東京都", "venue": "日本武道館" },
-        { "date": "2015-10-24", "prefecture": "東京都", "venue": "日本武道館" },
-        { "date": "2015-10-27", "prefecture": "宮城県", "venue": "仙台サンプラザホール" },
-        { "date": "2015-10-28", "prefecture": "宮城県", "venue": "仙台サンプラザホール" },
-        { "date": "2015-10-30", "prefecture": "青森県", "venue": "八戸市公会堂" },
-        { "date": "2015-11-03", "prefecture": "北海道", "venue": "旭川市民文化会館" },
-        { "date": "2015-11-05", "prefecture": "北海道", "venue": "ニトリ文化ホール" },
-        { "date": "2015-11-06", "prefecture": "北海道", "venue": "ニトリ文化ホール" },
-        { "date": "2015-11-09", "prefecture": "長野県", "venue": "上田市交流文化芸術センター" },
-        { "date": "2015-11-11", "prefecture": "石川県", "venue": "本多の森ホール" },
-        { "date": "2015-11-12", "prefecture": "石川県", "venue": "本多の森ホール" },
-        { "date": "2015-11-15", "prefecture": "広島県", "venue": "広島文化学園HBGホール" },
-        { "date": "2015-11-16", "prefecture": "広島県", "venue": "広島文化学園HBGホール" },
-        { "date": "2015-11-18", "prefecture": "愛媛県", "venue": "松山市民会館" },
-        { "date": "2015-11-19", "prefecture": "高知県", "venue": "高知県立県民文化ホール" },
-        { "date": "2015-11-23", "prefecture": "福島県", "venue": "福島県文化センター" },
-        { "date": "2015-12-15", "prefecture": "神奈川県", "venue": "横浜アリーナ" },
-        { "date": "2015-12-16", "prefecture": "神奈川県", "venue": "横浜アリーナ" },
-        { "date": "2015-12-21", "prefecture": "大阪府", "venue": "大阪城ホール" },
-        { "date": "2015-12-22", "prefecture": "大阪府", "venue": "大阪城ホール" }
-      ]
-    }
-  ]
-},
-{
-  "liveName": "神戸・横浜ロマンスポルノ'14 〜惑ワ不ノ森〜",
-  "color": "radial-gradient(circle at 20% 28%, rgba(230,255,200,0.55), transparent 58%), radial-gradient(circle at 75% 35%, rgba(170,235,150,0.40), transparent 62%), radial-gradient(circle at 48% 75%, rgba(140,200,120,0.30), transparent 66%), linear-gradient(135deg, #f3ffe8 0%, #dff8c8 32%, #bfeaa6 52%, #a8d88f 72%, #f7fff2 100%)",
-  "years": [
-    {
-      "year": 2014,
-      "shows": [
-        { "date": "2014-09-13", "prefecture": "兵庫県", "venue": "ほっともっとフィールド神戸" },
-        { "date": "2014-09-20", "prefecture": "神奈川県", "venue": "横浜スタジアム" },
-        { "date": "2014-09-21", "prefecture": "神奈川県", "venue": "横浜スタジアム" }
-      ]
-    }
-  ]
-},
-{
-  "liveName": "13thライヴサーキット \"ラヴ・E・メール・フロム・1999\"",
-  "color": "radial-gradient(circle at 25% 30%, rgba(255,240,150,0.45), transparent 60%), radial-gradient(circle at 70% 35%, rgba(180,220,255,0.45), transparent 65%), linear-gradient(135deg, #fff6c8 0%, #e8f4ff 50%, #f6fbff 100%)",
-  "years": [
-    {
-      "year": 2013,
-      "shows": [
-        { "date": "2013-12-05", "prefecture": "東京都", "venue": "EX THEATER ROPPONGI（プレライヴ）" },
-        { "date": "2013-12-14", "prefecture": "広島県", "venue": "広島グリーンアリーナ" },
-        { "date": "2013-12-22", "prefecture": "北海道", "venue": "北海道立総合体育センター 北海きたえーる" },
-        { "date": "2013-12-28", "prefecture": "愛知県", "venue": "日本ガイシホール" },
-        { "date": "2013-12-29", "prefecture": "愛知県", "venue": "日本ガイシホール" }
-      ]
-    },
-    {
-      "year": 2014,
-      "shows": [
-        { "date": "2014-01-18", "prefecture": "埼玉県", "venue": "さいたまスーパーアリーナ" },
-        { "date": "2014-01-19", "prefecture": "埼玉県", "venue": "さいたまスーパーアリーナ" },
-        { "date": "2014-01-30", "prefecture": "大阪府", "venue": "大阪城ホール" },
-        { "date": "2014-02-01", "prefecture": "大阪府", "venue": "大阪城ホール" },
-        { "date": "2014-02-02", "prefecture": "大阪府", "venue": "大阪城ホール" },
-        { "date": "2014-02-08", "prefecture": "徳島県", "venue": "アスティとくしま" },
-        { "date": "2014-02-22", "prefecture": "宮城県", "venue": "セキスイハイムスーパーアリーナ" },
-        { "date": "2014-03-01", "prefecture": "神奈川県", "venue": "横浜アリーナ" },
-        { "date": "2014-03-02", "prefecture": "神奈川県", "venue": "横浜アリーナ" },
-        { "date": "2014-03-15", "prefecture": "福井県", "venue": "サンドーム福井" },
-        { "date": "2014-03-21", "prefecture": "静岡県", "venue": "静岡エコパアリーナ" },
-        { "date": "2014-03-29", "prefecture": "福岡県", "venue": "マリンメッセ福岡" }
-      ]
-    }        
-  ]
-},
-
+    "liveName": "色情塗鴉 Special Live in Taiwan",
+    "color": "radial-gradient(circle at 18% 25%, rgba(255,230,235,0.60), transparent 58%), radial-gradient(circle at 70% 32%, rgba(255,210,220,0.45), transparent 62%), radial-gradient(circle at 45% 70%, rgba(255,245,248,0.55), transparent 65%), radial-gradient(circle at 82% 78%, rgba(210,70,85,0.22), transparent 60%), linear-gradient(135deg, #fff7f9 0%, #ffe3e8 28%, #ffd1d9 48%, #ffffff 72%, #f3f5f8 100%)",
+    "years": [
+      {
+        "year": 2017,
+        "shows": [
+          {
+            "date": "2017-03-25",
+            "prefecture": "台湾",
+            "venue": "Legacy Taipei"
+          },
+          {
+            "date": "2017-03-26",
+            "prefecture": "台湾",
+            "venue": "Legacy Taipei"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "liveName": "横浜ロマンスポルノ'16 ～THE WAY～",
+    "color": "radial-gradient(circle at 20% 28%, rgba(220,245,255,0.55), transparent 58%), radial-gradient(circle at 72% 32%, rgba(190,230,255,0.45), transparent 62%), radial-gradient(circle at 46% 72%, rgba(210,235,255,0.35), transparent 66%), linear-gradient(135deg, #f2fbff 0%, #dff3ff 32%, #cfeaff 52%, #deefff 72%, #f6fbff 100%)",
+    "years": [
+      {
+        "year": 2016,
+        "shows": [
+          {
+            "date": "2016-09-03",
+            "prefecture": "神奈川県",
+            "venue": "横浜スタジアム"
+          },
+          {
+            "date": "2016-09-04",
+            "prefecture": "神奈川県",
+            "venue": "横浜スタジアム"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "liveName": "FANCLUB UNDERWORLD 5",
+    "color": "radial-gradient(circle at 22% 30%, rgba(255,245,232,0.65), transparent 58%), radial-gradient(circle at 72% 35%, rgba(245,225,200,0.45), transparent 62%), radial-gradient(circle at 48% 75%, rgba(225,200,170,0.30), transparent 66%), linear-gradient(135deg, #fff7ee 0%, #f6e6d3 33%, #edd9c1 52%, #f7efe5 74%, #fffaf4 100%)",
+    "years": [
+      {
+        "year": 2016,
+        "shows": [
+          {
+            "date": "2016-02-01",
+            "prefecture": "愛知県",
+            "venue": "Zepp Nagoya"
+          },
+          {
+            "date": "2016-02-02",
+            "prefecture": "愛知県",
+            "venue": "Zepp Nagoya"
+          },
+          {
+            "date": "2016-02-08",
+            "prefecture": "北海道",
+            "venue": "Zepp Sapporo"
+          },
+          {
+            "date": "2016-02-15",
+            "prefecture": "福岡県",
+            "venue": "Zepp Fukuoka"
+          },
+          {
+            "date": "2016-02-17",
+            "prefecture": "広島県",
+            "venue": "CLUB QUATTRO"
+          },
+          {
+            "date": "2016-02-18",
+            "prefecture": "広島県",
+            "venue": "CLUB QUATTRO"
+          },
+          {
+            "date": "2016-02-22",
+            "prefecture": "大阪府",
+            "venue": "Zepp Namba(OSAKA)"
+          },
+          {
+            "date": "2016-02-23",
+            "prefecture": "大阪府",
+            "venue": "Zepp Namba(OSAKA)",
+            "time": "AM"
+          },
+          {
+            "date": "2016-02-23",
+            "prefecture": "大阪府",
+            "venue": "Zepp Namba(OSAKA)",
+            "time": "PM"
+          },
+          {
+            "date": "2016-03-02",
+            "prefecture": "東京都",
+            "venue": "Zepp DiverCity(TOKYO)"
+          },
+          {
+            "date": "2016-03-03",
+            "prefecture": "東京都",
+            "venue": "Zepp DiverCity(TOKYO)",
+            "time": "AM"
+          },
+          {
+            "date": "2016-03-03",
+            "prefecture": "東京都",
+            "venue": "Zepp DiverCity(TOKYO)",
+            "time": "PM"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "liveName": "14thライヴサーキット \"The dice are cast\"",
+    "color": "radial-gradient(circle at 30% 30%, rgba(245,225,140,0.45), transparent 60%), linear-gradient(135deg, #f5f5f2 0%, #e8e4d6 40%, #3a3a3a 100%)",
+    "years": [
+      {
+        "year": 2015,
+        "shows": [
+          {
+            "date": "2015-09-03",
+            "prefecture": "神奈川県",
+            "venue": "よこすか芸術劇場"
+          },
+          {
+            "date": "2015-09-05",
+            "prefecture": "静岡県",
+            "venue": "富士市文化会館ロゼシアター"
+          },
+          {
+            "date": "2015-09-06",
+            "prefecture": "静岡県",
+            "venue": "アクトシティ浜松"
+          },
+          {
+            "date": "2015-09-09",
+            "prefecture": "千葉県",
+            "venue": "市川市文化会館"
+          },
+          {
+            "date": "2015-09-12",
+            "prefecture": "福岡県",
+            "venue": "福岡サンパレスホテル＆ホール"
+          },
+          {
+            "date": "2015-09-13",
+            "prefecture": "福岡県",
+            "venue": "福岡サンパレスホテル＆ホール"
+          },
+          {
+            "date": "2015-09-15",
+            "prefecture": "熊本県",
+            "venue": "市民会館崇城大学ホール"
+          },
+          {
+            "date": "2015-09-16",
+            "prefecture": "宮崎県",
+            "venue": "都城市総合文化ホール"
+          },
+          {
+            "date": "2015-09-19",
+            "prefecture": "沖縄県",
+            "venue": "沖縄コンベンション劇場"
+          },
+          {
+            "date": "2015-09-24",
+            "prefecture": "埼玉県",
+            "venue": "大宮ソニックシティ"
+          },
+          {
+            "date": "2015-09-28",
+            "prefecture": "大阪府",
+            "venue": "フェスティバルホール"
+          },
+          {
+            "date": "2015-09-29",
+            "prefecture": "大阪府",
+            "venue": "フェスティバルホール"
+          },
+          {
+            "date": "2015-10-02",
+            "prefecture": "滋賀県",
+            "venue": "滋賀県立芸術劇場 びわ湖ホール"
+          },
+          {
+            "date": "2015-10-04",
+            "prefecture": "奈良県",
+            "venue": "なら100年会館"
+          },
+          {
+            "date": "2015-10-06",
+            "prefecture": "香川県",
+            "venue": "アルファあなぶきホール"
+          },
+          {
+            "date": "2015-10-08",
+            "prefecture": "岐阜県",
+            "venue": "長良川国際会議場"
+          },
+          {
+            "date": "2015-10-09",
+            "prefecture": "三重県",
+            "venue": "三重県文化会館"
+          },
+          {
+            "date": "2015-10-12",
+            "prefecture": "鳥取県",
+            "venue": "とりぎん文化会館"
+          },
+          {
+            "date": "2015-10-15",
+            "prefecture": "愛知県",
+            "venue": "名古屋国際会議場センチュリーホール"
+          },
+          {
+            "date": "2015-10-16",
+            "prefecture": "愛知県",
+            "venue": "名古屋国際会議場センチュリーホール"
+          },
+          {
+            "date": "2015-10-18",
+            "prefecture": "岐阜県",
+            "venue": "高山市民文化会館"
+          },
+          {
+            "date": "2015-10-23",
+            "prefecture": "東京都",
+            "venue": "日本武道館"
+          },
+          {
+            "date": "2015-10-24",
+            "prefecture": "東京都",
+            "venue": "日本武道館"
+          },
+          {
+            "date": "2015-10-27",
+            "prefecture": "宮城県",
+            "venue": "仙台サンプラザホール"
+          },
+          {
+            "date": "2015-10-28",
+            "prefecture": "宮城県",
+            "venue": "仙台サンプラザホール"
+          },
+          {
+            "date": "2015-10-30",
+            "prefecture": "青森県",
+            "venue": "八戸市公会堂"
+          },
+          {
+            "date": "2015-11-03",
+            "prefecture": "北海道",
+            "venue": "旭川市民文化会館"
+          },
+          {
+            "date": "2015-11-05",
+            "prefecture": "北海道",
+            "venue": "ニトリ文化ホール"
+          },
+          {
+            "date": "2015-11-06",
+            "prefecture": "北海道",
+            "venue": "ニトリ文化ホール"
+          },
+          {
+            "date": "2015-11-09",
+            "prefecture": "長野県",
+            "venue": "上田市交流文化芸術センター"
+          },
+          {
+            "date": "2015-11-11",
+            "prefecture": "石川県",
+            "venue": "本多の森ホール"
+          },
+          {
+            "date": "2015-11-12",
+            "prefecture": "石川県",
+            "venue": "本多の森ホール"
+          },
+          {
+            "date": "2015-11-15",
+            "prefecture": "広島県",
+            "venue": "広島文化学園HBGホール"
+          },
+          {
+            "date": "2015-11-16",
+            "prefecture": "広島県",
+            "venue": "広島文化学園HBGホール"
+          },
+          {
+            "date": "2015-11-18",
+            "prefecture": "愛媛県",
+            "venue": "松山市民会館"
+          },
+          {
+            "date": "2015-11-19",
+            "prefecture": "高知県",
+            "venue": "高知県立県民文化ホール"
+          },
+          {
+            "date": "2015-11-23",
+            "prefecture": "福島県",
+            "venue": "福島県文化センター"
+          },
+          {
+            "date": "2015-12-15",
+            "prefecture": "神奈川県",
+            "venue": "横浜アリーナ"
+          },
+          {
+            "date": "2015-12-16",
+            "prefecture": "神奈川県",
+            "venue": "横浜アリーナ"
+          },
+          {
+            "date": "2015-12-21",
+            "prefecture": "大阪府",
+            "venue": "大阪城ホール"
+          },
+          {
+            "date": "2015-12-22",
+            "prefecture": "大阪府",
+            "venue": "大阪城ホール"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "liveName": "神戸・横浜ロマンスポルノ'14 〜惑ワ不ノ森〜",
+    "color": "radial-gradient(circle at 20% 28%, rgba(230,255,200,0.55), transparent 58%), radial-gradient(circle at 75% 35%, rgba(170,235,150,0.40), transparent 62%), radial-gradient(circle at 48% 75%, rgba(140,200,120,0.30), transparent 66%), linear-gradient(135deg, #f3ffe8 0%, #dff8c8 32%, #bfeaa6 52%, #a8d88f 72%, #f7fff2 100%)",
+    "years": [
+      {
+        "year": 2014,
+        "shows": [
+          {
+            "date": "2014-09-13",
+            "prefecture": "兵庫県",
+            "venue": "ほっともっとフィールド神戸"
+          },
+          {
+            "date": "2014-09-20",
+            "prefecture": "神奈川県",
+            "venue": "横浜スタジアム"
+          },
+          {
+            "date": "2014-09-21",
+            "prefecture": "神奈川県",
+            "venue": "横浜スタジアム"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "liveName": "13thライヴサーキット \"ラヴ・E・メール・フロム・1999\"",
+    "color": "radial-gradient(circle at 25% 30%, rgba(255,240,150,0.45), transparent 60%), radial-gradient(circle at 70% 35%, rgba(180,220,255,0.45), transparent 65%), linear-gradient(135deg, #fff6c8 0%, #e8f4ff 50%, #f6fbff 100%)",
+    "years": [
+      {
+        "year": 2013,
+        "shows": [
+          {
+            "date": "2013-12-05",
+            "prefecture": "東京都",
+            "venue": "EX THEATER ROPPONGI（プレライヴ）"
+          },
+          {
+            "date": "2013-12-14",
+            "prefecture": "広島県",
+            "venue": "広島グリーンアリーナ"
+          },
+          {
+            "date": "2013-12-22",
+            "prefecture": "北海道",
+            "venue": "北海道立総合体育センター 北海きたえーる"
+          },
+          {
+            "date": "2013-12-28",
+            "prefecture": "愛知県",
+            "venue": "日本ガイシホール"
+          },
+          {
+            "date": "2013-12-29",
+            "prefecture": "愛知県",
+            "venue": "日本ガイシホール"
+          }
+        ]
+      },
+      {
+        "year": 2014,
+        "shows": [
+          {
+            "date": "2014-01-18",
+            "prefecture": "埼玉県",
+            "venue": "さいたまスーパーアリーナ"
+          },
+          {
+            "date": "2014-01-19",
+            "prefecture": "埼玉県",
+            "venue": "さいたまスーパーアリーナ"
+          },
+          {
+            "date": "2014-01-30",
+            "prefecture": "大阪府",
+            "venue": "大阪城ホール"
+          },
+          {
+            "date": "2014-02-01",
+            "prefecture": "大阪府",
+            "venue": "大阪城ホール"
+          },
+          {
+            "date": "2014-02-02",
+            "prefecture": "大阪府",
+            "venue": "大阪城ホール"
+          },
+          {
+            "date": "2014-02-08",
+            "prefecture": "徳島県",
+            "venue": "アスティとくしま"
+          },
+          {
+            "date": "2014-02-22",
+            "prefecture": "宮城県",
+            "venue": "セキスイハイムスーパーアリーナ"
+          },
+          {
+            "date": "2014-03-01",
+            "prefecture": "神奈川県",
+            "venue": "横浜アリーナ"
+          },
+          {
+            "date": "2014-03-02",
+            "prefecture": "神奈川県",
+            "venue": "横浜アリーナ"
+          },
+          {
+            "date": "2014-03-15",
+            "prefecture": "福井県",
+            "venue": "サンドーム福井"
+          },
+          {
+            "date": "2014-03-21",
+            "prefecture": "静岡県",
+            "venue": "静岡エコパアリーナ"
+          },
+          {
+            "date": "2014-03-29",
+            "prefecture": "福岡県",
+            "venue": "マリンメッセ福岡"
+          }
+        ]
+      }
+    ]
+  },
   {
     "liveName": "12thライヴサーキット \"PANORAMA×42\"",
     "color": "radial-gradient(circle at 18% 25%, rgba(255,240,170,0.55), transparent 58%), radial-gradient(circle at 70% 32%, rgba(255,210,120,0.40), transparent 62%), radial-gradient(circle at 45% 72%, rgba(255,250,230,0.55), transparent 66%), linear-gradient(135deg, #fff6d6 0%, #ffe4a8 28%, #f4c85b 52%, #ffeabf 72%, #fffaf0 100%)",
@@ -538,48 +1597,216 @@
       {
         "year": 2012,
         "shows": [
-          { "date": "2012-07-13", "prefecture": "埼玉県", "venue": "戸田市文化会館" },
-          { "date": "2012-07-16", "prefecture": "愛媛県", "venue": "ひめぎんホール" },
-          { "date": "2012-07-18", "prefecture": "広島県", "venue": "広島市文化交流会館" },
-          { "date": "2012-07-20", "prefecture": "山口県", "venue": "周南市文化会館" },
-          { "date": "2012-07-23", "prefecture": "栃木県", "venue": "栃木県総合文化センター" },
-          { "date": "2012-08-03", "prefecture": "長崎県", "venue": "長崎県ブリックホール" },
-          { "date": "2012-08-06", "prefecture": "鹿児島県", "venue": "鹿児島市民文化ホール" },
-          { "date": "2012-08-08", "prefecture": "福岡県", "venue": "福岡サンパレスホテル&ホール" },
-          { "date": "2012-08-11", "prefecture": "青森県", "venue": "リンクステーションホール青森" },
-          { "date": "2012-08-12", "prefecture": "岩手県", "venue": "盛岡市民文化ホール" },
-          { "date": "2012-08-19", "prefecture": "山梨県", "venue": "コラニー文化ホール" },
-          { "date": "2012-08-25", "prefecture": "石川県", "venue": "本多の森ホール" },
-          { "date": "2012-08-26", "prefecture": "福井県", "venue": "福井フェニックスプラザ" },
-          { "date": "2012-08-28", "prefecture": "静岡県", "venue": "静岡市民文化会館" },
-          { "date": "2012-09-08", "prefecture": "沖縄県", "venue": "宜野湾海浜公園屋外劇場 ※2012ポルノグラフテー" },
-          { "date": "2012-09-26", "prefecture": "東京都", "venue": "日本武道館" },
-          { "date": "2012-09-27", "prefecture": "東京都", "venue": "日本武道館" },
-          { "date": "2012-09-28", "prefecture": "東京都", "venue": "日本武道館" },
-          { "date": "2012-10-01", "prefecture": "埼玉県", "venue": "大宮ソニックシティ" },
-          { "date": "2012-10-10", "prefecture": "新潟県", "venue": "新潟県民会館" },
-          { "date": "2012-10-12", "prefecture": "福島県", "venue": "會津風雅堂" },
-          { "date": "2012-10-13", "prefecture": "山形県", "venue": "山形県県民会館" },
-          { "date": "2012-10-15", "prefecture": "宮城県", "venue": "仙台サンプラザホール" },
-          { "date": "2012-10-18", "prefecture": "群馬県", "venue": "ベイシア文化ホール" },
-          { "date": "2012-10-23", "prefecture": "三重県", "venue": "四日市市文化会館" },
-          { "date": "2012-10-25", "prefecture": "奈良県", "venue": "なら100年会館" },
-          { "date": "2012-10-27", "prefecture": "徳島県", "venue": "鳴門市文化会館" },
-          { "date": "2012-10-29", "prefecture": "岡山県", "venue": "倉敷市民会館" },
-          { "date": "2012-11-07", "prefecture": "北海道", "venue": "函館市民会館" },
-          { "date": "2012-11-09", "prefecture": "北海道", "venue": "稚内総合文化センター" },
-          { "date": "2012-11-12", "prefecture": "北海道", "venue": "ニトリ文化ホール" },
-          { "date": "2012-11-16", "prefecture": "長野県", "venue": "長野県松本文化会館" },
-          { "date": "2012-11-20", "prefecture": "和歌山県", "venue": "和歌山市民会館" },
-          { "date": "2012-11-22", "prefecture": "島根県", "venue": "島根県民会館" },
-          { "date": "2012-11-24", "prefecture": "香川県", "venue": "アルファあなぶきホール" },
-          { "date": "2012-11-26", "prefecture": "兵庫県", "venue": "神戸国際会館こくさいホール" },
-          { "date": "2012-12-18", "prefecture": "神奈川県", "venue": "横浜アリーナ" },
-          { "date": "2012-12-19", "prefecture": "神奈川県", "venue": "横浜アリーナ" },
-          { "date": "2012-12-22", "prefecture": "愛知県", "venue": "日本ガイシホール" },
-          { "date": "2012-12-23", "prefecture": "愛知県", "venue": "日本ガイシホール" },
-          { "date": "2012-12-26", "prefecture": "大阪府", "venue": "大阪城ホール" },
-          { "date": "2012-12-27", "prefecture": "大阪府", "venue": "大阪城ホール" }
+          {
+            "date": "2012-07-13",
+            "prefecture": "埼玉県",
+            "venue": "戸田市文化会館"
+          },
+          {
+            "date": "2012-07-16",
+            "prefecture": "愛媛県",
+            "venue": "ひめぎんホール"
+          },
+          {
+            "date": "2012-07-18",
+            "prefecture": "広島県",
+            "venue": "広島市文化交流会館"
+          },
+          {
+            "date": "2012-07-20",
+            "prefecture": "山口県",
+            "venue": "周南市文化会館"
+          },
+          {
+            "date": "2012-07-23",
+            "prefecture": "栃木県",
+            "venue": "栃木県総合文化センター"
+          },
+          {
+            "date": "2012-08-03",
+            "prefecture": "長崎県",
+            "venue": "長崎県ブリックホール"
+          },
+          {
+            "date": "2012-08-06",
+            "prefecture": "鹿児島県",
+            "venue": "鹿児島市民文化ホール"
+          },
+          {
+            "date": "2012-08-08",
+            "prefecture": "福岡県",
+            "venue": "福岡サンパレスホテル&ホール"
+          },
+          {
+            "date": "2012-08-11",
+            "prefecture": "青森県",
+            "venue": "リンクステーションホール青森"
+          },
+          {
+            "date": "2012-08-12",
+            "prefecture": "岩手県",
+            "venue": "盛岡市民文化ホール"
+          },
+          {
+            "date": "2012-08-19",
+            "prefecture": "山梨県",
+            "venue": "コラニー文化ホール"
+          },
+          {
+            "date": "2012-08-25",
+            "prefecture": "石川県",
+            "venue": "本多の森ホール"
+          },
+          {
+            "date": "2012-08-26",
+            "prefecture": "福井県",
+            "venue": "福井フェニックスプラザ"
+          },
+          {
+            "date": "2012-08-28",
+            "prefecture": "静岡県",
+            "venue": "静岡市民文化会館"
+          },
+          {
+            "date": "2012-09-08",
+            "prefecture": "沖縄県",
+            "venue": "宜野湾海浜公園屋外劇場 ※2012ポルノグラフテー"
+          },
+          {
+            "date": "2012-09-26",
+            "prefecture": "東京都",
+            "venue": "日本武道館"
+          },
+          {
+            "date": "2012-09-27",
+            "prefecture": "東京都",
+            "venue": "日本武道館"
+          },
+          {
+            "date": "2012-09-28",
+            "prefecture": "東京都",
+            "venue": "日本武道館"
+          },
+          {
+            "date": "2012-10-01",
+            "prefecture": "埼玉県",
+            "venue": "大宮ソニックシティ"
+          },
+          {
+            "date": "2012-10-10",
+            "prefecture": "新潟県",
+            "venue": "新潟県民会館"
+          },
+          {
+            "date": "2012-10-12",
+            "prefecture": "福島県",
+            "venue": "會津風雅堂"
+          },
+          {
+            "date": "2012-10-13",
+            "prefecture": "山形県",
+            "venue": "山形県県民会館"
+          },
+          {
+            "date": "2012-10-15",
+            "prefecture": "宮城県",
+            "venue": "仙台サンプラザホール"
+          },
+          {
+            "date": "2012-10-18",
+            "prefecture": "群馬県",
+            "venue": "ベイシア文化ホール"
+          },
+          {
+            "date": "2012-10-23",
+            "prefecture": "三重県",
+            "venue": "四日市市文化会館"
+          },
+          {
+            "date": "2012-10-25",
+            "prefecture": "奈良県",
+            "venue": "なら100年会館"
+          },
+          {
+            "date": "2012-10-27",
+            "prefecture": "徳島県",
+            "venue": "鳴門市文化会館"
+          },
+          {
+            "date": "2012-10-29",
+            "prefecture": "岡山県",
+            "venue": "倉敷市民会館"
+          },
+          {
+            "date": "2012-11-07",
+            "prefecture": "北海道",
+            "venue": "函館市民会館"
+          },
+          {
+            "date": "2012-11-09",
+            "prefecture": "北海道",
+            "venue": "稚内総合文化センター"
+          },
+          {
+            "date": "2012-11-12",
+            "prefecture": "北海道",
+            "venue": "ニトリ文化ホール"
+          },
+          {
+            "date": "2012-11-16",
+            "prefecture": "長野県",
+            "venue": "長野県松本文化会館"
+          },
+          {
+            "date": "2012-11-20",
+            "prefecture": "和歌山県",
+            "venue": "和歌山市民会館"
+          },
+          {
+            "date": "2012-11-22",
+            "prefecture": "島根県",
+            "venue": "島根県民会館"
+          },
+          {
+            "date": "2012-11-24",
+            "prefecture": "香川県",
+            "venue": "アルファあなぶきホール"
+          },
+          {
+            "date": "2012-11-26",
+            "prefecture": "兵庫県",
+            "venue": "神戸国際会館こくさいホール"
+          },
+          {
+            "date": "2012-12-18",
+            "prefecture": "神奈川県",
+            "venue": "横浜アリーナ"
+          },
+          {
+            "date": "2012-12-19",
+            "prefecture": "神奈川県",
+            "venue": "横浜アリーナ"
+          },
+          {
+            "date": "2012-12-22",
+            "prefecture": "愛知県",
+            "venue": "日本ガイシホール"
+          },
+          {
+            "date": "2012-12-23",
+            "prefecture": "愛知県",
+            "venue": "日本ガイシホール"
+          },
+          {
+            "date": "2012-12-26",
+            "prefecture": "大阪府",
+            "venue": "大阪城ホール"
+          },
+          {
+            "date": "2012-12-27",
+            "prefecture": "大阪府",
+            "venue": "大阪城ホール"
+          }
         ]
       }
     ]
@@ -591,21 +1818,85 @@
       {
         "year": 2012,
         "shows": [
-          { "date": "2012-05-07", "prefecture": "大阪府", "venue": "Zepp Namba(OSAKA)" },
-          { "date": "2012-05-08", "prefecture": "大阪府", "venue": "Zepp Namba(OSAKA)", "time": "AM" },
-          { "date": "2012-05-08", "prefecture": "大阪府", "venue": "Zepp Namba(OSAKA)", "time": "PM" },
-          { "date": "2012-05-10", "prefecture": "広島県", "venue": "広島アステールプラザ" },
-          { "date": "2012-05-14", "prefecture": "東京都", "venue": "Zepp DiverCity(TOKYO)" },
-          { "date": "2012-05-15", "prefecture": "東京都", "venue": "Zepp DiverCity(TOKYO)", "time": "AM" },
-          { "date": "2012-05-15", "prefecture": "東京都", "venue": "Zepp DiverCity(TOKYO)", "time": "PM" },
-          { "date": "2012-05-18", "prefecture": "新潟県", "venue": "新潟市民芸術文化会館 りゅーとぴあ" },
-          { "date": "2012-05-21", "prefecture": "福岡県", "venue": "Zepp Fukuoka" },
-          { "date": "2012-05-23", "prefecture": "愛媛県", "venue": "松山市総合コミュニティセンター" },
-          { "date": "2012-05-28", "prefecture": "北海道", "venue": "Zepp Sapporo" },
-          { "date": "2012-05-30", "prefecture": "宮城県", "venue": "Zepp Sendai" },
-          { "date": "2012-05-31", "prefecture": "宮城県", "venue": "Zepp Sendai" },
-          { "date": "2012-06-04", "prefecture": "愛知県", "venue": "Zepp Nagoya" },
-          { "date": "2012-06-05", "prefecture": "愛知県", "venue": "Zepp Nagoya" }
+          {
+            "date": "2012-05-07",
+            "prefecture": "大阪府",
+            "venue": "Zepp Namba(OSAKA)"
+          },
+          {
+            "date": "2012-05-08",
+            "prefecture": "大阪府",
+            "venue": "Zepp Namba(OSAKA)",
+            "time": "AM"
+          },
+          {
+            "date": "2012-05-08",
+            "prefecture": "大阪府",
+            "venue": "Zepp Namba(OSAKA)",
+            "time": "PM"
+          },
+          {
+            "date": "2012-05-10",
+            "prefecture": "広島県",
+            "venue": "広島アステールプラザ"
+          },
+          {
+            "date": "2012-05-14",
+            "prefecture": "東京都",
+            "venue": "Zepp DiverCity(TOKYO)"
+          },
+          {
+            "date": "2012-05-15",
+            "prefecture": "東京都",
+            "venue": "Zepp DiverCity(TOKYO)",
+            "time": "AM"
+          },
+          {
+            "date": "2012-05-15",
+            "prefecture": "東京都",
+            "venue": "Zepp DiverCity(TOKYO)",
+            "time": "PM"
+          },
+          {
+            "date": "2012-05-18",
+            "prefecture": "新潟県",
+            "venue": "新潟市民芸術文化会館 りゅーとぴあ"
+          },
+          {
+            "date": "2012-05-21",
+            "prefecture": "福岡県",
+            "venue": "Zepp Fukuoka"
+          },
+          {
+            "date": "2012-05-23",
+            "prefecture": "愛媛県",
+            "venue": "松山市総合コミュニティセンター"
+          },
+          {
+            "date": "2012-05-28",
+            "prefecture": "北海道",
+            "venue": "Zepp Sapporo"
+          },
+          {
+            "date": "2012-05-30",
+            "prefecture": "宮城県",
+            "venue": "Zepp Sendai"
+          },
+          {
+            "date": "2012-05-31",
+            "prefecture": "宮城県",
+            "venue": "Zepp Sendai"
+          },
+          {
+            "date": "2012-06-04",
+            "prefecture": "愛知県",
+            "venue": "Zepp Nagoya"
+          },
+          {
+            "date": "2012-06-05",
+            "prefecture": "愛知県",
+            "venue": "Zepp Nagoya"
+          }
         ]
       }
     ]
@@ -617,9 +1908,21 @@
       {
         "year": 2011,
         "shows": [
-          { "date": "2011-12-24", "prefecture": "千葉県", "venue": "幕張メッセ国際展示場 9-11ホール" },
-          { "date": "2011-12-25", "prefecture": "千葉県", "venue": "幕張メッセ国際展示場 9-11ホール" },
-          { "date": "2011-12-31", "prefecture": "千葉県", "venue": "幕張メッセ国際展示場 9-11ホール ※カウントダウン公演" }
+          {
+            "date": "2011-12-24",
+            "prefecture": "千葉県",
+            "venue": "幕張メッセ国際展示場 9-11ホール"
+          },
+          {
+            "date": "2011-12-25",
+            "prefecture": "千葉県",
+            "venue": "幕張メッセ国際展示場 9-11ホール"
+          },
+          {
+            "date": "2011-12-31",
+            "prefecture": "千葉県",
+            "venue": "幕張メッセ国際展示場 9-11ホール ※カウントダウン公演"
+          }
         ]
       }
     ]
@@ -631,8 +1934,18 @@
       {
         "year": 2011,
         "shows": [
-          { "date": "2011-10-28", "prefecture": "宮城県", "venue": "Zepp Sendai ※振替公演/love up! 会員限定", "time": "AM" },
-          { "date": "2011-10-28", "prefecture": "宮城県", "venue": "Zepp Sendai ※振替公演/love up! 会員限定", "time": "PM" }
+          {
+            "date": "2011-10-28",
+            "prefecture": "宮城県",
+            "venue": "Zepp Sendai ※振替公演/love up! 会員限定",
+            "time": "AM"
+          },
+          {
+            "date": "2011-10-28",
+            "prefecture": "宮城県",
+            "venue": "Zepp Sendai ※振替公演/love up! 会員限定",
+            "time": "PM"
+          }
         ]
       }
     ]
@@ -644,8 +1957,16 @@
       {
         "year": 2011,
         "shows": [
-          { "date": "2011-09-10", "prefecture": "静岡県", "venue": "ヤマハリゾートつま恋" },
-          { "date": "2011-09-11", "prefecture": "静岡県", "venue": "ヤマハリゾートつま恋" }
+          {
+            "date": "2011-09-10",
+            "prefecture": "静岡県",
+            "venue": "ヤマハリゾートつま恋"
+          },
+          {
+            "date": "2011-09-11",
+            "prefecture": "静岡県",
+            "venue": "ヤマハリゾートつま恋"
+          }
         ]
       }
     ]
@@ -657,69 +1978,300 @@
       {
         "year": 2010,
         "shows": [
-          { "date": "2010-05-15", "prefecture": "埼玉県", "venue": "三郷市文化会館" },
-          { "date": "2010-05-18", "prefecture": "静岡県", "venue": "富士市文化会館ロゼシアター" },
-          { "date": "2010-05-20", "prefecture": "福井県", "venue": "福井フェニックスプラザ" },
-          { "date": "2010-05-21", "prefecture": "石川県", "venue": "本多の森ホール" },
-          { "date": "2010-05-23", "prefecture": "静岡県", "venue": "静岡市文化会館" },
-          { "date": "2010-05-26", "prefecture": "東京都", "venue": "NHKホール" },
-          { "date": "2010-05-27", "prefecture": "東京都", "venue": "NHKホール" },
-          { "date": "2010-05-31", "prefecture": "神奈川県", "venue": "神奈川県民ホール" },
-          { "date": "2010-06-01", "prefecture": "神奈川県", "venue": "神奈川県民ホール" },
-          { "date": "2010-06-03", "prefecture": "東京都", "venue": "渋谷C.C.Lemonホール" },
-          { "date": "2010-06-04", "prefecture": "東京都", "venue": "渋谷C.C.Lemonホール" },
-          { "date": "2010-06-08", "prefecture": "新潟県", "venue": "長岡市立劇場" },
-          { "date": "2010-06-09", "prefecture": "新潟県", "venue": "新潟県民会館" },
-          { "date": "2010-06-11", "prefecture": "長野県", "venue": "ホクト文化ホール" },
-          { "date": "2010-06-14", "prefecture": "宮城県", "venue": "仙台サンプラザホール" },
-          { "date": "2010-06-16", "prefecture": "福島県", "venue": "いわき芸術文化交流館アリオス" },
-          { "date": "2010-06-18", "prefecture": "岩手県", "venue": "盛岡市民文化ホール" },
-          { "date": "2010-06-19", "prefecture": "青森県", "venue": "青森市文化会館" },
-          { "date": "2010-06-25", "prefecture": "北海道", "venue": "帯広市民文化ホール" },
-          { "date": "2010-06-27", "prefecture": "北海道", "venue": "旭川市民文化会館" },
-          { "date": "2010-06-29", "prefecture": "北海道", "venue": "苫小牧市民会館" },
-          { "date": "2010-06-30", "prefecture": "北海道", "venue": "ニトリ文化ホール" },
-          { "date": "2010-07-06", "prefecture": "埼玉県", "venue": "大宮ソニックシティ" },
-          { "date": "2010-07-11", "prefecture": "大阪府", "venue": "大阪国際会議場メインホール" },
-          { "date": "2010-07-12", "prefecture": "大阪府", "venue": "大阪国際会議場メインホール" },
-          { "date": "2010-07-14", "prefecture": "兵庫県", "venue": "神戸国際会館こくさいホール" },
-          { "date": "2010-07-15", "prefecture": "兵庫県", "venue": "姫路市文化センター" },
-          { "date": "2010-07-19", "prefecture": "愛知県", "venue": "名古屋国際会議場センチュリーホール" },
-          { "date": "2010-07-20", "prefecture": "愛知県", "venue": "名古屋国際会議場センチュリーホール" },
-          { "date": "2010-07-22", "prefecture": "愛知県", "venue": "名古屋国際会議場センチュリーホール" },
-          { "date": "2010-07-23", "prefecture": "愛知県", "venue": "名古屋国際会議場センチュリーホール" },
-          { "date": "2010-08-19", "prefecture": "栃木県", "venue": "栃木県総合文化センター" },
-          { "date": "2010-08-24", "prefecture": "三重県", "venue": "三重県文化会館" },
-          { "date": "2010-08-26", "prefecture": "広島県", "venue": "ふくやま芸術文化ホールリーデンローズ" },
-          { "date": "2010-08-28", "prefecture": "鳥取県", "venue": "米子コンベンションセンター" },
-          { "date": "2010-08-30", "prefecture": "広島県", "venue": "広島厚生年金会館" },
-          { "date": "2010-08-31", "prefecture": "広島県", "venue": "広島厚生年金会館" },
-          { "date": "2010-09-02", "prefecture": "山口県", "venue": "周南市文化会館" },
-          { "date": "2010-09-04", "prefecture": "岐阜県", "venue": "土岐市文化プラザ" },
-          { "date": "2010-09-07", "prefecture": "千葉県", "venue": "千葉県文化会館" },
-          { "date": "2010-09-08", "prefecture": "千葉県", "venue": "千葉県文化会館" },
-          { "date": "2010-09-12", "prefecture": "和歌山県", "venue": "和歌山県民文化会館" },
-          { "date": "2010-09-13", "prefecture": "滋賀県", "venue": "滋賀県立芸術劇場びわ湖ホール" },
-          { "date": "2010-09-15", "prefecture": "大阪府", "venue": "大阪国際会議場メインホール" },
-          { "date": "2010-09-16", "prefecture": "大阪府", "venue": "大阪国際会議場メインホール" },
-          { "date": "2010-09-20", "prefecture": "徳島県", "venue": "徳島市立文化センター" },
-          { "date": "2010-09-22", "prefecture": "香川県", "venue": "アルファあなぶきホール" },
-          { "date": "2010-09-24", "prefecture": "愛媛県", "venue": "ひめぎんホール" },
-          { "date": "2010-09-27", "prefecture": "東京都", "venue": "JCBホール" },
-          { "date": "2010-09-28", "prefecture": "東京都", "venue": "JCBホール" },
-          { "date": "2010-10-01", "prefecture": "熊本県", "venue": "崇城大学市民ホール" },
-          { "date": "2010-10-03", "prefecture": "鹿児島県", "venue": "鹿児島市民文化ホール" },
-          { "date": "2010-10-05", "prefecture": "福岡県", "venue": "福岡サンパレスホテル＆ホール" },
-          { "date": "2010-10-06", "prefecture": "長崎県", "venue": "長崎ブリックホール" },
-          { "date": "2010-10-09", "prefecture": "沖縄県", "venue": "沖縄コンベンション劇場" },
-          { "date": "2010-10-10", "prefecture": "沖縄県", "venue": "沖縄コンベンション劇場" },
-          { "date": "2010-12-30", "prefecture": "神奈川県", "venue": "横浜アリーナ ※love up! 会員限定" },
-          { "date": "2010-12-31", "prefecture": "神奈川県", "venue": "横浜アリーナ ※love up! 会員限定/カウントダウン公演" }
+          {
+            "date": "2010-05-15",
+            "prefecture": "埼玉県",
+            "venue": "三郷市文化会館"
+          },
+          {
+            "date": "2010-05-18",
+            "prefecture": "静岡県",
+            "venue": "富士市文化会館ロゼシアター"
+          },
+          {
+            "date": "2010-05-20",
+            "prefecture": "福井県",
+            "venue": "福井フェニックスプラザ"
+          },
+          {
+            "date": "2010-05-21",
+            "prefecture": "石川県",
+            "venue": "本多の森ホール"
+          },
+          {
+            "date": "2010-05-23",
+            "prefecture": "静岡県",
+            "venue": "静岡市文化会館"
+          },
+          {
+            "date": "2010-05-26",
+            "prefecture": "東京都",
+            "venue": "NHKホール"
+          },
+          {
+            "date": "2010-05-27",
+            "prefecture": "東京都",
+            "venue": "NHKホール"
+          },
+          {
+            "date": "2010-05-31",
+            "prefecture": "神奈川県",
+            "venue": "神奈川県民ホール"
+          },
+          {
+            "date": "2010-06-01",
+            "prefecture": "神奈川県",
+            "venue": "神奈川県民ホール"
+          },
+          {
+            "date": "2010-06-03",
+            "prefecture": "東京都",
+            "venue": "渋谷C.C.Lemonホール"
+          },
+          {
+            "date": "2010-06-04",
+            "prefecture": "東京都",
+            "venue": "渋谷C.C.Lemonホール"
+          },
+          {
+            "date": "2010-06-08",
+            "prefecture": "新潟県",
+            "venue": "長岡市立劇場"
+          },
+          {
+            "date": "2010-06-09",
+            "prefecture": "新潟県",
+            "venue": "新潟県民会館"
+          },
+          {
+            "date": "2010-06-11",
+            "prefecture": "長野県",
+            "venue": "ホクト文化ホール"
+          },
+          {
+            "date": "2010-06-14",
+            "prefecture": "宮城県",
+            "venue": "仙台サンプラザホール"
+          },
+          {
+            "date": "2010-06-16",
+            "prefecture": "福島県",
+            "venue": "いわき芸術文化交流館アリオス"
+          },
+          {
+            "date": "2010-06-18",
+            "prefecture": "岩手県",
+            "venue": "盛岡市民文化ホール"
+          },
+          {
+            "date": "2010-06-19",
+            "prefecture": "青森県",
+            "venue": "青森市文化会館"
+          },
+          {
+            "date": "2010-06-25",
+            "prefecture": "北海道",
+            "venue": "帯広市民文化ホール"
+          },
+          {
+            "date": "2010-06-27",
+            "prefecture": "北海道",
+            "venue": "旭川市民文化会館"
+          },
+          {
+            "date": "2010-06-29",
+            "prefecture": "北海道",
+            "venue": "苫小牧市民会館"
+          },
+          {
+            "date": "2010-06-30",
+            "prefecture": "北海道",
+            "venue": "ニトリ文化ホール"
+          },
+          {
+            "date": "2010-07-06",
+            "prefecture": "埼玉県",
+            "venue": "大宮ソニックシティ"
+          },
+          {
+            "date": "2010-07-11",
+            "prefecture": "大阪府",
+            "venue": "大阪国際会議場メインホール"
+          },
+          {
+            "date": "2010-07-12",
+            "prefecture": "大阪府",
+            "venue": "大阪国際会議場メインホール"
+          },
+          {
+            "date": "2010-07-14",
+            "prefecture": "兵庫県",
+            "venue": "神戸国際会館こくさいホール"
+          },
+          {
+            "date": "2010-07-15",
+            "prefecture": "兵庫県",
+            "venue": "姫路市文化センター"
+          },
+          {
+            "date": "2010-07-19",
+            "prefecture": "愛知県",
+            "venue": "名古屋国際会議場センチュリーホール"
+          },
+          {
+            "date": "2010-07-20",
+            "prefecture": "愛知県",
+            "venue": "名古屋国際会議場センチュリーホール"
+          },
+          {
+            "date": "2010-07-22",
+            "prefecture": "愛知県",
+            "venue": "名古屋国際会議場センチュリーホール"
+          },
+          {
+            "date": "2010-07-23",
+            "prefecture": "愛知県",
+            "venue": "名古屋国際会議場センチュリーホール"
+          },
+          {
+            "date": "2010-08-19",
+            "prefecture": "栃木県",
+            "venue": "栃木県総合文化センター"
+          },
+          {
+            "date": "2010-08-24",
+            "prefecture": "三重県",
+            "venue": "三重県文化会館"
+          },
+          {
+            "date": "2010-08-26",
+            "prefecture": "広島県",
+            "venue": "ふくやま芸術文化ホールリーデンローズ"
+          },
+          {
+            "date": "2010-08-28",
+            "prefecture": "鳥取県",
+            "venue": "米子コンベンションセンター"
+          },
+          {
+            "date": "2010-08-30",
+            "prefecture": "広島県",
+            "venue": "広島厚生年金会館"
+          },
+          {
+            "date": "2010-08-31",
+            "prefecture": "広島県",
+            "venue": "広島厚生年金会館"
+          },
+          {
+            "date": "2010-09-02",
+            "prefecture": "山口県",
+            "venue": "周南市文化会館"
+          },
+          {
+            "date": "2010-09-04",
+            "prefecture": "岐阜県",
+            "venue": "土岐市文化プラザ"
+          },
+          {
+            "date": "2010-09-07",
+            "prefecture": "千葉県",
+            "venue": "千葉県文化会館"
+          },
+          {
+            "date": "2010-09-08",
+            "prefecture": "千葉県",
+            "venue": "千葉県文化会館"
+          },
+          {
+            "date": "2010-09-12",
+            "prefecture": "和歌山県",
+            "venue": "和歌山県民文化会館"
+          },
+          {
+            "date": "2010-09-13",
+            "prefecture": "滋賀県",
+            "venue": "滋賀県立芸術劇場びわ湖ホール"
+          },
+          {
+            "date": "2010-09-15",
+            "prefecture": "大阪府",
+            "venue": "大阪国際会議場メインホール"
+          },
+          {
+            "date": "2010-09-16",
+            "prefecture": "大阪府",
+            "venue": "大阪国際会議場メインホール"
+          },
+          {
+            "date": "2010-09-20",
+            "prefecture": "徳島県",
+            "venue": "徳島市立文化センター"
+          },
+          {
+            "date": "2010-09-22",
+            "prefecture": "香川県",
+            "venue": "アルファあなぶきホール"
+          },
+          {
+            "date": "2010-09-24",
+            "prefecture": "愛媛県",
+            "venue": "ひめぎんホール"
+          },
+          {
+            "date": "2010-09-27",
+            "prefecture": "東京都",
+            "venue": "JCBホール"
+          },
+          {
+            "date": "2010-09-28",
+            "prefecture": "東京都",
+            "venue": "JCBホール"
+          },
+          {
+            "date": "2010-10-01",
+            "prefecture": "熊本県",
+            "venue": "崇城大学市民ホール"
+          },
+          {
+            "date": "2010-10-03",
+            "prefecture": "鹿児島県",
+            "venue": "鹿児島市民文化ホール"
+          },
+          {
+            "date": "2010-10-05",
+            "prefecture": "福岡県",
+            "venue": "福岡サンパレスホテル＆ホール"
+          },
+          {
+            "date": "2010-10-06",
+            "prefecture": "長崎県",
+            "venue": "長崎ブリックホール"
+          },
+          {
+            "date": "2010-10-09",
+            "prefecture": "沖縄県",
+            "venue": "沖縄コンベンション劇場"
+          },
+          {
+            "date": "2010-10-10",
+            "prefecture": "沖縄県",
+            "venue": "沖縄コンベンション劇場"
+          },
+          {
+            "date": "2010-12-30",
+            "prefecture": "神奈川県",
+            "venue": "横浜アリーナ ※love up! 会員限定"
+          },
+          {
+            "date": "2010-12-31",
+            "prefecture": "神奈川県",
+            "venue": "横浜アリーナ ※love up! 会員限定/カウントダウン公演"
+          }
         ]
       }
     ]
   },
-
   {
     "liveName": "東京ロマンスポルノ'09 〜愛と青春の日々〜",
     "color": "radial-gradient(circle at 18% 25%, rgba(255,190,200,0.55), transparent 58%), radial-gradient(circle at 72% 30%, rgba(170,210,255,0.45), transparent 62%), radial-gradient(circle at 48% 72%, rgba(180,235,200,0.40), transparent 66%), linear-gradient(135deg, #fff2f5 0%, #ffd0db 28%, #dff0ff 52%, #c9f1dd 74%, #f7fbff 100%)",
@@ -727,12 +2279,15 @@
       {
         "year": 2009,
         "shows": [
-          { "date": "2009-11-28", "prefecture": "東京都", "venue": "東京ドーム" }
+          {
+            "date": "2009-11-28",
+            "prefecture": "東京都",
+            "venue": "東京ドーム"
+          }
         ]
       }
     ]
   },
-
   {
     "liveName": "10thライヴサーキット \"ロイヤル ストレート フラッシュ\"",
     "color": "radial-gradient(circle at 20% 28%, rgba(210,255,200,0.55), transparent 58%), radial-gradient(circle at 74% 35%, rgba(255,235,160,0.45), transparent 62%), radial-gradient(circle at 46% 75%, rgba(230,255,220,0.35), transparent 66%), linear-gradient(135deg, #f1ffe8 0%, #d7f8c4 32%, #fff0b0 58%, #dff2c8 76%, #f7fff2 100%)",
@@ -740,41 +2295,160 @@
       {
         "year": 2009,
         "shows": [
-          { "date": "2009-01-30", "prefecture": "大阪府", "venue": "Zepp Osaka ※love up! 会員限定" },
-          { "date": "2009-02-05", "prefecture": "大阪府", "venue": "大阪城ホール" },
-          { "date": "2009-02-06", "prefecture": "大阪府", "venue": "大阪城ホール" },
-          { "date": "2009-02-14", "prefecture": "静岡県", "venue": "静岡エコパアリーナ" },
-          { "date": "2009-02-15", "prefecture": "静岡県", "venue": "静岡エコパアリーナ" },
-          { "date": "2009-02-27", "prefecture": "広島県", "venue": "広島サンプラザホール" },
-          { "date": "2009-02-28", "prefecture": "広島県", "venue": "広島サンプラザホール" },
-          { "date": "2009-03-06", "prefecture": "三重県", "venue": "三重県営サンアリーナ" },
-          { "date": "2009-03-07", "prefecture": "三重県", "venue": "三重県営サンアリーナ" },
-          { "date": "2009-03-14", "prefecture": "福岡県", "venue": "マリンメッセ福岡" },
-          { "date": "2009-03-15", "prefecture": "福岡県", "venue": "マリンメッセ福岡" },
-          { "date": "2009-03-20", "prefecture": "埼玉県", "venue": "さいたまスーパーアリーナ" },
-          { "date": "2009-03-21", "prefecture": "埼玉県", "venue": "さいたまスーパーアリーナ" },
-          { "date": "2009-03-22", "prefecture": "埼玉県", "venue": "さいたまスーパーアリーナ" },
-          { "date": "2009-03-28", "prefecture": "兵庫県", "venue": "神戸ワールド記念ホール" },
-          { "date": "2009-03-29", "prefecture": "兵庫県", "venue": "神戸ワールド記念ホール" },
-          { "date": "2009-04-04", "prefecture": "北海道", "venue": "北海道立総合体育センター 北海きたえーる" },
-          { "date": "2009-04-05", "prefecture": "北海道", "venue": "北海道立総合体育センター 北海きたえーる" },
-          { "date": "2009-04-11", "prefecture": "宮城県", "venue": "仙台市体育館" },
-          { "date": "2009-04-12", "prefecture": "宮城県", "venue": "仙台市体育館" },
-          { "date": "2009-04-18", "prefecture": "愛媛県", "venue": "愛媛県武道館" },
-          { "date": "2009-04-19", "prefecture": "愛媛県", "venue": "愛媛県武道館" },
-          { "date": "2009-04-25", "prefecture": "新潟県", "venue": "朱鷺メッセ・新潟コンベンションセンター" },
-          { "date": "2009-04-26", "prefecture": "新潟県", "venue": "朱鷺メッセ・新潟コンベンションセンター" },
-          { "date": "2009-05-02", "prefecture": "愛知県", "venue": "日本ガイシホール" },
-          { "date": "2009-05-03", "prefecture": "愛知県", "venue": "日本ガイシホール" },
-          { "date": "2009-05-20", "prefecture": "東京都", "venue": "国立代々木競技場 第一体育館 ※追加公演" },
-          { "date": "2009-05-22", "prefecture": "東京都", "venue": "国立代々木競技場 第一体育館 ※追加公演" },
-          { "date": "2009-05-23", "prefecture": "東京都", "venue": "国立代々木競技場 第一体育館 ※追加公演" },
-          { "date": "2009-05-24", "prefecture": "東京都", "venue": "国立代々木競技場 第一体育館 ※追加公演" }
+          {
+            "date": "2009-01-30",
+            "prefecture": "大阪府",
+            "venue": "Zepp Osaka ※love up! 会員限定"
+          },
+          {
+            "date": "2009-02-05",
+            "prefecture": "大阪府",
+            "venue": "大阪城ホール"
+          },
+          {
+            "date": "2009-02-06",
+            "prefecture": "大阪府",
+            "venue": "大阪城ホール"
+          },
+          {
+            "date": "2009-02-14",
+            "prefecture": "静岡県",
+            "venue": "静岡エコパアリーナ"
+          },
+          {
+            "date": "2009-02-15",
+            "prefecture": "静岡県",
+            "venue": "静岡エコパアリーナ"
+          },
+          {
+            "date": "2009-02-27",
+            "prefecture": "広島県",
+            "venue": "広島サンプラザホール"
+          },
+          {
+            "date": "2009-02-28",
+            "prefecture": "広島県",
+            "venue": "広島サンプラザホール"
+          },
+          {
+            "date": "2009-03-06",
+            "prefecture": "三重県",
+            "venue": "三重県営サンアリーナ"
+          },
+          {
+            "date": "2009-03-07",
+            "prefecture": "三重県",
+            "venue": "三重県営サンアリーナ"
+          },
+          {
+            "date": "2009-03-14",
+            "prefecture": "福岡県",
+            "venue": "マリンメッセ福岡"
+          },
+          {
+            "date": "2009-03-15",
+            "prefecture": "福岡県",
+            "venue": "マリンメッセ福岡"
+          },
+          {
+            "date": "2009-03-20",
+            "prefecture": "埼玉県",
+            "venue": "さいたまスーパーアリーナ"
+          },
+          {
+            "date": "2009-03-21",
+            "prefecture": "埼玉県",
+            "venue": "さいたまスーパーアリーナ"
+          },
+          {
+            "date": "2009-03-22",
+            "prefecture": "埼玉県",
+            "venue": "さいたまスーパーアリーナ"
+          },
+          {
+            "date": "2009-03-28",
+            "prefecture": "兵庫県",
+            "venue": "神戸ワールド記念ホール"
+          },
+          {
+            "date": "2009-03-29",
+            "prefecture": "兵庫県",
+            "venue": "神戸ワールド記念ホール"
+          },
+          {
+            "date": "2009-04-04",
+            "prefecture": "北海道",
+            "venue": "北海道立総合体育センター 北海きたえーる"
+          },
+          {
+            "date": "2009-04-05",
+            "prefecture": "北海道",
+            "venue": "北海道立総合体育センター 北海きたえーる"
+          },
+          {
+            "date": "2009-04-11",
+            "prefecture": "宮城県",
+            "venue": "仙台市体育館"
+          },
+          {
+            "date": "2009-04-12",
+            "prefecture": "宮城県",
+            "venue": "仙台市体育館"
+          },
+          {
+            "date": "2009-04-18",
+            "prefecture": "愛媛県",
+            "venue": "愛媛県武道館"
+          },
+          {
+            "date": "2009-04-19",
+            "prefecture": "愛媛県",
+            "venue": "愛媛県武道館"
+          },
+          {
+            "date": "2009-04-25",
+            "prefecture": "新潟県",
+            "venue": "朱鷺メッセ・新潟コンベンションセンター"
+          },
+          {
+            "date": "2009-04-26",
+            "prefecture": "新潟県",
+            "venue": "朱鷺メッセ・新潟コンベンションセンター"
+          },
+          {
+            "date": "2009-05-02",
+            "prefecture": "愛知県",
+            "venue": "日本ガイシホール"
+          },
+          {
+            "date": "2009-05-03",
+            "prefecture": "愛知県",
+            "venue": "日本ガイシホール"
+          },
+          {
+            "date": "2009-05-20",
+            "prefecture": "東京都",
+            "venue": "国立代々木競技場 第一体育館 ※追加公演"
+          },
+          {
+            "date": "2009-05-22",
+            "prefecture": "東京都",
+            "venue": "国立代々木競技場 第一体育館 ※追加公演"
+          },
+          {
+            "date": "2009-05-23",
+            "prefecture": "東京都",
+            "venue": "国立代々木競技場 第一体育館 ※追加公演"
+          },
+          {
+            "date": "2009-05-24",
+            "prefecture": "東京都",
+            "venue": "国立代々木競技場 第一体育館 ※追加公演"
+          }
         ]
       }
     ]
   },
-
   {
     "liveName": "FANCLUB UNDERWORLD 3",
     "color": "radial-gradient(circle at 20% 28%, rgba(205,220,255,0.55), transparent 58%), radial-gradient(circle at 74% 35%, rgba(170,190,245,0.40), transparent 62%), radial-gradient(circle at 46% 75%, rgba(220,235,255,0.35), transparent 66%), linear-gradient(135deg, #f2f6ff 0%, #dbe5ff 32%, #bfcdf0 55%, #d9e2ff 75%, #f7f9ff 100%)",
@@ -782,29 +2456,110 @@
       {
         "year": 2008,
         "shows": [
-          { "date": "2008-10-27", "prefecture": "神奈川県", "venue": "横浜BLITZ" },
-          { "date": "2008-10-28", "prefecture": "神奈川県", "venue": "横浜BLITZ" },
-          { "date": "2008-10-31", "prefecture": "新潟県", "venue": "NIIGATA LOTS" },
-          { "date": "2008-11-05", "prefecture": "広島県", "venue": "広島クラブクアトロ", "time": "AM" },
-          { "date": "2008-11-05", "prefecture": "広島県", "venue": "広島クラブクアトロ", "time": "PM" },
-          { "date": "2008-11-07", "prefecture": "愛媛県", "venue": "松山市総合コミュニティーセンター" },
-          { "date": "2008-11-10", "prefecture": "福岡県", "venue": "Zepp Fukuoka" },
-          { "date": "2008-11-13", "prefecture": "北海道", "venue": "Zepp Sapporo" },
-          { "date": "2008-11-15", "prefecture": "宮城県", "venue": "Zepp Sendai", "time": "AM" },
-          { "date": "2008-11-15", "prefecture": "宮城県", "venue": "Zepp Sendai", "time": "PM" },
-          { "date": "2008-11-20", "prefecture": "愛知県", "venue": "Zepp Nagoya", "time": "AM" },
-          { "date": "2008-11-20", "prefecture": "愛知県", "venue": "Zepp Nagoya", "time": "PM" },
-          { "date": "2008-11-25", "prefecture": "大阪府", "venue": "Zepp Osaka" },
-          { "date": "2008-11-26", "prefecture": "大阪府", "venue": "Zepp Osaka", "time": "AM" },
-          { "date": "2008-11-26", "prefecture": "大阪府", "venue": "Zepp Osaka", "time": "PM" },
-          { "date": "2008-12-12", "prefecture": "東京都", "venue": "Zepp Tokyo" },
-          { "date": "2008-12-13", "prefecture": "東京都", "venue": "Zepp Tokyo", "time": "AM" },
-          { "date": "2008-12-13", "prefecture": "東京都", "venue": "Zepp Tokyo", "time": "PM" }
+          {
+            "date": "2008-10-27",
+            "prefecture": "神奈川県",
+            "venue": "横浜BLITZ"
+          },
+          {
+            "date": "2008-10-28",
+            "prefecture": "神奈川県",
+            "venue": "横浜BLITZ"
+          },
+          {
+            "date": "2008-10-31",
+            "prefecture": "新潟県",
+            "venue": "NIIGATA LOTS"
+          },
+          {
+            "date": "2008-11-05",
+            "prefecture": "広島県",
+            "venue": "広島クラブクアトロ",
+            "time": "AM"
+          },
+          {
+            "date": "2008-11-05",
+            "prefecture": "広島県",
+            "venue": "広島クラブクアトロ",
+            "time": "PM"
+          },
+          {
+            "date": "2008-11-07",
+            "prefecture": "愛媛県",
+            "venue": "松山市総合コミュニティーセンター"
+          },
+          {
+            "date": "2008-11-10",
+            "prefecture": "福岡県",
+            "venue": "Zepp Fukuoka"
+          },
+          {
+            "date": "2008-11-13",
+            "prefecture": "北海道",
+            "venue": "Zepp Sapporo"
+          },
+          {
+            "date": "2008-11-15",
+            "prefecture": "宮城県",
+            "venue": "Zepp Sendai",
+            "time": "AM"
+          },
+          {
+            "date": "2008-11-15",
+            "prefecture": "宮城県",
+            "venue": "Zepp Sendai",
+            "time": "PM"
+          },
+          {
+            "date": "2008-11-20",
+            "prefecture": "愛知県",
+            "venue": "Zepp Nagoya",
+            "time": "AM"
+          },
+          {
+            "date": "2008-11-20",
+            "prefecture": "愛知県",
+            "venue": "Zepp Nagoya",
+            "time": "PM"
+          },
+          {
+            "date": "2008-11-25",
+            "prefecture": "大阪府",
+            "venue": "Zepp Osaka"
+          },
+          {
+            "date": "2008-11-26",
+            "prefecture": "大阪府",
+            "venue": "Zepp Osaka",
+            "time": "AM"
+          },
+          {
+            "date": "2008-11-26",
+            "prefecture": "大阪府",
+            "venue": "Zepp Osaka",
+            "time": "PM"
+          },
+          {
+            "date": "2008-12-12",
+            "prefecture": "東京都",
+            "venue": "Zepp Tokyo"
+          },
+          {
+            "date": "2008-12-13",
+            "prefecture": "東京都",
+            "venue": "Zepp Tokyo",
+            "time": "AM"
+          },
+          {
+            "date": "2008-12-13",
+            "prefecture": "東京都",
+            "venue": "Zepp Tokyo",
+            "time": "PM"
+          }
         ]
       }
     ]
   },
-
   {
     "liveName": "横浜・淡路ロマンスポルノ'08 〜10イヤーズ ギフト〜",
     "color": "radial-gradient(circle at 18% 25%, rgba(235,240,248,0.60), transparent 58%), radial-gradient(circle at 72% 35%, rgba(255,235,170,0.45), transparent 62%), radial-gradient(circle at 46% 75%, rgba(250,250,255,0.45), transparent 66%), linear-gradient(135deg, #f4f6fb 0%, #e1e6ef 32%, #ffe9b0 58%, #f7f3da 76%, #fbfbff 100%)",
@@ -812,15 +2567,30 @@
       {
         "year": 2008,
         "shows": [
-          { "date": "2008-09-06", "prefecture": "神奈川県", "venue": "横浜スタジアム" },
-          { "date": "2008-09-07", "prefecture": "神奈川県", "venue": "横浜スタジアム" },
-          { "date": "2008-09-14", "prefecture": "兵庫県", "venue": "国営明石海峡公園芝生広場" },
-          { "date": "2008-09-15", "prefecture": "兵庫県", "venue": "国営明石海峡公園芝生広場" }
+          {
+            "date": "2008-09-06",
+            "prefecture": "神奈川県",
+            "venue": "横浜スタジアム"
+          },
+          {
+            "date": "2008-09-07",
+            "prefecture": "神奈川県",
+            "venue": "横浜スタジアム"
+          },
+          {
+            "date": "2008-09-14",
+            "prefecture": "兵庫県",
+            "venue": "国営明石海峡公園芝生広場"
+          },
+          {
+            "date": "2008-09-15",
+            "prefecture": "兵庫県",
+            "venue": "国営明石海峡公園芝生広場"
+          }
         ]
       }
     ]
   },
-
   {
     "liveName": "9thライヴサーキット \"ポルノグラフィティがやってきた\"",
     "color": "radial-gradient(circle at 20% 28%, rgba(255,246,230,0.65), transparent 58%), radial-gradient(circle at 74% 35%, rgba(245,224,195,0.45), transparent 62%), radial-gradient(circle at 46% 75%, rgba(225,195,165,0.30), transparent 66%), linear-gradient(135deg, #fff8ee 0%, #f6e3cf 32%, #edd2b7 55%, #f7efe5 76%, #fffaf4 100%)",
@@ -828,49 +2598,201 @@
       {
         "year": 2007,
         "shows": [
-          { "date": "2007-11-26", "prefecture": "東京都", "venue": "新木場studioCOAST" },
-          { "date": "2007-11-27", "prefecture": "東京都", "venue": "新木場studioCOAST" },
-          { "date": "2007-12-02", "prefecture": "宮城県", "venue": "Zepp Sendai" },
-          { "date": "2007-12-03", "prefecture": "宮城県", "venue": "Zepp Sendai" },
-          { "date": "2007-12-05", "prefecture": "宮城県", "venue": "Zepp Sendai" },
-          { "date": "2007-12-06", "prefecture": "宮城県", "venue": "Zepp Sendai" },
-          { "date": "2007-12-10", "prefecture": "大阪府", "venue": "Zepp Osaka" },
-          { "date": "2007-12-11", "prefecture": "大阪府", "venue": "Zepp Osaka" },
-          { "date": "2007-12-13", "prefecture": "大阪府", "venue": "Zepp Osaka" },
-          { "date": "2007-12-14", "prefecture": "大阪府", "venue": "Zepp Osaka" },
-          { "date": "2007-12-16", "prefecture": "高知県", "venue": "高知BAY5 SQUARE" },
-          { "date": "2007-12-17", "prefecture": "高知県", "venue": "高知BAY5 SQUARE" },
-          { "date": "2007-12-24", "prefecture": "広島県", "venue": "広島CLUB QUATTRO" },
-          { "date": "2007-12-25", "prefecture": "広島県", "venue": "広島CLUB QUATTRO" },
-          { "date": "2007-12-27", "prefecture": "神奈川県", "venue": "横浜BLITZ" },
-          { "date": "2007-12-28", "prefecture": "神奈川県", "venue": "横浜BLITZ" }
+          {
+            "date": "2007-11-26",
+            "prefecture": "東京都",
+            "venue": "新木場studioCOAST"
+          },
+          {
+            "date": "2007-11-27",
+            "prefecture": "東京都",
+            "venue": "新木場studioCOAST"
+          },
+          {
+            "date": "2007-12-02",
+            "prefecture": "宮城県",
+            "venue": "Zepp Sendai"
+          },
+          {
+            "date": "2007-12-03",
+            "prefecture": "宮城県",
+            "venue": "Zepp Sendai"
+          },
+          {
+            "date": "2007-12-05",
+            "prefecture": "宮城県",
+            "venue": "Zepp Sendai"
+          },
+          {
+            "date": "2007-12-06",
+            "prefecture": "宮城県",
+            "venue": "Zepp Sendai"
+          },
+          {
+            "date": "2007-12-10",
+            "prefecture": "大阪府",
+            "venue": "Zepp Osaka"
+          },
+          {
+            "date": "2007-12-11",
+            "prefecture": "大阪府",
+            "venue": "Zepp Osaka"
+          },
+          {
+            "date": "2007-12-13",
+            "prefecture": "大阪府",
+            "venue": "Zepp Osaka"
+          },
+          {
+            "date": "2007-12-14",
+            "prefecture": "大阪府",
+            "venue": "Zepp Osaka"
+          },
+          {
+            "date": "2007-12-16",
+            "prefecture": "高知県",
+            "venue": "高知BAY5 SQUARE"
+          },
+          {
+            "date": "2007-12-17",
+            "prefecture": "高知県",
+            "venue": "高知BAY5 SQUARE"
+          },
+          {
+            "date": "2007-12-24",
+            "prefecture": "広島県",
+            "venue": "広島CLUB QUATTRO"
+          },
+          {
+            "date": "2007-12-25",
+            "prefecture": "広島県",
+            "venue": "広島CLUB QUATTRO"
+          },
+          {
+            "date": "2007-12-27",
+            "prefecture": "神奈川県",
+            "venue": "横浜BLITZ"
+          },
+          {
+            "date": "2007-12-28",
+            "prefecture": "神奈川県",
+            "venue": "横浜BLITZ"
+          }
         ]
       },
       {
         "year": 2008,
         "shows": [
-          { "date": "2008-01-07", "prefecture": "北海道", "venue": "Zepp Sapporo" },
-          { "date": "2008-01-08", "prefecture": "北海道", "venue": "Zepp Sapporo" },
-          { "date": "2008-01-10", "prefecture": "北海道", "venue": "Zepp Sapporo" },
-          { "date": "2008-01-11", "prefecture": "北海道", "venue": "Zepp Sapporo" },
-          { "date": "2008-01-15", "prefecture": "福岡県", "venue": "Zepp Fukuoka" },
-          { "date": "2008-01-16", "prefecture": "福岡県", "venue": "Zepp Fukuoka" },
-          { "date": "2008-01-18", "prefecture": "福岡県", "venue": "Zepp Fukuoka" },
-          { "date": "2008-01-19", "prefecture": "福岡県", "venue": "Zepp Fukuoka" },
-          { "date": "2008-01-22", "prefecture": "愛知県", "venue": "Zepp Nagoya" },
-          { "date": "2008-01-23", "prefecture": "愛知県", "venue": "Zepp Nagoya" },
-          { "date": "2008-01-25", "prefecture": "愛知県", "venue": "Zepp Nagoya" },
-          { "date": "2008-01-26", "prefecture": "愛知県", "venue": "Zepp Nagoya" },
-          { "date": "2008-01-29", "prefecture": "東京都", "venue": "Zepp Tokyo" },
-          { "date": "2008-01-30", "prefecture": "東京都", "venue": "Zepp Tokyo" },
-          { "date": "2008-02-01", "prefecture": "東京都", "venue": "Zepp Tokyo" },
-          { "date": "2008-02-02", "prefecture": "東京都", "venue": "Zepp Tokyo" },
-          { "date": "2008-02-14", "prefecture": "千葉県", "venue": "市川市文化会館" },
-          { "date": "2008-02-20", "prefecture": "富山県", "venue": "富山オーバードホール" },
-          { "date": "2008-02-22", "prefecture": "京都府", "venue": "京都会館" },
-          { "date": "2008-02-27", "prefecture": "宮崎県", "venue": "宮崎市民文化ホール" },
-          { "date": "2008-02-29", "prefecture": "佐賀県", "venue": "佐賀市文化会館" },
-          { "date": "2008-03-02", "prefecture": "大分県", "venue": "iichiko グランシアタ" }
+          {
+            "date": "2008-01-07",
+            "prefecture": "北海道",
+            "venue": "Zepp Sapporo"
+          },
+          {
+            "date": "2008-01-08",
+            "prefecture": "北海道",
+            "venue": "Zepp Sapporo"
+          },
+          {
+            "date": "2008-01-10",
+            "prefecture": "北海道",
+            "venue": "Zepp Sapporo"
+          },
+          {
+            "date": "2008-01-11",
+            "prefecture": "北海道",
+            "venue": "Zepp Sapporo"
+          },
+          {
+            "date": "2008-01-15",
+            "prefecture": "福岡県",
+            "venue": "Zepp Fukuoka"
+          },
+          {
+            "date": "2008-01-16",
+            "prefecture": "福岡県",
+            "venue": "Zepp Fukuoka"
+          },
+          {
+            "date": "2008-01-18",
+            "prefecture": "福岡県",
+            "venue": "Zepp Fukuoka"
+          },
+          {
+            "date": "2008-01-19",
+            "prefecture": "福岡県",
+            "venue": "Zepp Fukuoka"
+          },
+          {
+            "date": "2008-01-22",
+            "prefecture": "愛知県",
+            "venue": "Zepp Nagoya"
+          },
+          {
+            "date": "2008-01-23",
+            "prefecture": "愛知県",
+            "venue": "Zepp Nagoya"
+          },
+          {
+            "date": "2008-01-25",
+            "prefecture": "愛知県",
+            "venue": "Zepp Nagoya"
+          },
+          {
+            "date": "2008-01-26",
+            "prefecture": "愛知県",
+            "venue": "Zepp Nagoya"
+          },
+          {
+            "date": "2008-01-29",
+            "prefecture": "東京都",
+            "venue": "Zepp Tokyo"
+          },
+          {
+            "date": "2008-01-30",
+            "prefecture": "東京都",
+            "venue": "Zepp Tokyo"
+          },
+          {
+            "date": "2008-02-01",
+            "prefecture": "東京都",
+            "venue": "Zepp Tokyo"
+          },
+          {
+            "date": "2008-02-02",
+            "prefecture": "東京都",
+            "venue": "Zepp Tokyo"
+          },
+          {
+            "date": "2008-02-14",
+            "prefecture": "千葉県",
+            "venue": "市川市文化会館"
+          },
+          {
+            "date": "2008-02-20",
+            "prefecture": "富山県",
+            "venue": "富山オーバードホール"
+          },
+          {
+            "date": "2008-02-22",
+            "prefecture": "京都府",
+            "venue": "京都会館"
+          },
+          {
+            "date": "2008-02-27",
+            "prefecture": "宮崎県",
+            "venue": "宮崎市民文化ホール"
+          },
+          {
+            "date": "2008-02-29",
+            "prefecture": "佐賀県",
+            "venue": "佐賀市文化会館"
+          },
+          {
+            "date": "2008-03-02",
+            "prefecture": "大分県",
+            "venue": "iichiko グランシアタ"
+          }
         ]
       }
     ]
@@ -882,36 +2804,135 @@
       {
         "year": 2007,
         "shows": [
-          { "date": "2007-03-19", "prefecture": "福岡県", "venue": "Zepp Fukuoka ※love up! 会員限定" },
-          { "date": "2007-03-24", "prefecture": "福岡県", "venue": "マリンメッセ福岡" },
-          { "date": "2007-03-25", "prefecture": "福岡県", "venue": "マリンメッセ福岡" },
-          { "date": "2007-03-29", "prefecture": "広島県", "venue": "広島サンプラザホール" },
-          { "date": "2007-03-30", "prefecture": "広島県", "venue": "広島サンプラザホール" },
-          { "date": "2007-04-07", "prefecture": "愛媛県", "venue": "愛媛県武道館" },
-          { "date": "2007-04-08", "prefecture": "愛媛県", "venue": "愛媛県武道館" },
-          { "date": "2007-04-12", "prefecture": "神奈川県", "venue": "横浜アリーナ" },
-          { "date": "2007-04-13", "prefecture": "神奈川県", "venue": "横浜アリーナ" },
-          { "date": "2007-04-20", "prefecture": "埼玉県", "venue": "さいたまスーパーアリーナ" },
-          { "date": "2007-04-21", "prefecture": "埼玉県", "venue": "さいたまスーパーアリーナ" },
-          { "date": "2007-04-22", "prefecture": "埼玉県", "venue": "さいたまスーパーアリーナ" },
-          { "date": "2007-04-29", "prefecture": "大阪府", "venue": "大阪城ホール" },
-          { "date": "2007-04-30", "prefecture": "大阪府", "venue": "大阪城ホール" },
-          { "date": "2007-05-01", "prefecture": "大阪府", "venue": "大阪城ホール" },
-          { "date": "2007-05-04", "prefecture": "愛知県", "venue": "日本ガイシホール" },
-          { "date": "2007-05-05", "prefecture": "愛知県", "venue": "日本ガイシホール" },
-          { "date": "2007-05-11", "prefecture": "宮城県", "venue": "ホットハウススーパーアリーナ" },
-          { "date": "2007-05-12", "prefecture": "宮城県", "venue": "ホットハウススーパーアリーナ" },
-          { "date": "2007-05-26", "prefecture": "静岡県", "venue": "静岡エコパアリーナ" },
-          { "date": "2007-05-27", "prefecture": "静岡県", "venue": "静岡エコパアリーナ" },
-          { "date": "2007-06-02", "prefecture": "北海道", "venue": "真駒内セキスイハイムアイスアリーナ" },
-          { "date": "2007-06-03", "prefecture": "北海道", "venue": "真駒内セキスイハイムアイスアリーナ" },
-          { "date": "2007-06-16", "prefecture": "石川県", "venue": "石川県産業展示館4号館" },
-          { "date": "2007-06-17", "prefecture": "石川県", "venue": "石川県産業展示館4号館" }
+          {
+            "date": "2007-03-19",
+            "prefecture": "福岡県",
+            "venue": "Zepp Fukuoka ※love up! 会員限定"
+          },
+          {
+            "date": "2007-03-24",
+            "prefecture": "福岡県",
+            "venue": "マリンメッセ福岡"
+          },
+          {
+            "date": "2007-03-25",
+            "prefecture": "福岡県",
+            "venue": "マリンメッセ福岡"
+          },
+          {
+            "date": "2007-03-29",
+            "prefecture": "広島県",
+            "venue": "広島サンプラザホール"
+          },
+          {
+            "date": "2007-03-30",
+            "prefecture": "広島県",
+            "venue": "広島サンプラザホール"
+          },
+          {
+            "date": "2007-04-07",
+            "prefecture": "愛媛県",
+            "venue": "愛媛県武道館"
+          },
+          {
+            "date": "2007-04-08",
+            "prefecture": "愛媛県",
+            "venue": "愛媛県武道館"
+          },
+          {
+            "date": "2007-04-12",
+            "prefecture": "神奈川県",
+            "venue": "横浜アリーナ"
+          },
+          {
+            "date": "2007-04-13",
+            "prefecture": "神奈川県",
+            "venue": "横浜アリーナ"
+          },
+          {
+            "date": "2007-04-20",
+            "prefecture": "埼玉県",
+            "venue": "さいたまスーパーアリーナ"
+          },
+          {
+            "date": "2007-04-21",
+            "prefecture": "埼玉県",
+            "venue": "さいたまスーパーアリーナ"
+          },
+          {
+            "date": "2007-04-22",
+            "prefecture": "埼玉県",
+            "venue": "さいたまスーパーアリーナ"
+          },
+          {
+            "date": "2007-04-29",
+            "prefecture": "大阪府",
+            "venue": "大阪城ホール"
+          },
+          {
+            "date": "2007-04-30",
+            "prefecture": "大阪府",
+            "venue": "大阪城ホール"
+          },
+          {
+            "date": "2007-05-01",
+            "prefecture": "大阪府",
+            "venue": "大阪城ホール"
+          },
+          {
+            "date": "2007-05-04",
+            "prefecture": "愛知県",
+            "venue": "日本ガイシホール"
+          },
+          {
+            "date": "2007-05-05",
+            "prefecture": "愛知県",
+            "venue": "日本ガイシホール"
+          },
+          {
+            "date": "2007-05-11",
+            "prefecture": "宮城県",
+            "venue": "ホットハウススーパーアリーナ"
+          },
+          {
+            "date": "2007-05-12",
+            "prefecture": "宮城県",
+            "venue": "ホットハウススーパーアリーナ"
+          },
+          {
+            "date": "2007-05-26",
+            "prefecture": "静岡県",
+            "venue": "静岡エコパアリーナ"
+          },
+          {
+            "date": "2007-05-27",
+            "prefecture": "静岡県",
+            "venue": "静岡エコパアリーナ"
+          },
+          {
+            "date": "2007-06-02",
+            "prefecture": "北海道",
+            "venue": "真駒内セキスイハイムアイスアリーナ"
+          },
+          {
+            "date": "2007-06-03",
+            "prefecture": "北海道",
+            "venue": "真駒内セキスイハイムアイスアリーナ"
+          },
+          {
+            "date": "2007-06-16",
+            "prefecture": "石川県",
+            "venue": "石川県産業展示館4号館"
+          },
+          {
+            "date": "2007-06-17",
+            "prefecture": "石川県",
+            "venue": "石川県産業展示館4号館"
+          }
         ]
       }
     ]
   },
-
   {
     "liveName": "POCARI SWEAT×PORNO GRAFFITTI LIVE \"RE・BODY\"",
     "color": "radial-gradient(circle at 20% 28%, rgba(190,220,255,0.55), transparent 58%), radial-gradient(circle at 74% 35%, rgba(255,255,255,0.55), transparent 62%), radial-gradient(circle at 46% 75%, rgba(210,235,255,0.35), transparent 66%), linear-gradient(135deg, #f4f9ff 0%, #dbeeff 35%, #ffffff 60%, #e8f2ff 78%, #f9fbff 100%)",
@@ -919,19 +2940,50 @@
       {
         "year": 2006,
         "shows": [
-          { "date": "2006-10-10", "prefecture": "東京都", "venue": "Zepp Tokyo" },
-          { "date": "2006-10-11", "prefecture": "東京都", "venue": "Zepp Tokyo" },
-          { "date": "2006-10-17", "prefecture": "広島県", "venue": "広島クラブクアトロ" },
-          { "date": "2006-10-19", "prefecture": "福岡県", "venue": "Zepp Fukuoka" },
-          { "date": "2006-10-24", "prefecture": "愛知県", "venue": "Zepp Nagoya" },
-          { "date": "2006-10-26", "prefecture": "大阪府", "venue": "Zepp Osaka" },
-          { "date": "2006-10-30", "prefecture": "北海道", "venue": "Zepp Sapporo" },
-          { "date": "2006-11-01", "prefecture": "宮城県", "venue": "Zepp Sendai" }
+          {
+            "date": "2006-10-10",
+            "prefecture": "東京都",
+            "venue": "Zepp Tokyo"
+          },
+          {
+            "date": "2006-10-11",
+            "prefecture": "東京都",
+            "venue": "Zepp Tokyo"
+          },
+          {
+            "date": "2006-10-17",
+            "prefecture": "広島県",
+            "venue": "広島クラブクアトロ"
+          },
+          {
+            "date": "2006-10-19",
+            "prefecture": "福岡県",
+            "venue": "Zepp Fukuoka"
+          },
+          {
+            "date": "2006-10-24",
+            "prefecture": "愛知県",
+            "venue": "Zepp Nagoya"
+          },
+          {
+            "date": "2006-10-26",
+            "prefecture": "大阪府",
+            "venue": "Zepp Osaka"
+          },
+          {
+            "date": "2006-10-30",
+            "prefecture": "北海道",
+            "venue": "Zepp Sapporo"
+          },
+          {
+            "date": "2006-11-01",
+            "prefecture": "宮城県",
+            "venue": "Zepp Sendai"
+          }
         ]
       }
     ]
   },
-
   {
     "liveName": "横浜ロマンスポルノ'06 〜キャッチ ザ ハネウマ〜",
     "color": "radial-gradient(circle at 20% 28%, rgba(160,210,255,0.55), transparent 58%), radial-gradient(circle at 74% 35%, rgba(255,240,160,0.50), transparent 62%), radial-gradient(circle at 46% 75%, rgba(210,235,255,0.35), transparent 66%), linear-gradient(135deg, #eef7ff 0%, #cfe9ff 34%, #fff0b0 60%, #d7ecff 78%, #f7fbff 100%)",
@@ -939,13 +2991,20 @@
       {
         "year": 2006,
         "shows": [
-          { "date": "2006-07-22", "prefecture": "神奈川県", "venue": "横浜スタジアム" },
-          { "date": "2006-07-23", "prefecture": "神奈川県", "venue": "横浜スタジアム" }
+          {
+            "date": "2006-07-22",
+            "prefecture": "神奈川県",
+            "venue": "横浜スタジアム"
+          },
+          {
+            "date": "2006-07-23",
+            "prefecture": "神奈川県",
+            "venue": "横浜スタジアム"
+          }
         ]
       }
     ]
   },
-
   {
     "liveName": "ポルノグラフィティ ライブ in 因島市",
     "color": "radial-gradient(circle at 20% 28%, rgba(170,220,210,0.50), transparent 58%), radial-gradient(circle at 74% 35%, rgba(255,220,160,0.40), transparent 62%), radial-gradient(circle at 46% 75%, rgba(220,245,255,0.30), transparent 66%), linear-gradient(135deg, #eefaf6 0%, #d2f2e8 35%, #ffe7c6 62%, #e9f6ff 80%, #fbfffd 100%)",
@@ -953,14 +3012,27 @@
       {
         "year": 2005,
         "shows": [
-          { "date": "2005-11-22", "prefecture": "広島県", "venue": "因島市民会館 ※中学生の部" },
-          { "date": "2005-11-23", "prefecture": "広島県", "venue": "因島市民会館 ※小学生の部(昼)", "time": "AM" },
-          { "date": "2005-11-23", "prefecture": "広島県", "venue": "因島市民会館 ※高校生の部(夜)", "time": "PM" }
+          {
+            "date": "2005-11-22",
+            "prefecture": "広島県",
+            "venue": "因島市民会館 ※中学生の部"
+          },
+          {
+            "date": "2005-11-23",
+            "prefecture": "広島県",
+            "venue": "因島市民会館 ※小学生の部(昼)",
+            "time": "AM"
+          },
+          {
+            "date": "2005-11-23",
+            "prefecture": "広島県",
+            "venue": "因島市民会館 ※高校生の部(夜)",
+            "time": "PM"
+          }
         ]
       }
     ]
   },
-
   {
     "liveName": "C1000タケダ Presents ポルノグラフィティ プレミアムLIVE",
     "color": "radial-gradient(circle at 20% 28%, rgba(255,245,190,0.60), transparent 58%), radial-gradient(circle at 74% 35%, rgba(255,255,255,0.60), transparent 62%), radial-gradient(circle at 46% 75%, rgba(255,230,150,0.35), transparent 66%), linear-gradient(135deg, #fff9d8 0%, #fff0b0 38%, #ffffff 62%, #fff7e8 80%, #ffffff 100%)",
@@ -968,13 +3040,20 @@
       {
         "year": 2005,
         "shows": [
-          { "date": "2005-08-17", "prefecture": "東京都", "venue": "SHIBUYA-AX" },
-          { "date": "2005-08-24", "prefecture": "大阪府", "venue": "なんばHatch" }
+          {
+            "date": "2005-08-17",
+            "prefecture": "東京都",
+            "venue": "SHIBUYA-AX"
+          },
+          {
+            "date": "2005-08-24",
+            "prefecture": "大阪府",
+            "venue": "なんばHatch"
+          }
         ]
       }
     ]
   },
-
   {
     "liveName": "7thライヴサーキット \"SWITCH\"",
     "color": "radial-gradient(circle at 20% 28%, rgba(165,215,255,0.55), transparent 58%), radial-gradient(circle at 74% 35%, rgba(255,175,110,0.45), transparent 62%), radial-gradient(circle at 46% 75%, rgba(210,235,255,0.35), transparent 66%), linear-gradient(135deg, #eef7ff 0%, #d2ecff 32%, #ffc28a 58%, #d9eaff 76%, #f7fbff 100%)",
@@ -982,63 +3061,270 @@
       {
         "year": 2005,
         "shows": [
-          { "date": "2005-05-07", "prefecture": "埼玉県", "venue": "大宮ソニックシティ" },
-          { "date": "2005-05-08", "prefecture": "埼玉県", "venue": "大宮ソニックシティ" },
-          { "date": "2005-05-10", "prefecture": "兵庫県", "venue": "神戸国際会館こくさいホール" },
-          { "date": "2005-05-13", "prefecture": "大阪府", "venue": "フェスティバルホール" },
-          { "date": "2005-05-14", "prefecture": "大阪府", "venue": "フェスティバルホール" },
-          { "date": "2005-05-16", "prefecture": "滋賀県", "venue": "滋賀県立芸術劇場びわ湖ホール" },
-          { "date": "2005-05-19", "prefecture": "熊本県", "venue": "熊本市民会館" },
-          { "date": "2005-05-20", "prefecture": "長崎県", "venue": "長崎ブリックホール" },
-          { "date": "2005-05-23", "prefecture": "福岡県", "venue": "福岡サンパレスホテル&ホール" },
-          { "date": "2005-05-24", "prefecture": "福岡県", "venue": "福岡サンパレスホテル&ホール" },
-          { "date": "2005-05-28", "prefecture": "岐阜県", "venue": "長良川国際会議場" },
-          { "date": "2005-05-31", "prefecture": "三重県", "venue": "三重県文化会館" },
-          { "date": "2005-06-02", "prefecture": "愛知県", "venue": "名古屋国際会議場センチュリーホール" },
-          { "date": "2005-06-03", "prefecture": "愛知県", "venue": "名古屋国際会議場センチュリーホール" },
-          { "date": "2005-06-05", "prefecture": "広島県", "venue": "広島厚生年金会館" },
-          { "date": "2005-06-06", "prefecture": "広島県", "venue": "広島厚生年金会館" },
-          { "date": "2005-06-08", "prefecture": "島根県", "venue": "島根県民会館" },
-          { "date": "2005-06-11", "prefecture": "東京都", "venue": "東京国際フォーラム・A" },
-          { "date": "2005-06-12", "prefecture": "東京都", "venue": "東京国際フォーラム・A" },
-          { "date": "2005-06-19", "prefecture": "東京都", "venue": "東京国際フォーラム・A" },
-          { "date": "2005-06-22", "prefecture": "静岡県", "venue": "静岡市民文化会館" },
-          { "date": "2005-06-23", "prefecture": "静岡県", "venue": "静岡市民文化会館" },
-          { "date": "2005-06-25", "prefecture": "和歌山県", "venue": "和歌山市民会館" },
-          { "date": "2005-06-27", "prefecture": "岡山県", "venue": "倉敷市民会館" },
-          { "date": "2005-06-28", "prefecture": "香川県", "venue": "香川県県民ホール" },
-          { "date": "2005-06-30", "prefecture": "愛媛県", "venue": "愛媛県県民文化会館" },
-          { "date": "2005-07-23", "prefecture": "沖縄県", "venue": "宜野湾海浜公園野外劇場" },
-          { "date": "2005-09-25", "prefecture": "山梨県", "venue": "山梨県立県民文化ホール" },
-          { "date": "2005-09-28", "prefecture": "福井県", "venue": "福井フェニックスプラザ" },
-          { "date": "2005-09-29", "prefecture": "石川県", "venue": "石川厚生年金会館" },
-          { "date": "2005-10-01", "prefecture": "新潟県", "venue": "新潟県民会館" },
-          { "date": "2005-10-03", "prefecture": "長野県", "venue": "長野県松本文化会館" },
-          { "date": "2005-10-05", "prefecture": "茨城県", "venue": "茨城県立県民文化センター" },
-          { "date": "2005-10-09", "prefecture": "山形県", "venue": "山形県県民会館" },
-          { "date": "2005-10-11", "prefecture": "宮城県", "venue": "仙台サンプラザホール" },
-          { "date": "2005-10-13", "prefecture": "岩手県", "venue": "岩手県民会館" },
-          { "date": "2005-10-16", "prefecture": "群馬県", "venue": "群馬県民会館" },
-          { "date": "2005-10-18", "prefecture": "福島県", "venue": "郡山市民文化センター" },
-          { "date": "2005-10-20", "prefecture": "栃木県", "venue": "栃木県総合文化センター" },
-          { "date": "2005-10-24", "prefecture": "北海道", "venue": "函館市民会館" },
-          { "date": "2005-10-26", "prefecture": "北海道", "venue": "北海道厚生年金会館" },
-          { "date": "2005-10-27", "prefecture": "北海道", "venue": "北海道厚生年金会館" },
-          { "date": "2005-10-29", "prefecture": "北海道", "venue": "札幌ペニーレーン24 ※SPECIAL LIVE HOUSE公演" },
-          { "date": "2005-11-02", "prefecture": "秋田県", "venue": "秋田県民会館" },
-          { "date": "2005-11-04", "prefecture": "青森県", "venue": "青森市文化会館" },
-          { "date": "2005-11-09", "prefecture": "大阪府", "venue": "フェスティバルホール ※追加公演" },
-          { "date": "2005-11-12", "prefecture": "愛知県", "venue": "名古屋国際会議場センチュリーホール ※追加公演" },
-          { "date": "2005-12-13", "prefecture": "東京都", "venue": "日本武道館 ※追加公演" },
-          { "date": "2005-12-14", "prefecture": "東京都", "venue": "日本武道館 ※追加公演" },
-          { "date": "2005-12-16", "prefecture": "東京都", "venue": "日本武道館 ※追加公演" },
-          { "date": "2005-12-17", "prefecture": "東京都", "venue": "日本武道館 ※追加公演" },
-          { "date": "2005-12-18", "prefecture": "東京都", "venue": "日本武道館 ※追加公演" }
+          {
+            "date": "2005-05-07",
+            "prefecture": "埼玉県",
+            "venue": "大宮ソニックシティ"
+          },
+          {
+            "date": "2005-05-08",
+            "prefecture": "埼玉県",
+            "venue": "大宮ソニックシティ"
+          },
+          {
+            "date": "2005-05-10",
+            "prefecture": "兵庫県",
+            "venue": "神戸国際会館こくさいホール"
+          },
+          {
+            "date": "2005-05-13",
+            "prefecture": "大阪府",
+            "venue": "フェスティバルホール"
+          },
+          {
+            "date": "2005-05-14",
+            "prefecture": "大阪府",
+            "venue": "フェスティバルホール"
+          },
+          {
+            "date": "2005-05-16",
+            "prefecture": "滋賀県",
+            "venue": "滋賀県立芸術劇場びわ湖ホール"
+          },
+          {
+            "date": "2005-05-19",
+            "prefecture": "熊本県",
+            "venue": "熊本市民会館"
+          },
+          {
+            "date": "2005-05-20",
+            "prefecture": "長崎県",
+            "venue": "長崎ブリックホール"
+          },
+          {
+            "date": "2005-05-23",
+            "prefecture": "福岡県",
+            "venue": "福岡サンパレスホテル&ホール"
+          },
+          {
+            "date": "2005-05-24",
+            "prefecture": "福岡県",
+            "venue": "福岡サンパレスホテル&ホール"
+          },
+          {
+            "date": "2005-05-28",
+            "prefecture": "岐阜県",
+            "venue": "長良川国際会議場"
+          },
+          {
+            "date": "2005-05-31",
+            "prefecture": "三重県",
+            "venue": "三重県文化会館"
+          },
+          {
+            "date": "2005-06-02",
+            "prefecture": "愛知県",
+            "venue": "名古屋国際会議場センチュリーホール"
+          },
+          {
+            "date": "2005-06-03",
+            "prefecture": "愛知県",
+            "venue": "名古屋国際会議場センチュリーホール"
+          },
+          {
+            "date": "2005-06-05",
+            "prefecture": "広島県",
+            "venue": "広島厚生年金会館"
+          },
+          {
+            "date": "2005-06-06",
+            "prefecture": "広島県",
+            "venue": "広島厚生年金会館"
+          },
+          {
+            "date": "2005-06-08",
+            "prefecture": "島根県",
+            "venue": "島根県民会館"
+          },
+          {
+            "date": "2005-06-11",
+            "prefecture": "東京都",
+            "venue": "東京国際フォーラム・A"
+          },
+          {
+            "date": "2005-06-12",
+            "prefecture": "東京都",
+            "venue": "東京国際フォーラム・A"
+          },
+          {
+            "date": "2005-06-19",
+            "prefecture": "東京都",
+            "venue": "東京国際フォーラム・A"
+          },
+          {
+            "date": "2005-06-22",
+            "prefecture": "静岡県",
+            "venue": "静岡市民文化会館"
+          },
+          {
+            "date": "2005-06-23",
+            "prefecture": "静岡県",
+            "venue": "静岡市民文化会館"
+          },
+          {
+            "date": "2005-06-25",
+            "prefecture": "和歌山県",
+            "venue": "和歌山市民会館"
+          },
+          {
+            "date": "2005-06-27",
+            "prefecture": "岡山県",
+            "venue": "倉敷市民会館"
+          },
+          {
+            "date": "2005-06-28",
+            "prefecture": "香川県",
+            "venue": "香川県県民ホール"
+          },
+          {
+            "date": "2005-06-30",
+            "prefecture": "愛媛県",
+            "venue": "愛媛県県民文化会館"
+          },
+          {
+            "date": "2005-07-23",
+            "prefecture": "沖縄県",
+            "venue": "宜野湾海浜公園野外劇場"
+          },
+          {
+            "date": "2005-09-25",
+            "prefecture": "山梨県",
+            "venue": "山梨県立県民文化ホール"
+          },
+          {
+            "date": "2005-09-28",
+            "prefecture": "福井県",
+            "venue": "福井フェニックスプラザ"
+          },
+          {
+            "date": "2005-09-29",
+            "prefecture": "石川県",
+            "venue": "石川厚生年金会館"
+          },
+          {
+            "date": "2005-10-01",
+            "prefecture": "新潟県",
+            "venue": "新潟県民会館"
+          },
+          {
+            "date": "2005-10-03",
+            "prefecture": "長野県",
+            "venue": "長野県松本文化会館"
+          },
+          {
+            "date": "2005-10-05",
+            "prefecture": "茨城県",
+            "venue": "茨城県立県民文化センター"
+          },
+          {
+            "date": "2005-10-09",
+            "prefecture": "山形県",
+            "venue": "山形県県民会館"
+          },
+          {
+            "date": "2005-10-11",
+            "prefecture": "宮城県",
+            "venue": "仙台サンプラザホール"
+          },
+          {
+            "date": "2005-10-13",
+            "prefecture": "岩手県",
+            "venue": "岩手県民会館"
+          },
+          {
+            "date": "2005-10-16",
+            "prefecture": "群馬県",
+            "venue": "群馬県民会館"
+          },
+          {
+            "date": "2005-10-18",
+            "prefecture": "福島県",
+            "venue": "郡山市民文化センター"
+          },
+          {
+            "date": "2005-10-20",
+            "prefecture": "栃木県",
+            "venue": "栃木県総合文化センター"
+          },
+          {
+            "date": "2005-10-24",
+            "prefecture": "北海道",
+            "venue": "函館市民会館"
+          },
+          {
+            "date": "2005-10-26",
+            "prefecture": "北海道",
+            "venue": "北海道厚生年金会館"
+          },
+          {
+            "date": "2005-10-27",
+            "prefecture": "北海道",
+            "venue": "北海道厚生年金会館"
+          },
+          {
+            "date": "2005-10-29",
+            "prefecture": "北海道",
+            "venue": "札幌ペニーレーン24 ※SPECIAL LIVE HOUSE公演"
+          },
+          {
+            "date": "2005-11-02",
+            "prefecture": "秋田県",
+            "venue": "秋田県民会館"
+          },
+          {
+            "date": "2005-11-04",
+            "prefecture": "青森県",
+            "venue": "青森市文化会館"
+          },
+          {
+            "date": "2005-11-09",
+            "prefecture": "大阪府",
+            "venue": "フェスティバルホール ※追加公演"
+          },
+          {
+            "date": "2005-11-12",
+            "prefecture": "愛知県",
+            "venue": "名古屋国際会議場センチュリーホール ※追加公演"
+          },
+          {
+            "date": "2005-12-13",
+            "prefecture": "東京都",
+            "venue": "日本武道館 ※追加公演"
+          },
+          {
+            "date": "2005-12-14",
+            "prefecture": "東京都",
+            "venue": "日本武道館 ※追加公演"
+          },
+          {
+            "date": "2005-12-16",
+            "prefecture": "東京都",
+            "venue": "日本武道館 ※追加公演"
+          },
+          {
+            "date": "2005-12-17",
+            "prefecture": "東京都",
+            "venue": "日本武道館 ※追加公演"
+          },
+          {
+            "date": "2005-12-18",
+            "prefecture": "東京都",
+            "venue": "日本武道館 ※追加公演"
+          }
         ]
       }
     ]
   },
-
   {
     "liveName": "5th Anniversary Special Live \"PURPLE'S\"",
     "color": "radial-gradient(circle at 20% 28%, rgba(165,140,235,0.45), transparent 58%), radial-gradient(circle at 74% 35%, rgba(210,120,200,0.35), transparent 62%), radial-gradient(circle at 46% 75%, rgba(235,170,220,0.25), transparent 66%), linear-gradient(135deg, #f3eeff 0%, #dcd2ff 35%, #f2c6ea 60%, #e6d7ff 78%, #fbf7ff 100%)",
@@ -1046,17 +3332,40 @@
       {
         "year": 2004,
         "shows": [
-          { "date": "2004-12-22", "prefecture": "大阪府", "venue": "大阪城ホール" },
-          { "date": "2004-12-23", "prefecture": "大阪府", "venue": "大阪城ホール" },
-          { "date": "2004-12-26", "prefecture": "愛知県", "venue": "愛知県体育館" },
-          { "date": "2004-12-27", "prefecture": "愛知県", "venue": "愛知県体育館" },
-          { "date": "2004-12-30", "prefecture": "東京都", "venue": "東京体育館" },
-          { "date": "2004-12-31", "prefecture": "東京都", "venue": "東京体育館 ※カウントダウン公演" }
+          {
+            "date": "2004-12-22",
+            "prefecture": "大阪府",
+            "venue": "大阪城ホール"
+          },
+          {
+            "date": "2004-12-23",
+            "prefecture": "大阪府",
+            "venue": "大阪城ホール"
+          },
+          {
+            "date": "2004-12-26",
+            "prefecture": "愛知県",
+            "venue": "愛知県体育館"
+          },
+          {
+            "date": "2004-12-27",
+            "prefecture": "愛知県",
+            "venue": "愛知県体育館"
+          },
+          {
+            "date": "2004-12-30",
+            "prefecture": "東京都",
+            "venue": "東京体育館"
+          },
+          {
+            "date": "2004-12-31",
+            "prefecture": "東京都",
+            "venue": "東京体育館 ※カウントダウン公演"
+          }
         ]
       }
     ]
   },
-
   {
     "liveName": "FANCLUB UNDERWORLD 2",
     "color": "radial-gradient(circle at 20% 28%, rgba(255,246,225,0.65), transparent 58%), radial-gradient(circle at 74% 35%, rgba(245,230,200,0.45), transparent 62%), radial-gradient(circle at 46% 75%, rgba(235,210,175,0.28), transparent 66%), linear-gradient(135deg, #fff7ea 0%, #f6e7cf 35%, #f2dcc2 60%, #fbf3e7 78%, #fffaf4 100%)",
@@ -1064,16 +3373,37 @@
       {
         "year": 2004,
         "shows": [
-          { "date": "2004-11-09", "prefecture": "広島県", "venue": "広島クラブクアトロ", "time": "AM" },
-          { "date": "2004-11-09", "prefecture": "広島県", "venue": "広島クラブクアトロ", "time": "PM" },
-          { "date": "2004-11-11", "prefecture": "福岡県", "venue": "Zepp Fukuoka" },
-          { "date": "2004-11-16", "prefecture": "北海道", "venue": "Zepp Sapporo" },
-          { "date": "2004-11-18", "prefecture": "宮城県", "venue": "Zepp Sendai" }
+          {
+            "date": "2004-11-09",
+            "prefecture": "広島県",
+            "venue": "広島クラブクアトロ",
+            "time": "AM"
+          },
+          {
+            "date": "2004-11-09",
+            "prefecture": "広島県",
+            "venue": "広島クラブクアトロ",
+            "time": "PM"
+          },
+          {
+            "date": "2004-11-11",
+            "prefecture": "福岡県",
+            "venue": "Zepp Fukuoka"
+          },
+          {
+            "date": "2004-11-16",
+            "prefecture": "北海道",
+            "venue": "Zepp Sapporo"
+          },
+          {
+            "date": "2004-11-18",
+            "prefecture": "宮城県",
+            "venue": "Zepp Sendai"
+          }
         ]
       }
     ]
   },
-
   {
     "liveName": "6thライヴサーキット \"74ers\"",
     "color": "radial-gradient(circle at 20% 28%, rgba(230,232,236,0.65), transparent 58%), radial-gradient(circle at 74% 35%, rgba(255,255,255,0.70), transparent 62%), radial-gradient(circle at 46% 75%, rgba(210,215,225,0.35), transparent 66%), linear-gradient(135deg, #f6f7f9 0%, #e5e7ec 35%, #ffffff 60%, #eef0f4 78%, #fbfbfd 100%)",
@@ -1081,37 +3411,120 @@
       {
         "year": 2003,
         "shows": [
-          { "date": "2003-12-04", "prefecture": "埼玉県", "venue": "さいたまスーパーアリーナ" },
-          { "date": "2003-12-05", "prefecture": "埼玉県", "venue": "さいたまスーパーアリーナ ※追加公演" },
-          { "date": "2003-12-08", "prefecture": "北海道", "venue": "北海道厚生年金会館" },
-          { "date": "2003-12-09", "prefecture": "北海道", "venue": "北海道厚生年金会館" },
-          { "date": "2003-12-11", "prefecture": "宮城県", "venue": "仙台サンプラザホール" },
-          { "date": "2003-12-12", "prefecture": "宮城県", "venue": "仙台サンプラザホール" },
-          { "date": "2003-12-17", "prefecture": "愛知県", "venue": "名古屋市総合体育館レインボーホール" },
-          { "date": "2003-12-18", "prefecture": "愛知県", "venue": "名古屋市総合体育館レインボーホール" },
-          { "date": "2003-12-21", "prefecture": "大阪府", "venue": "大阪城ホール" },
-          { "date": "2003-12-22", "prefecture": "大阪府", "venue": "大阪城ホール" },
-          { "date": "2003-12-30", "prefecture": "東京都", "venue": "東京体育館" },
-          { "date": "2003-12-31", "prefecture": "東京都", "venue": "東京体育館 ※カウントダウン公演" }
+          {
+            "date": "2003-12-04",
+            "prefecture": "埼玉県",
+            "venue": "さいたまスーパーアリーナ"
+          },
+          {
+            "date": "2003-12-05",
+            "prefecture": "埼玉県",
+            "venue": "さいたまスーパーアリーナ ※追加公演"
+          },
+          {
+            "date": "2003-12-08",
+            "prefecture": "北海道",
+            "venue": "北海道厚生年金会館"
+          },
+          {
+            "date": "2003-12-09",
+            "prefecture": "北海道",
+            "venue": "北海道厚生年金会館"
+          },
+          {
+            "date": "2003-12-11",
+            "prefecture": "宮城県",
+            "venue": "仙台サンプラザホール"
+          },
+          {
+            "date": "2003-12-12",
+            "prefecture": "宮城県",
+            "venue": "仙台サンプラザホール"
+          },
+          {
+            "date": "2003-12-17",
+            "prefecture": "愛知県",
+            "venue": "名古屋市総合体育館レインボーホール"
+          },
+          {
+            "date": "2003-12-18",
+            "prefecture": "愛知県",
+            "venue": "名古屋市総合体育館レインボーホール"
+          },
+          {
+            "date": "2003-12-21",
+            "prefecture": "大阪府",
+            "venue": "大阪城ホール"
+          },
+          {
+            "date": "2003-12-22",
+            "prefecture": "大阪府",
+            "venue": "大阪城ホール"
+          },
+          {
+            "date": "2003-12-30",
+            "prefecture": "東京都",
+            "venue": "東京体育館"
+          },
+          {
+            "date": "2003-12-31",
+            "prefecture": "東京都",
+            "venue": "東京体育館 ※カウントダウン公演"
+          }
         ]
       },
       {
         "year": 2004,
         "shows": [
-          { "date": "2004-01-08", "prefecture": "福岡県", "venue": "福岡サンパレスホテル&ホール" },
-          { "date": "2004-01-09", "prefecture": "福岡県", "venue": "福岡サンパレスホテル&ホール" },
-          { "date": "2004-01-11", "prefecture": "広島県", "venue": "広島厚生年金会館" },
-          { "date": "2004-01-12", "prefecture": "広島県", "venue": "広島厚生年金会館" },
-          { "date": "2004-01-16", "prefecture": "愛媛県", "venue": "松山市民会館" },
-          { "date": "2004-01-17", "prefecture": "香川県", "venue": "香川県県民ホール" },
-          { "date": "2004-01-24", "prefecture": "新潟県", "venue": "新潟PHASE ※SPECIAL LIVE HOUSE公演" },
-          { "date": "2004-01-26", "prefecture": "石川県", "venue": "石川厚生年金会館" },
-          { "date": "2004-01-27", "prefecture": "石川県", "venue": "石川厚生年金会館" }
+          {
+            "date": "2004-01-08",
+            "prefecture": "福岡県",
+            "venue": "福岡サンパレスホテル&ホール"
+          },
+          {
+            "date": "2004-01-09",
+            "prefecture": "福岡県",
+            "venue": "福岡サンパレスホテル&ホール"
+          },
+          {
+            "date": "2004-01-11",
+            "prefecture": "広島県",
+            "venue": "広島厚生年金会館"
+          },
+          {
+            "date": "2004-01-12",
+            "prefecture": "広島県",
+            "venue": "広島厚生年金会館"
+          },
+          {
+            "date": "2004-01-16",
+            "prefecture": "愛媛県",
+            "venue": "松山市民会館"
+          },
+          {
+            "date": "2004-01-17",
+            "prefecture": "香川県",
+            "venue": "香川県県民ホール"
+          },
+          {
+            "date": "2004-01-24",
+            "prefecture": "新潟県",
+            "venue": "新潟PHASE ※SPECIAL LIVE HOUSE公演"
+          },
+          {
+            "date": "2004-01-26",
+            "prefecture": "石川県",
+            "venue": "石川厚生年金会館"
+          },
+          {
+            "date": "2004-01-27",
+            "prefecture": "石川県",
+            "venue": "石川厚生年金会館"
+          }
         ]
       }
     ]
   },
-
   {
     "liveName": "FANCLUB UNDERWORLD",
     "color": "radial-gradient(circle at 20% 28%, rgba(200,240,230,0.50), transparent 58%), radial-gradient(circle at 74% 35%, rgba(200,220,255,0.45), transparent 62%), radial-gradient(circle at 46% 75%, rgba(255,235,200,0.30), transparent 66%), linear-gradient(135deg, #eefaf6 0%, #d8f2ea 30%, #dbe9ff 58%, #fff1d6 78%, #fbfffd 100%)",
@@ -1119,25 +3532,90 @@
       {
         "year": 2003,
         "shows": [
-          { "date": "2003-06-15", "prefecture": "広島県", "venue": "広島クラブクアトロ", "time": "AM" },
-          { "date": "2003-06-15", "prefecture": "広島県", "venue": "広島クラブクアトロ", "time": "PM" },
-          { "date": "2003-06-21", "prefecture": "福岡県", "venue": "Zepp Fukuoka" },
-          { "date": "2003-06-22", "prefecture": "愛媛県", "venue": "EBC Vivit Hall", "time": "AM" },
-          { "date": "2003-06-22", "prefecture": "愛媛県", "venue": "EBC Vivit Hall", "time": "PM" },
-          { "date": "2003-06-25", "prefecture": "北海道", "venue": "Zepp Sapporo" },
-          { "date": "2003-06-29", "prefecture": "大阪府", "venue": "なんばHatch", "time": "AM" },
-          { "date": "2003-06-29", "prefecture": "大阪府", "venue": "なんばHatch", "time": "PM" },
-          { "date": "2003-06-30", "prefecture": "愛知県", "venue": "名古屋 Daiamond Hall", "time": "AM" },
-          { "date": "2003-06-30", "prefecture": "愛知県", "venue": "名古屋 Daiamond Hall", "time": "PM" },
-          { "date": "2003-07-05", "prefecture": "新潟県", "venue": "NIIGATA LOTS" },
-          { "date": "2003-07-06", "prefecture": "宮城県", "venue": "Zepp Sendai" },
-          { "date": "2003-07-12", "prefecture": "東京都", "venue": "Zepp Tokyo", "time": "AM" },
-          { "date": "2003-07-12", "prefecture": "東京都", "venue": "Zepp Tokyo", "time": "PM" }
+          {
+            "date": "2003-06-15",
+            "prefecture": "広島県",
+            "venue": "広島クラブクアトロ",
+            "time": "AM"
+          },
+          {
+            "date": "2003-06-15",
+            "prefecture": "広島県",
+            "venue": "広島クラブクアトロ",
+            "time": "PM"
+          },
+          {
+            "date": "2003-06-21",
+            "prefecture": "福岡県",
+            "venue": "Zepp Fukuoka"
+          },
+          {
+            "date": "2003-06-22",
+            "prefecture": "愛媛県",
+            "venue": "EBC Vivit Hall",
+            "time": "AM"
+          },
+          {
+            "date": "2003-06-22",
+            "prefecture": "愛媛県",
+            "venue": "EBC Vivit Hall",
+            "time": "PM"
+          },
+          {
+            "date": "2003-06-25",
+            "prefecture": "北海道",
+            "venue": "Zepp Sapporo"
+          },
+          {
+            "date": "2003-06-29",
+            "prefecture": "大阪府",
+            "venue": "なんばHatch",
+            "time": "AM"
+          },
+          {
+            "date": "2003-06-29",
+            "prefecture": "大阪府",
+            "venue": "なんばHatch",
+            "time": "PM"
+          },
+          {
+            "date": "2003-06-30",
+            "prefecture": "愛知県",
+            "venue": "名古屋 Daiamond Hall",
+            "time": "AM"
+          },
+          {
+            "date": "2003-06-30",
+            "prefecture": "愛知県",
+            "venue": "名古屋 Daiamond Hall",
+            "time": "PM"
+          },
+          {
+            "date": "2003-07-05",
+            "prefecture": "新潟県",
+            "venue": "NIIGATA LOTS"
+          },
+          {
+            "date": "2003-07-06",
+            "prefecture": "宮城県",
+            "venue": "Zepp Sendai"
+          },
+          {
+            "date": "2003-07-12",
+            "prefecture": "東京都",
+            "venue": "Zepp Tokyo",
+            "time": "AM"
+          },
+          {
+            "date": "2003-07-12",
+            "prefecture": "東京都",
+            "venue": "Zepp Tokyo",
+            "time": "PM"
+          }
         ]
       }
     ]
   },
-
   {
     "liveName": "SPECIAL LIVE 2002-2003 \"<s>BITTER</s> SWEET MUSIC <s>BIZ</s>\"",
     "color": "radial-gradient(circle at 20% 28%, rgba(200,205,215,0.55), transparent 58%), radial-gradient(circle at 74% 35%, rgba(230,190,140,0.35), transparent 62%), radial-gradient(circle at 46% 75%, rgba(245,235,225,0.35), transparent 66%), linear-gradient(135deg, #f2f3f6 0%, #dfe3ea 35%, #f2d2b4 60%, #ece6df 78%, #fbfbfd 100%)",
@@ -1145,15 +3623,30 @@
       {
         "year": 2002,
         "shows": [
-          { "date": "2002-12-24", "prefecture": "大阪府", "venue": "大阪城ホール" },
-          { "date": "2002-12-25", "prefecture": "大阪府", "venue": "大阪城ホール" },
-          { "date": "2002-12-30", "prefecture": "東京都", "venue": "東京体育館" },
-          { "date": "2002-12-31", "prefecture": "東京都", "venue": "東京体育館 ※カウントダウン公演" }
+          {
+            "date": "2002-12-24",
+            "prefecture": "大阪府",
+            "venue": "大阪城ホール"
+          },
+          {
+            "date": "2002-12-25",
+            "prefecture": "大阪府",
+            "venue": "大阪城ホール"
+          },
+          {
+            "date": "2002-12-30",
+            "prefecture": "東京都",
+            "venue": "東京体育館"
+          },
+          {
+            "date": "2002-12-31",
+            "prefecture": "東京都",
+            "venue": "東京体育館 ※カウントダウン公演"
+          }
         ]
       }
     ]
   },
-
   {
     "liveName": "5thライヴサーキット \"BITTER SWEET MUSIC BIZ\"",
     "color": "radial-gradient(circle at 20% 28%, rgba(255,190,190,0.55), transparent 58%), radial-gradient(circle at 74% 35%, rgba(255,140,140,0.40), transparent 62%), radial-gradient(circle at 46% 75%, rgba(255,220,210,0.35), transparent 66%), linear-gradient(135deg, #fff1f1 0%, #ffd0d0 32%, #ffaaaa 55%, #ffdede 75%, #fff7f7 100%)",
@@ -1161,58 +3654,245 @@
       {
         "year": 2002,
         "shows": [
-          { "date": "2002-06-21", "prefecture": "東京都", "venue": "NHKホール" },
-          { "date": "2002-06-22", "prefecture": "東京都", "venue": "NHKホール" },
-          { "date": "2002-06-25", "prefecture": "高知県", "venue": "高知県立県民文化ホール" },
-          { "date": "2002-06-26", "prefecture": "愛媛県", "venue": "愛媛県民文化会館" },
-          { "date": "2002-06-28", "prefecture": "香川県", "venue": "香川県県民ホール" },
-          { "date": "2002-07-01", "prefecture": "大阪府", "venue": "フェスティバルホール" },
-          { "date": "2002-07-02", "prefecture": "大阪府", "venue": "フェスティバルホール" },
-          { "date": "2002-07-04", "prefecture": "広島県", "venue": "広島厚生年金会館" },
-          { "date": "2002-07-05", "prefecture": "広島県", "venue": "広島厚生年金会館" },
-          { "date": "2002-07-07", "prefecture": "岡山県", "venue": "倉敷市民会館" },
-          { "date": "2002-07-09", "prefecture": "山口県", "venue": "徳山市文化会館" },
-          { "date": "2002-07-12", "prefecture": "長野県", "venue": "長野県県民文化会館" },
-          { "date": "2002-07-14", "prefecture": "兵庫県", "venue": "神戸国際会館こくさいホール" },
-          { "date": "2002-07-15", "prefecture": "奈良県", "venue": "なら100年会館" },
-          { "date": "2002-07-20", "prefecture": "愛知県", "venue": "名古屋国際会議場センチュリーホール" },
-          { "date": "2002-07-21", "prefecture": "愛知県", "venue": "名古屋国際会議場センチュリーホール" },
-          { "date": "2002-07-23", "prefecture": "三重県", "venue": "三重県文化会館" },
-          { "date": "2002-07-25", "prefecture": "岐阜県", "venue": "長良川国際会議場" },
-          { "date": "2002-07-30", "prefecture": "福岡県", "venue": "福岡サンパレスホテル&ホール" },
-          { "date": "2002-07-31", "prefecture": "福岡県", "venue": "福岡サンパレスホテル&ホール" },
-          { "date": "2002-08-02", "prefecture": "埼玉県", "venue": "大宮ソニックシティ" },
-          { "date": "2002-08-06", "prefecture": "石川県", "venue": "石川厚生年金会館" },
-          { "date": "2002-08-07", "prefecture": "石川県", "venue": "石川厚生年金会館" },
-          { "date": "2002-08-09", "prefecture": "新潟県", "venue": "新潟テルサ" },
-          { "date": "2002-08-12", "prefecture": "静岡県", "venue": "アクトシティ浜松" },
-          { "date": "2002-08-16", "prefecture": "神奈川県", "venue": "神奈川県民ホール" },
-          { "date": "2002-08-20", "prefecture": "北海道", "venue": "北海道厚生年金会館" },
-          { "date": "2002-08-21", "prefecture": "北海道", "venue": "北海道厚生年金会館" },
-          { "date": "2002-08-23", "prefecture": "北海道", "venue": "北見市民会館" },
-          { "date": "2002-08-25", "prefecture": "北海道", "venue": "釧路市民会館" },
-          { "date": "2002-08-27", "prefecture": "北海道", "venue": "函館市民会館" },
-          { "date": "2002-08-29", "prefecture": "岩手県", "venue": "岩手県民会館" },
-          { "date": "2002-08-31", "prefecture": "青森県", "venue": "青森市文化会館" },
-          { "date": "2002-09-01", "prefecture": "秋田県", "venue": "秋田県民会館" },
-          { "date": "2002-09-05", "prefecture": "静岡県", "venue": "静岡市民会館" },
-          { "date": "2002-09-06", "prefecture": "静岡県", "venue": "静岡市民会館" },
-          { "date": "2002-09-13", "prefecture": "熊本県", "venue": "熊本市民会館" },
-          { "date": "2002-09-14", "prefecture": "鹿児島県", "venue": "鹿児島市民文化ホール" },
-          { "date": "2002-09-17", "prefecture": "沖縄県", "venue": "沖縄コンベンション劇場" },
-          { "date": "2002-09-18", "prefecture": "沖縄県", "venue": "沖縄コンベンション劇場" },
-          { "date": "2002-09-24", "prefecture": "宮城県", "venue": "Zepp Sendai ※SPECIAL LIVE HOUSE公演" },
-          { "date": "2002-09-26", "prefecture": "宮城県", "venue": "仙台サンプラザホール" },
-          { "date": "2002-09-27", "prefecture": "宮城県", "venue": "仙台サンプラザホール" },
-          { "date": "2002-10-07", "prefecture": "東京都", "venue": "日本武道館 ※追加公演" },
-          { "date": "2002-10-08", "prefecture": "東京都", "venue": "日本武道館 ※追加公演" },
-          { "date": "2002-10-10", "prefecture": "東京都", "venue": "日本武道館 ※追加公演" },
-          { "date": "2002-10-11", "prefecture": "東京都", "venue": "日本武道館 ※追加公演" }
+          {
+            "date": "2002-06-21",
+            "prefecture": "東京都",
+            "venue": "NHKホール"
+          },
+          {
+            "date": "2002-06-22",
+            "prefecture": "東京都",
+            "venue": "NHKホール"
+          },
+          {
+            "date": "2002-06-25",
+            "prefecture": "高知県",
+            "venue": "高知県立県民文化ホール"
+          },
+          {
+            "date": "2002-06-26",
+            "prefecture": "愛媛県",
+            "venue": "愛媛県民文化会館"
+          },
+          {
+            "date": "2002-06-28",
+            "prefecture": "香川県",
+            "venue": "香川県県民ホール"
+          },
+          {
+            "date": "2002-07-01",
+            "prefecture": "大阪府",
+            "venue": "フェスティバルホール"
+          },
+          {
+            "date": "2002-07-02",
+            "prefecture": "大阪府",
+            "venue": "フェスティバルホール"
+          },
+          {
+            "date": "2002-07-04",
+            "prefecture": "広島県",
+            "venue": "広島厚生年金会館"
+          },
+          {
+            "date": "2002-07-05",
+            "prefecture": "広島県",
+            "venue": "広島厚生年金会館"
+          },
+          {
+            "date": "2002-07-07",
+            "prefecture": "岡山県",
+            "venue": "倉敷市民会館"
+          },
+          {
+            "date": "2002-07-09",
+            "prefecture": "山口県",
+            "venue": "徳山市文化会館"
+          },
+          {
+            "date": "2002-07-12",
+            "prefecture": "長野県",
+            "venue": "長野県県民文化会館"
+          },
+          {
+            "date": "2002-07-14",
+            "prefecture": "兵庫県",
+            "venue": "神戸国際会館こくさいホール"
+          },
+          {
+            "date": "2002-07-15",
+            "prefecture": "奈良県",
+            "venue": "なら100年会館"
+          },
+          {
+            "date": "2002-07-20",
+            "prefecture": "愛知県",
+            "venue": "名古屋国際会議場センチュリーホール"
+          },
+          {
+            "date": "2002-07-21",
+            "prefecture": "愛知県",
+            "venue": "名古屋国際会議場センチュリーホール"
+          },
+          {
+            "date": "2002-07-23",
+            "prefecture": "三重県",
+            "venue": "三重県文化会館"
+          },
+          {
+            "date": "2002-07-25",
+            "prefecture": "岐阜県",
+            "venue": "長良川国際会議場"
+          },
+          {
+            "date": "2002-07-30",
+            "prefecture": "福岡県",
+            "venue": "福岡サンパレスホテル&ホール"
+          },
+          {
+            "date": "2002-07-31",
+            "prefecture": "福岡県",
+            "venue": "福岡サンパレスホテル&ホール"
+          },
+          {
+            "date": "2002-08-02",
+            "prefecture": "埼玉県",
+            "venue": "大宮ソニックシティ"
+          },
+          {
+            "date": "2002-08-06",
+            "prefecture": "石川県",
+            "venue": "石川厚生年金会館"
+          },
+          {
+            "date": "2002-08-07",
+            "prefecture": "石川県",
+            "venue": "石川厚生年金会館"
+          },
+          {
+            "date": "2002-08-09",
+            "prefecture": "新潟県",
+            "venue": "新潟テルサ"
+          },
+          {
+            "date": "2002-08-12",
+            "prefecture": "静岡県",
+            "venue": "アクトシティ浜松"
+          },
+          {
+            "date": "2002-08-16",
+            "prefecture": "神奈川県",
+            "venue": "神奈川県民ホール"
+          },
+          {
+            "date": "2002-08-20",
+            "prefecture": "北海道",
+            "venue": "北海道厚生年金会館"
+          },
+          {
+            "date": "2002-08-21",
+            "prefecture": "北海道",
+            "venue": "北海道厚生年金会館"
+          },
+          {
+            "date": "2002-08-23",
+            "prefecture": "北海道",
+            "venue": "北見市民会館"
+          },
+          {
+            "date": "2002-08-25",
+            "prefecture": "北海道",
+            "venue": "釧路市民会館"
+          },
+          {
+            "date": "2002-08-27",
+            "prefecture": "北海道",
+            "venue": "函館市民会館"
+          },
+          {
+            "date": "2002-08-29",
+            "prefecture": "岩手県",
+            "venue": "岩手県民会館"
+          },
+          {
+            "date": "2002-08-31",
+            "prefecture": "青森県",
+            "venue": "青森市文化会館"
+          },
+          {
+            "date": "2002-09-01",
+            "prefecture": "秋田県",
+            "venue": "秋田県民会館"
+          },
+          {
+            "date": "2002-09-05",
+            "prefecture": "静岡県",
+            "venue": "静岡市民会館"
+          },
+          {
+            "date": "2002-09-06",
+            "prefecture": "静岡県",
+            "venue": "静岡市民会館"
+          },
+          {
+            "date": "2002-09-13",
+            "prefecture": "熊本県",
+            "venue": "熊本市民会館"
+          },
+          {
+            "date": "2002-09-14",
+            "prefecture": "鹿児島県",
+            "venue": "鹿児島市民文化ホール"
+          },
+          {
+            "date": "2002-09-17",
+            "prefecture": "沖縄県",
+            "venue": "沖縄コンベンション劇場"
+          },
+          {
+            "date": "2002-09-18",
+            "prefecture": "沖縄県",
+            "venue": "沖縄コンベンション劇場"
+          },
+          {
+            "date": "2002-09-24",
+            "prefecture": "宮城県",
+            "venue": "Zepp Sendai ※SPECIAL LIVE HOUSE公演"
+          },
+          {
+            "date": "2002-09-26",
+            "prefecture": "宮城県",
+            "venue": "仙台サンプラザホール"
+          },
+          {
+            "date": "2002-09-27",
+            "prefecture": "宮城県",
+            "venue": "仙台サンプラザホール"
+          },
+          {
+            "date": "2002-10-07",
+            "prefecture": "東京都",
+            "venue": "日本武道館 ※追加公演"
+          },
+          {
+            "date": "2002-10-08",
+            "prefecture": "東京都",
+            "venue": "日本武道館 ※追加公演"
+          },
+          {
+            "date": "2002-10-10",
+            "prefecture": "東京都",
+            "venue": "日本武道館 ※追加公演"
+          },
+          {
+            "date": "2002-10-11",
+            "prefecture": "東京都",
+            "venue": "日本武道館 ※追加公演"
+          }
         ]
       }
     ]
   },
-
   {
     "liveName": "4thライヴサーキット \"Cupid (is painted blind)\"",
     "color": "radial-gradient(circle at 20% 28%, rgba(255,170,215,0.55), transparent 58%), radial-gradient(circle at 74% 35%, rgba(255,115,185,0.35), transparent 62%), radial-gradient(circle at 46% 75%, rgba(255,210,235,0.30), transparent 66%), linear-gradient(135deg, #fff0f8 0%, #ffd1ea 35%, #ffb0d6 60%, #ffe2f2 78%, #fff7fb 100%)",
@@ -1220,37 +3900,120 @@
       {
         "year": 2001,
         "shows": [
-          { "date": "2001-11-29", "prefecture": "石川県", "venue": "石川厚生年金会館" },
-          { "date": "2001-11-30", "prefecture": "石川県", "venue": "石川厚生年金会館" },
-          { "date": "2001-12-03", "prefecture": "愛媛県", "venue": "愛媛県県民文化会館" },
-          { "date": "2001-12-04", "prefecture": "愛媛県", "venue": "愛媛県県民文化会館" },
-          { "date": "2001-12-13", "prefecture": "東京都", "venue": "国立代々木競技場 第一体育館" },
-          { "date": "2001-12-14", "prefecture": "東京都", "venue": "国立代々木競技場 第一体育館" },
-          { "date": "2001-12-16", "prefecture": "宮城県", "venue": "仙台サンプラザホール" },
-          { "date": "2001-12-17", "prefecture": "宮城県", "venue": "仙台サンプラザホール" },
-          { "date": "2001-12-24", "prefecture": "大阪府", "venue": "大阪城ホール" },
-          { "date": "2001-12-25", "prefecture": "大阪府", "venue": "大阪城ホール" },
-          { "date": "2001-12-27", "prefecture": "愛知県", "venue": "名古屋市総合体育館レインボーホール" },
-          { "date": "2001-12-29", "prefecture": "愛知県", "venue": "名古屋市総合体育館レインボーホール" }
+          {
+            "date": "2001-11-29",
+            "prefecture": "石川県",
+            "venue": "石川厚生年金会館"
+          },
+          {
+            "date": "2001-11-30",
+            "prefecture": "石川県",
+            "venue": "石川厚生年金会館"
+          },
+          {
+            "date": "2001-12-03",
+            "prefecture": "愛媛県",
+            "venue": "愛媛県県民文化会館"
+          },
+          {
+            "date": "2001-12-04",
+            "prefecture": "愛媛県",
+            "venue": "愛媛県県民文化会館"
+          },
+          {
+            "date": "2001-12-13",
+            "prefecture": "東京都",
+            "venue": "国立代々木競技場 第一体育館"
+          },
+          {
+            "date": "2001-12-14",
+            "prefecture": "東京都",
+            "venue": "国立代々木競技場 第一体育館"
+          },
+          {
+            "date": "2001-12-16",
+            "prefecture": "宮城県",
+            "venue": "仙台サンプラザホール"
+          },
+          {
+            "date": "2001-12-17",
+            "prefecture": "宮城県",
+            "venue": "仙台サンプラザホール"
+          },
+          {
+            "date": "2001-12-24",
+            "prefecture": "大阪府",
+            "venue": "大阪城ホール"
+          },
+          {
+            "date": "2001-12-25",
+            "prefecture": "大阪府",
+            "venue": "大阪城ホール"
+          },
+          {
+            "date": "2001-12-27",
+            "prefecture": "愛知県",
+            "venue": "名古屋市総合体育館レインボーホール"
+          },
+          {
+            "date": "2001-12-29",
+            "prefecture": "愛知県",
+            "venue": "名古屋市総合体育館レインボーホール"
+          }
         ]
       },
       {
         "year": 2002,
         "shows": [
-          { "date": "2002-01-05", "prefecture": "広島県", "venue": "広島厚生年金会館" },
-          { "date": "2002-01-06", "prefecture": "広島県", "venue": "広島厚生年金会館" },
-          { "date": "2002-01-08", "prefecture": "福岡県", "venue": "福岡サンパレスホテル&ホール" },
-          { "date": "2002-01-09", "prefecture": "福岡県", "venue": "福岡サンパレスホテル&ホール" },
-          { "date": "2002-01-11", "prefecture": "福岡県", "venue": "福岡ドラムロゴス ※SPECIAL LIVE HOUSE公演" },
-          { "date": "2002-01-14", "prefecture": "北海道", "venue": "北海道厚生年金会館" },
-          { "date": "2002-01-15", "prefecture": "北海道", "venue": "北海道厚生年金会館" },
-          { "date": "2002-01-19", "prefecture": "神奈川県", "venue": "横浜アリーナ ※追加公演" },
-          { "date": "2002-01-20", "prefecture": "神奈川県", "venue": "横浜アリーナ ※追加公演" }
+          {
+            "date": "2002-01-05",
+            "prefecture": "広島県",
+            "venue": "広島厚生年金会館"
+          },
+          {
+            "date": "2002-01-06",
+            "prefecture": "広島県",
+            "venue": "広島厚生年金会館"
+          },
+          {
+            "date": "2002-01-08",
+            "prefecture": "福岡県",
+            "venue": "福岡サンパレスホテル&ホール"
+          },
+          {
+            "date": "2002-01-09",
+            "prefecture": "福岡県",
+            "venue": "福岡サンパレスホテル&ホール"
+          },
+          {
+            "date": "2002-01-11",
+            "prefecture": "福岡県",
+            "venue": "福岡ドラムロゴス ※SPECIAL LIVE HOUSE公演"
+          },
+          {
+            "date": "2002-01-14",
+            "prefecture": "北海道",
+            "venue": "北海道厚生年金会館"
+          },
+          {
+            "date": "2002-01-15",
+            "prefecture": "北海道",
+            "venue": "北海道厚生年金会館"
+          },
+          {
+            "date": "2002-01-19",
+            "prefecture": "神奈川県",
+            "venue": "横浜アリーナ ※追加公演"
+          },
+          {
+            "date": "2002-01-20",
+            "prefecture": "神奈川県",
+            "venue": "横浜アリーナ ※追加公演"
+          }
         ]
       }
     ]
   },
-
   {
     "liveName": "3rdライヴサーキット \"ジャパンツアー\"",
     "color": "radial-gradient(circle at 20% 28%, rgba(255,205,210,0.55), transparent 58%), radial-gradient(circle at 74% 35%, rgba(255,255,255,0.60), transparent 62%), radial-gradient(circle at 46% 75%, rgba(255,160,160,0.35), transparent 66%), linear-gradient(135deg, #fff3f3 0%, #ffd7d7 35%, #ffffff 60%, #ffe9e9 78%, #fff9f9 100%)",
@@ -1258,46 +4021,185 @@
       {
         "year": 2001,
         "shows": [
-          { "date": "2001-03-30", "prefecture": "長野県", "venue": "長野県民文化会館" },
-          { "date": "2001-03-31", "prefecture": "埼玉県", "venue": "大宮ソニックシティ" },
-          { "date": "2001-04-04", "prefecture": "神奈川県", "venue": "神奈川県民ホール" },
-          { "date": "2001-04-07", "prefecture": "北海道", "venue": "札幌市民会館" },
-          { "date": "2001-04-08", "prefecture": "北海道", "venue": "旭川市民文化会館" },
-          { "date": "2001-04-10", "prefecture": "岩手県", "venue": "岩手県民会館" },
-          { "date": "2001-04-11", "prefecture": "青森県", "venue": "青森市文化会館" },
-          { "date": "2001-04-13", "prefecture": "福島県", "venue": "郡山市民文化センター" },
-          { "date": "2001-04-14", "prefecture": "宮城県", "venue": "仙台サンプラザホール" },
-          { "date": "2001-04-17", "prefecture": "鳥取県", "venue": "鳥取県立県民文化会館" },
-          { "date": "2001-04-19", "prefecture": "岡山県", "venue": "倉敷市民会館" },
-          { "date": "2001-04-20", "prefecture": "広島県", "venue": "広島厚生年金会館" },
-          { "date": "2001-04-23", "prefecture": "徳島県", "venue": "徳島市立文化センター" },
-          { "date": "2001-04-25", "prefecture": "高知県", "venue": "高知県立県民文化ホール" },
-          { "date": "2001-04-28", "prefecture": "東京都", "venue": "渋谷公会堂" },
-          { "date": "2001-04-29", "prefecture": "東京都", "venue": "渋谷公会堂" },
-          { "date": "2001-05-01", "prefecture": "東京都", "venue": "渋谷公会堂" },
-          { "date": "2001-05-02", "prefecture": "東京都", "venue": "渋谷公会堂" },
-          { "date": "2001-05-05", "prefecture": "石川県", "venue": "石川厚生年金会館" },
-          { "date": "2001-05-06", "prefecture": "新潟県", "venue": "新潟県民会館" },
-          { "date": "2001-05-09", "prefecture": "静岡県", "venue": "アクトシティ浜松" },
-          { "date": "2001-05-10", "prefecture": "静岡県", "venue": "静岡市民文化会館" },
-          { "date": "2001-05-13", "prefecture": "愛知県", "venue": "名古屋国際会議場センチュリーホール" },
-          { "date": "2001-05-14", "prefecture": "愛知県", "venue": "名古屋国際会議場センチュリーホール" },
-          { "date": "2001-05-16", "prefecture": "三重県", "venue": "三重県総合文化センター" },
-          { "date": "2001-05-18", "prefecture": "岐阜県", "venue": "長良川国際会議場" },
-          { "date": "2001-05-21", "prefecture": "愛媛県", "venue": "愛媛県県民文化会館" },
-          { "date": "2001-05-23", "prefecture": "香川県", "venue": "香川県県民ホール" },
-          { "date": "2001-05-25", "prefecture": "福岡県", "venue": "福岡サンパレスホテル&ホール" },
-          { "date": "2001-05-26", "prefecture": "長崎県", "venue": "長崎ブリックホール" },
-          { "date": "2001-05-28", "prefecture": "熊本県", "venue": "熊本市民会館" },
-          { "date": "2001-05-29", "prefecture": "鹿児島県", "venue": "鹿児島市民文化ホール" },
-          { "date": "2001-05-31", "prefecture": "大阪府", "venue": "フェスティバルホール" },
-          { "date": "2001-06-01", "prefecture": "大阪府", "venue": "フェスティバルホール" },
-          { "date": "2001-06-03", "prefecture": "兵庫県", "venue": "神戸チキンジョージ ※SPECIAL LIVE HOUSE公演/love up! 会員限定" }
+          {
+            "date": "2001-03-30",
+            "prefecture": "長野県",
+            "venue": "長野県民文化会館"
+          },
+          {
+            "date": "2001-03-31",
+            "prefecture": "埼玉県",
+            "venue": "大宮ソニックシティ"
+          },
+          {
+            "date": "2001-04-04",
+            "prefecture": "神奈川県",
+            "venue": "神奈川県民ホール"
+          },
+          {
+            "date": "2001-04-07",
+            "prefecture": "北海道",
+            "venue": "札幌市民会館"
+          },
+          {
+            "date": "2001-04-08",
+            "prefecture": "北海道",
+            "venue": "旭川市民文化会館"
+          },
+          {
+            "date": "2001-04-10",
+            "prefecture": "岩手県",
+            "venue": "岩手県民会館"
+          },
+          {
+            "date": "2001-04-11",
+            "prefecture": "青森県",
+            "venue": "青森市文化会館"
+          },
+          {
+            "date": "2001-04-13",
+            "prefecture": "福島県",
+            "venue": "郡山市民文化センター"
+          },
+          {
+            "date": "2001-04-14",
+            "prefecture": "宮城県",
+            "venue": "仙台サンプラザホール"
+          },
+          {
+            "date": "2001-04-17",
+            "prefecture": "鳥取県",
+            "venue": "鳥取県立県民文化会館"
+          },
+          {
+            "date": "2001-04-19",
+            "prefecture": "岡山県",
+            "venue": "倉敷市民会館"
+          },
+          {
+            "date": "2001-04-20",
+            "prefecture": "広島県",
+            "venue": "広島厚生年金会館"
+          },
+          {
+            "date": "2001-04-23",
+            "prefecture": "徳島県",
+            "venue": "徳島市立文化センター"
+          },
+          {
+            "date": "2001-04-25",
+            "prefecture": "高知県",
+            "venue": "高知県立県民文化ホール"
+          },
+          {
+            "date": "2001-04-28",
+            "prefecture": "東京都",
+            "venue": "渋谷公会堂"
+          },
+          {
+            "date": "2001-04-29",
+            "prefecture": "東京都",
+            "venue": "渋谷公会堂"
+          },
+          {
+            "date": "2001-05-01",
+            "prefecture": "東京都",
+            "venue": "渋谷公会堂"
+          },
+          {
+            "date": "2001-05-02",
+            "prefecture": "東京都",
+            "venue": "渋谷公会堂"
+          },
+          {
+            "date": "2001-05-05",
+            "prefecture": "石川県",
+            "venue": "石川厚生年金会館"
+          },
+          {
+            "date": "2001-05-06",
+            "prefecture": "新潟県",
+            "venue": "新潟県民会館"
+          },
+          {
+            "date": "2001-05-09",
+            "prefecture": "静岡県",
+            "venue": "アクトシティ浜松"
+          },
+          {
+            "date": "2001-05-10",
+            "prefecture": "静岡県",
+            "venue": "静岡市民文化会館"
+          },
+          {
+            "date": "2001-05-13",
+            "prefecture": "愛知県",
+            "venue": "名古屋国際会議場センチュリーホール"
+          },
+          {
+            "date": "2001-05-14",
+            "prefecture": "愛知県",
+            "venue": "名古屋国際会議場センチュリーホール"
+          },
+          {
+            "date": "2001-05-16",
+            "prefecture": "三重県",
+            "venue": "三重県総合文化センター"
+          },
+          {
+            "date": "2001-05-18",
+            "prefecture": "岐阜県",
+            "venue": "長良川国際会議場"
+          },
+          {
+            "date": "2001-05-21",
+            "prefecture": "愛媛県",
+            "venue": "愛媛県県民文化会館"
+          },
+          {
+            "date": "2001-05-23",
+            "prefecture": "香川県",
+            "venue": "香川県県民ホール"
+          },
+          {
+            "date": "2001-05-25",
+            "prefecture": "福岡県",
+            "venue": "福岡サンパレスホテル&ホール"
+          },
+          {
+            "date": "2001-05-26",
+            "prefecture": "長崎県",
+            "venue": "長崎ブリックホール"
+          },
+          {
+            "date": "2001-05-28",
+            "prefecture": "熊本県",
+            "venue": "熊本市民会館"
+          },
+          {
+            "date": "2001-05-29",
+            "prefecture": "鹿児島県",
+            "venue": "鹿児島市民文化ホール"
+          },
+          {
+            "date": "2001-05-31",
+            "prefecture": "大阪府",
+            "venue": "フェスティバルホール"
+          },
+          {
+            "date": "2001-06-01",
+            "prefecture": "大阪府",
+            "venue": "フェスティバルホール"
+          },
+          {
+            "date": "2001-06-03",
+            "prefecture": "兵庫県",
+            "venue": "神戸チキンジョージ ※SPECIAL LIVE HOUSE公演/love up! 会員限定"
+          }
         ]
       }
     ]
   },
-
   {
     "liveName": "2ndライヴサーキット \"D4-33-4\"",
     "color": "radial-gradient(circle at 20% 28%, rgba(190,160,255,0.45), transparent 58%), radial-gradient(circle at 74% 35%, rgba(255,175,120,0.45), transparent 62%), radial-gradient(circle at 46% 75%, rgba(220,210,255,0.30), transparent 66%), linear-gradient(135deg, #f4efff 0%, #dfd3ff 35%, #ffcaa0 60%, #e8ddff 78%, #fff7ff 100%)",
@@ -1305,25 +4207,80 @@
       {
         "year": 2000,
         "shows": [
-          { "date": "2000-09-24", "prefecture": "愛媛県", "venue": "松山市民会館" },
-          { "date": "2000-09-25", "prefecture": "広島県", "venue": "広島アステールプラザ" },
-          { "date": "2000-09-28", "prefecture": "鹿児島県", "venue": "鹿児島県文化センター" },
-          { "date": "2000-10-03", "prefecture": "愛知県", "venue": "名古屋E.L.L ※追加公演/SPECIAL LIVE HOUSE公演" },
-          { "date": "2000-10-04", "prefecture": "静岡県", "venue": "静岡市民文化会館" },
-          { "date": "2000-10-07", "prefecture": "宮城県", "venue": "Zepp Sendai" },
-          { "date": "2000-10-10", "prefecture": "石川県", "venue": "金沢市文化ホール" },
-          { "date": "2000-10-11", "prefecture": "新潟県", "venue": "新潟フェイズ" },
-          { "date": "2000-10-15", "prefecture": "福岡県", "venue": "Zepp Fukuoka" },
-          { "date": "2000-10-18", "prefecture": "北海道", "venue": "札幌ファクトリーホール" },
-          { "date": "2000-10-20", "prefecture": "大阪府", "venue": "大阪厚生年金会館" },
-          { "date": "2000-10-22", "prefecture": "愛知県", "venue": "名古屋市公会堂" },
-          { "date": "2000-10-24", "prefecture": "東京都", "venue": "渋谷公会堂" },
-          { "date": "2000-10-25", "prefecture": "東京都", "venue": "渋谷公会堂" }
+          {
+            "date": "2000-09-24",
+            "prefecture": "愛媛県",
+            "venue": "松山市民会館"
+          },
+          {
+            "date": "2000-09-25",
+            "prefecture": "広島県",
+            "venue": "広島アステールプラザ"
+          },
+          {
+            "date": "2000-09-28",
+            "prefecture": "鹿児島県",
+            "venue": "鹿児島県文化センター"
+          },
+          {
+            "date": "2000-10-03",
+            "prefecture": "愛知県",
+            "venue": "名古屋E.L.L ※追加公演/SPECIAL LIVE HOUSE公演"
+          },
+          {
+            "date": "2000-10-04",
+            "prefecture": "静岡県",
+            "venue": "静岡市民文化会館"
+          },
+          {
+            "date": "2000-10-07",
+            "prefecture": "宮城県",
+            "venue": "Zepp Sendai"
+          },
+          {
+            "date": "2000-10-10",
+            "prefecture": "石川県",
+            "venue": "金沢市文化ホール"
+          },
+          {
+            "date": "2000-10-11",
+            "prefecture": "新潟県",
+            "venue": "新潟フェイズ"
+          },
+          {
+            "date": "2000-10-15",
+            "prefecture": "福岡県",
+            "venue": "Zepp Fukuoka"
+          },
+          {
+            "date": "2000-10-18",
+            "prefecture": "北海道",
+            "venue": "札幌ファクトリーホール"
+          },
+          {
+            "date": "2000-10-20",
+            "prefecture": "大阪府",
+            "venue": "大阪厚生年金会館"
+          },
+          {
+            "date": "2000-10-22",
+            "prefecture": "愛知県",
+            "venue": "名古屋市公会堂"
+          },
+          {
+            "date": "2000-10-24",
+            "prefecture": "東京都",
+            "venue": "渋谷公会堂"
+          },
+          {
+            "date": "2000-10-25",
+            "prefecture": "東京都",
+            "venue": "渋谷公会堂"
+          }
         ]
       }
     ]
   },
-
   {
     "liveName": "東京ロマンスポルノ vol.4 \"横G\"",
     "color": "radial-gradient(circle at 20% 28%, rgba(200,240,255,0.60), transparent 58%), radial-gradient(circle at 74% 35%, rgba(150,205,255,0.45), transparent 62%), radial-gradient(circle at 46% 75%, rgba(235,250,255,0.40), transparent 66%), linear-gradient(135deg, #f2fbff 0%, #d6f0ff 35%, #bfe3ff 60%, #e8f7ff 78%, #fbfeff 100%)",
@@ -1331,12 +4288,15 @@
       {
         "year": 2000,
         "shows": [
-          { "date": "2000-06-17", "prefecture": "東京都", "venue": "渋谷公会堂" }
+          {
+            "date": "2000-06-17",
+            "prefecture": "東京都",
+            "venue": "渋谷公会堂"
+          }
         ]
       }
     ]
   },
-
   {
     "liveName": "1stライヴサーキット \"Tour 08452 〜Welcome to my heart〜\"",
     "color": "radial-gradient(circle at 20% 28%, rgba(210,255,230,0.55), transparent 58%), radial-gradient(circle at 74% 35%, rgba(255,220,245,0.35), transparent 62%), radial-gradient(circle at 46% 75%, rgba(200,225,255,0.35), transparent 66%), linear-gradient(135deg, #effff6 0%, #d6f7e8 35%, #ffe1f4 60%, #dbeaff 78%, #f7fffb 100%)",
@@ -1344,23 +4304,70 @@
       {
         "year": 2000,
         "shows": [
-          { "date": "2000-03-18", "prefecture": "愛知県", "venue": "名古屋ボトムライン" },
-          { "date": "2000-03-24", "prefecture": "東京都", "venue": "渋谷ON AIR EAST" },
-          { "date": "2000-03-26", "prefecture": "大阪府", "venue": "心斎橋クラブクアトロ" },
-          { "date": "2000-03-29", "prefecture": "広島県", "venue": "広島ナミキジャンクション" },
-          { "date": "2000-03-30", "prefecture": "広島県", "venue": "広島ナミキジャンクション" },
-          { "date": "2000-04-01", "prefecture": "福岡県", "venue": "福岡ドラムロゴス" },
-          { "date": "2000-04-02", "prefecture": "兵庫県", "venue": "神戸チキンジョージ" },
-          { "date": "2000-04-04", "prefecture": "愛媛県", "venue": "松山サロンキティ" },
-          { "date": "2000-04-05", "prefecture": "高知県", "venue": "高知キャラバンサライ" },
-          { "date": "2000-04-08", "prefecture": "北海道", "venue": "札幌ペニーレーン24" },
-          { "date": "2000-04-10", "prefecture": "宮城県", "venue": "仙台ビーブベースメントシアター" },
-          { "date": "2000-04-20", "prefecture": "東京都", "venue": "渋谷ON AIR EAST ※追加公演" }
+          {
+            "date": "2000-03-18",
+            "prefecture": "愛知県",
+            "venue": "名古屋ボトムライン"
+          },
+          {
+            "date": "2000-03-24",
+            "prefecture": "東京都",
+            "venue": "渋谷ON AIR EAST"
+          },
+          {
+            "date": "2000-03-26",
+            "prefecture": "大阪府",
+            "venue": "心斎橋クラブクアトロ"
+          },
+          {
+            "date": "2000-03-29",
+            "prefecture": "広島県",
+            "venue": "広島ナミキジャンクション"
+          },
+          {
+            "date": "2000-03-30",
+            "prefecture": "広島県",
+            "venue": "広島ナミキジャンクション"
+          },
+          {
+            "date": "2000-04-01",
+            "prefecture": "福岡県",
+            "venue": "福岡ドラムロゴス"
+          },
+          {
+            "date": "2000-04-02",
+            "prefecture": "兵庫県",
+            "venue": "神戸チキンジョージ"
+          },
+          {
+            "date": "2000-04-04",
+            "prefecture": "愛媛県",
+            "venue": "松山サロンキティ"
+          },
+          {
+            "date": "2000-04-05",
+            "prefecture": "高知県",
+            "venue": "高知キャラバンサライ"
+          },
+          {
+            "date": "2000-04-08",
+            "prefecture": "北海道",
+            "venue": "札幌ペニーレーン24"
+          },
+          {
+            "date": "2000-04-10",
+            "prefecture": "宮城県",
+            "venue": "仙台ビーブベースメントシアター"
+          },
+          {
+            "date": "2000-04-20",
+            "prefecture": "東京都",
+            "venue": "渋谷ON AIR EAST ※追加公演"
+          }
         ]
       }
     ]
   },
-
   {
     "liveName": "東京ロマンスポルノ vol.3 LIVE IN SHIBUYA ON AIR WEST",
     "color": "radial-gradient(circle at 20% 28%, rgba(255,225,180,0.55), transparent 58%), radial-gradient(circle at 74% 35%, rgba(200,220,255,0.45), transparent 62%), radial-gradient(circle at 46% 75%, rgba(230,255,245,0.30), transparent 66%), linear-gradient(135deg, #fff6e6 0%, #ffe1bf 35%, #dbe9ff 60%, #e6fff7 78%, #fffdf8 100%)",
@@ -1368,14 +4375,13 @@
       {
         "year": 1999,
         "shows": [
-          { "date": "1999-12-04", "prefecture": "東京都", "venue": "渋谷ON AIR WEST" }
+          {
+            "date": "1999-12-04",
+            "prefecture": "東京都",
+            "venue": "渋谷ON AIR WEST"
+          }
         ]
       }
     ]
   }
-
-
-
-  
-
 ]
