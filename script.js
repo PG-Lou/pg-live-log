@@ -154,18 +154,40 @@ function createQrElement(text) {
     return d + t;
   }
 
+  // hidden:true の公演は、QR互換のためデータには残すが画面/出力には出さない
+  function isHiddenShow(show) {
+    return !!(show && show.hidden === true);
+  }
+
+  // JSON上の並びはQR index互換のため維持し、画面表示だけ日付順にする
+  function compareShowsForDisplay(a, b) {
+    const ad = String(a?.date || '');
+    const bd = String(b?.date || '');
+    if (ad !== bd) return ad.localeCompare(bd);
+
+    const timeOrder = { AM: 1, PM: 2 };
+    const at = timeOrder[a?.time] || 0;
+    const bt = timeOrder[b?.time] || 0;
+    return at - bt;
+  }
+
 
   function buildTinyIndex(liveData) {
     const list = [];
+    const appendList = [];
+
     liveData.forEach(live => {
       (live.years || []).forEach(y => {
         (y.shows || []).forEach(s => {
-          list.push(makeTinyId(s));
+          // qrAppend:true の新規追加公演は、既存QRのindexを壊さないためQR上だけ末尾に回す
+          const target = s && s.qrAppend === true ? appendList : list;
+          target.push(makeTinyId(s));
         });
       });
     });
-    __tinyIdList = list;
-    __tinyIdToIndex = new Map(list.map((id, i) => [id, i]));
+
+    __tinyIdList = list.concat(appendList);
+    __tinyIdToIndex = new Map(__tinyIdList.map((id, i) => [id, i]));
   }
 
   function setBit(bytes, i) {
@@ -542,6 +564,13 @@ function applyRestoredData(data) {
       content.hidden = true;
 
       live.years.forEach(y => {
+        const visibleShows = (y.shows || [])
+          .filter(s => !isHiddenShow(s))
+          .slice()
+          .sort(compareShowsForDisplay);
+
+        if (!visibleShows.length) return;
+
         const yearBlock = document.createElement('div');
 
         const yearTitle = document.createElement('div');
@@ -549,7 +578,7 @@ function applyRestoredData(data) {
         yearTitle.textContent = y.year;
         yearBlock.appendChild(yearTitle);
 
-        y.shows.forEach(s => {
+        visibleShows.forEach(s => {
           const label = document.createElement('label');
           label.className = 'show-item';
 
@@ -917,8 +946,10 @@ function updateExportButtonState() {
     const today = new Date();
     today.setHours(0, 0, 0, 0);
   
-    return checked.map(cb => {
-      const data = JSON.parse(cb.dataset.show);
+    return checked
+      .map(cb => JSON.parse(cb.dataset.show))
+      .filter(data => !isHiddenShow(data.show))
+      .map(data => {
       const s = data.show;
   
       const time =
@@ -987,6 +1018,32 @@ function resolveBackground(bgValue, name) {
            "#2f2f2f";
   }
 
+
+// ネオメロドラマティック：ジャケ写寄りのダークくすみレッド
+if (bgValue === 'NEOMELO') {
+  return "linear-gradient(135deg," +
+         " #7a1e24 0%," +
+         " #96252c 22%," +
+         " #b13a3a 45%," +
+         " #c76a58 72%," +
+         " #d59a73 100%)," +
+         "radial-gradient(circle at 22% 18%, rgba(255,220,170,0.10) 0%, transparent 52%)," +
+         "radial-gradient(circle at 78% 82%, rgba(60,0,0,0.18) 0%, transparent 58%)," +
+         "radial-gradient(circle at 55% 40%, rgba(255,120,80,0.08) 0%, transparent 65%)";
+}
+
+// ライン：青みを少し戻したダークくすみブルー
+if (bgValue === 'LINE_BLUE') {
+  return "linear-gradient(135deg," +
+         " #2b4258 0%," +
+         " #355069 28%," +
+         " #44627d 55%," +
+         " #5d7891 82%," +
+         " #7e97ad 100%)," +
+         "radial-gradient(circle at 22% 18%, rgba(255,255,255,0.05) 0%, transparent 52%)," +
+         "radial-gradient(circle at 78% 82%, rgba(10,20,35,0.14) 0%, transparent 58%)";
+} 
+  
   // Rainbow：流行り寄り・ほんのりくすみ（くすませすぎない）
   if (bgValue === 'RAINBOW') {
     return "linear-gradient(135deg," +
@@ -1865,12 +1922,6 @@ function resolveBackground(bgValue, name) {
   });
 
 });
-
-
-
-
-
-
 
 
 
